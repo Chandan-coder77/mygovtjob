@@ -1,22 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-from datetime import datetime
 
 jobs = []
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-}
-
-# ---------- SSC SCRAPER ----------
-def ssc_scraper():
+# ----------------------- SSC -----------------------
+def fetch_ssc():
+    url = "https://ssc.nic.in/"
     try:
-        url = "https://ssc.nic.in/"
-        r = requests.get(url, headers=headers, timeout=25)
+        r = requests.get(url, timeout=15)
         soup = BeautifulSoup(r.text, "html.parser")
+        notice = soup.find("div", {"id":"kCarousel"})  # Latest Notification block
+
+        title = notice.text.strip().split("\n")[0] if notice else "SSC Latest Jobs"
         
-        title = "SSC Latest Notification"
         jobs.append({
             "title": title,
             "vacancies": "Update Soon",
@@ -26,70 +23,64 @@ def ssc_scraper():
             "last_date": "Check Website",
             "state": "All India",
             "category": "SSC",
-            "apply_link": url
+            "apply_link": "https://ssc.nic.in/"
         })
-        print("[✔] SSC Added")
-
     except:
-        print("[✖] SSC Fetch Failed")
+        pass
 
-# ---------- UPSC SCRAPER ----------
-def upsc_scraper():
+
+# ----------------------- UPSC -----------------------
+def fetch_upsc():
+    url = "https://upsc.gov.in/"
     try:
-        url = "https://upsc.gov.in/"
-        r = requests.get(url, headers=headers, timeout=25)
+        r = requests.get(url, timeout=15)
         soup = BeautifulSoup(r.text, "html.parser")
-        
-        title = "UPSC Latest Recruitment"
+        title = soup.find("marquee").text.strip() if soup.find("marquee") else "UPSC Latest Notification"
+
         jobs.append({
             "title": title,
-            "vacancies": "Various",
+            "vacancies": "Update Soon",
             "qualification": "Graduate",
             "age": "21+",
-            "salary": "As per post",
+            "salary": "As per rules",
             "last_date": "Check Website",
             "state": "All India",
             "category": "UPSC",
             "apply_link": url
         })
-        print("[✔] UPSC Added")
-
     except:
-        print("[✖] UPSC Fetch Failed")
+        pass
 
-# ---------- RAILWAY SCRAPER ----------
-def railway_scraper():
+
+# ----------------------- Railway -----------------------
+def fetch_railway():
+    url = "https://indianrailways.gov.in/"
     try:
-        url = "https://indianrailways.gov.in/"
-        r = requests.get(url, headers=headers, timeout=25)
+        r = requests.get(url, timeout=15)
         soup = BeautifulSoup(r.text, "html.parser")
-
-        title = "Railway Latest Vacancy"
+        title = "Railway Recruitment Latest"
         jobs.append({
             "title": title,
-            "vacancies": "Upcoming",
-            "qualification": "10th/12th",
-            "age": "18+",
-            "salary": "As per rules",
-            "last_date": "Soon",
+            "vacancies": "Update Soon",
+            "qualification": "10th/ITI/Diploma/Graduate",
+            "age": "18-30",
+            "salary": "₹21,700+",
+            "last_date": "Official Notice Soon",
             "state": "All India",
             "category": "Railway",
             "apply_link": url
         })
-        print("[✔] Railway Added")
-
     except:
-        print("[✖] Railway Fetch Failed")
+        pass
 
 
-# Main run
-print("Running Scraper...")
-ssc_scraper()
-upsc_scraper()
-railway_scraper()
+# ------------ run scrapers -------------
+fetch_ssc()
+fetch_upsc()
+fetch_railway()
 
-# Save JSON
-with open("jobs.json","w") as f:
+# Save to jobs.json
+with open("jobs.json", "w") as f:
     json.dump(jobs, f, indent=4)
 
-print("\n📁 jobs.json Updated Successfully 🚀")
+print("Jobs Updated Successfully!")
