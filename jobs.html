@@ -2,85 +2,117 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Latest Jobs - MyGovtJob</title>
-<style>
-body{font-family:Arial;background:#e9edf3;margin:0;}
-header{text-align:center;background:#0A3D91;color:#fff;padding:15px;font-size:25px;font-weight:bold;}
-.container{padding:15px;}
-.job-card{
- background:#fff;padding:15px;margin-bottom:15px;border-radius:10px;
- box-shadow:0 0 5px rgba(0,0,0,0.2);
-}
-.job-card h3{color:#0A3D91;margin-bottom:6px;}
-.apply{background:#0A3D91;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:8px;}
-.filter-btn,.search{
- padding:8px;margin:4px;border-radius:6px;border:none;font-size:15px;
- background:#0A3D91;color:#fff;
-}
-.search-box input{width:90%;padding:10px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;font-size:16px;}
-</style>
-</head>
+<title>Government Jobs - MyGovtJob</title>
 
+<style>
+body{ font-family: Arial; background:#f4f4f4; margin:0; text-align:center; }
+
+header{
+    background:#0A3D91; color:white; padding:15px;
+    font-size:22px; font-weight:bold;
+}
+
+.filter-buttons{
+    margin:10px 5px;
+}
+.filter-buttons button{
+    background:#0A3D91; color:#fff; border:none;
+    padding:8px 14px; margin:5px; border-radius:5px;
+    cursor:pointer; font-size:14px;
+}
+.filter-buttons button:hover{
+    background:#06285D;
+}
+
+.jobs-container{
+    width:90%; margin:auto;
+}
+
+.job-card{
+    background:white; padding:12px; margin:12px 0;
+    border-radius:8px; text-align:left; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.job-card h2{
+    color:#0A3D91; margin:0 0 10px; font-size:20px;
+    font-weight:bold;
+}
+.apply-btn{
+    background:#0A3D91; color:white; padding:8px 14px;
+    text-decoration:none; display:inline-block;
+    border-radius:5px; margin-top:10px;
+}
+.apply-btn:hover{ background:#06285D;}
+</style>
+
+</head>
 <body>
 
 <header>Latest Government Jobs</header>
 
-<div class="container">
-
-<!-- Search -->
-<div class="search-box">
-<input type="text" id="search" placeholder="Search Job e.g SSC, Police, Teacher" onkeyup="searchJob()">
+<!-- Category Filter -->
+<div class="filter-buttons">
+    <button onclick="filterCategory('All')">All Jobs</button>
+    <button onclick="filterCategory('SSC')">SSC</button>
+    <button onclick="filterCategory('Railway')">Railway</button>
+    <button onclick="filterCategory('Police')">Police</button>
 </div>
 
-<!-- Filter Buttons -->
-<button class="filter-btn" onclick="filterJobs('All')">All</button>
-<button class="filter-btn" onclick="filterJobs('SSC')">SSC</button>
-<button class="filter-btn" onclick="filterJobs('Railway')">Railway</button>
-<button class="filter-btn" onclick="filterJobs('Police')">Police</button>
-<button class="filter-btn" onclick="filterJobs('Forest')">Forest</button>
-
-<div id="jobList"></div>
-
+<!-- State Filter -->
+<div class="filter-buttons">
+    <button onclick="filterState('All')">All India</button>
+    <button onclick="filterState('Odisha')">Odisha</button>
+    <button onclick="filterState('Bihar')">Bihar</button>
+    <button onclick="filterState('UP')">UP</button>
+    <button onclick="filterState('Jharkhand')">Jharkhand</button>
+    <button onclick="filterState('Delhi')">Delhi</button>
 </div>
+
+<div class="jobs-container" id="jobs"></div>
 
 <script>
 let jobsData = [];
 
+// Load jobs.json automatically
 fetch("jobs.json")
-.then(res=>res.json())
-.then(data=>{
- jobsData=data;
- displayJobs(data);
+.then(res => res.json())
+.then(data => {
+    jobsData = data;
+    displayJobs(data); // show all at first
 });
 
-// DISPLAY JOBS
+// Display Job Cards
 function displayJobs(list){
- document.getElementById("jobList").innerHTML="";
- list.forEach(j=>{
-  document.getElementById("jobList").innerHTML+=`
-  <div class='job-card' data-cat="${j.category.toLowerCase()}" data-title="${j.title.toLowerCase()}">
-     <h3>${j.title}</h3>
-     <p><b>Vacancy:</b> ${j.vacancies}</p>
-     <p><b>Qualification:</b> ${j.qualification}</p>
-     <p><b>Age:</b> ${j.age}</p>
-     <p><b>Salary:</b> ${j.salary}</p>
-     <p><b>Last Date:</b> ${j.last_date}</p>
-     <p><b>State:</b> ${j.state}</p>
-     <a class='apply' href="${j.apply_link}" target="_blank">Apply Now</a>
-  </div>`;
- });
+    document.getElementById("jobs").innerHTML = "";
+    list.forEach(job => createJobCard(job));
 }
 
-// FILTER
-function filterJobs(c){
- c=c.toLowerCase();
- displayJobs(c=="all"?jobsData:jobsData.filter(j=>j.category.toLowerCase()==c));
+// Create Card
+function createJobCard(job){
+    document.getElementById("jobs").innerHTML += `
+    <div class="job-card">
+        <h2>${job.title}</h2>
+        <b>Vacancy:</b> ${job.vacancies}<br>
+        <b>Qualification:</b> ${job.qualification}<br>
+        <b>Age:</b> ${job.age}<br>
+        <b>Salary:</b> ${job.salary}<br>
+        <b>Last Date:</b> ${job.last_date}<br>
+        <b>State:</b> ${job.state}<br>
+        <a class="apply-btn" href="${job.apply_link}" target="_blank">Apply Now</a>
+    </div>`;
 }
 
-// SEARCH
-function searchJob(){
- let val=document.getElementById("search").value.toLowerCase();
- displayJobs(jobsData.filter(j=>j.title.toLowerCase().includes(val)));
+// Category Filter
+function filterCategory(cat){
+    if(cat == 'All'){ displayJobs(jobsData); return; }
+    displayJobs(jobsData.filter(j => j.category.toLowerCase() == cat.toLowerCase()));
+}
+
+// State Filter
+function filterState(state){
+    if(state == 'All'){ displayJobs(jobsData); return; }
+    displayJobs(jobsData.filter(j => j.state.toLowerCase().includes(state.toLowerCase())));
 }
 </script>
 
