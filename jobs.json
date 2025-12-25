@@ -4,32 +4,43 @@
         "vacancies": "Update Soon",
         "qualification": "10th/12th/Graduate",
         "age": "18+",
-        "salary": "As per SSC Rules",
+        "salary": "As per rules",
         "last_date": "Check Website",
         "state": "All India",
         "category": "SSC",
         "apply_link": "https://ssc.nic.in/"
     },
     {
-        "title": "UPSC Jobs",
-        "vacancies": "Soon",
+        "title": "Bank Jobs (Auto-Upcoming Update)",
+        "vacancies": "Waiting extractor",
         "qualification": "Graduate",
-        "age": "Varies",
+        "age": "21+",
         "salary": "As per rules",
-        "last_date": "Upcoming",
+        "last_date": "Soon",
         "state": "All India",
-        "category": "UPSC",
-        "apply_link": "https://www.upsc.gov.in/"
+        "category": "Bank",
+        "apply_link": "https://ibps.in"
     },
     {
-        "title": "Railway Jobs",
+        "title": "Police Recruitment (Auto-Upcoming Update)",
         "vacancies": "Soon",
-        "qualification": "10th/ITI/Graduate",
+        "qualification": "10th/12th",
         "age": "18+",
         "salary": "As per rules",
-        "last_date": "Upcoming",
-        "state": "All India",
-        "category": "Railway",
-        "apply_link": "https://indianrailways.gov.in/"
+        "last_date": "Soon",
+        "state": "State Wise",
+        "category": "Police",
+        "apply_link": "https://police.gov.in"
+    },
+    {
+        "title": "Teacher/TET Jobs",
+        "vacancies": "Updating",
+        "qualification": "B.Ed/CTET",
+        "age": "21+",
+        "salary": "As per norms",
+        "last_date": "Check Website",
+        "state": "India",
+        "category": "Teacher",
+        "apply_link": "https://ctet.nic.in"
     }
 ]
