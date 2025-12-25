@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Saved Jobs - MyGovtJob</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f2f4f7;
+}
+.topbar{
+  background:#0B3C5D;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:18px;
+}
+.job{
+  background:white;
+  margin:12px;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+.job h3{margin:0;}
+.job p{color:#555;}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">Saved Jobs</div>
+
+<div id="savedJobs"></div>
+
+<script>
+let jobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+if(jobs.length === 0){
+  document.getElementById("savedJobs").innerHTML =
+  "<p style='text-align:center;margin-top:20px;'>No saved jobs</p>";
+}else{
+  let html = "";
+  jobs.forEach(j=>{
+    html += `
+    <div class="job">
+      <h3>${j.title}</h3>
+      <p>${j.dept}</p>
+      <p>Last Date: ${j.date}</p>
+    </div>`;
+  });
+  document.getElementById("savedJobs").innerHTML = html;
+}
+</script>
+
+</body>
+</html>

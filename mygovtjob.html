@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MyGovtJob</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{margin:0;font-family:Arial;background:#f2f4f7;}
+.topbar{background:#0B3C5D;color:white;padding:15px;text-align:center;font-size:20px;}
+.filter{padding:10px;}
+select{width:100%;padding:10px;border-radius:6px;}
+.job{background:white;margin:12px;padding:15px;border-radius:10px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.job h3{margin:0;}
+.job p{color:#555;}
+.new{color:#F57C00;font-weight:bold;}
+button{padding:8px 12px;border:none;border-radius:6px;}
+.apply{background:#0B3C5D;color:white;}
+.save{background:#ddd;margin-left:8px;}
+a{text-decoration:none;}
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+  MyGovtJob |
+  <a href="saved.html" style="color:white;">❤️ Saved</a>
+</div>
+
+<div class="filter">
+  <select id="stateFilter" onchange="filterJobs()">
+    <option value="All">All States</option>
+  </select>
+</div>
+
+<div id="jobList"></div>
+
+<script>
+let allJobs = [];
+
+fetch("https://opensheet.elk.sh/1IF5kWoo-p3ACe45O8K6kN-d03kPfp7BElMenz7_x1mM/Sheet1")
+.then(res => res.json())
+.then(data => {
+  allJobs = data;
+  loadStates(data);
+  showJobs(data);
+});
+
+function loadStates(data){
+  let states = new Set();
+  data.forEach(j => states.add(j.State));
+  let select = document.getElementById("stateFilter");
+  states.forEach(s=>{
+    let opt = document.createElement("option");
+    opt.value = s;
+    opt.textContent = s;
+    select.appendChild(opt);
+  });
+}
+
+function filterJobs(){
+  let state = document.getElementById("stateFilter").value;
+  if(state === "All") showJobs(allJobs);
+  else showJobs(allJobs.filter(j => j.State === state));
+}
+
+function showJobs(jobs){
+  let html = "";
+  jobs.forEach(j=>{
+    html += `
+    <div class="job">
+      <h3>${j.JobTitle} ${j.IsNew==="YES" ? "<span class='new'>NEW</span>" : ""}</h3>
+      <p>State: ${j.State}</p>
+      <p>Qualification: ${j.Qualification}</p>
+      <p>Last Date: ${j.LastDate}</p>
+
+      <a href="${j.ApplyLink}" target="_blank">
+        <button class="apply">Apply</button>
+      </a>
+
+      <button class="save"
+        onclick="saveJob('${j.JobTitle}','${j.State}','${j.LastDate}')">
+        Save
+      </button>
+    </div>`;
+  });
+  document.getElementById("jobList").innerHTML = html;
+}
+
+function saveJob(title, state, date){
+  let jobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+  jobs.push({title, state, date});
+  localStorage.setItem("savedJobs", JSON.stringify(jobs));
+  alert("Job Saved ✅");
+}
+</script>
+
+</body>
+</html>
