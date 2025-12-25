@@ -1,13 +1,68 @@
 [
-    {
-        "title": "SSC Latest Notification",
-        "vacancies": "Update Soon",
-        "qualification": "10th/12th/Graduate",
-        "age": "18+",
-        "salary": "As per rules",
-        "last_date": "Check Website",
-        "state": "All India",
-        "category": "SSC",
-        "apply_link": "https://ssc.nic.in/"
-    }
+  {
+    "title": "SSC Latest Jobs",
+    "vacancies": "Update Soon",
+    "qualification": "10th/12th/Graduate",
+    "age": "18+",
+    "salary": "As per rules",
+    "last_date": "Check Website",
+    "state": "All India",
+    "category": "SSC",
+    "apply_link": "https://ssc.nic.in/"
+  },
+  {
+    "title": "Railway Upcoming Vacancy",
+    "vacancies": "Update Soon",
+    "qualification": "10th/ITI/Diploma/Graduate",
+    "age": "18+",
+    "salary": "As per rules",
+    "last_date": "Notify Soon",
+    "state": "All India",
+    "category": "Railway",
+    "apply_link": "https://indianrailways.gov.in/"
+  },
+  {
+    "title": "UPSC Recruitment Notification",
+    "vacancies": "Announced Soon",
+    "qualification": "Graduate",
+    "age": "21+",
+    "salary": "As per Govt Pay Scale",
+    "last_date": "Check Website",
+    "state": "All India",
+    "category": "UPSC",
+    "apply_link": "https://upsc.gov.in/"
+  },
+  {
+    "title": "Banking IBPS Upcoming Exams",
+    "vacancies": "Update Soon",
+    "qualification": "Graduate",
+    "age": "20+",
+    "salary": "As per Bank Rules",
+    "last_date": "Coming Soon",
+    "state": "All India",
+    "category": "Banking",
+    "apply_link": "https://ibps.in/"
+  },
+  {
+    "title": "Police Vacancy Upcoming",
+    "vacancies": "Multiple States",
+    "qualification": "10th/12th/Graduate",
+    "age": "18+",
+    "salary": "As per Govt Rules",
+    "last_date": "State Wise",
+    "state": "India (State-wise)",
+    "category": "Police",
+    "apply_link": "https://police.gov.in/"
+  },
+  {
+    "title": "Teacher & TET Notification",
+    "vacancies": "Update Soon",
+    "qualification": "12th/Graduate/B.Ed",
+    "age": "18+",
+    "salary": "As per Govt Rules",
+    "last_date": "Check Notification",
+    "state": "All India",
+    "category": "Teacher",
+    "apply_link": "https://ncte.gov.in/"
+  }
 ]
