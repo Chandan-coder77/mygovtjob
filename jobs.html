@@ -1,96 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Latest Govt Jobs</title>
-
+<meta charset="UTF-8">
+<title>Latest Jobs - MyGovtJob</title>
 <style>
-body{font-family:Arial;background:#fff;margin:0;padding:10px;}
-h1{text-align:center;color:#0A3CA4;}
-
-.filter-box{
-    text-align:center;
-    margin-bottom:15px;
+body{font-family:Arial;background:#e9edf3;margin:0;}
+header{text-align:center;background:#0A3D91;color:#fff;padding:15px;font-size:25px;font-weight:bold;}
+.container{padding:15px;}
+.job-card{
+ background:#fff;padding:15px;margin-bottom:15px;border-radius:10px;
+ box-shadow:0 0 5px rgba(0,0,0,0.2);
 }
-.filter-box button{
-    padding:8px 15px;
-    margin:5px;
-    border:none;
-    background:#0A3CA4;
-    color:#fff;
-    border-radius:6px;
-    font-size:15px;
+.job-card h3{color:#0A3D91;margin-bottom:6px;}
+.apply{background:#0A3D91;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:8px;}
+.filter-btn,.search{
+ padding:8px;margin:4px;border-radius:6px;border:none;font-size:15px;
+ background:#0A3D91;color:#fff;
 }
-.filter-box button:hover{
-    background:#072f75;
-}
-
-.card{
-  border:1px solid #ddd;border-radius:8px;padding:12px;margin-bottom:12px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-.card h2{margin:0;font-size:20px;color:#0A3CA4;}
-p{margin:4px 0;font-size:15px;}
-.btn{
-  background:#0A3CA4;color:#fff;padding:8px 15px;
-  text-decoration:none;border-radius:6px;display:inline-block;margin-top:8px;
-}
+.search-box input{width:90%;padding:10px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;font-size:16px;}
 </style>
 </head>
 
 <body>
 
-<h1>Latest Government Jobs</h1>
+<header>Latest Government Jobs</header>
 
-<!-- ---------- FILTER BUTTONS ---------- -->
-<div class="filter-box">
-    <button onclick="filterJob('All')">All Jobs</button>
-    <button onclick="filterJob('Odisha')">Odisha</button>
-    <button onclick="filterJob('UP')">UP</button>
-    <button onclick="filterJob('Bihar')">Bihar</button>
-    <button onclick="filterJob('Railway')">Railway</button>
-    <button onclick="filterJob('SSC')">SSC</button>
-    <button onclick="filterJob('Police')">Police</button>
+<div class="container">
+
+<!-- Search -->
+<div class="search-box">
+<input type="text" id="search" placeholder="Search Job e.g SSC, Police, Teacher" onkeyup="searchJob()">
 </div>
 
-<div id="job-container"></div>
+<!-- Filter Buttons -->
+<button class="filter-btn" onclick="filterJobs('All')">All</button>
+<button class="filter-btn" onclick="filterJobs('SSC')">SSC</button>
+<button class="filter-btn" onclick="filterJobs('Railway')">Railway</button>
+<button class="filter-btn" onclick="filterJobs('Police')">Police</button>
+<button class="filter-btn" onclick="filterJobs('Forest')">Forest</button>
 
-<!-- ---------- FETCH JOBS FROM JSON ---------- -->
+<div id="jobList"></div>
+
+</div>
+
 <script>
-let allJobs = [];
+let jobsData = [];
 
 fetch("jobs.json")
-.then(res => res.json())
-.then(data =>{
-  allJobs = data.jobs;
-  displayJobs(allJobs);
-})
+.then(res=>res.json())
+.then(data=>{
+ jobsData=data;
+ displayJobs(data);
+});
 
+// DISPLAY JOBS
 function displayJobs(list){
-  let container = document.getElementById("job-container");
-  container.innerHTML="";
-  list.forEach(job=>{
-    container.innerHTML += `
-    <div class='card'>
-      <h2>${job.title}</h2>
-      <p><b>Vacancy:</b> ${job.vacancy}</p>
-      <p><b>Qualification:</b> ${job.qualification}</p>
-      <p><b>Age:</b> ${job.age}</p>
-      <p><b>Salary:</b> ${job.salary}</p>
-      <p><b>Last Date:</b> ${job.last_date}</p>
-      <p><b>State:</b> ${job.state}</p>
-      <a class='btn' href='${job.apply_link}' target="_blank">Apply Now</a>
-    </div>`;
-  })
+ document.getElementById("jobList").innerHTML="";
+ list.forEach(j=>{
+  document.getElementById("jobList").innerHTML+=`
+  <div class='job-card' data-cat="${j.category.toLowerCase()}" data-title="${j.title.toLowerCase()}">
+     <h3>${j.title}</h3>
+     <p><b>Vacancy:</b> ${j.vacancies}</p>
+     <p><b>Qualification:</b> ${j.qualification}</p>
+     <p><b>Age:</b> ${j.age}</p>
+     <p><b>Salary:</b> ${j.salary}</p>
+     <p><b>Last Date:</b> ${j.last_date}</p>
+     <p><b>State:</b> ${j.state}</p>
+     <a class='apply' href="${j.apply_link}" target="_blank">Apply Now</a>
+  </div>`;
+ });
 }
 
-function filterJob(key){
-  if(key=="All") displayJobs(allJobs);
-  else{
-    let result = allJobs.filter(item=> 
-      item.state.includes(key) || item.category.includes(key) || item.title.includes(key)
-    );
-    displayJobs(result);
-  }
+// FILTER
+function filterJobs(c){
+ c=c.toLowerCase();
+ displayJobs(c=="all"?jobsData:jobsData.filter(j=>j.category.toLowerCase()==c));
+}
+
+// SEARCH
+function searchJob(){
+ let val=document.getElementById("search").value.toLowerCase();
+ displayJobs(jobsData.filter(j=>j.title.toLowerCase().includes(val)));
 }
 </script>
 
