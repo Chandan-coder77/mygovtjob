@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Govt Jobs</title>
+<title>Latest Govt Jobs</title>
+
 <style>
 body{font-family:Arial;background:#fff;margin:0;padding:10px;}
+h1{text-align:center;color:#0A3CA4;}
+
+.filter-box{
+    text-align:center;
+    margin-bottom:15px;
+}
+.filter-box button{
+    padding:8px 15px;
+    margin:5px;
+    border:none;
+    background:#0A3CA4;
+    color:#fff;
+    border-radius:6px;
+    font-size:15px;
+}
+.filter-box button:hover{
+    background:#072f75;
+}
+
 .card{
   border:1px solid #ddd;border-radius:8px;padding:12px;margin-bottom:12px;
   box-shadow:0 2px 5px rgba(0,0,0,0.1);
@@ -18,16 +38,37 @@ p{margin:4px 0;font-size:15px;}
 </head>
 
 <body>
+
 <h1>Latest Government Jobs</h1>
+
+<!-- ---------- FILTER BUTTONS ---------- -->
+<div class="filter-box">
+    <button onclick="filterJob('All')">All Jobs</button>
+    <button onclick="filterJob('Odisha')">Odisha</button>
+    <button onclick="filterJob('UP')">UP</button>
+    <button onclick="filterJob('Bihar')">Bihar</button>
+    <button onclick="filterJob('Railway')">Railway</button>
+    <button onclick="filterJob('SSC')">SSC</button>
+    <button onclick="filterJob('Police')">Police</button>
+</div>
+
 <div id="job-container"></div>
 
+<!-- ---------- FETCH JOBS FROM JSON ---------- -->
 <script>
+let allJobs = [];
+
 fetch("jobs.json")
 .then(res => res.json())
 .then(data =>{
-  let jobs = data.jobs;
+  allJobs = data.jobs;
+  displayJobs(allJobs);
+})
+
+function displayJobs(list){
   let container = document.getElementById("job-container");
-  jobs.forEach(job=>{
+  container.innerHTML="";
+  list.forEach(job=>{
     container.innerHTML += `
     <div class='card'>
       <h2>${job.title}</h2>
@@ -36,10 +77,21 @@ fetch("jobs.json")
       <p><b>Age:</b> ${job.age}</p>
       <p><b>Salary:</b> ${job.salary}</p>
       <p><b>Last Date:</b> ${job.last_date}</p>
-      <a class='btn' href='${job.apply_link}'>Apply Now</a>
+      <p><b>State:</b> ${job.state}</p>
+      <a class='btn' href='${job.apply_link}' target="_blank">Apply Now</a>
     </div>`;
   })
-})
+}
+
+function filterJob(key){
+  if(key=="All") displayJobs(allJobs);
+  else{
+    let result = allJobs.filter(item=> 
+      item.state.includes(key) || item.category.includes(key) || item.title.includes(key)
+    );
+    displayJobs(result);
+  }
+}
 </script>
 
 </body>
