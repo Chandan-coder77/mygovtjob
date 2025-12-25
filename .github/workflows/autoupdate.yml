@@ -1,39 +1,32 @@
 name: Auto Update Jobs
 
-permissions:
-  contents: write   # allow push to repo
-
 on:
   schedule:
-    - cron: "0 */6 * * *"   # हर 6 घंटे में run
-  workflow_dispatch:        # manual run button
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    - name: Install requirements
-      run: |
-        pip install requests beautifulsoup4
+      - name: Install libs
+        run: pip install requests beautifulsoup4
 
-    - name: Run scraper
-      run: python scraper.py
+      - name: Run scraper
+        run: python scraper.py
 
-    - name: Commit changes
-      run: |
-        git config --global user.name "ChandanBot"
-        git config --global user.email "chandan@example.com"
-        git add jobs.json
-        git commit -m "Auto update jobs" || echo "No changes"
-        git push
+      - name: Commit changes
+        run: |
+          git config --global user.name "AutoUpdater"
+          git config --global user.email "bot@update.com"
+          git add jobs.json
+          git commit -m "Auto Job Update" || echo "No changes to commit"
+          git push
