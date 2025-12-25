@@ -1,96 +1,103 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import time
-
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
-}
+import datetime
 
 jobs = []
 
-# ================= SSC Scraper =================
+# ============= Helper Function =============
+def add_job(title, vacancies, qualification, age, salary, last_date, state, category, link):
+    jobs.append({
+        "title": title,
+        "vacancies": vacancies,
+        "qualification": qualification,
+        "age": age,
+        "salary": salary,
+        "last_date": last_date,
+        "state": state,
+        "category": category,
+        "apply_link": link
+    })
+
+# ============= SSC SCRAPER =============
 def ssc_scraper():
+    print("Fetching SSC Jobs...")
+    url = "https://ssc.nic.in/"
     try:
-        url = "https://ssc.nic.in/"
-        r = requests.get(url, headers=headers, timeout=20)
+        r = requests.get(url, timeout=15)
         soup = BeautifulSoup(r.text, "html.parser")
 
-        jobs.append({
-            "title": "SSC Latest Notification",
-            "vacancies": "Update Soon",
-            "qualification": "10th/12th/Graduate",
-            "age": "18+",
-            "salary": "As per rules",
-            "last_date": "Check Website",
-            "state": "All India",
-            "category": "SSC",
-            "apply_link": "https://ssc.nic.in/"
-        })
-        print("SSC Data Added")
+        title = "SSC Latest Jobs"
+        vacancies = "Update Soon"
+        qualification = "10th/12th/Graduate"
+        age = "18+"
+        salary = "As per SSC Rules"
+        last_date = "Check Website"
+        state = "All India"
+        category = "SSC"
+
+        add_job(title, vacancies, qualification, age, salary, last_date, state, category, url)
+        print("SSC Added ✔")
     except Exception as e:
-        print("SSC Failed:", e)
+        print("SSC Scraper Failed ❌", e)
 
 
-# ================= UPSC Scraper =================
+# ============= UPSC SCRAPER =============
 def upsc_scraper():
+    print("Fetching UPSC Jobs...")
+    url = "https://www.upsc.gov.in/"
     try:
-        url = "https://upsc.gov.in/"
-        r = requests.get(url, headers=headers, timeout=30)
+        r = requests.get(url, timeout=20)
         soup = BeautifulSoup(r.text, "html.parser")
 
-        jobs.append({
-            "title": "UPSC Latest Notification",
-            "vacancies": "Update Soon",
-            "qualification": "Graduate",
-            "age": "21+",
-            "salary": "As per rules",
-            "last_date": "Check Website",
-            "state": "All India",
-            "category": "UPSC",
-            "apply_link": "https://upsc.gov.in/"
-        })
-        print("UPSC Data Added")
+        title = "UPSC Latest Recruitment"
+        qualification = "Graduate/As per post"
+        age = "Varies"
+        salary = "As per UPSC rules"
+        last_date = "Update Soon"
+        vacancies = "Wait for Notification"
+        category = "UPSC"
+        state = "All India"
+
+        add_job(title, vacancies, qualification, age, salary, last_date, state, category, url)
+        print("UPSC Added ✔")
     except Exception as e:
-        print("UPSC Failed:", e)
+        print("UPSC Scraper Failed ❌", e)
+        # fallback entry ताकि job हमेशा दिखे
+        add_job("UPSC Jobs", "Soon", "Graduate", "Varies", "As per rules", "Upcoming", "All India", "UPSC", url)
 
 
-# ================= Railway Scraper =================
+# ============= RAILWAY SCRAPER =============
 def railway_scraper():
+    print("Fetching Railway Jobs...")
+    url = "https://indianrailways.gov.in/"
     try:
-        url = "https://indianrailways.gov.in/"
-        r = requests.get(url, headers=headers, timeout=30)
+        r = requests.get(url, timeout=20)
         soup = BeautifulSoup(r.text, "html.parser")
 
-        jobs.append({
-            "title": "Railway Latest Jobs",
-            "vacancies": "Update Soon",
-            "qualification": "10th/12th/ITI/Graduate",
-            "age": "18+",
-            "salary": "As per Rules",
-            "last_date": "Check Website",
-            "state": "All India",
-            "category": "Railway",
-            "apply_link": "https://indianrailways.gov.in/"
-        })
-        print("Railway Added")
+        title = "Indian Railway Recruitment"
+        qualification = "10th/ITI/Diploma/Graduate"
+        age = "18-30"
+        salary = "As per Railway Rules"
+        last_date = "Check Notification"
+        vacancies = "Update Soon"
+        category = "Railway"
+        state = "All India"
+
+        add_job(title, vacancies, qualification, age, salary, last_date, state, category, url)
+        print("Railway Added ✔")
     except Exception as e:
-        print("Railway Failed:", e)
+        print("Railway Scraper Failed ❌", e)
+        add_job("Railway Jobs", "Soon", "10th/ITI/Graduate", "18+", "As per rules", "Upcoming", "All India", "Railway", url)
 
 
-# ================= Run All =================
-if __name__ == "__main__":
-    print("Starting Scraper...")
+# ============= Run All Scrapers =============
+ssc_scraper()
+upsc_scraper()
+railway_scraper()
 
-    ssc_scraper()
-    time.sleep(2)
+# Save to jobs.json
+with open("jobs.json", "w") as f:
+    json.dump(jobs, f, indent=4)
 
-    upsc_scraper()
-    time.sleep(2)
-
-    railway_scraper()
-
-    with open("jobs.json", "w") as f:
-        json.dump(jobs, f, indent=4)
-
-    print("Jobs Updated Successfully!")
+print("\n All Jobs Updated Successfully 🔥")
