@@ -1,21 +1,23 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import time
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
+}
 
 jobs = []
 
-# ----------------------- SSC -----------------------
-def fetch_ssc():
-    url = "https://ssc.nic.in/"
+# ================= SSC Scraper =================
+def ssc_scraper():
     try:
-        r = requests.get(url, timeout=15)
+        url = "https://ssc.nic.in/"
+        r = requests.get(url, headers=headers, timeout=20)
         soup = BeautifulSoup(r.text, "html.parser")
-        notice = soup.find("div", {"id":"kCarousel"})  # Latest Notification block
 
-        title = notice.text.strip().split("\n")[0] if notice else "SSC Latest Jobs"
-        
         jobs.append({
-            "title": title,
+            "title": "SSC Latest Notification",
             "vacancies": "Update Soon",
             "qualification": "10th/12th/Graduate",
             "age": "18+",
@@ -25,20 +27,20 @@ def fetch_ssc():
             "category": "SSC",
             "apply_link": "https://ssc.nic.in/"
         })
-    except:
-        pass
+        print("SSC Data Added")
+    except Exception as e:
+        print("SSC Failed:", e)
 
 
-# ----------------------- UPSC -----------------------
-def fetch_upsc():
-    url = "https://upsc.gov.in/"
+# ================= UPSC Scraper =================
+def upsc_scraper():
     try:
-        r = requests.get(url, timeout=15)
+        url = "https://upsc.gov.in/"
+        r = requests.get(url, headers=headers, timeout=30)
         soup = BeautifulSoup(r.text, "html.parser")
-        title = soup.find("marquee").text.strip() if soup.find("marquee") else "UPSC Latest Notification"
 
         jobs.append({
-            "title": title,
+            "title": "UPSC Latest Notification",
             "vacancies": "Update Soon",
             "qualification": "Graduate",
             "age": "21+",
@@ -46,41 +48,49 @@ def fetch_upsc():
             "last_date": "Check Website",
             "state": "All India",
             "category": "UPSC",
-            "apply_link": url
+            "apply_link": "https://upsc.gov.in/"
         })
-    except:
-        pass
+        print("UPSC Data Added")
+    except Exception as e:
+        print("UPSC Failed:", e)
 
 
-# ----------------------- Railway -----------------------
-def fetch_railway():
-    url = "https://indianrailways.gov.in/"
+# ================= Railway Scraper =================
+def railway_scraper():
     try:
-        r = requests.get(url, timeout=15)
+        url = "https://indianrailways.gov.in/"
+        r = requests.get(url, headers=headers, timeout=30)
         soup = BeautifulSoup(r.text, "html.parser")
-        title = "Railway Recruitment Latest"
+
         jobs.append({
-            "title": title,
+            "title": "Railway Latest Jobs",
             "vacancies": "Update Soon",
-            "qualification": "10th/ITI/Diploma/Graduate",
-            "age": "18-30",
-            "salary": "₹21,700+",
-            "last_date": "Official Notice Soon",
+            "qualification": "10th/12th/ITI/Graduate",
+            "age": "18+",
+            "salary": "As per Rules",
+            "last_date": "Check Website",
             "state": "All India",
             "category": "Railway",
-            "apply_link": url
+            "apply_link": "https://indianrailways.gov.in/"
         })
-    except:
-        pass
+        print("Railway Added")
+    except Exception as e:
+        print("Railway Failed:", e)
 
 
-# ------------ run scrapers -------------
-fetch_ssc()
-fetch_upsc()
-fetch_railway()
+# ================= Run All =================
+if __name__ == "__main__":
+    print("Starting Scraper...")
 
-# Save to jobs.json
-with open("jobs.json", "w") as f:
-    json.dump(jobs, f, indent=4)
+    ssc_scraper()
+    time.sleep(2)
 
-print("Jobs Updated Successfully!")
+    upsc_scraper()
+    time.sleep(2)
+
+    railway_scraper()
+
+    with open("jobs.json", "w") as f:
+        json.dump(jobs, f, indent=4)
+
+    print("Jobs Updated Successfully!")
