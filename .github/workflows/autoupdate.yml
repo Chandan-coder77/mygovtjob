@@ -2,33 +2,35 @@ name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # हर 6 घंटे में चलना
-  workflow_dispatch:        # Manual Run button भी मिलेगा
+    - cron: "0 */6 * * *"   # हर 6 घंटे में रन होगा
+  workflow_dispatch:       # मैनुअल रन बटन भी रहेगा
 
 jobs:
   update:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write       # ❗ यही missing था (fix)
+
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    - name: Install dependencies
-      run: |
-        pip install requests beautifulsoup4 lxml
+      - name: Install requirements
+        run: pip install requests beautifulsoup4
 
-    - name: Run scraper
-      run: python scraper.py
+      - name: Run Scraper
+        run: python scraper.py
 
-    - name: Commit & Push changes
-      run: |
-        git config --global user.email "actions@github.com"
-        git config --global user.name "Github AutoBot"
-        git add jobs.json
-        git commit -m "Auto updated jobs" || echo "No new jobs found"
-        git push
+      - name: Commit & Push New Data
+        run: |
+          git config user.email "autobot@github.com"
+          git config user.name "AutoJobBot"
+          git add jobs.json
+          git commit -m "Auto update jobs" || echo "No changes to commit"
+          git push
