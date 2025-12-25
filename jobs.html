@@ -57,6 +57,7 @@ header{
     <button onclick="filterCategory('SSC')">SSC</button>
     <button onclick="filterCategory('Railway')">Railway</button>
     <button onclick="filterCategory('Police')">Police</button>
+    <button onclick="filterCategory('Forest')">Forest</button>
 </div>
 
 <!-- State Filter -->
@@ -79,7 +80,7 @@ fetch("jobs.json")
 .then(res => res.json())
 .then(data => {
     jobsData = data;
-    displayJobs(data); // show all at first
+    displayJobs(data); 
 });
 
 // Display Job Cards
