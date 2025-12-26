@@ -6,98 +6,119 @@
 <title>MyGovtJob App Portal</title>
 
 <style>
-    body{
-        font-family: Arial, sans-serif;
-        margin:0;
-        background:#f2f5ff;
-    }
 
-    header{
-        background:#0055ff;
-        color:#fff;
-        padding:14px;
-        font-size:22px;
-        font-weight:bold;
-        border-radius:0 0 18px 18px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        gap:6px;
-    }
-    header img{ height:28px; }
+/* ======= 🌟 Global Style ======= */
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f2f5ff;
+}
 
-    /* 🟨 Search Box Yellow */
-    .search-box{ padding:12px 15px; }
-    .search-box input{
-        width:100%;
-        padding:12px;
-        font-size:16px;
-        border-radius:12px;
-        border:2.4px solid #ffcc00;
-        background:white;
-    }
+/* ======= 🔵 Header + Logo ======= */
+header{
+    background:#0055ff;
+    color:#fff;
+    padding:14px;
+    font-size:22px;
+    font-weight:bold;
+    border-radius:0 0 18px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+header img{ height:28px; }
 
-    /* 🩷 Categories Pink */
-    .categories, .states{
-        display:flex; gap:10px;
-        overflow-x:auto;
-        padding:10px 12px;
-    }
-    .cat,.state{
-        background:white;
-        padding:7px 15px;
-        font-size:15px;
-        border-radius:25px;
-        white-space:nowrap;
-        cursor:pointer;
-    }
-    .cat{ border:2.3px solid #ff4db3; }
-    .state{ border:2.3px solid #00c853; }
+/* ======= 🟨 Search Box (Yellow Border) ======= */
+.search-box{ padding:12px 15px; }
+.search-box input{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border-radius:12px;
+    border:2.4px solid #ffcc00;
+    background:white;
+    outline:none;
+}
 
-    .cat.active{
-        background:#0055ff; color:white;
-        border-color:#0055ff;
-        font-weight:bold;
-    }
-    .state.active{
-        background:#00c853; color:white;
-        font-weight:bold;
-    }
+/* ======= 🩷 Job Categories (Pink Border) ======= */
+.categories, .states{
+    display:flex; 
+    gap:10px;
+    overflow-x:auto;
+    padding:10px 12px;
+}
 
-    /* 🟦 Job Card Blue Rectangle */
-    .job-card{
-        background:white;
-        margin:15px 12px;
-        padding:18px;
-        border-radius:14px;
-        border:2.4px solid #1e88e5;
-        box-shadow:0 3px 10px rgba(0,0,0,.08);
-    }
-    .job-card h3{ margin:0 0 10px; font-size:19px; color:#222; }
+.cat,.state{
+    background:white;
+    padding:7px 15px;
+    font-size:15px;
+    border-radius:25px;
+    white-space:nowrap;
+    cursor:pointer;
+}
 
-    .apply{
-        display:inline-block;
-        background:#00b33c;
-        color:white;
-        padding:10px 16px;
-        border-radius:8px;
-        text-decoration:none;
-        margin-top:12px;
-        font-size:15px;
-    }
+/* Category Pink */
+.cat{ border:2.3px solid #ff4db3; }
+.cat.active{
+    background:#0055ff; 
+    color:white;
+    border-color:#0055ff;
+    font-weight:bold;
+}
+
+/* ======= 🟩 States (Green Border) ======= */
+.state{ border:2.3px solid #00c853; }
+.state.active{
+    background:#00c853;
+    color:white;
+    font-weight:bold;
+}
+
+/* ======= 🟦 Job Card (Blue Border Rectangle) ======= */
+.job-card{
+    background:white;
+    margin:15px 12px;
+    padding:18px;
+    border-radius:14px;
+    border:2.4px solid #1e88e5;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+.job-card h3{
+    margin:0 0 10px;
+    font-size:19px;
+    color:#222;
+}
+
+/* Apply Button */
+.apply{
+    display:inline-block;
+    background:#00b33c;
+    color:white;
+    padding:10px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-top:12px;
+    font-size:15px;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- 🔵 Header Section -->
 <header>
-    <img src="logo.png"><span>MyGovtJob</span>
+    <img src="logo.png">
+    <span>MyGovtJob</span>
 </header>
 
+<!-- 🟨 Search Box -->
 <div class="search-box">
     <input id="search" placeholder="Search Govt Jobs... 🔍">
 </div>
 
+<!-- 🩷 Top Job Categories -->
 <div class="categories" id="categories">
     <span class="cat active" data-cat="All">All</span>
     <span class="cat" data-cat="SSC">SSC</span>
@@ -110,6 +131,7 @@
     <span class="cat" data-cat="State">State</span>
 </div>
 
+<!-- 🟩 States Filter -->
 <div class="states" id="states">
     <span class="state active" data-state="All">All States</span>
     <span class="state" data-state="Odisha">Odisha</span>
@@ -123,16 +145,19 @@
     <span class="state" data-state="Maharashtra">Maharashtra</span>
 </div>
 
+<!-- Job Render Area -->
 <div id="job-list"></div>
 
 <script>
 const jobBox=document.getElementById("job-list");
 let jobs=[];
 
+/* 💾 Load JSON from GitHub */
 fetch("https://chandan-coder77.github.io/mygovtjob/jobs.json")
 .then(r=>r.json())
 .then(data=>{ jobs=data; showJobs(jobs); });
 
+/* 📌 Job Display */
 function showJobs(list){
     jobBox.innerHTML="";
     list.forEach(j=>{
@@ -149,10 +174,12 @@ function showJobs(list){
     });
 }
 
+/* 🔍 Search Filter */
 document.getElementById("search").addEventListener("input",e=>{
     showJobs(jobs.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())));
 });
 
+/* 🩷 Category Filter */
 document.querySelectorAll(".cat").forEach(c=>{
 c.onclick=()=>{
     document.querySelector(".cat.active").classList.remove("active");
@@ -160,6 +187,7 @@ c.onclick=()=>{
     showJobs(c.dataset.cat=="All"?jobs:jobs.filter(x=>x.category==c.dataset.cat));
 }});
 
+/* 🟩 State Filter */
 document.querySelectorAll(".state").forEach(s=>{
 s.onclick=()=>{
     document.querySelector(".state.active").classList.remove("active");
@@ -169,4 +197,4 @@ s.onclick=()=>{
 </script>
 
 </body>
-    </html>
+        </html>
