@@ -1,55 +1,57 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import re
 
-# AI Crawl Keywords
-KEYWORDS = ["recruitment","notification","vacancy","advertisement","apply","exam","post","govt"]
+KEYWORDS = ["recruitment","vacancy","notification","advertisement","apply","post","job"]
+IGNORED = ["post new job","mou","gig","zomato","swiggy","rapido","quickr","zepto"]
 
-# Websites to auto scan
 SITES = [
     "https://ssc.nic.in/",
     "https://upsc.gov.in/",
+    "https://www.ncs.gov.in/",
     "https://indianrailways.gov.in/",
-    "https://ibps.in/",
-    "https://www.ncs.gov.in/"
+    "https://ibps.in/"
 ]
 
 jobs=[]
 
-def extract_jobs(url):
+def extract(url):
     try:
         html = requests.get(url,timeout=12).text
         soup = BeautifulSoup(html,"html.parser")
 
-        links = soup.find_all("a",href=True)
+        for a in soup.find_all("a",href=True):
+            text=a.text.strip().lower()
 
-        for a in links:
-            txt = a.text.strip().lower()
+            if any(k in text for k in KEYWORDS) and not any(b in text for b in IGNORED):
 
-            if any(k in txt for k in KEYWORDS) and len(a.text.strip())>8:
                 jobs.append({
                     "title": a.text.strip().title(),
                     "vacancies": "Check Notice",
                     "qualification": "Check",
                     "age": "Check",
-                    "salary": "Govt Rules",
-                    "last_date": "Check Site",
+                    "salary": "As per Govt Rule",
+                    "last_date": "Check Website",
                     "state": "India",
                     "category": "Govt Job",
-                    "apply_link": url + a['href'] if "http" not in a['href'] else a['href']
+                    "apply_link": url if "http" not in a['href'] else a['href']
                 })
-    except:
-        print("Error reading",url)
 
+    except Exception as e:
+        print("Error:",url, e)
 
-# Run crawler for each site
-for site in SITES:
-    extract_jobs(site)
+for s in SITES:
+    extract(s)
 
+# Remove duplicates based on title
+unique=[]
+titles=set()
+for j in jobs:
+    if j['title'] not in titles:
+        unique.append(j)
+        titles.add(j['title'])
 
-# Save final data
 with open("jobs.json","w") as f:
-    json.dump(jobs,f,indent=4)
+    json.dump(unique,f,indent=4)
 
-print("AUTO AI SCRAPER RUN ✔ Total jobs detected:",len(jobs))
+print("Cleaned Jobs:",len(unique))
