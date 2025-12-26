@@ -15,85 +15,75 @@
     header{
         background:#0055ff;
         color:#fff;
-        padding:12px;
+        padding:14px;
         font-size:22px;
         font-weight:bold;
-        border-radius:0 0 20px 20px;
+        border-radius:0 0 18px 18px;
         display:flex;
         align-items:center;
         justify-content:center;
         gap:6px;
     }
-    header img{ height:30px; }
+    header img{ height:28px; }
 
-    /* 🔥 Search Yellow Border */
-    .search-box{ margin:15px; }
+    /* 🟨 Search Box Yellow */
+    .search-box{ padding:12px 15px; }
     .search-box input{
         width:100%;
         padding:12px;
         font-size:16px;
-        border-radius:10px;
-        border:2px solid #ffcc00;
-        outline:none;
+        border-radius:12px;
+        border:2.4px solid #ffcc00;
+        background:white;
     }
 
-    /* 🔥 Top Job Categories — PINK BORDER */
-    .categories{ display:flex; gap:10px; overflow-x:auto; padding:10px; }
-    .cat{
-        background:white;
-        padding:8px 14px;
-        border-radius:20px;
-        white-space:nowrap;
-        font-size:14px;
-        cursor:pointer;
-        border:2px solid #ff4db3;   /* Pink line */
+    /* 🩷 Categories Pink */
+    .categories, .states{
+        display:flex; gap:10px;
+        overflow-x:auto;
+        padding:10px 12px;
     }
+    .cat,.state{
+        background:white;
+        padding:7px 15px;
+        font-size:15px;
+        border-radius:25px;
+        white-space:nowrap;
+        cursor:pointer;
+    }
+    .cat{ border:2.3px solid #ff4db3; }
+    .state{ border:2.3px solid #00c853; }
+
     .cat.active{
-        background:#0055ff;
-        color:#fff;
-        font-weight:bold;
+        background:#0055ff; color:white;
         border-color:#0055ff;
+        font-weight:bold;
+    }
+    .state.active{
+        background:#00c853; color:white;
+        font-weight:bold;
     }
 
-    /* 🔥 State Filter — GREEN BORDER */
-    .states{ 
-        display:flex; 
-        gap:10px; 
-        overflow-x:auto; 
-        padding:10px; 
-        margin-top:10px;  /* FIX APPLIED = now layout perfect */
-    }
-    .state{
-        background:white;
-        padding:8px 14px;
-        border-radius:20px;
-        white-space:nowrap;
-        font-size:14px;
-        cursor:pointer;
-        border:2px solid #00c853;
-    }
-    .state.active{ background:#00c853; color:#fff; font-weight:bold; }
-
-    /* 🔥 Job Card — BLUE BORDER */
+    /* 🟦 Job Card Blue Rectangle */
     .job-card{
-    background:white;
-    margin:20px 15px;       /* top spacing improved */
-    padding:18px;
-    border-radius:18px;     /* more rounded like screenshot */
-    border:3px solid #1e88e5;  /* bold clean blue line */
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+        background:white;
+        margin:15px 12px;
+        padding:18px;
+        border-radius:14px;
+        border:2.4px solid #1e88e5;
+        box-shadow:0 3px 10px rgba(0,0,0,.08);
     }
-      
-    .job-card h3{ margin:0 0 8px; color:#222; font-size:18px; }
+    .job-card h3{ margin:0 0 10px; font-size:19px; color:#222; }
+
     .apply{
-        background:#00b33c;
-        color:#fff;
-        padding:10px 14px;
-        border-radius:10px;
         display:inline-block;
+        background:#00b33c;
+        color:white;
+        padding:10px 16px;
+        border-radius:8px;
         text-decoration:none;
-        margin-top:10px;
-        font-size:14px;
+        margin-top:12px;
+        font-size:15px;
     }
 </style>
 </head>
@@ -167,23 +157,16 @@ document.querySelectorAll(".cat").forEach(c=>{
 c.onclick=()=>{
     document.querySelector(".cat.active").classList.remove("active");
     c.classList.add("active");
-    let cat=c.dataset.cat;
-
-    if(cat=="All") showJobs(jobs);
-    else showJobs(jobs.filter(x=>x.category==cat));
+    showJobs(c.dataset.cat=="All"?jobs:jobs.filter(x=>x.category==c.dataset.cat));
 }});
 
 document.querySelectorAll(".state").forEach(s=>{
 s.onclick=()=>{
     document.querySelector(".state.active").classList.remove("active");
     s.classList.add("active");
-    let st=s.dataset.state;
-
-    if(st=="All") showJobs(jobs);
-    else showJobs(jobs.filter(x=>x.state==st));
+    showJobs(s.dataset.state=="All"?jobs:jobs.filter(x=>x.state==s.dataset.state));
 }});
 </script>
 
 </body>
-        </html>
-
+    </html>
