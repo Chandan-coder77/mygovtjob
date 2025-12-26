@@ -1,6 +1,6 @@
 [
     {
-        "title": "SSC Latest Jobs",
+        "title": "SSC Latest Notification",
         "vacancies": "Update Soon",
         "qualification": "10th/12th/Graduate",
         "age": "18+",
@@ -11,36 +11,14 @@
         "apply_link": "https://ssc.nic.in/"
     },
     {
-        "title": "Bank Jobs (Auto-Upcoming Update)",
-        "vacancies": "Waiting extractor",
+        "title": "UPSC Recruitment Coming Soon",
+        "vacancies": "Soon",
         "qualification": "Graduate",
         "age": "21+",
-        "salary": "As per rules",
-        "last_date": "Soon",
-        "state": "All India",
-        "category": "Bank",
-        "apply_link": "https://ibps.in"
-    },
-    {
-        "title": "Police Recruitment (Auto-Upcoming Update)",
-        "vacancies": "Soon",
-        "qualification": "10th/12th",
-        "age": "18+",
-        "salary": "As per rules",
-        "last_date": "Soon",
-        "state": "State Wise",
-        "category": "Police",
-        "apply_link": "https://police.gov.in"
-    },
-    {
-        "title": "Teacher/TET Jobs",
-        "vacancies": "Updating",
-        "qualification": "B.Ed/CTET",
-        "age": "21+",
-        "salary": "As per norms",
-        "last_date": "Check Website",
+        "salary": "Rules as per UPSC",
+        "last_date": "Next Update",
         "state": "India",
-        "category": "Teacher",
-        "apply_link": "https://ctet.nic.in"
+        "category": "UPSC",
+        "apply_link": "https://upsc.gov.in/"
     }
 ]
