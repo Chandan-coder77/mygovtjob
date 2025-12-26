@@ -1,52 +1,75 @@
-import requests
+import json, requests
 from bs4 import BeautifulSoup
-import json
-
-# ---------------- Source URLs ----------------
-sources = {
-    "SSC": "https://ssc.nic.in/",
-    "UPSC": "https://upsc.gov.in/examinations/ActiveExams",
-    "Railway": "https://indianrailways.gov.in/",
-    "Banking": "https://ibps.in/"
-}
 
 jobs = []
 
-# ---------------- SSC Static ----------------
-jobs.append({
-    "title": "SSC Latest Notification",
-    "vacancies": "Update Soon",
-    "qualification": "10th/12th/Graduate",
-    "age": "18+",
-    "salary": "As per SSC rules",
-    "last_date": "Check Website",
-    "state": "All India",
-    "category": "SSC",
-    "apply_link": sources["SSC"]
-})
+sources = {
+    "SSC": "https://ssc.nic.in/",
+    "UPSC": "https://upsc.gov.in/examinations/ActiveExams",
+    "RAILWAY": "https://indianrailways.gov.in/",
+    "BANK": "https://ibps.in/"
+}
 
-# ---------------- LIVE UPSC SCRAPER ----------------
+
+# ---------------- SSC Scraper ----------------
 try:
-    upsc_html = requests.get(sources["UPSC"], timeout=10).text
-    soup = BeautifulSoup(upsc_html, "html.parser")
+    ssc_html = requests.get(sources["SSC"], timeout=15).text
+    soup = BeautifulSoup(ssc_html, "html.parser")
 
-    exam_block = soup.find("table")  # UPSC active exam table
-    exam_name = exam_block.find("a").text.strip() if exam_block else "UPSC New Notice Soon"
-    exam_link = "https://upsc.gov.in" + exam_block.find("a")["href"] if exam_block else sources["UPSC"]
+    title = soup.find("title").text.strip() if soup.find("title") else "SSC Latest Notification"
 
     jobs.append({
-        "title": exam_name,
-        "vacancies": "As per UPSC notice",
-        "qualification": "Graduate",
-        "age": "21+",
-        "salary": "As per Rules",
-        "last_date": "Check Notification",
-        "state": "India",
-        "category": "UPSC",
-        "apply_link": exam_link
+        "title": title,
+        "vacancies": "Update Soon",
+        "qualification": "10th/12th/Graduate",
+        "age": "18+",
+        "salary": "As per SSC rules",
+        "last_date": "Check Website",
+        "state": "All India",
+        "category": "SSC",
+        "apply_link": sources["SSC"]
     })
 
-except Exception as e:
+except:
+    jobs.append({
+        "title": "SSC Latest Notification",
+        "vacancies": "Update Soon",
+        "qualification": "10th/12th/Graduate",
+        "age": "18+",
+        "salary": "As per SSC rules",
+        "last_date": "Check Website",
+        "state": "All India",
+        "category": "SSC",
+        "apply_link": sources["SSC"]
+    })
+
+
+
+# ---------------- UPSC Live Scraper (New V2) ----------------
+try:
+    up_html = requests.get(sources["UPSC"], timeout=15).text
+    soup2 = BeautifulSoup(up_html, "html.parser")
+
+    exam = soup2.select_one("table a")   # पहला active exam title fetch
+    if exam:
+        exam_title = exam.text.strip()
+        link = "https://upsc.gov.in" + exam.get("href")
+
+        jobs.append({
+            "title": exam_title,
+            "vacancies": "As per notification",
+            "qualification": "Graduate",
+            "age": "21+",
+            "salary": "As per UPSC rules",
+            "last_date": "Check official website",
+            "state": "India",
+            "category": "UPSC",
+            "apply_link": link
+        })
+    else:
+        raise Exception("Exam not found")
+
+except:
     jobs.append({
         "title": "UPSC Recruitment Coming Soon",
         "vacancies": "Soon",
@@ -59,7 +82,9 @@ except Exception as e:
         "apply_link": sources["UPSC"]
     })
 
-# ---------------- RAILWAY Static ----------------
+
+
+# ---------------- Railway fallback ----------------
 jobs.append({
     "title": "Railway Recruitment - Coming Soon",
     "vacancies": "Update Soon",
@@ -69,10 +94,11 @@ jobs.append({
     "last_date": "Check Website",
     "state": "All India",
     "category": "Railway",
-    "apply_link": sources["Railway"]
+    "apply_link": sources["RAILWAY"]
 })
 
-# ---------------- BANKING Static ----------------
+
+# ---------------- BANK fallback ----------------
 jobs.append({
     "title": "Bank Jobs (IBPS/SBI) Updates",
     "vacancies": "Soon",
@@ -82,11 +108,12 @@ jobs.append({
     "last_date": "Update Soon",
     "state": "India",
     "category": "Banking",
-    "apply_link": sources["Banking"]
+    "apply_link": sources["BANK"]
 })
 
-# Save Output
+
+# ---------------- Save Output ----------------
 with open("jobs.json", "w") as f:
     json.dump(jobs, f, indent=4)
 
-print("🔥 Auto Job Update Completed Successfully")
+print("jobs.json updated successfully!")
