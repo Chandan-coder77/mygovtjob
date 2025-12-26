@@ -2,129 +2,115 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-jobs=[]   # final combined data stored here
+# Master list for all jobs
+jobs = []
 
-# ======================= 1. SSC =======================
+# ------------------- ADD JOB FUNCTION -------------------
+def add_job(title, vacancies, qualification, age, salary, last_date, state, category, link):
+    jobs.append({
+        "title": title,
+        "vacancies": vacancies,
+        "qualification": qualification,
+        "age": age,
+        "salary": salary,
+        "last_date": last_date,
+        "state": state,
+        "category": category,
+        "apply_link": link
+    })
+
+
+# ===================== 1. SSC Scraper =====================
 def ssc_scraper():
-    url="https://ssc.nic.in/"
+    print("Fetching SSC...")
+    url = "https://ssc.nic.in/"
     try:
-        r=requests.get(url,timeout=15)
-        soup=BeautifulSoup(r.text,"html.parser")
-
-        for item in soup.find_all("a")[:3]:              # future expand
-            jobs.append({
-                "title":"SSC Latest Jobs",
-                "vacancies":"Update Soon",
-                "qualification":"10th/12th/Graduate",
-                "age":"18+",
-                "salary":"As per rules",
-                "last_date":"Check Website",
-                "state":"All India",
-                "category":"SSC",
-                "apply_link":"https://ssc.nic.in/"
-            })
+        requests.get(url, timeout=15)
+        add_job(
+            "SSC Latest Notification",
+            "Update Soon",
+            "10th/12th/Graduate",
+            "18+",
+            "As per rules",
+            "Check Website",
+            "All India",
+            "SSC",
+            url
+        )
+        print("SSC Added ✔")
     except:
-        print("SSC Failed")
+        print("SSC Failed ❌")
 
 
-# ======================= 2. UPSC =======================
+# ===================== 2. UPSC Scraper (Improved) =====================
 def upsc_scraper():
-    url="https://upsc.gov.in/"
+    print("Fetching UPSC...")
+    url = "https://upsc.gov.in/examinations/active-examinations"
     try:
-        r=requests.get(url,timeout=15)
-        soup=BeautifulSoup(r.text,"html.parser")
+        r = requests.get(url, timeout=20)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-        jobs.append({
-            "title":"UPSC New Recruitment",
-            "vacancies":"Update Soon",
-            "qualification":"Graduate/PG",
-            "age":"21+",
-            "salary":"As per rules",
-            "last_date":"Check Website",
-            "state":"All India",
-            "category":"UPSC",
-            "apply_link":"https://upsc.gov.in/"
-        })
+        for row in soup.select(".views-row")[:5]:
+            try:
+                title = row.find("a").text.strip()
+                link = "https://upsc.gov.in" + row.find("a")["href"]
+
+                add_job(
+                    title,
+                    "As per post",
+                    "Graduate/PG",
+                    "21+",
+                    "As per rules",
+                    "Check Notification",
+                    "All India",
+                    "UPSC",
+                    link
+                )
+            except:
+                pass
+
+        print("UPSC Added ✔")
     except:
-        print("UPSC Failed")
+        print("UPSC Timeout/Fail ❌ (Backup Entry Added)")
+        add_job("UPSC Recruitment Coming Soon", "Soon", "Graduate", "21+", "Rules as per UPSC", "Next Update", "India", "UPSC", "https://upsc.gov.in/")
 
 
-# ======================= 3. Railway =======================
+# ===================== 3. Railway Scraper (Improved) =====================
 def railway_scraper():
-    url="https://indianrailways.gov.in/"
+    print("Fetching Railway...")
+    url = "https://www.rrbcdg.gov.in/"
     try:
-        requests.get(url,timeout=15)
+        r = requests.get(url, timeout=20)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-        jobs.append({
-            "title":"Railway Recruitment",
-            "vacancies":"Upcoming",
-            "qualification":"10th/ITI/Diploma",
-            "age":"18+",
-            "salary":"As per rules",
-            "last_date":"Check Website",
-            "state":"All India",
-            "category":"Railway",
-            "apply_link":"https://indianrailways.gov.in/"
-        })
+        for tag in soup.select("a")[:5]:
+            text = tag.text.strip()
+            if "recruit" in text.lower() or "job" in text.lower() or "notice" in text.lower():
+                add_job(
+                    text,
+                    "Update Soon",
+                    "10th/12th/ITI/Diploma",
+                    "18+",
+                    "As per rules",
+                    "Check Site",
+                    "All India",
+                    "Railway",
+                    url
+                )
+
+        print("Railway Added ✔")
     except:
-        print("Railway Failed")
+        print("Railway Failed ❌ (Backup Entry Added)")
+        add_job("Railway Recruitment", "Upcoming", "10th/ITI", "18+", "Govt Pay", "Soon", "India", "Railway", "https://www.rrbcdg.gov.in/")
 
 
-# ======================= 4. BANK Coming Next =======================
-def bank_scraper():
-    jobs.append({
-        "title":"Bank Jobs (Auto-Upcoming Update)",
-        "vacancies":"Waiting extractor",
-        "qualification":"Graduate",
-        "age":"21+",
-        "salary":"As per rules",
-        "last_date":"Soon",
-        "state":"All India",
-        "category":"Bank",
-        "apply_link":"https://ibps.in"
-    })
-
-
-# ======================= 5. Police =======================
-def police_scraper():
-    jobs.append({
-        "title":"Police Recruitment (Auto-Upcoming Update)",
-        "vacancies":"Soon",
-        "qualification":"10th/12th",
-        "age":"18+",
-        "salary":"As per rules",
-        "last_date":"Soon",
-        "state":"State Wise",
-        "category":"Police",
-        "apply_link":"https://police.gov.in"
-    })
-
-
-# ======================= 6. Teacher =======================
-def teacher_scraper():
-    jobs.append({
-        "title":"Teacher/TET Jobs",
-        "vacancies":"Updating",
-        "qualification":"B.Ed/CTET",
-        "age":"21+",
-        "salary":"As per norms",
-        "last_date":"Check Website",
-        "state":"India",
-        "category":"Teacher",
-        "apply_link":"https://ctet.nic.in"
-    })
-
-
-# ======================= RUN ALL =======================
+# ===================== RUN ALL SCRAPERS =====================
 ssc_scraper()
 upsc_scraper()
 railway_scraper()
-bank_scraper()
-police_scraper()
-teacher_scraper()
 
-# Save output
-with open("jobs.json","w") as f:
-    json.dump(jobs,f,indent=4)
+# Save to JSON
+with open("jobs.json", "w") as f:
+    json.dump(jobs, f, indent=4)
 
-print("JOB DATA UPDATED SUCCESSFULLY ✔")
+print("\n✔ All Job Data Updated Successfully!")
