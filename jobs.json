@@ -1,12 +1,12 @@
 [
     {
         "title": "SSC Latest Notification",
-        "vacancies": "Update Soon",
+        "vacancies": "As Per Notice",
         "qualification": "10th/12th/Graduate",
         "age": "18+",
-        "salary": "As per SSC rules",
-        "last_date": "Check Website",
-        "state": "All India",
+        "salary": "As per SSC Rules",
+        "last_date": "Check Notification",
+        "state": "India",
         "category": "SSC",
         "apply_link": "https://ssc.nic.in/"
     },
@@ -22,18 +22,18 @@
         "apply_link": "https://upsc.gov.in/"
     },
     {
-        "title": "Railway Recruitment Live Updates Soon",
+        "title": "Railway Recruitment Live Soon",
         "vacancies": "Coming",
         "qualification": "10th/ITI/Graduate",
         "age": "18+",
-        "salary": "As per Railway",
+        "salary": "As per Rules",
         "last_date": "Check Site",
         "state": "India",
         "category": "Railway",
         "apply_link": "https://indianrailways.gov.in/"
     },
     {
-        "title": "Bank (IBPS/SBI) Exam Updates - Auto Refresh Soon",
+        "title": "Bank IBPS/SBI Live Updates Soon",
         "vacancies": "Upcoming",
         "qualification": "Graduate",
         "age": "20+",
