@@ -26,18 +26,18 @@
     }
     header img{ height:30px; }
 
-    /* 1️⃣ Search Yellow Border (2px → 3px so visible perfect) */
+    /* 🔥 Search Yellow Border */
     .search-box{ margin:15px; }
     .search-box input{
         width:100%;
         padding:12px;
         font-size:16px;
         border-radius:10px;
-        border:3px solid #ffcc00; /* changed */
+        border:2px solid #ffcc00;
         outline:none;
     }
 
-    /* 2️⃣ Top Job Category — Pink Border (2px → 3px) */
+    /* 🔥 Top Job Categories — PINK BORDER */
     .categories{ display:flex; gap:10px; overflow-x:auto; padding:10px; }
     .cat{
         background:white;
@@ -46,7 +46,7 @@
         white-space:nowrap;
         font-size:14px;
         cursor:pointer;
-        border:3px solid #ff4db3;  /* changed */
+        border:2px solid #ff4db3;   /* Pink line */
     }
     .cat.active{
         background:#0055ff;
@@ -55,8 +55,14 @@
         border-color:#0055ff;
     }
 
-    /* 3️⃣ State Category — Green border (2px → 3px) */
-    .states{ display:flex; gap:10px; overflow-x:auto; padding:10px; margin-top:-5px;}
+    /* 🔥 State Filter — GREEN BORDER */
+    .states{ 
+        display:flex; 
+        gap:10px; 
+        overflow-x:auto; 
+        padding:10px; 
+        margin-top:10px;  /* FIX APPLIED = now layout perfect */
+    }
     .state{
         background:white;
         padding:8px 14px;
@@ -64,18 +70,17 @@
         white-space:nowrap;
         font-size:14px;
         cursor:pointer;
-        border:3px solid #00c853; /* changed */
+        border:2px solid #00c853;
     }
     .state.active{ background:#00c853; color:#fff; font-weight:bold; }
 
-    /* 4️⃣ Job Card Blue border (2px → 3px + margin-bottom extra) */
+    /* 🔥 Job Card — BLUE BORDER */
     .job-card{
         background:white;
         margin:15px;
         padding:15px;
         border-radius:15px;
-        border:3px solid #1e88e5; /* changed */
-        margin-bottom:30px;        /* added → blue border always visible */
+        border:2px solid #1e88e5;
         box-shadow:0 4px 10px rgba(0,0,0,.08);
     }
     .job-card h3{ margin:0 0 8px; color:#222; font-size:18px; }
@@ -102,7 +107,6 @@
     <input id="search" placeholder="Search Govt Jobs... 🔍">
 </div>
 
-<!-- Top Categories -->
 <div class="categories" id="categories">
     <span class="cat active" data-cat="All">All</span>
     <span class="cat" data-cat="SSC">SSC</span>
@@ -115,7 +119,6 @@
     <span class="cat" data-cat="State">State</span>
 </div>
 
-<!-- State Filter -->
 <div class="states" id="states">
     <span class="state active" data-state="All">All States</span>
     <span class="state" data-state="Odisha">Odisha</span>
@@ -159,24 +162,27 @@ document.getElementById("search").addEventListener("input",e=>{
     showJobs(jobs.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())));
 });
 
-// Category Filter
 document.querySelectorAll(".cat").forEach(c=>{
 c.onclick=()=>{
     document.querySelector(".cat.active").classList.remove("active");
     c.classList.add("active");
     let cat=c.dataset.cat;
-    showJobs(cat=="All"?jobs:jobs.filter(x=>x.category==cat));
+
+    if(cat=="All") showJobs(jobs);
+    else showJobs(jobs.filter(x=>x.category==cat));
 }});
 
-// State Filter
 document.querySelectorAll(".state").forEach(s=>{
 s.onclick=()=>{
     document.querySelector(".state.active").classList.remove("active");
     s.classList.add("active");
     let st=s.dataset.state;
-    showJobs(st=="All"?jobs:jobs.filter(x=>x.state==st));
+
+    if(st=="All") showJobs(jobs);
+    else showJobs(jobs.filter(x=>x.state==st));
 }});
 </script>
 
 </body>
-</html>
+        </html>
+
