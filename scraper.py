@@ -12,40 +12,54 @@ sources = {
 
 jobs = []
 
-# ---------------- SSC Scraping -----------------
-try:
-    ssc_html = requests.get(sources["SSC"]).text
-    ssc = BeautifulSoup(ssc_html, "html.parser")
-    notice = ssc.find("span", {"class": "blink"}) or "Update Soon"
-
-    jobs.append({
-        "title": "SSC Latest Notification",
-        "vacancies": "Update Soon",
-        "qualification": "10th/12th/Graduate",
-        "age": "18+",
-        "salary": "As per SSC rules",
-        "last_date": "Check Website",
-        "state": "All India",
-        "category": "SSC",
-        "apply_link": sources["SSC"]
-    })
-except:
-    print("SSC source fetch fail ❌")
-
-# ---------------- UPSC Static until live -----------------
+# ---------------- SSC Scraper (Static until direct pattern found) ----------------
 jobs.append({
-    "title": "UPSC Recruitment Coming Soon",
-    "vacancies": "Soon",
-    "qualification": "Graduate",
-    "age": "21+",
-    "salary": "As per UPSC",
-    "last_date": "Next Update",
-    "state": "India",
-    "category": "UPSC",
-    "apply_link": sources["UPSC"]
+    "title": "SSC Latest Notification",
+    "vacancies": "Update Soon",
+    "qualification": "10th/12th/Graduate",
+    "age": "18+",
+    "salary": "As per SSC rules",
+    "last_date": "Check Website",
+    "state": "All India",
+    "category": "SSC",
+    "apply_link": sources["SSC"]
 })
 
-# ---------------- Railway Static -----------------
+# ---------------- UPSC Live Scraper ----------------
+try:
+    upsc_html = requests.get(sources["UPSC"]).text
+    soup = BeautifulSoup(upsc_html, "html.parser")
+
+    latest_notice = soup.find("a")  # First Notice Link (Just basic tracking)
+    title = latest_notice.text.strip() if latest_notice else "UPSC New Notice Soon"
+    link = "https://upsc.gov.in" + latest_notice["href"] if latest_notice else sources["UPSC"]
+
+    jobs.append({
+        "title": title,
+        "vacancies": "Update Live",
+        "qualification": "Graduate",
+        "age": "21+",
+        "salary": "As per UPSC rules",
+        "last_date": "Check Notification",
+        "state": "India",
+        "category": "UPSC",
+        "apply_link": link
+    })
+
+except:
+    jobs.append({
+        "title": "UPSC Recruitment Coming Soon",
+        "vacancies": "Soon",
+        "qualification": "Graduate",
+        "age": "21+",
+        "salary": "As per UPSC",
+        "last_date": "Next Update",
+        "state": "India",
+        "category": "UPSC",
+        "apply_link": sources["UPSC"]
+    })
+
+# ---------------- Railway (Static for now) ----------------
 jobs.append({
     "title": "Railway Recruitment - Coming Soon",
     "vacancies": "Update Soon",
@@ -58,7 +72,7 @@ jobs.append({
     "apply_link": sources["Railway"]
 })
 
-# ---------------- Bank Static -----------------
+# ---------------- Banking (Static for now) ----------------
 jobs.append({
     "title": "Bank Jobs (IBPS/SBI) Updates",
     "vacancies": "Soon",
@@ -71,8 +85,8 @@ jobs.append({
     "apply_link": sources["Banking"]
 })
 
-# Save JSON Output
-with open("jobs.json", "w") as file:
-    json.dump(jobs, file, indent=4)
+# Save Output JSON
+with open("jobs.json", "w") as f:
+    json.dump(jobs, f, indent=4)
 
-print("Jobs Updated Successfully 🚀")
+print("LIVE Jobs updated successfully 🚀")
