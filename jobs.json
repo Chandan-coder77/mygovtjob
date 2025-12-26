@@ -19,26 +19,26 @@
         "last_date": "Next Update",
         "state": "India",
         "category": "UPSC",
-        "apply_link": "https://upsc.gov.in/examinations/ActiveExams"
+        "apply_link": "https://upsc.gov.in/"
     },
     {
-        "title": "Railway Recruitment - Coming Soon",
-        "vacancies": "Update Soon",
+        "title": "Railway Recruitment Live Updates Soon",
+        "vacancies": "Coming",
         "qualification": "10th/ITI/Graduate",
         "age": "18+",
-        "salary": "As per Railway rules",
-        "last_date": "Check Website",
-        "state": "All India",
+        "salary": "As per Railway",
+        "last_date": "Check Site",
+        "state": "India",
         "category": "Railway",
         "apply_link": "https://indianrailways.gov.in/"
     },
     {
-        "title": "Bank Jobs (IBPS/SBI) Updates",
-        "vacancies": "Soon",
+        "title": "Bank (IBPS/SBI) Exam Updates - Auto Refresh Soon",
+        "vacancies": "Upcoming",
         "qualification": "Graduate",
         "age": "20+",
-        "salary": "As per Bank rules",
-        "last_date": "Update Soon",
+        "salary": "As per Bank",
+        "last_date": "Check Site",
         "state": "India",
         "category": "Banking",
         "apply_link": "https://ibps.in/"
