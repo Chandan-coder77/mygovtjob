@@ -1,130 +1,81 @@
 import requests
 from bs4 import BeautifulSoup
-import json
-import datetime
-
-def safe_request(url):
-    try:
-        return requests.get(url, timeout=12)
-    except:
-        return None
+import json, datetime
 
 jobs = []
 
-###############################
-# 1. SSC DEFAULT (temporary)
-###############################
-jobs.append({
-    "title": "SSC Latest Notification",
-    "vacancies": "Update Soon",
-    "qualification": "10th/12th/Graduate",
-    "age": "18+",
-    "salary": "As per rules",
-    "last_date": "Check Website",
-    "state": "All India",
-    "category": "SSC",
-    "apply_link": "https://ssc.nic.in/"
-})
+def add_job(title, vacancies, qualification, age, salary, last_date, state, category, apply_link):
+    jobs.append({
+        "title": title,
+        "vacancies": vacancies,
+        "qualification": qualification,
+        "age": age,
+        "salary": salary,
+        "last_date": last_date,
+        "state": state,
+        "category": category,
+        "apply_link": apply_link
+    })
 
-###############################
-# 2. UPSC Scraper
-###############################
-def upsc_scraper():
-    url = "https://upsc.gov.in"
-    r = safe_request(url)
-    if r and r.status_code == 200:
-        soup = BeautifulSoup(r.text,"html.parser")
-        latest = soup.find("div",{"class":"view-content"})
+# ========== SSC LIVE SCRAPER ==========
+def ssc_scraper():
+    url = "https://ssc.nic.in/"
+    try:
+        r = requests.get(url, timeout=15)
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        latest = soup.find("div", {"id": "latestnews"})
         if latest:
-            title = latest.text.strip()[:60] + "..."
-            jobs.append({
-                "title": "UPSC Latest – "+title,
-                "vacancies": "Available on Website",
-                "qualification": "Graduate",
-                "age": "21+",
-                "salary": "As per UPSC",
-                "last_date": "Check Website",
-                "state": "India",
-                "category": "UPSC",
-                "apply_link": url
-            })
+            title = latest.text.strip().split("\n")[0][:80]  # shorten
         else:
-            fallback_upsc()
-    else:
-        fallback_upsc()
+            title = "SSC Latest Notification"
 
-def fallback_upsc():
-    jobs.append({
-        "title": "UPSC Recruitment Coming Soon",
-        "vacancies": "Soon",
-        "qualification": "Graduate",
-        "age": "21+",
-        "salary": "Rules as per UPSC",
-        "last_date": "Next Update",
-        "state": "India",
-        "category": "UPSC",
-        "apply_link": "https://upsc.gov.in/"
-    })
+        add_job(
+            title=title,
+            vacancies="Update Soon",
+            qualification="10th/12th/Graduate",
+            age="18+",
+            salary="As per SSC rules",
+            last_date="Check Website",
+            state="All India",
+            category="SSC",
+            apply_link=url
+        )
+    except:
+        # fallback static entry if scraping fails
+        add_job(
+            "SSC Latest Jobs", "Update Soon", "10th/12th/Graduate", "18+",
+            "As per rules", "Check Website", "All India", "SSC", "https://ssc.nic.in/"
+        )
 
-upsc_scraper()
+# ========== UPSC STATIC TEMP (live after SSC works) ==========
+def upsc():
+    add_job(
+        "UPSC Recruitment Coming Soon", "Soon", "Graduate", "21+",
+        "As per UPSC", "Next Update", "India", "UPSC", "https://upsc.gov.in/"
+    )
 
-###############################
-# 3. Railway Scraper
-###############################
-def railway_scraper():
-    url="https://indianrailways.gov.in"
-    r=safe_request(url)
-    if r and r.status_code==200:
-        soup=BeautifulSoup(r.text,"html.parser")
-        title="Railway New Vacancy Notice Available..."
-        jobs.append({
-            "title": title,
-            "vacancies": "Check Site",
-            "qualification": "10th/ITI/Diploma/Graduate",
-            "age": "18+",
-            "salary": "As per Railway Rules",
-            "last_date": "See Website",
-            "state": "All India",
-            "category": "Railway",
-            "apply_link": url
-        })
-    else:
-        fallback_railway()
+def railway():
+    add_job(
+        "Railway Recruitment - Coming Soon", "Update Soon", "10th/ITI/Graduate", "18+",
+        "As per rules", "Check Website", "All India", "Railway", "https://indianrailways.gov.in/"
+    )
 
-def fallback_railway():
-    jobs.append({
-        "title": "Indian Railway Upcoming Recruitment",
-        "vacancies": "Update Soon",
-        "qualification": "10th/ITI/Diploma/Graduate",
-        "age": "18+",
-        "salary": "As per Railway Rules",
-        "last_date": "Check Website",
-        "state": "All India",
-        "category": "Railway",
-        "apply_link": "https://indianrailways.gov.in/"
-    })
+def banking():
+    add_job(
+        "Bank Jobs (IBPS/SBI) Updates", "Soon", "Graduate", "20+",
+        "As per Bank rules", "Update Soon", "India", "Banking", "https://ibps.in/"
+    )
 
-railway_scraper()
 
-###############################
-# 4. Banking Default
-###############################
-jobs.append({
-    "title": "Bank Jobs IBPS/SBI Recruitment",
-    "vacancies": "Soon",
-    "qualification": "Graduate",
-    "age": "20+",
-    "salary": "Bank Rules",
-    "last_date": "Update Soon",
-    "state": "India",
-    "category": "Banking",
-    "apply_link": "https://ibps.in/"
-})
+# RUN ALL
+ssc_scraper()
+upsc()
+railway()
+banking()
 
-###############################
-# Save JSON
-###############################
-with open("jobs.json","w") as f:
-    json.dump(jobs,f,indent=4)
+# save output
+with open("jobs.json", "w") as f:
+    json.dump(jobs, f, indent=4)
 
-print("Jobs Updated ✔",len(jobs))
+print("Jobs Updated Successfully", datetime.datetime.now())
