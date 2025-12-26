@@ -15,7 +15,6 @@
     header{
         background:#0055ff;
         color:#fff;
-        text-align:center;
         padding:12px;
         font-size:22px;
         font-weight:bold;
@@ -23,81 +22,71 @@
         display:flex;
         align-items:center;
         justify-content:center;
-        gap:6px; /* logo name aur paas aa gaye */
+        gap:6px;
     }
+    header img{ height:30px; }
 
-    header img{
-        height:30px;
-    }
-
-    /* 1️⃣ Search box Yellow Border */
-    .search-box{
-        margin:15px;
-        display:flex;
-        gap:10px;
-    }
+    /* 🔥 Search Yellow Border */
+    .search-box{ margin:15px; }
     .search-box input{
-        flex:1;
-        padding:10px;
-        border-radius:10px;
-        border:2px solid #ffcc00; /* Yellow border */
+        width:100%;
+        padding:12px;
         font-size:16px;
+        border-radius:10px;
+        border:2px solid #ffcc00;
+        outline:none;
     }
 
-    /* Category buttons styling */
-    .categories{
-        display:flex;
-        gap:10px;
-        overflow-x:auto;
-        padding:10px;
-    }
+    /* 🔥 Top Job Categories — PINK BORDER */
+    .categories{ display:flex; gap:10px; overflow-x:auto; padding:10px; }
     .cat{
         background:white;
         padding:8px 14px;
         border-radius:20px;
         white-space:nowrap;
-        border:2px solid #00c853; /* 2️⃣ Green Border */
         font-size:14px;
         cursor:pointer;
+        border:2px solid #ff4db3;   /* Pink line */
     }
     .cat.active{
         background:#0055ff;
-        color:white;
+        color:#fff;
         font-weight:bold;
         border-color:#0055ff;
     }
 
-    /* 3️⃣ Job card Blue Border */
+    /* 🔥 State Filter — GREEN BORDER */
+    .states{ display:flex; gap:10px; overflow-x:auto; padding:10px; margin-top:-5px; }
+    .state{
+        background:white;
+        padding:8px 14px;
+        border-radius:20px;
+        white-space:nowrap;
+        font-size:14px;
+        cursor:pointer;
+        border:2px solid #00c853;  /* green */
+    }
+    .state.active{ background:#00c853; color:#fff; font-weight:bold; }
+
+    /* 🔥 Job Card — BLUE BORDER */
     .job-card{
         background:white;
         margin:15px;
         padding:15px;
         border-radius:15px;
-        border:2px solid #1e88e5; /* Blue border */
-        box-shadow:0 4px 10px rgba(0,0,0,0.08);
-        animation:pop 0.4s ease;
+        border:2px solid #1e88e5;
+        box-shadow:0 4px 10px rgba(0,0,0,.08);
     }
-
-    @keyframes pop{
-        from{transform:scale(.95);opacity:0;}
-        to{transform:scale(1);opacity:1;}
-    }
-
-    .job-card h3{
-        margin:0 0 8px;
-        font-size:18px;
-        color:#222;
-    }
-
+    .job-card h3{ margin:0 0 8px; color:#222; font-size:18px; }
     .apply{
         background:#00b33c;
-        color:white;
+        color:#fff;
         padding:10px 14px;
         border-radius:10px;
-        margin-top:10px;
         display:inline-block;
-        font-size:14px;
         text-decoration:none;
+        margin-top:10px;
+        font-size:14px;
     }
 </style>
 </head>
@@ -105,22 +94,38 @@
 <body>
 
 <header>
-    <img src="logo.png">
-    <span>MyGovtJob</span>
+    <img src="logo.png"><span>MyGovtJob</span>
 </header>
 
 <div class="search-box">
     <input id="search" placeholder="Search Govt Jobs... 🔍">
 </div>
 
+<!-- Top Categories (PINK Border) -->
 <div class="categories" id="categories">
     <span class="cat active" data-cat="All">All</span>
     <span class="cat" data-cat="SSC">SSC</span>
     <span class="cat" data-cat="UPSC">UPSC</span>
     <span class="cat" data-cat="Railway">Railway</span>
     <span class="cat" data-cat="Banking">Banking</span>
+    <span class="cat" data-cat="Teacher">Teacher</span>
     <span class="cat" data-cat="Police">Police</span>
+    <span class="cat" data-cat="Defence">Defence</span>
     <span class="cat" data-cat="State">State</span>
+</div>
+
+<!-- State Filter Line (GREEN Border) -->
+<div class="states" id="states">
+    <span class="state active" data-state="All">All States</span>
+    <span class="state" data-state="Odisha">Odisha</span>
+    <span class="state" data-state="Bihar">Bihar</span>
+    <span class="state" data-state="UP">UP</span>
+    <span class="state" data-state="Delhi">Delhi</span>
+    <span class="state" data-state="MP">MP</span>
+    <span class="state" data-state="Rajasthan">Rajasthan</span>
+    <span class="state" data-state="Jharkhand">Jharkhand</span>
+    <span class="state" data-state="WB">West Bengal</span>
+    <span class="state" data-state="Maharashtra">Maharashtra</span>
 </div>
 
 <div id="job-list"></div>
@@ -129,15 +134,10 @@
 const jobBox=document.getElementById("job-list");
 let jobs=[];
 
-// Load Jobs JSON live from GitHub
 fetch("https://chandan-coder77.github.io/mygovtjob/jobs.json")
 .then(r=>r.json())
-.then(data=>{
-    jobs=data;
-    showJobs(jobs);
-});
+.then(data=>{ jobs=data; showJobs(jobs); });
 
-// Render Function
 function showJobs(list){
     jobBox.innerHTML="";
     list.forEach(j=>{
@@ -154,21 +154,32 @@ function showJobs(list){
     });
 }
 
-// Search Feature
 document.getElementById("search").addEventListener("input",e=>{
-    showJobs(jobs.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())))
+    showJobs(jobs.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())));
 });
 
-// Category Filter
+// Category
 document.querySelectorAll(".cat").forEach(c=>{
 c.onclick=()=>{
-    document.querySelector(".active").classList.remove("active");
+    document.querySelector(".cat.active").classList.remove("active");
     c.classList.add("active");
     let cat=c.dataset.cat;
 
-    showJobs(cat==="All"?jobs:jobs.filter(x=>x.category===cat));
+    if(cat=="All") showJobs(jobs);
+    else showJobs(jobs.filter(x=>x.category==cat));
+}});
+
+// State
+document.querySelectorAll(".state").forEach(s=>{
+s.onclick=()=>{
+    document.querySelector(".state.active").classList.remove("active");
+    s.classList.add("active");
+    let st=s.dataset.state;
+
+    if(st=="All") showJobs(jobs);
+    else showJobs(jobs.filter(x=>x.state==st));
 }});
 </script>
 
 </body>
-        </html>
+</html>
