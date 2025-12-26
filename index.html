@@ -1,161 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyGovtJob App Portal</title>
-
+<title>MyGovtJob</title>
 <style>
-    body{
-        font-family: Arial, sans-serif;
-        margin:0;
-        background:#f2f5ff;
+    body {font-family: Arial, sans-serif; background-color: #f5f7ff; margin:0; padding:0;}
+    header {
+        background:#0057ff; color:white; padding:15px;
+        text-align:center; font-size:22px; font-weight:bold;
+        display:flex; align-items:center; justify-content:center;
+        gap:10px; box-shadow:0 2px 5px rgba(0,0,0,0.2);
     }
-
-    header{
-        background:#0055ff;
-        color:#fff;
-        text-align:center;
-        padding:15px;
-        font-size:22px;
-        font-weight:bold;
-        border-radius:0 0 20px 20px;
+    header img{height:35px;}
+    .search-box {
+        width:85%; display:block; margin:20px auto;
+        padding:12px 18px; border-radius:12px;
+        border:2px solid #ddd; font-size:17px;
     }
-
-    .search-box{
-        margin:15px;
-        display:flex;
-        gap:10px;
+    .tabs {text-align:center; margin:10px;}
+    .tabs button {
+        padding:8px 18px; margin:5px; border-radius:20px; border:none;
+        background:white; box-shadow:0 2px 6px rgba(0,0,0,0.2);
+        font-size:14px; cursor:pointer;
     }
-
-    .search-box input{
-        flex:1;
-        padding:10px;
-        border-radius:10px;
-        border:none;
-        font-size:16px;
+    .job-card {
+        background:white; width:85%; margin:15px auto;
+        padding:18px; border-radius:18px;
+        box-shadow:0 2px 6px rgba(0,0,0,0.2); line-height:22px;
     }
-
-    .categories{
-        display:flex;
-        gap:10px;
-        overflow-x:auto;
-        padding:10px;
-    }
-
-    .cat{
-        background:white;
-        padding:8px 14px;
-        border-radius:20px;
-        white-space:nowrap;
-        border:1px solid #d9d9d9;
-        font-size:14px;
-        cursor:pointer;
-    }
-
-    .cat.active{
-        background:#0055ff;
-        color:white;
-        font-weight:bold;
-    }
-
-    .job-card{
-        background:white;
-        margin:15px;
-        padding:15px;
-        border-radius:15px;
-        box-shadow:0 4px 10px rgba(0,0,0,0.08);
-        animation:pop 0.4s ease;
-    }
-
-    @keyframes pop{
-        from{transform:scale(.95);opacity:0;}
-        to{transform:scale(1);opacity:1;}
-    }
-
-    .job-card h3{
-        margin:0 0 8px;
-        font-size:18px;
-        color:#222;
-    }
-
-    .apply{
-        background:#00b33c;
-        color:white;
-        padding:10px 14px;
-        border-radius:10px;
-        margin-top:10px;
-        display:inline-block;
-        font-size:14px;
-        text-decoration:none;
+    .apply-btn {
+        background:#02c132; color:white; border:none;
+        padding:10px 15px; font-size:16px;
+        border-radius:10px; margin-top:10px; cursor:pointer;
     }
 </style>
 </head>
 
 <body>
 
-<header>🔥 Govt Jobs App Portal</header>
+<header>
+    <img src="logo.png">
+    <span>MyGovtJob</span>
+</header>
 
-<div class="search-box">
-    <input id="search" placeholder="Search Govt Jobs... 🔍">
+<input type="text" class="search-box" id="search" placeholder="Search Govt Jobs... 🔍">
+
+<div class="tabs">
+    <button onclick="filterCategory('SSC')">SSC</button>
+    <button onclick="filterCategory('Railway')">Railway</button>
+    <button onclick="filterCategory('Banking')">Banking</button>
+    <button onclick="filterCategory('Police')">Police</button>
+    <button onclick="filterCategory('State')">State</button>
 </div>
 
-<div class="categories" id="categories">
-    <span class="cat active" data-cat="All">All</span>
-    <span class="cat" data-cat="SSC">SSC</span>
-    <span class="cat" data-cat="UPSC">UPSC</span>
-    <span class="cat" data-cat="Railway">Railway</span>
-    <span class="cat" data-cat="Banking">Banking</span>
-    <span class="cat" data-cat="Police">Police</span>
-    <span class="cat" data-cat="State">State</span>
-</div>
-
-<div id="job-list"></div>
+<div id="jobs"></div>
 
 <script>
-const jobBox=document.getElementById("job-list");
-let jobs=[];
+async function loadJobs(){
+    let res = await fetch("jobs.json");
+    let data = await res.json();
+    displayJobs(data);
+}
 
-// Load Jobs JSON live from GitHub
-fetch("https://chandan-coder77.github.io/mygovtjob/jobs.json")
-.then(r=>r.json())
-.then(data=>{
-    jobs=data;
-    showJobs(jobs);
-});
+function displayJobs(data){
+    let box = document.getElementById("jobs");
+    box.innerHTML="";
 
-// Render Function
-function showJobs(list){
-    jobBox.innerHTML="";
-    list.forEach(j=>{
-        jobBox.innerHTML+=`
-        <div class='job-card'>
-            <h3>${j.title}</h3>
-            <p><b>Vacancies:</b> ${j.vacancies}</p>
-            <p><b>Qualification:</b> ${j.qualification}</p>
-            <p><b>Age:</b> ${j.age}</p>
-            <p><b>Salary:</b> ${j.salary}</p>
-            <p><b>Last Date:</b> ${j.last_date}</p>
-            <a class='apply' href='${j.apply_link}' target='_blank'>Apply Now 🚀</a>
+    data.forEach(job=>{
+        box.innerHTML += `
+        <div class="job-card">
+            <h3>${job.title}</h3>
+            <p><b>Vacancies:</b> ${job.vacancies}</p>
+            <p><b>Qualification:</b> ${job.qualification}</p>
+            <p><b>Age:</b> ${job.age}</p>
+            <p><b>Salary:</b> ${job.salary}</p>
+            <p><b>Last Date:</b> ${job.last_date}</p>
+            <button class="apply-btn" onclick="window.location='${job.apply_link}'">Apply Now 🚀</button>
         </div>`;
     });
 }
 
-// Search Feature
-document.getElementById("search").addEventListener("input",e=>{
-    showJobs(jobs.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())))
-});
+function filterCategory(cat){
+    fetch("jobs.json").then(r=>r.json()).then(d=>{
+        let f = d.filter(x=>x.category.toLowerCase().includes(cat.toLowerCase()));
+        displayJobs(f);
+    })
+}
 
-// Category Filter
-document.querySelectorAll(".cat").forEach(c=>{
-c.onclick=()=>{
-    document.querySelector(".active").classList.remove("active");
-    c.classList.add("active");
-    let cat=c.dataset.cat;
-
-    showJobs(cat==="All"?jobs:jobs.filter(x=>x.category===cat));
-}});
+loadJobs();
 </script>
 
 </body>
-   </html>
+</html>
