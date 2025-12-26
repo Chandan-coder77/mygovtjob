@@ -7,118 +7,126 @@
 
 <style>
 
-/* ======= 🌟 Global Style ======= */
+/* ======= 🌟 Global ======= */
 body{
     font-family: Arial, sans-serif;
     margin:0;
     background:#f2f5ff;
 }
 
-/* ======= 🔵 Header + Logo ======= */
+/* ======= 🔵 Header ======= */
 header{
     background:#0055ff;
     color:#fff;
-    padding:14px;
+    padding:14px 10px;
     font-size:22px;
     font-weight:bold;
-    border-radius:0 0 18px 18px;
+    border-radius:0 0 20px 20px;
     display:flex;
     align-items:center;
     justify-content:center;
     gap:6px;
 }
-header img{ height:28px; }
+header img{ height:30px; }
 
-/* ======= 🟨 Search Box (Yellow Border) ======= */
-.search-box{ padding:12px 15px; }
+/* ======= 🟨 Search Box (Perfect border in screenshot) ======= */
+.search-box{
+    padding:15px;
+    margin-top:-8px;               /* spacing alignment fix */
+}
 .search-box input{
     width:100%;
     padding:12px;
     font-size:16px;
-    border-radius:12px;
-    border:2.4px solid #ffcc00;
+    border-radius:10px;
+    border:2px solid #ffcc00;      /* yellow exactly like pic-1 */
     background:white;
     outline:none;
 }
 
-/* ======= 🩷 Job Categories (Pink Border) ======= */
-.categories, .states{
-    display:flex; 
+/* ======= 🩷 CATEGORIES ======= */
+.categories{
+    display:flex;
     gap:10px;
     overflow-x:auto;
-    padding:10px 12px;
+    padding:10px 15px 6px;         /* bottom reduce like pic-1 */
 }
-
-.cat,.state{
+.cat{
     background:white;
     padding:7px 15px;
     font-size:15px;
-    border-radius:25px;
+    border-radius:22px;
+    border:2px solid #ff4db3;
     white-space:nowrap;
     cursor:pointer;
 }
-
-/* Category Pink */
-.cat{ border:2.3px solid #ff4db3; }
 .cat.active{
-    background:#0055ff; 
+    background:#0055ff;
     color:white;
     border-color:#0055ff;
-    font-weight:bold;
 }
 
-/* ======= 🟩 States (Green Border) ======= */
-.state{ border:2.3px solid #00c853; }
+/* ======= 🟩 STATES ROW ======= */
+.states{
+    display:flex; 
+    gap:10px;
+    overflow-x:auto;
+    padding:6px 15px 8px;          /* spacing improved equal view */
+    margin-top:-6px;               /* top reduce like screenshot-1 */
+}
+.state{
+    background:white;
+    padding:7px 15px;
+    font-size:15px;
+    border-radius:22px;
+    border:2px solid #00c853;
+    white-space:nowrap;
+    cursor:pointer;
+}
 .state.active{
     background:#00c853;
     color:white;
-    font-weight:bold;
 }
 
-/* ======= 🟦 Job Card (Blue Border Rectangle) ======= */
+/* ======= 🟦 JOB CARD (Exactly like pic-1) ======= */
 .job-card{
     background:white;
-    margin:15px 12px;
+    margin:15px;
     padding:18px;
     border-radius:14px;
-    border:2.4px solid #1e88e5;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    border:2px solid #1e88e5;       /* perfect blue rectangle */
+    box-shadow:0 4px 10px rgba(0,0,0,.09);
 }
 .job-card h3{
     margin:0 0 10px;
     font-size:19px;
-    color:#222;
+    font-weight:bold;
 }
 
-/* Apply Button */
+/* Apply Btn */
 .apply{
     display:inline-block;
     background:#00b33c;
     color:white;
-    padding:10px 16px;
+    padding:10px 15px;
     border-radius:8px;
     text-decoration:none;
     margin-top:12px;
     font-size:15px;
 }
-
 </style>
 </head>
-
 <body>
 
-<!-- 🔵 Header Section -->
 <header>
     <img src="logo.png">
     <span>MyGovtJob</span>
 </header>
 
-<!-- 🟨 Search Box -->
 <div class="search-box">
     <input id="search" placeholder="Search Govt Jobs... 🔍">
 </div>
 
-<!-- 🩷 Top Job Categories -->
 <div class="categories" id="categories">
     <span class="cat active" data-cat="All">All</span>
     <span class="cat" data-cat="SSC">SSC</span>
@@ -131,7 +139,6 @@ header img{ height:28px; }
     <span class="cat" data-cat="State">State</span>
 </div>
 
-<!-- 🟩 States Filter -->
 <div class="states" id="states">
     <span class="state active" data-state="All">All States</span>
     <span class="state" data-state="Odisha">Odisha</span>
@@ -145,19 +152,18 @@ header img{ height:28px; }
     <span class="state" data-state="Maharashtra">Maharashtra</span>
 </div>
 
-<!-- Job Render Area -->
 <div id="job-list"></div>
 
 <script>
 const jobBox=document.getElementById("job-list");
 let jobs=[];
 
-/* 💾 Load JSON from GitHub */
+/* JSON Load */
 fetch("https://chandan-coder77.github.io/mygovtjob/jobs.json")
 .then(r=>r.json())
 .then(data=>{ jobs=data; showJobs(jobs); });
 
-/* 📌 Job Display */
+/* Render Job Cards */
 function showJobs(list){
     jobBox.innerHTML="";
     list.forEach(j=>{
@@ -174,12 +180,12 @@ function showJobs(list){
     });
 }
 
-/* 🔍 Search Filter */
+/* Search */
 document.getElementById("search").addEventListener("input",e=>{
     showJobs(jobs.filter(x=>x.title.toLowerCase().includes(e.target.value.toLowerCase())));
 });
 
-/* 🩷 Category Filter */
+/* Category Filter */
 document.querySelectorAll(".cat").forEach(c=>{
 c.onclick=()=>{
     document.querySelector(".cat.active").classList.remove("active");
@@ -187,7 +193,7 @@ c.onclick=()=>{
     showJobs(c.dataset.cat=="All"?jobs:jobs.filter(x=>x.category==c.dataset.cat));
 }});
 
-/* 🟩 State Filter */
+/* State Filter */
 document.querySelectorAll(".state").forEach(s=>{
 s.onclick=()=>{
     document.querySelector(".state.active").classList.remove("active");
@@ -197,4 +203,4 @@ s.onclick=()=>{
 </script>
 
 </body>
-        </html>
+    </html>
