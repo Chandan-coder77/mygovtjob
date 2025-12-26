@@ -1,1 +1,35 @@
-[]
+[
+    {
+        "title": "SSC Govt Jobs (Live fetch soon)",
+        "vacancies": "Update",
+        "qualification": "10th/12th/Grad",
+        "age": "18+",
+        "salary": "Rules",
+        "last_date": "Check",
+        "state": "India",
+        "category": "SSC",
+        "apply_link": "https://ssc.nic.in/"
+    },
+    {
+        "title": "UPSC Govt Jobs (Auto fetch soon)",
+        "vacancies": "Update",
+        "qualification": "Graduate",
+        "age": "21+",
+        "salary": "Rules",
+        "last_date": "Check",
+        "state": "India",
+        "category": "UPSC",
+        "apply_link": "https://upsc.gov.in/"
+    },
+    {
+        "title": "NCS Govt Jobs",
+        "vacancies": "Available",
+        "qualification": "Check Notice",
+        "age": "Check",
+        "salary": "As per post",
+        "last_date": "Check Site",
+        "state": "India",
+        "category": "Central",
+        "apply_link": "https://www.ncs.gov.in/"
+    }
+]
