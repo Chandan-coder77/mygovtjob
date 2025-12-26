@@ -4,115 +4,84 @@ import json
 
 jobs=[]
 
-# ================== SSC LIVE TITLE SCRAPER ==================
-def fetch_ssc():
+
+# ---------------- LIVE SOURCE 1 - NCS (REAL JOBS) ----------------
+def fetch_ncs():
     try:
-        url="https://ssc.nic.in/portal/Notifications"
-        r=requests.get(url,timeout=12).text
-        soup=BeautifulSoup(r,"html.parser")
-        
-        notice=soup.select_one(".card-body a")   # First Latest Job Link
-        title=notice.text.strip() if notice else "SSC Latest Notification"
-        link="https://ssc.nic.in"+notice['href'] if notice else "https://ssc.nic.in/"
-        
+        url="https://www.ncs.gov.in/"
+        soup=BeautifulSoup(requests.get(url,timeout=15).text,"html.parser")
+        job=soup.select_one(".featured-job .job-title")  # Top job
+        title=job.text.strip() if job else "NCS Govt Jobs"
         return{
             "title":title,
-            "vacancies":"As Per Notice",
-            "qualification":"10th/12th/Graduate",
-            "age":"18+",
-            "salary":"As per SSC Rules",
-            "last_date":"Check Notification",
+            "vacancies":"Available",
+            "qualification":"Check Notice",
+            "age":"Check",
+            "salary":"As per post",
+            "last_date":"Check Site",
             "state":"India",
-            "category":"SSC",
-            "apply_link":link
+            "category":"Central",
+            "apply_link":url
         }
     except:
-        return{
-            "title":"SSC Latest Notification",
-            "vacancies":"Update Soon",
-            "qualification":"10th/12th/Graduate",
-            "age":"18+",
-            "salary":"As per SSC",
-            "last_date":"Check Website",
-            "state":"India",
-            "category":"SSC",
-            "apply_link":"https://ssc.nic.in/"
-        }
+        return None
 
 
-# ================== UPSC LIVE TITLE SCRAPER ==================
-def fetch_upsc():
+# ---------------- LIVE SOURCE 2 - Employment News ----------------
+def fetch_emp_news():
     try:
-        url="https://upsc.gov.in/exams-related-info/recruitment"
-        r=requests.get(url,timeout=12).text
-        soup=BeautifulSoup(r,"html.parser")
-
-        news=soup.select_one(".views-field-title a")
-        title=news.text.strip() if news else "UPSC Latest Exam Notice"
-        link="https://upsc.gov.in"+news['href'] if news else "https://upsc.gov.in/"
-
+        url="http://employmentnews.gov.in/"
+        soup=BeautifulSoup(requests.get(url,timeout=15).text,"html.parser")
+        title=soup.find("h3").text.strip()
         return{
             "title":title,
-            "vacancies":"As per notice",
-            "qualification":"Graduate",
-            "age":"21+",
-            "salary":"As per UPSC",
+            "vacancies":"Update Live",
+            "qualification":"As per Post",
+            "age":"Check",
+            "salary":"Govt Rules",
             "last_date":"Check Notice",
             "state":"India",
-            "category":"UPSC",
-            "apply_link":link
+            "category":"Employment",
+            "apply_link":url
         }
     except:
-        return{
-            "title":"UPSC Recruitment Coming Soon",
-            "vacancies":"Soon",
-            "qualification":"Graduate",
-            "age":"21+",
-            "salary":"As per UPSC",
-            "last_date":"Next Update",
-            "state":"India",
-            "category":"UPSC",
-            "apply_link":"https://upsc.gov.in/"
-        }
+        return None
 
 
-# ============= Railway Basic (Later PDF Parsing Add) =============
-def fetch_railway():
-    return{
-        "title":"Railway Recruitment Live Soon",
-        "vacancies":"Coming",
-        "qualification":"10th/ITI/Graduate",
-        "age":"18+",
-        "salary":"As per Rules",
-        "last_date":"Check Site",
-        "state":"India",
-        "category":"Railway",
-        "apply_link":"https://indianrailways.gov.in/"
-    }
+# ---------------- OLD STATIC SAFE BLOCK (Fallback) ----------------
+jobs.append({
+"title":"SSC Govt Jobs (Live fetch soon)",
+"vacancies":"Update",
+"qualification":"10th/12th/Grad",
+"age":"18+",
+"salary":"Rules",
+"last_date":"Check",
+"state":"India",
+"category":"SSC",
+"apply_link":"https://ssc.nic.in/"
+})
+
+jobs.append({
+"title":"UPSC Govt Jobs (Auto fetch soon)",
+"vacancies":"Update",
+"qualification":"Graduate",
+"age":"21+",
+"salary":"Rules",
+"last_date":"Check",
+"state":"India",
+"category":"UPSC",
+"apply_link":"https://upsc.gov.in/"
+})
+
+jobs.append(fetch_ncs())
+jobs.append(fetch_emp_news())
+
+# Remove None if any
+jobs=[j for j in jobs if j]
 
 
-# ============= Bank Basic (SBI/IBPS scrape Next Step) =============
-def fetch_bank():
-    return{
-        "title":"Bank IBPS/SBI Live Updates Soon",
-        "vacancies":"Upcoming",
-        "qualification":"Graduate",
-        "age":"20+",
-        "salary":"As per Bank",
-        "last_date":"Check Site",
-        "state":"India",
-        "category":"Banking",
-        "apply_link":"https://ibps.in/"
-    }
-
-
-# ============ MERGE + WRITE JSON ============
-jobs.append(fetch_ssc())
-jobs.append(fetch_upsc())
-jobs.append(fetch_railway())
-jobs.append(fetch_bank())
-
+# Save JSON
 with open("jobs.json","w") as f:
     json.dump(jobs,f,indent=4)
 
-print("New Live Scraper Updated Successfully 🚀")
+print("LIVE JOBS UPDATED 🚀")
