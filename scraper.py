@@ -1,81 +1,78 @@
 import requests
 from bs4 import BeautifulSoup
-import json, datetime
+import json
+
+# URL sources
+sources = {
+    "SSC": "https://ssc.nic.in/",
+    "UPSC": "https://upsc.gov.in/",
+    "Railway": "https://indianrailways.gov.in/",
+    "Banking": "https://ibps.in/"
+}
 
 jobs = []
 
-def add_job(title, vacancies, qualification, age, salary, last_date, state, category, apply_link):
+# ---------------- SSC Scraping -----------------
+try:
+    ssc_html = requests.get(sources["SSC"]).text
+    ssc = BeautifulSoup(ssc_html, "html.parser")
+    notice = ssc.find("span", {"class": "blink"}) or "Update Soon"
+
     jobs.append({
-        "title": title,
-        "vacancies": vacancies,
-        "qualification": qualification,
-        "age": age,
-        "salary": salary,
-        "last_date": last_date,
-        "state": state,
-        "category": category,
-        "apply_link": apply_link
+        "title": "SSC Latest Notification",
+        "vacancies": "Update Soon",
+        "qualification": "10th/12th/Graduate",
+        "age": "18+",
+        "salary": "As per SSC rules",
+        "last_date": "Check Website",
+        "state": "All India",
+        "category": "SSC",
+        "apply_link": sources["SSC"]
     })
+except:
+    print("SSC source fetch fail ❌")
 
-# ========== SSC LIVE SCRAPER ==========
-def ssc_scraper():
-    url = "https://ssc.nic.in/"
-    try:
-        r = requests.get(url, timeout=15)
-        soup = BeautifulSoup(r.text, "html.parser")
+# ---------------- UPSC Static until live -----------------
+jobs.append({
+    "title": "UPSC Recruitment Coming Soon",
+    "vacancies": "Soon",
+    "qualification": "Graduate",
+    "age": "21+",
+    "salary": "As per UPSC",
+    "last_date": "Next Update",
+    "state": "India",
+    "category": "UPSC",
+    "apply_link": sources["UPSC"]
+})
 
-        latest = soup.find("div", {"id": "latestnews"})
-        if latest:
-            title = latest.text.strip().split("\n")[0][:80]  # shorten
-        else:
-            title = "SSC Latest Notification"
+# ---------------- Railway Static -----------------
+jobs.append({
+    "title": "Railway Recruitment - Coming Soon",
+    "vacancies": "Update Soon",
+    "qualification": "10th/ITI/Graduate",
+    "age": "18+",
+    "salary": "As per rules",
+    "last_date": "Check Website",
+    "state": "All India",
+    "category": "Railway",
+    "apply_link": sources["Railway"]
+})
 
-        add_job(
-            title=title,
-            vacancies="Update Soon",
-            qualification="10th/12th/Graduate",
-            age="18+",
-            salary="As per SSC rules",
-            last_date="Check Website",
-            state="All India",
-            category="SSC",
-            apply_link=url
-        )
-    except:
-        # fallback static entry if scraping fails
-        add_job(
-            "SSC Latest Jobs", "Update Soon", "10th/12th/Graduate", "18+",
-            "As per rules", "Check Website", "All India", "SSC", "https://ssc.nic.in/"
-        )
+# ---------------- Bank Static -----------------
+jobs.append({
+    "title": "Bank Jobs (IBPS/SBI) Updates",
+    "vacancies": "Soon",
+    "qualification": "Graduate",
+    "age": "20+",
+    "salary": "As per Bank rules",
+    "last_date": "Update Soon",
+    "state": "India",
+    "category": "Banking",
+    "apply_link": sources["Banking"]
+})
 
-# ========== UPSC STATIC TEMP (live after SSC works) ==========
-def upsc():
-    add_job(
-        "UPSC Recruitment Coming Soon", "Soon", "Graduate", "21+",
-        "As per UPSC", "Next Update", "India", "UPSC", "https://upsc.gov.in/"
-    )
+# Save JSON Output
+with open("jobs.json", "w") as file:
+    json.dump(jobs, file, indent=4)
 
-def railway():
-    add_job(
-        "Railway Recruitment - Coming Soon", "Update Soon", "10th/ITI/Graduate", "18+",
-        "As per rules", "Check Website", "All India", "Railway", "https://indianrailways.gov.in/"
-    )
-
-def banking():
-    add_job(
-        "Bank Jobs (IBPS/SBI) Updates", "Soon", "Graduate", "20+",
-        "As per Bank rules", "Update Soon", "India", "Banking", "https://ibps.in/"
-    )
-
-
-# RUN ALL
-ssc_scraper()
-upsc()
-railway()
-banking()
-
-# save output
-with open("jobs.json", "w") as f:
-    json.dump(jobs, f, indent=4)
-
-print("Jobs Updated Successfully", datetime.datetime.now())
+print("Jobs Updated Successfully 🚀")
