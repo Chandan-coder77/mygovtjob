@@ -20,5 +20,27 @@
         "state": "India",
         "category": "UPSC",
         "apply_link": "https://upsc.gov.in/"
+    },
+    {
+        "title": "Indian Railway Upcoming Recruitment",
+        "vacancies": "Update Soon",
+        "qualification": "10th/ITI/Diploma/Graduate",
+        "age": "18+",
+        "salary": "As per Railway Rules",
+        "last_date": "Check Website",
+        "state": "All India",
+        "category": "Railway",
+        "apply_link": "https://indianrailways.gov.in/"
+    },
+    {
+        "title": "Bank Jobs IBPS/SBI Recruitment",
+        "vacancies": "Soon",
+        "qualification": "Graduate",
+        "age": "20+",
+        "salary": "As per Bank Rules",
+        "last_date": "Update Soon",
+        "state": "India",
+        "category": "Bank",
+        "apply_link": "https://ibps.in/"
     }
 ]
