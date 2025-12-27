@@ -1,30 +1,36 @@
 import requests, json, bs4, datetime
 
-print("\n🚀 Govt Job Auto Scraper Running...\n")
+print("\n🚀 Smart Job Scraper Running...\n")
 
+# Pages where real recruitments are published
 sources = {
-    "SSC":"https://ssc.nic.in/portal/notifications",
-    "UPSC":"https://upsc.gov.in/recruitment",
-    "Railway":"https://indianrailways.gov.in/railwayboard/view_section.jsp?id=0,7,2158",
-    "IBPS":"https://www.ibps.in/",
-    "NCS":"https://www.ncs.gov.in/"
+    "SSC": "https://ssc.nic.in/Portal/Notices",
+    "UPSC": "https://upsc.gov.in/recruitment/recruitment",
+    "Railway": "https://indianrailways.gov.in/",
+    "IBPS": "https://www.ibps.in/crp-specialist-officers-xiii/",
+    "NCS": "https://www.ncs.gov.in/job-seeker/jobsearch"
 }
 
-jobs = []
+all_jobs = []
 
-for cat, url in sources.items():
+def extract_jobs(url, category):
+    print(f"🔎 Checking {category}... {url}")
+
     try:
-        print(f"🔎 Scraping {cat}: {url}")
-        soup = bs4.BeautifulSoup(requests.get(url,timeout=10).text,"html.parser")
+        soup = bs4.BeautifulSoup(requests.get(url, timeout=15).text, "html.parser")
 
-        # Most sites use links <a> for job notices
-        for link in soup.find_all("a")[:10]:
-            title = link.get_text(strip=True)
+        jobs_found = 0
 
-            if len(title) < 10:   # Avoid junk text
+        for a in soup.find_all("a"):
+            title = a.get_text(strip=True)
+
+            # VALID Job Title Filter (no skip)
+            if len(title) < 12: 
+                continue
+            if any(x in title.lower() for x in ["login", "home", "content", "about", "privacy", "faq"]):
                 continue
 
-            jobs.append({
+            all_jobs.append({
                 "title": title,
                 "vacancies": "Updating...",
                 "qualification": "Check Official Notice",
@@ -32,15 +38,22 @@ for cat, url in sources.items():
                 "salary": "As per Govt Rules",
                 "last_date": "Updating...",
                 "state": "India",
-                "category": cat,
+                "category": category,
                 "apply_link": url
             })
 
+            jobs_found += 1
+            if jobs_found >= 10: break   # limit per source
+
     except Exception as e:
-        print(f"❌ Failed {cat} → {e}")
+        print(f"❌ Failed {category}: {e}")
 
-open("jobs.json","w").write(json.dumps(jobs,indent=4))
+# Run for all websites
+for cat, link in sources.items():
+    extract_jobs(link, cat)
 
-print(f"\n📁 Total Jobs Fetched: {len(jobs)}")
-print("⏳ Last Update:",datetime.datetime.now())
-print("✔ Saved Successfully\n")
+open("jobs.json","w").write(json.dumps(all_jobs, indent=4))
+
+print(f"\n📁 Total Jobs Scraped: {len(all_jobs)}")
+print("⏳ Updated:", datetime.datetime.now())
+print("✔ Stored in jobs.json\n")
