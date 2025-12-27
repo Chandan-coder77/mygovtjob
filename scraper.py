@@ -1,49 +1,46 @@
 import requests, json, bs4, datetime
 
-print("\n🚀 Smart Job Auto-Update Started...\n")
+print("\n🚀 Auto Smart Govt Job Scraper Started...\n")
 
-# ---------- Full Strong Header (prevent block) ----------
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
 URL = "https://www.freejobalert.com/latest-notification/"
 
-# ------------ Fetch Website Data ------------
 try:
-    response = requests.get(URL, headers=headers, timeout=25)
-    response.raise_for_status()
-    soup = bs4.BeautifulSoup(response.text, "html.parser")
+    r = requests.get(URL, headers=headers, timeout=25)
+    r.raise_for_status()
+    soup = bs4.BeautifulSoup(r.text, "html.parser")
 except Exception as e:
-    print("❌ Error while fetching website:", e)
+    print("❌ Fetch Failed:", e)
     exit()
 
-# ------------ Scrap Latest Job List ------------
 jobs = []
 
-for row in soup.select("ul li a")[:20]:   # top 20 job posts
+# 🔥 Extract Real Latest Govt Job Notifications
+for row in soup.select(".wpsm_recent_posts_list li")[:25]:  # 25 latest jobs
     title = row.get_text(strip=True)
-    link = row.get("href")
+    link = row.find("a")["href"]
 
-    # complete relative URL fix
     if not link.startswith("http"):
-        link = "https://www.freejobalert.com/" + link
+        link = "https://www.freejobalert.com" + link
 
     jobs.append({
         "title": title,
         "vacancies": "Updating...",
         "qualification": "Check Notification",
         "age": "18+",
-        "salary": "Govt Rules",
+        "salary": "As per Govt Rules",
         "last_date": "Updating...",
         "state": "India",
         "category": "Latest",
         "apply_link": link
     })
 
-# ------------ Save in jobs.json ------------
-open("jobs.json", "w").write(json.dumps(jobs, indent=4))
+# Save ✔
+open("jobs.json","w").write(json.dumps(jobs,indent=4))
 
-print(f"📁 Total Jobs Added: {len(jobs)}")
-print("⏳ Updated:", datetime.datetime.now())
-print("✔ Auto Update Successfully Completed\n")
+print(f"📄 Total Jobs Fetched: {len(jobs)}")
+print("🕒 Updated:", datetime.datetime.now())
+print("✔ Job Auto-Update Successful\n")
