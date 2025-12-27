@@ -1,62 +1,84 @@
-import json, requests, bs4, datetime,re
-print("\n🚀 Smart Govt Job Scraper Running...\n")
+import json,requests,bs4,datetime,re
+
+print("\n🚀 Smart Govt Job Scraper (Advanced) Running...\n")
 
 URL="https://www.freejobalert.com/"
-headers={
-    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
-}
+headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36"}
 
-html=requests.get(URL,headers=headers,timeout=30).text
+html=requests.get(URL,headers=headers,timeout=20).text
 soup=bs4.BeautifulSoup(html,"html.parser")
 
-
-# CATEGORY DETECTOR
 def detect_category(text):
     T=text.lower()
-    if "bank" in T:return "Banking"
+    if "bank" in T or "sbi" in T or "bob" in T or "boi" in T:return "Banking"
     if "rail" in T:return "Railway"
     if "ssc" in T:return "SSC"
     if "upsc" in T:return "UPSC"
     if "teacher" in T or "faculty" in T:return "Teaching"
-    if "police" in T or "defence" in T or "army" in T or "navy" in T:return "Defence"
+    if "police" in T or "defence" in T or "army" in T:return "Defence"
     return "Latest"
-
 
 jobs=[]
 
-# Extract top table jobs only recruitment posts
-for row in soup.select("table tbody tr")[:30]:
+def fetch_details(link):
+    """Post page se Qualification & Salary extract"""
+    try:
+        page=requests.get(link,headers=headers,timeout=20).text
+        sp=bs4.BeautifulSoup(page,"html.parser")
+        
+        text=sp.get_text(" ").lower()
+
+        # find qualification
+        q=re.search(r'qualification[:\- ]+(.+?)\n',text)
+        qualification=q.group(1).strip() if q else "Not Mentioned"
+
+        # find salary
+        s=re.search(r'salary[:\- ]+(.+?)\n',text)
+        salary=s.group(1).strip() if s else "As per Notification"
+
+        return qualification,salary
+    
+    except:
+        return "Not Mentioned","As per Notification"
+
+
+# scrape homepage table
+for row in soup.select("table tbody tr")[:15]:   # first 15 jobs
     try:
         cols=row.find_all("td")
         date=cols[0].get_text(strip=True)
-        a=row.find("a")
-        title=a.get_text(strip=True) if a else ""
+        org=cols[1].get_text(strip=True)
+        posts=cols[2].get_text(strip=True)
+        link=row.find("a")["href"]
 
-        # FILTER 🔥 only recruitment forms
-        if not re.search(r"(Form|Recruitment|Online|Vacancy|Post)",title,re.I):
-            continue
-
-        posts=cols[2].get_text(strip=True) if len(cols)>2 else "Updating"
-        clean_title = re.sub(r"\s*\d{2}/\d{2}/\d{4}", "", title).strip()
+        q,sal = fetch_details(link)  # Fetch details from inside page
 
         job={
-            "title": clean_title,
-            "vacancies": posts.replace("–","-"),
-            "qualification":"Check Official Notification",
+            "title":org.replace("Recruitment","").strip(),   # clean title
+            "vacancies":posts.replace("–","-"),
+            "qualification":q,
             "age":"18+",
-            "salary":"As per Govt Rules",
-            "last_date": date,
+            "salary":sal,
+            "last_date":date,
             "state":"India",
-            "category": detect_category(clean_title),
-            "apply_link": a["href"]
+            "category":detect_category(org),
+            "apply_link":link
         }
         jobs.append(job)
 
-    except:
-        pass
+    except Exception as e:
+        print("Error:",e)
 
 
-open("jobs.json","w").write(json.dumps(jobs,indent=4))
-print("📁 Saved:",len(jobs),"Jobs")
+# Merge + Save
+try: old=json.load(open("jobs.json"))
+except: old=[]
+
+titles=set(i["title"] for i in old)
+final = old+[j for j in jobs if j["title"] not in titles]
+
+open("jobs.json","w").write(json.dumps(final,indent=4))
+
+print("📁 Jobs Saved:",len(final))
 print("⏳ Updated:",datetime.datetime.now())
 print("✔ Done\n")
