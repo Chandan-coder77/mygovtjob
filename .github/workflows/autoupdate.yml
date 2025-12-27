@@ -1,19 +1,17 @@
 name: Auto Update Jobs
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"   # हर 6 घंटे में auto update
   workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"   # हर 6 घंटे में
 
 jobs:
-  update:
+  scrape:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -23,13 +21,13 @@ jobs:
       - name: Install deps
         run: pip install requests beautifulsoup4
 
-      - name: Run scraper
-        run: python scraper.py
+      - name: Run Scraper
+        run: python main.py   # <-- यही missing था
 
-      - name: Force Commit
+      - name: Commit changes
         run: |
-          git config --global user.name "AutoUpdater"
-          git config --global user.email "actions@github.com"
-          git add jobs.json
-          git commit -m "Auto update jobs $(date)" || echo "no changes"
-          git push --force
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add .
+          git commit -m "Auto update jobs" || echo "No changes"
+          git push
