@@ -1,96 +1,63 @@
-import requests, re, json, datetime, bs4
-from parser import extract_qualification, extract_salary, extract_age
+import requests
+from bs4 import BeautifulSoup
+import re
 
 headers = {
-"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-# Multiple Govt Job Sources
-SITES = [
-"https://www.freejobalert.com/",
-"https://www.sarkariresult.com/",
-"https://www.sarkariresult.com/latestjob/",
-"https://ssc.nic.in/",
-"https://www.upsc.gov.in/recruitment/recruitment",
-"https://www.rrbcdg.gov.in/employment-notices.php",
-"https://sbi.co.in/web/careers",
-"https://bankofindia.co.in/Careers",
-"https://www.ibps.in/",
-"https://www.ncs.gov.in/",
-"https://www.india.gov.in/my-government/jobs",
-"https://www.drdo.gov.in/careers",
-"https://joinindianarmy.nic.in/",
-"https://isro.gov.in/Careers",
-]  # अब भी 50+ जोड़ सकते हो सिर्फ SITES में add करके
+def extract_text(soup, keywords):
+    for tag in soup.find_all(["p", "li", "span", "div"]):
+        text = tag.get_text(strip=True).lower()
+        for key in keywords:
+            if key in text:
+                return tag.get_text(strip=True)
+    return "Not Available"
 
-def get_details(url):
+def clean_title(title):
+    title = re.sub(r"Recruitment|Apply Online|Notification|Admit Card|Result", "", title, flags=re.I)
+    return title.strip("-: ")
+
+def scrape(url):
     try:
-        page=requests.get(url,headers=headers,timeout=15).text
-        txt=" ".join(bs4.BeautifulSoup(page,"html.parser").stripped_strings)
+        print("Scraping:", url)
+        r = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-        vacancy=re.search(r"\d{1,5}\s?posts|\d{1,5}\s?vacancy",txt,re.I)
-        lastdate=re.search(r"\d{1,2}[-/]\d{1,2}[-/]\d{2,4}",txt)
+        jobs = []
+        links = soup.find_all("a", href=True)
 
-        return {
-            "vacancies":vacancy.group(0) if vacancy else "Available",
-            "qualification":extract_qualification(txt),
-            "salary":extract_salary(txt),
-            "age_limit":extract_age(txt),
-            "last_date":lastdate.group(0) if lastdate else "Not Mentioned"
-        }
-    except:
-        return {
-            "vacancies":"Available",
-            "qualification":"Check Notification",
-            "salary":"As per Govt Rules",
-            "age_limit":"18+",
-            "last_date":"Not Mentioned"
-        }
+        for link in links:
+            title = clean_title(link.get_text(strip=True))
+            if len(title) < 4: 
+                continue
 
+            job_link = link['href']
+            if job_link.startswith("/"):
+                job_link = url.rstrip("/") + job_link
 
-def scrap(url):
-    try:
-        html=requests.get(url,headers=headers,timeout=15).text
-        soup=bs4.BeautifulSoup(html,"html.parser")
-        jobs=[]
+            job_page = requests.get(job_link, headers=headers, timeout=10)
+            inner = BeautifulSoup(job_page.text, "html.parser")
 
-        for a in soup.find_all("a")[:100]:
-            text=a.get_text(" ",strip=True)
+            vacancies = extract_text(inner, ["vacancy", "post", "posts"])
+            qualification = extract_text(inner, ["qualification", "educational"])
+            salary = extract_text(inner, ["salary", "pay"])
+            age = extract_text(inner, ["age limit", "age"])
+            last_date = extract_text(inner, ["last date", "closing date", "apply till"])
 
-            if any(x in text.lower() for x in ["recruit","vacancy","online","form","notice","jobs","recruitment"]):
-                link=a.get("href")
-                if link and len(text)>5:
-                    full=link if link.startswith("http") else url+link
+            jobs.append({
+                "title": title,
+                "vacancies": vacancies,
+                "qualification": qualification,
+                "salary": salary,
+                "age_limit": age,
+                "last_date": last_date,
+                "apply_link": job_link,
+                "source": url,
+            })
 
-                    data=get_details(full)
-
-                    jobs.append({
-                        "title":text.replace("Recruitment","").strip(),
-                        **data,
-                        "apply_link":full,
-                        "state":"India",
-                        "category":"Govt Job",
-                        "source":url.split("//")[1].split("/")[0],
-                        "updated":str(datetime.datetime.now())
-                    })
         return jobs
 
-    except: return []
-
-
-# Run Scraper
-all=[]
-for site in SITES:
-    print("📥 Fetching →",site)
-    all+=scrap(site)
-
-
-try: old=json.load(open("jobs.json"))
-except: old=[]
-
-titles=set(i["title"] for i in old)
-final=old+[j for j in all if j["title"] not in titles]
-
-open("jobs.json","w").write(json.dumps(final,indent=4,ensure_ascii=False))
-
-print("\n✔ Jobs Updated:",len(final))
+    except Exception as e:
+        print("Error scraping:", url, e)
+        return []
