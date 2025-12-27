@@ -10,21 +10,22 @@ html=requests.get(URL,headers=headers,timeout=20).text
 soup=bs4.BeautifulSoup(html,"html.parser")
 
 
-# ================= CATEGORY DETECTOR =================
+# =============== CATEGORY DETECTOR ===============
 def detect_category(text):
     T=text.lower()
-    if "bank" in T or "sbi" in T or "bob" in T or "boi" in T: return "Banking"
-    if "rail" in T: return "Railway"
-    if "ssc" in T: return "SSC"
-    if "upsc" in T: return "UPSC"
-    if "teacher" in T or "faculty" in T: return "Teaching"
-    if "police" in T or "defence" in T or "army" in T or "navy" in T: return "Defence"
+    if "bank" in T or "sbi" in T or "bob" in T or "boi" in T:return "Banking"
+    if "rail" in T:return "Railway"
+    if "ssc" in T:return "SSC"
+    if "upsc" in T:return "UPSC"
+    if "teacher" in T or "faculty" in T:return "Teaching"
+    if "police" in T or "defence" in T or "army" in T or "navy" in T:return "Defence"
     return "Latest"
-# ======================================================
+# =================================================
+
 
 jobs=[]
 
-# Scraping Latest Jobs (Top 20)
+# =============== Extract Latest Jobs ===============
 for row in soup.select("table tbody tr")[:20]:
     try:
         cols=row.find_all("td")
@@ -34,12 +35,12 @@ for row in soup.select("table tbody tr")[:20]:
         link=row.find("a")["href"]
 
         job={
-            "title":f"{org} Recruitment",   # 🔥 Date removed from title
+            "title":org+" Recruitment",       # 🔥 date removed from title
             "vacancies":posts.replace("–","-"),
             "qualification":"Check Official Notification",
             "age":"18+",
             "salary":"As per Govt Rules",
-            "last_date":date,               # Date यहां रहेगा
+            "last_date":date,                 # date remains here
             "state":"India",
             "category":detect_category(org),
             "apply_link":link
@@ -48,7 +49,22 @@ for row in soup.select("table tbody tr")[:20]:
     except:
         pass
 
-# ========== No Duplicate + Save JSON ==========
+
+# 🔥 TEST UPDATE ENTRY (run check purpose)
+jobs.append({
+    "title":f"Auto Update Test {datetime.datetime.now().strftime('%H:%M:%S')}",
+    "vacancies":"Test Entry",
+    "qualification":"Test",
+    "age":"N/A",
+    "salary":"N/A",
+    "last_date":datetime.datetime.now().strftime("%d/%m/%Y"),
+    "state":"Test",
+    "category":"Test",
+    "apply_link":URL
+})
+
+
+# =============== OLD + NEW DATA MERGE ===============
 try:
     old=json.load(open("jobs.json"))
 except:
@@ -57,8 +73,9 @@ except:
 titles=set(i["title"] for i in old)
 final=old+[j for j in jobs if j["title"] not in titles]
 
+
 open("jobs.json","w").write(json.dumps(final,indent=4))
 
-print("📁 Total Jobs Saved:",len(final))
+print("\n📁 Total Jobs Saved:",len(final))
 print("⏳ Last Update:",datetime.datetime.now())
 print("✔ Auto Job Update Complete\n")
