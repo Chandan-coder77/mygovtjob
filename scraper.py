@@ -1,40 +1,46 @@
-import json,requests,bs4,datetime
+import requests, json, bs4, datetime
 
-print("\n🔎 Fetching Govt Jobs from FreeJobAlert...\n")
+print("\n🚀 Auto Job Scraper Running...\n")
 
-URL="https://www.freejobalert.com/"
-html=requests.get(URL,headers={"User-Agent":"Mozilla/5.0"}).text
-soup=bs4.BeautifulSoup(html,"html.parser")
+sites = {
+    "SSC":"https://ssc.nic.in/",
+    "UPSC":"https://upsconline.nic.in/",
+    "Railway":"https://indianrailways.gov.in/",
+    "Banking":"https://ibps.in/",
+    "NCS":"https://www.ncs.gov.in/"
+}
 
-new_jobs=[]
+jobs = []
 
-# Top job titles read
-for li in soup.select(".menu li a")[:5]:
-    title=li.get_text(strip=True)
+for category, url in sites.items():
+    try:
+        print(f"🔎 Fetching {category} – {url}")
+        r = requests.get(url, timeout=10)
+        soup = bs4.BeautifulSoup(r.text, "html.parser")
 
-    job={
-        "title":title,
-        "vacancies":"Updating...",
-        "qualification":"Check Notification",
-        "age":"18+",
-        "salary":"As Govt Rules",
-        "last_date":"Check Website",
-        "state":"India",
-        "category":"Central",
-        "apply_link":URL
-    }
-    new_jobs.append(job)
+        for h in soup.find_all(["h1","h2","h3"])[:4]:  # हर साइट से 4 titles
+            title = h.get_text(strip=True)
 
-# old jobs read
-try:
-    old=json.load(open("jobs.json"))
-except:
-    old=[]
+            if len(title) < 5: 
+                continue
 
-titles=set(j["title"].lower() for j in old)
-final=old+[j for j in new_jobs if j["title"].lower() not in titles]
+            jobs.append({
+                "title": title,
+                "vacancies":"Updating...",
+                "qualification":"Check Official Notice",
+                "age":"18+",
+                "salary":"As per Govt Rules",
+                "last_date":"Updating...",
+                "state":"India",
+                "category": category,
+                "apply_link": url
+            })
 
-open("jobs.json","w").write(json.dumps(final,indent=4))
-print("📁 Total Jobs:",len(final))
-print("⏳ Last Updated:",datetime.datetime.now())
-print("✔ Auto Update Success!\n")
+    except Exception as e:
+        print(f"❌ Failed on {url}: {e}")
+
+# save
+open("jobs.json","w").write(json.dumps(jobs, indent=4))
+print("\n📁 Total Jobs Fetched:", len(jobs))
+print("⏳ Last Run:", datetime.datetime.now())
+print("✔ Saved to jobs.json\n")
