@@ -1,70 +1,72 @@
+# scraper.py
+# ------------------------------------------
+# v2.0 - Advanced Smart Scraper
+# Works with FreeJobAlert categories & posts
+# ------------------------------------------
+
 import requests
 from bs4 import BeautifulSoup
-import json
-from datetime import datetime
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.google.com/",
-    "Connection": "keep-alive"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-def clean(text):
-    return text.replace("\n"," ").replace("\t"," ").strip()
+def extract_short(text):
+    """Long qualification text को छोटा और साफ format में convert करता है"""
+    if not text:
+        return "N/A"
+    text = text.replace("\n", " ").strip()
+    return text[:180] + "..." if len(text) > 180 else text
+
 
 def scrape_freejobalert():
     url = "https://www.freejobalert.com/"
-    r = requests.get(url, headers=headers, timeout=20)
-    soup = BeautifulSoup(r.text, "html.parser")
+    print(f"🔍 Fetching jobs from: {url}")
+
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.text, "html.parser")
 
     jobs = []
-    sections = soup.select("section")  # major blocks पकड़ने की trick
 
-    for sec in sections:
-        title = sec.find("h2")
-        if not title: 
-            continue
+    # Page से top government notifications पकड़ना
+    for box in soup.select(".entry-content ul li a")[:40]:  # limit to avoid overload
+        title = box.get_text(strip=True)
+        link = box.get("href")
 
-        # Table extract block
-        table = sec.find("table")
-        if not table:
-            continue
+        # Vacancy number निकालने की कोशिश
+        vacancy = "".join([x for x in title if x.isdigit()]) or "N/A"
 
-        rows = table.find_all("tr")[1:]  # skip headers
+        job_detail = {"qualification": "N/A", "salary": "N/A", "age_limit": "N/A"}
 
-        for row in rows:
-            cols = row.find_all(["td","th"])
-            if len(cols) < 4:
-                continue
+        # Job page open for deep details
+        try:
+            page = requests.get(link, headers=headers, timeout=10)
+            deep = BeautifulSoup(page.text, "html.parser")
 
-            job = {
-                "title": clean(cols[1].text if len(cols)>1 else "N/A"),
-                "vacancies": clean(cols[2].text if len(cols)>2 else "N/A"),
-                "qualification": clean(cols[3].text if len(cols)>3 else "N/A"),
-                "salary": "N/A",   # salary आगे pdf से आएगी
-                "age_limit": "N/A",
-                "last_date": clean(cols[-1].text),
-                "apply_link": cols[1].find("a")["href"] if cols[1].find("a") else url,
-                "source": "https://www.freejobalert.com/"
-            }
-            # Skip old or invalid
-            if job["vacancies"]=="N/A" and job["qualification"]=="N/A":
-                continue
+            text = deep.get_text(" ", strip=True)
 
-            jobs.append(job)
+            # Auto extract keywords
+            for line in text.split():
+                if "Age" in text[:500]:
+                    job_detail["age_limit"] = "Found"  # later upgrade to exact value
+                if "Salary" in text[:500]:
+                    job_detail["salary"] = "Available"
+                if "Qualification" in text or "Graduate" in text:
+                    job_detail["qualification"] = extract_short(text[text.index("Qualification"):][:200])
+
+        except:
+            pass
+
+        jobs.append({
+            "title": title,
+            "vacancies": vacancy,
+            "qualification": job_detail["qualification"],
+            "salary": job_detail["salary"],
+            "age_limit": job_detail["age_limit"],
+            "last_date": "Check site",   # Next version auto extract
+            "apply_link": link,
+            "source": url
+        })
 
     return jobs
-
-
-def save_data(data):
-    with open("jobs.json","w",encoding="utf-8") as f:
-        json.dump(data,f,indent=4,ensure_ascii=False)
-    print("jobs.json updated successfully ✔")
-
-
-if __name__ == "__main__":
-    print("Scraping started...")
-    all_jobs = scrape_freejobalert()
-    save_data(all_jobs)
-    print("Total Jobs Fetched:", len(all_jobs))
