@@ -1,1 +1,46 @@
-[]
+[
+    {
+        "title": "Staff Selection Commission",
+        "vacancies": "Updating...",
+        "qualification": "Check Official Notice",
+        "age": "18+",
+        "salary": "As per Govt Rules",
+        "last_date": "Updating...",
+        "state": "India",
+        "category": "SSC",
+        "apply_link": "https://ssc.nic.in/"
+    },
+    {
+        "title": "Login",
+        "vacancies": "Updating...",
+        "qualification": "Check Official Notice",
+        "age": "18+",
+        "salary": "As per Govt Rules",
+        "last_date": "Updating...",
+        "state": "India",
+        "category": "SSC",
+        "apply_link": "https://ssc.nic.in/"
+    },
+    {
+        "title": "Unlock Account",
+        "vacancies": "Updating...",
+        "qualification": "Check Official Notice",
+        "age": "18+",
+        "salary": "As per Govt Rules",
+        "last_date": "Updating...",
+        "state": "India",
+        "category": "SSC",
+        "apply_link": "https://ssc.nic.in/"
+    },
+    {
+        "title": "Latest News",
+        "vacancies": "Updating...",
+        "qualification": "Check Official Notice",
+        "age": "18+",
+        "salary": "As per Govt Rules",
+        "last_date": "Updating...",
+        "state": "India",
+        "category": "SSC",
+        "apply_link": "https://ssc.nic.in/"
+    }
+]
