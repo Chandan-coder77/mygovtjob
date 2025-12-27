@@ -1,72 +1,56 @@
-# scraper.py
-# ------------------------------------------
-# v2.0 - Advanced Smart Scraper
-# Works with FreeJobAlert categories & posts
-# ------------------------------------------
-
 import requests
 from bs4 import BeautifulSoup
+import re
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-def extract_short(text):
-    """Long qualification text को छोटा और साफ format में convert करता है"""
-    if not text:
-        return "N/A"
-    text = text.replace("\n", " ").strip()
-    return text[:180] + "..." if len(text) > 180 else text
+def extract_field(text, key):
+    """ Smart extractor: Vacancy, Qualification, Age, Salary, Dates """
+    text = text.replace("\n", " ")
+    patterns = {
+        "vacancy": r"(\d+\s*posts?|\d+ vacancies|\d+\s*post)",
+        "qualification": r"Qualification[:\-]?\s*([^,.;\n]+)",
+        "age": r"Age\s*Limit[:\-]?\s*([^,.;\n]+)",
+        "salary": r"Salary[:\-]?\s*([^,.;\n]+)",
+        "last_date": r"Last\s*Date[:\-]?\s*([^,.;\n]+)"
+    }
 
+    match = re.search(patterns.get(key, ""), text, re.IGNORECASE)
+    return match.group(1).strip() if match else "Updating Soon"
 
-def scrape_freejobalert():
-    url = "https://www.freejobalert.com/"
-    print(f"🔍 Fetching jobs from: {url}")
-
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.text, "html.parser")
-
+def scrape(url):
+    print("Scraping:", url)
     jobs = []
+    try:
+        r = requests.get(url, headers=headers, timeout=20)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-    # Page से top government notifications पकड़ना
-    for box in soup.select(".entry-content ul li a")[:40]:  # limit to avoid overload
-        title = box.get_text(strip=True)
-        link = box.get("href")
+        cards = soup.select("article, .job-card, .post-list, li, .entry-content")
+        for card in cards[:40]:  # 40 job limit per site
+            text = card.get_text(" ", strip=True)
 
-        # Vacancy number निकालने की कोशिश
-        vacancy = "".join([x for x in title if x.isdigit()]) or "N/A"
+            title = card.find("a").get_text(strip=True) if card.find("a") else None
+            link = card.find("a")["href"] if card.find("a") else url
 
-        job_detail = {"qualification": "N/A", "salary": "N/A", "age_limit": "N/A"}
+            if not title or len(title) < 8:
+                continue
 
-        # Job page open for deep details
-        try:
-            page = requests.get(link, headers=headers, timeout=10)
-            deep = BeautifulSoup(page.text, "html.parser")
+            job = {
+                "title": title,
+                "vacancies": extract_field(text, "vacancy"),
+                "qualification": extract_field(text, "qualification"),
+                "age": extract_field(text, "age"),
+                "salary": extract_field(text, "salary"),
+                "last_date": extract_field(text, "last_date"),
+                "apply_link": link,
+                "source": url
+            }
 
-            text = deep.get_text(" ", strip=True)
+            jobs.append(job)
 
-            # Auto extract keywords
-            for line in text.split():
-                if "Age" in text[:500]:
-                    job_detail["age_limit"] = "Found"  # later upgrade to exact value
-                if "Salary" in text[:500]:
-                    job_detail["salary"] = "Available"
-                if "Qualification" in text or "Graduate" in text:
-                    job_detail["qualification"] = extract_short(text[text.index("Qualification"):][:200])
-
-        except:
-            pass
-
-        jobs.append({
-            "title": title,
-            "vacancies": vacancy,
-            "qualification": job_detail["qualification"],
-            "salary": job_detail["salary"],
-            "age_limit": job_detail["age_limit"],
-            "last_date": "Check site",   # Next version auto extract
-            "apply_link": link,
-            "source": url
-        })
+    except Exception as e:
+        print("Error:", e)
 
     return jobs
