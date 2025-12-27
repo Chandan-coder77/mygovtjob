@@ -1,108 +1,154 @@
-import json,requests,bs4,datetime,re
+import json,requests,bs4,re,datetime,time
 
-print("\n🚀 Smart Govt Job Scraper Running...\n")
+print("\n🚀 INDIA MEGA GOVT SCRAPER STARTED...\n")
 
+#================ HIGH POWER USER-AGENT (100% Recommended) ================
 headers={
-    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
+    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept-Language":"en-US,en;q=0.9",
+    "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
+#=========================================================================
+
+def clean(x): return re.sub("\s+"," ",x).strip()
+
+def make_job(title,vac,qual,age,sal,last,state,cat,link,src):
+    return {
+        "title":clean(title),
+        "vacancies":clean(vac),
+        "qualification":clean(qual),
+        "age_limit":clean(age),
+        "salary":clean(sal),
+        "last_date":clean(last),
+        "state":state,
+        "category":cat,
+        "apply_link":link,
+        "source":src
+    }
+
+def detect_cat(t):
+    T=t.lower()
+    if "rail" in T: return "Railway"
+    if "ssc" in T: return "SSC"
+    if "upsc" in T: return "UPSC"
+    if "bank" in T or "sbi" in T or "boi" in T or "bob" in T: return "Banking"
+    if "teacher" in T or "lectur" in T: return "Teaching"
+    if "police" in T or "army" in T or "defence" in T: return "Defence"
+    return "Govt Job"
 
 jobs=[]
 
-# =========================================================
-# SOURCE 1 — FreeJobAlert (Latest Govt Jobs)
-# =========================================================
+#=======================================================================
+# 1. FREEJOBALERT SCRAPER
+#=======================================================================
+print("📡 FreeJobAlert...")
 try:
-    URL="https://www.freejobalert.com/"
-    html=requests.get(URL,headers=headers,timeout=20).text
-    soup=bs4.BeautifulSoup(html,"html.parser")
+    soup=bs4.BeautifulSoup(requests.get("https://www.freejobalert.com/",headers=headers,timeout=30).text,"html.parser")
+    rows=soup.select("table tbody tr")[:20]
 
-    def detect_category(text):
-        T=text.lower()
-        if "bank" in T or "sbi" in T or "bob" in T or "boi" in T:return "Banking"
-        if "rail" in T:return "Railway"
-        if "ssc" in T:return "SSC"
-        if "upsc" in T:return "UPSC"
-        if "teacher" in T or "faculty" in T:return "Teaching"
-        if "police" in T or "defence" in T or "army" in T or "navy" in T:return "Defence"
-        return "Latest"
-
-    for row in soup.select("table tbody tr")[:20]:
+    for row in rows:
         try:
-            cols=row.find_all("td")
-            date=cols[0].get_text(strip=True)
-            org=cols[1].get_text(strip=True)
-            posts=cols[2].get_text(strip=True)
+            td=row.find_all("td")
+            date,org,post=td[0].text,td[1].text,td[2].text
             link=row.find("a")["href"]
 
-            job={
-                "title":org,                         # Title cleaned (no Recruitment,date)
-                "vacancies":posts.replace("–","-"),
-                "qualification":"Check Notification",
-                "age":"18+",
-                "salary":"As per Govt Rules",
-                "last_date":date,
-                "state":"India",
-                "category":detect_category(org),
-                "apply_link":link,
-                "source":"FreeJobAlert"
-            }
-            jobs.append(job)
-        except:
-            pass
-    print("✔ FreeJobAlert Added")
-except:
-    print("❌ FreeJobAlert Failed")
+            inner=bs4.BeautifulSoup(requests.get(link,headers=headers).text,"html.parser")
+            text=inner.get_text(" ",strip=True)
+
+            qualification=re.findall(r"(?i)qualifi.*?(?=age|fee|salary|₹|rs)",text)
+            salary=re.findall(r"(?i)salary.*?(?=qualifi|age|fee)",text)
+            age=re.findall(r"(?i)age.*?(?=qualifi|salary|fee)",text)
+
+            jobs.append(make_job(
+                title=org.replace("Recruitment","").replace(date,""),
+                vac=post,
+                qual=qualification[0] if qualification else "Check Notification",
+                age=age[0] if age else "18+",
+                sal=salary[0] if salary else "As per Govt Rules",
+                last=date,
+                state="India",
+                cat=detect_cat(org),
+                link=link,
+                src="FreeJobAlert"
+            ))
+        except: pass
+
+except Exception as e:
+    print("⚠ FreeJobAlert Error:",e)
 
 
-# =========================================================
-# SOURCE 2 — SarkariResult (Only Forms — no result/admit)
-# =========================================================
+#=======================================================================
+# 2. SARKARI RESULT SCRAPER
+#=======================================================================
+print("📡 SarkariResult...")
 try:
-    print("📡 Fetching from SarkariResult ...")
-
-    html=requests.get("https://www.sarkariresult.com/",headers=headers,timeout=20).text
-    soup=bs4.BeautifulSoup(html,"html.parser")
-
-    for row in soup.select(".post li a")[:20]:
-        title=row.get_text(strip=True)
-        link=row["href"]
-
-        # Skip result/admit/syllabus
-        if any(x in title.lower() for x in ["result","admit","syllabus","answer","certificate"]):
-            continue
-
-        job={
-            "title":title,
-            "vacancies":"Updating...",
-            "qualification":"Check Notification",
-            "age":"18+",
-            "salary":"As per Govt Rules",
-            "last_date":"Updating...",
-            "state":"India",
-            "category":detect_category(title),
-            "apply_link":link,
-            "source":"SarkariResult"
-        }
-        jobs.append(job)
-
-    print("✔ SarkariResult Added")
-except:
-    print("❌ SarkariResult Failed")
+    soup=bs4.BeautifulSoup(requests.get("https://www.sarkariresult.com/",headers=headers).text,"html.parser")
+    for a in soup.select("a")[:150]:
+        t=a.text
+        if any(x in t for x in ["Form","Recruit","Vacancy","Admit"]):
+            jobs.append(make_job(t,"","Check Notification","18+","Govt Rules","","India",detect_cat(t),"https://www.sarkariresult.com/"+a['href'],"SarkariResult"))
+except: print("⚠ Error")
 
 
-# =========================================================
-# Save + No Duplicate Title
-# =========================================================
+#=======================================================================
+# 3. NCS.GOV.IN API
+#=======================================================================
+print("📡 NCS Jobs...")
 try:
-    old=json.load(open("jobs.json"))
-except:
-    old=[]
+    r=requests.get("https://www.ncs.gov.in/_layouts/15/ncsp/user/vacancy.asmx/GetGovVacancy",headers=headers).json()
+    for j in r["d"][:40]:
+        jobs.append(make_job(j["jobTitle"],j["noVacancy"],j["qualificationReq"],"18+",j["salary"],j["lastDate"],j["stateName"],"Govt Job","https://www.ncs.gov.in","NCS"))
+except: print("⚠ Error")
 
-titles=set(i["title"] for i in old)
-final=old+[j for j in jobs if j["title"] not in titles]
+
+#=======================================================================
+# 4. SSC.gov.in
+#=======================================================================
+print("📡 SSC...")
+try:
+    soup=bs4.BeautifulSoup(requests.get("https://ssc.nic.in/",headers=headers).text,"html.parser")
+    for x in soup.select("a")[:80]:
+        if any(k in x.text for k in ["Recruit","Exam","Vacancy"]):
+            jobs.append(make_job(x.text,"","Check Notification","18+","","","India","SSC","https://ssc.nic.in"+x['href'],"SSC"))
+except: print("⚠ Error")
+
+
+#=======================================================================
+# 5. RAILWAY RRB
+#=======================================================================
+print("📡 Railway RRB...")
+try:
+    soup=bs4.BeautifulSoup(requests.get("https://www.rrbcdg.gov.in/",headers=headers).text,"html.parser")
+    for x in soup.select("a")[:100]:
+        if "Recruit" in x.text or "Notification" in x.text:
+            jobs.append(make_job(x.text,"","Check Notification","18+","","","India","Railway","https://www.rrbcdg.gov.in/"+x['href'],"Railway"))
+except: print("⚠ Error")
+
+
+#=======================================================================
+# 6. UPSC.gov.in
+#=======================================================================
+print("📡 UPSC...")
+try:
+    soup=bs4.BeautifulSoup(requests.get("https://upsc.gov.in",headers=headers).text,"html.parser")
+    for x in soup.select("a")[:100]:
+        if "Recruit" in x.text or "Exam" in x.text:
+            jobs.append(make_job(x.text,"","Check PDF","18+","Govt Rules","","India","UPSC","https://upsc.gov.in"+x['href'],"UPSC"))
+except: print("⚠ Error")
+
+
+#=======================================================================
+# MERGE + REMOVE DUPLICATE + SAVE
+#=======================================================================
+try: old=json.load(open("jobs.json"))
+except: old=[]
+
+exist=set(i["title"] for i in old)
+final=old+[j for j in jobs if j["title"] not in exist]
 
 open("jobs.json","w").write(json.dumps(final,indent=4))
 
-print("\n📁 Total Jobs Saved:",len(final))
-print("⏳ Last Update:",datetime.datetime.now())
-print("✔ Auto Job Update Complete\n")
+print("\n==============================")
+print(f"✔ TOTAL JOBS SAVED = {len(final)}")
+print("🟢 Scraping Finished:",datetime.datetime.now())
+print("==============================\n")
