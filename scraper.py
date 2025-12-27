@@ -35,7 +35,7 @@ for row in soup.select("table tbody tr")[:20]:   # extract top 20 jobs
         link=row.find("a")["href"]
 
         job={
-            "title":f"{org} Recruitment {date}",
+            "title":f"{org},
             "vacancies":posts.replace("–","-"),
             "qualification":"Check Official Notification",
             "age":"18+",
