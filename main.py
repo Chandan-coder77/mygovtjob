@@ -1,42 +1,23 @@
-import json, os
-from scraper import scrape
+# main.py
+# -------------------------
+# Runs the scraper and updates jobs.json
+# Make sure scraper.py contains function => scrape_freejobalert()
+# -------------------------
 
-jobs_file = "jobs.json"
-sources_file = "sources.txt"
+import json
+from scraper import scrape_freejobalert   # must match function name in scraper.py
 
-def load_sources():
-    with open(sources_file, "r") as file:
-        return [line.strip() for line in file.readlines() if line.strip()]
-
-def load_old_jobs():
-    if not os.path.exists(jobs_file):
-        return []
-    with open(jobs_file, "r") as file:
-        return json.load(file)
-
-def save_jobs(data):
-    with open(jobs_file, "w") as file:
-        json.dump(data, file, indent=4)
+def save_jobs(data, file="jobs.json"):
+    with open(file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 def main():
-    print("\n🚀 Running AI Job Scraper...\n")
-    sources = load_sources()
-    old_jobs = load_old_jobs()
-    new_jobs = []
+    print("\n🚀 Running Government Job Scraper...\n")
 
-    for url in sources:
-        new_jobs.extend(scrape(url))
+    jobs = scrape_freejobalert()   # <-- call scraper
+    save_jobs(jobs)
 
-    titles = set()
-    final = []
-
-    for job in new_jobs + old_jobs:
-        if job["title"] not in titles and "Not Available" not in job["qualification"]:
-            titles.add(job["title"])
-            final.append(job)
-
-    save_jobs(final)
-    print("✔ Jobs updated successfully! Total:", len(final))
+    print(f"✔ Jobs updated successfully! Total Jobs: {len(jobs)}\n")
 
 if __name__ == "__main__":
     main()
