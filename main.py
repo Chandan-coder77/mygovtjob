@@ -1,45 +1,34 @@
 import json, os
-from scraper import scrape
+from scraper import crawl_site
 
-jobs_file = "jobs.json"
-sources_file = "sources.txt"
+FILE = "jobs.json"
 
-def load_sources():
-    if not os.path.exists(sources_file):
-        print("❌ sources.txt missing — Add job URLs inside sources.txt")
-        return []
-    with open(sources_file, "r") as file:
-        return [l.strip() for l in file if l.strip()]
-
-def load_old_jobs():
-    return json.load(open(jobs_file)) if os.path.exists(jobs_file) else []
+def load_jobs():
+    if os.path.exists(FILE):
+        try:
+            return json.load(open(FILE))
+        except:
+            return []
+    return []
 
 def save_jobs(data):
-    with open(jobs_file, "w") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    with open(FILE,"w",encoding="utf-8") as f:
+        json.dump(data,f,indent=4,ensure_ascii=False)
 
 def main():
-    print("\n🚀 Auto Job Scraper Running...\n")
-    sites = load_sources()
-    old = load_old_jobs()
-    new = []
+    old = load_jobs()
 
-    for url in sites:
-        print("🔍 Checking:", url)
-        jobs = scrape(url)
-        new.extend(jobs)
+    urls = open("sources.txt").read().splitlines()
+    new_jobs=[]
 
-    # remove duplicates by title
-    final = []
-    titles = set()
+    for u in urls:
+        new_jobs += crawl_site(u)
 
-    for job in new + old:
-        if job["title"] not in titles and job["qualification"] != "Updating Soon":
-            titles.add(job["title"])
-            final.append(job)
+    unique = {j["title"]:j for j in (old+new_jobs)}
+    final = list(unique.values())
 
     save_jobs(final)
-    print("✔ Updated Successfully | Total Jobs:", len(final))
+    print("✔ Jobs updated:",len(final))
 
 if __name__ == "__main__":
     main()
