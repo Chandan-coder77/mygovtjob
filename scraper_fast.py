@@ -1,48 +1,39 @@
-import requests, bs4, json, time
+import requests, bs4, json, datetime
 
-headers = {
- "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-}
+headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
 
-def fetch_links(url):
-    print("SCRAPING:", url)
+def crawl(url):
     try:
-        r = requests.get(url, headers=headers, timeout=15)
-        soup = bs4.BeautifulSoup(r.text, "html.parser")
-        data=[]
+        html = requests.get(url,headers=headers,timeout=15).text
+        soup = bs4.BeautifulSoup(html,"html.parser")
 
+        links=[]
         for a in soup.find_all("a")[:200]:
-            title = a.get_text(" ", strip=True)
-            link = a.get("href")
+            name = a.get_text(" ",strip=True)
+            href = a.get("href")
 
-            if not link or len(title) < 8: 
-                continue
+            if not href or len(name)<6: continue
+            key = name.lower()
 
-            keywords=["recruit","job","vacancy","apply","notification","form"]
-            if not any(k in title.lower() for k in keywords):
-                continue
+            if any(x in key for x in ["recruit","vacancy","post","online","form","job","notice","notification"]):
+                full = href if href.startswith("http") else url.rstrip("/")+"/"+href.lstrip("/")
+                links.append({
+                    "title":name,
+                    "apply_link":full,
+                    "source":url,
+                    "updated":str(datetime.datetime.now())
+                })
 
-            full = link if link.startswith("http") else url.rstrip("/")+"/"+link.lstrip("/")
-
-            data.append({
-                "title": title,
-                "apply_link": full,
-                "source": url
-            })
-
-        return data
-
-    except Exception as e:
-        print("ERROR:", url, e)
+        return links
+    except:
         return []
 
-
 sites=open("sources.txt").read().splitlines()
-all=[]
+all_links=[]
 
 for s in sites:
-    all += fetch_links(s)
-    time.sleep(2) # GitHub timeout safe
+    print("Scraping:",s)
+    all_links+=crawl(s)
 
-open("jobs.links.json","w").write(json.dumps(all, indent=4, ensure_ascii=False))
-print("TOTAL LINKS SAVED:", len(all))
+open("jobs.links.json","w").write(json.dumps(all_links,indent=4))
+print("LINKS SAVED:",len(all_links))
