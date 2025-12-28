@@ -3,7 +3,7 @@ name: Auto Update Jobs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *"   # हर 6 घंटे में automatic
 
 jobs:
   scrape:
@@ -11,21 +11,26 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0    # IMPORTANT (fetch history)
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with: {python-version: '3.10'}
 
     - name: Install deps
-      run: pip install requests beautifulsoup4
+      run: pip install requests beautifulsoup4 pdfminer.six
 
-    - name: Run Only Link Scraper
+    - name: Step 1 → Collect Links
       run: python scraper_fast.py
 
-    - name: Commit & Push Links
+    - name: Step 2 → Extract Job Details
+      run: python scraper_detail.py
+
+    - name: Commit & Push Force
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        git add jobs.links.json
-        git commit -m "Update Job Links" || echo "No changes"
-        git push
+        git add .
+        git commit -m "Auto Update Jobs" || echo "No changes"
+        git push --force   # IMPORTANT FOR FIX
