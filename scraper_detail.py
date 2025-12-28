@@ -1,47 +1,45 @@
-import requests, bs4, json, re, datetime, time
+import requests, json, re, datetime, bs4
 from pdfminer.high_level import extract_text
 
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
 
 def read_pdf(url):
     try:
-        file=requests.get(url,timeout=15).content
-        open("temp.pdf","wb").write(file)
-        text=extract_text("temp.pdf")
-        return text[:4000]
-    except:
+        pdf = requests.get(url, timeout=10).content
+        open("temp.pdf","wb").write(pdf)
+        return extract_text("temp.pdf")[:2000]
+    except: 
         return ""
 
-def extract_job(url):
+def extract(url):
     try:
-        html=requests.get(url,headers=headers,timeout=15).text
-        soup=bs4.BeautifulSoup(html,"html.parser")
-        text=soup.get_text(" ",strip=True)
+        html = requests.get(url, headers=headers).text
+        soup = bs4.BeautifulSoup(html, "html.parser")
+        text = soup.get_text(" ", strip=True)
 
-        # PDF Read if found
-        pdf=soup.find("a",href=lambda x: x and x.endswith(".pdf"))
-        if pdf:
-            text+=read_pdf(pdf.get("href"))
+        pdf = soup.find("a",href=lambda x: x and x.endswith(".pdf"))
+        if pdf: text += " " + read_pdf(pdf.get("href"))
+
+        def find(reg, default): 
+            m=re.search(reg,text,re.I); return m.group(1) if m else default
 
         return {
-            "vacancies": re.search(r"(\d{2,5})\s+Posts?",text,re.I).group(1) if re.search(r"(\d{2,5})\s+Posts?",text,re.I) else "Not Mentioned",
-            "qualification": re.search(r"(10th|12th|Diploma|ITI|Graduate|Post Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BCA|MCA)",text,re.I).group(1) if re.search(r"(10th|12th|Diploma|ITI|Graduate|Post Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BCA|MCA)",text,re.I) else "Check Notification",
-            "salary": re.search(r"₹\s?\d{4,6}.*?\d{4,6}",text).group(0) if re.search(r"₹\s?\d{4,6}.*?\d{4,6}",text) else "As per Govt Rules",
-            "age_limit": re.search(r"Age.*?(\d+.*?years)",text,re.I).group(1) if re.search(r"Age.*?(\d+.*?years)",text,re.I) else "18+",
-            "last_date": re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text).group(1) if re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text) else "Not Mentioned"
+            "vacancies": find(r"(\d{2,6})\s*Posts?", "Not Mentioned"),
+            "qualification": find(r"(10th|12th|Diploma|ITI|Graduate|MBA|B.?Tech|M.?Tech)", "Check Notification"),
+            "salary": find(r"(₹\s?\d{4,6}.*?\d{4,6})", "As per Govt Rules"),
+            "age_limit": find(r"Age.*?(\d+.*?)\sYears", "18+"),
+            "last_date": find(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})", "Not Mentioned"),
         }
-    except:
-        return {}
+    except: return {}
 
-links=json.load(open("jobs.links.json"))
-final=[]
+raw=json.load(open("jobs_temp.json"))
+out=[]
 
-for i,job in enumerate(links[:60]):  # safe batch - future increase 200+
-    print(f"[{i+1}] Extracting:",job["title"])
-    info=extract_job(job["apply_link"])
-    job.update(info)
-    final.append(job)
-    time.sleep(1)
+for i,j in enumerate(raw[:40]):
+    print("Extracting:",i+1,j["title"])
+    info=extract(j["apply_link"])
+    j.update(info); j["updated"]=str(datetime.datetime.now())
+    out.append(j)
 
-open("jobs.json","w").write(json.dumps(final,indent=4))
-print("SAVED JOBS:",len(final))
+open("jobs_details.json","w").write(json.dumps(out,indent=4))
+print("Done:",len(out))
