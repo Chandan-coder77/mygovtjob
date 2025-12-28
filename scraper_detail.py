@@ -9,7 +9,7 @@ def read_pdf(url):
     try:
         file=requests.get(url,timeout=12).content
         open("temp.pdf","wb").write(file)
-        return extract_text("temp.pdf")[:3500]
+        return extract_text("temp.pdf")[:4000]
     except:
         return ""
 
@@ -19,6 +19,7 @@ def extract_details(url):
         soup=bs4.BeautifulSoup(html,"html.parser")
         text=soup.get_text(" ",strip=True)
 
+        # PDF detection
         pdf=soup.find("a",href=lambda x: x and x.endswith(".pdf"))
         if pdf:
             text += read_pdf(pdf.get("href"))
@@ -26,18 +27,20 @@ def extract_details(url):
         return {
             "vacancies": re.search(r"(\d+)\s+Posts?",text,re.I).group(1) if re.search(r"(\d+)\s+Posts?",text,re.I) else "Not Mentioned",
             "qualification": re.search(r"(10th|12th|Diploma|ITI|Graduate|Post Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BA|MA|MCA)",text,re.I).group(1) if re.search(r"(10th|12th|Diploma|ITI|Graduate|Post Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BA|MA|MCA)",text,re.I) else "Check Notification",
-            "salary": re.search(r"₹\s?\d{4,6}.*?\d{4,6}",text).group(0) if re.search(r"₹\s?\d{4,6}.*?\d{4,6}",text) else "As per Govt Rules",
+            "salary": re.search(r"(₹|Rs\.?)\s?\d{4,6}.*?\d{4,6}",text,re.I).group(0) if re.search(r"(₹|Rs\.?)\s?\d{4,6}.*?\d{4,6}",text,re.I) else "As per Govt Rules",
             "age_limit": re.search(r"Age.*?(\d+.*?years)",text,re.I).group(1) if re.search(r"Age.*?(\d+.*?years)",text,re.I) else "18+",
-            "last_date": re.search(r"Last\s*Date.*?(\d{1,2}\/\d{1,2}\/\d{2,4})",text).group(1) if re.search(r"Last\s*Date.*?(\d{1,2}\/\d{1,2}\/\d{2,4})",text) else "Not Mentioned"
+            "last_date": re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text,re.I).group(1) if re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text,re.I) else "Not Mentioned"
         }
-
     except:
         return {}
 
-links=json.load(open("jobs_links.json"))
+# ---------------- FILE FIXED ↓  ---------------- #
+links=json.load(open("jobs.links.json"))   # correct file name
+# ---------------------------------------------- #
+
 final=[]
 
-for i,job in enumerate(links[:30]):  # safe load for GitHub runner
+for i,job in enumerate(links[:40]):   # 40 jobs per run safe
     print("DETAIL:",i+1,job["title"])
     info=extract_details(job["apply_link"])
     job.update(info)
