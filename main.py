@@ -1,34 +1,25 @@
-import json, os
-from scraper import crawl_site
-
-FILE = "jobs.json"
-
-def load_jobs():
-    if os.path.exists(FILE):
-        try:
-            return json.load(open(FILE))
-        except:
-            return []
-    return []
-
-def save_jobs(data):
-    with open(FILE,"w",encoding="utf-8") as f:
-        json.dump(data,f,indent=4,ensure_ascii=False)
+import json
+from scraper import load_sources, scrape
 
 def main():
-    old = load_jobs()
+    print("\n🔍 AI Job Scraper Started...\n")
+    sites = load_sources()
+    all_jobs = []
 
-    urls = open("sources.txt").read().splitlines()
-    new_jobs=[]
+    for site in sites:
+        print("Scraping:", site)
+        all_jobs += scrape(site)
 
-    for u in urls:
-        new_jobs += crawl_site(u)
+    try:
+        old = json.load(open("jobs.json"))
+    except:
+        old = []
 
-    unique = {j["title"]:j for j in (old+new_jobs)}
-    final = list(unique.values())
+    titles = set(i['title'] for i in old)
+    final = old + [j for j in all_jobs if j['title'] not in titles]
 
-    save_jobs(final)
-    print("✔ Jobs updated:",len(final))
+    open("jobs.json","w").write(json.dumps(final,indent=4))
+    print("\n📁 Saved Total Jobs:",len(final))
 
 if __name__ == "__main__":
     main()
