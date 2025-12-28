@@ -2,7 +2,7 @@ name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"    # every 6 hours
+    - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -13,28 +13,24 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
       with:
-        fetch-depth: 0   # Pull history to avoid merge issues
+        fetch-depth: 0
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: "3.10"
 
     - name: Install dependencies
-      run: |
-        pip install requests beautifulsoup4 lxml
+      run: pip install requests beautifulsoup4
 
     - name: Run Scraper
-      run: python scraper.py
+      run: python main.py
 
-    - name: Pull latest before commit   # << Important Fix
+    - name: Commit & Push
       run: |
-        git pull origin main --rebase || true
-
-    - name: Commit & Push updated jobs.json
-      run: |
-        git config --global user.email "actions@github.com"
         git config --global user.name "github-actions"
+        git config --global user.email "action@github.com"
         git add jobs.json
-        git commit -m "Auto updated jobs" || echo "No changes to commit"
-        git push origin main || echo "Push skipped"
+        git commit -m "Auto updated jobs"
+        git pull --rebase
+        git push
