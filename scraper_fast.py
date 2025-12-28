@@ -1,50 +1,31 @@
-import requests, bs4, json, datetime
+import requests, bs4, json
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+headers={
+ "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-def load_sources():
-    return [x.strip() for x in open("sources.txt").read().splitlines() if x.strip()]
+sites=open("sources.txt").read().splitlines()
+all_links=[]
 
-def quick_scrape(url):
+def collect(url):
     try:
-        html = requests.get(url, headers=headers, timeout=10).text
-        soup = bs4.BeautifulSoup(html, "html.parser")
+        print("Crawling:",url)
+        html=requests.get(url,headers=headers,timeout=15).text
+        soup=bs4.BeautifulSoup(html,"html.parser")
 
-        jobs=[]
-        for a in soup.find_all("a")[:80]:  
+        for a in soup.find_all("a")[:200]:
             title=a.get_text(" ",strip=True)
             link=a.get("href")
 
-            if not link or len(title)<8: continue
-            if not any(x in title.lower() for x in ["recruit","vacancy","apply","form","notification","job"]): continue
+            if link and len(title)>6 and any(x in title.lower() for x in ["recruit","vacancy","job","apply","form","notification"]):
+                full=link if link.startswith("http") else url.rstrip('/')+'/'+link.lstrip('/')
+                all_links.append({"title":title,"apply_link":full,"source":url})
 
-            full = link if link.startswith("http") else url + link
+    except Exception as e:
+        print("ERROR:",url,e)
 
-            jobs.append({
-                "title":title,
-                "apply_link":full,
-                "source":url,
-                "updated":str(datetime.datetime.now())
-            })
+for s in sites:
+    collect(s)
 
-        return jobs
-    except:
-        return []
-
-all=[]
-for site in load_sources():
-    print("FAST:",site)
-    all+=quick_scrape(site)
-
-try:
-    old=json.load(open("jobs_links.json"))
-except:
-    old=[]
-
-titles=set(i['title'] for i in old)
-final = old+[j for j in all if j['title'] not in titles]
-
-open("jobs_links.json","w").write(json.dumps(final,indent=3))
-print("Saved Links:",len(final))
+open("jobs.links.json","w").write(json.dumps(all_links,indent=4))
+print("Saved Links:",len(all_links))
