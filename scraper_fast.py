@@ -1,39 +1,42 @@
-import requests, bs4, json, datetime
+import requests, bs4, json
 
-headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
+headers = {
+ "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+}
 
-def crawl(url):
+SITES = [
+    "https://www.freejobalert.com/",
+    "https://www.sarkariresult.com/latestjob/",
+    "https://ssc.nic.in/",
+    "https://upsc.gov.in/recruitment/recruitment",
+    "https://rrbcdg.gov.in/employment-notices.php",
+    "https://sbi.co.in/web/careers"
+]
+
+def scrape(url):
     try:
-        html = requests.get(url,headers=headers,timeout=15).text
-        soup = bs4.BeautifulSoup(html,"html.parser")
+        html = requests.get(url, headers=headers, timeout=12).text
+        soup = bs4.BeautifulSoup(html, "html.parser")
+        jobs = []
 
-        links=[]
-        for a in soup.find_all("a")[:200]:
-            name = a.get_text(" ",strip=True)
-            href = a.get("href")
+        for a in soup.find_all("a")[:120]:
+            title = a.get_text(" ", strip=True)
+            link = a.get("href")
 
-            if not href or len(name)<6: continue
-            key = name.lower()
+            if not link or len(title) < 8: continue
+            if not any(k in title.lower() for k in ["recruit","job","vacancy","apply","online","notification"]): continue
 
-            if any(x in key for x in ["recruit","vacancy","post","online","form","job","notice","notification"]):
-                full = href if href.startswith("http") else url.rstrip("/")+"/"+href.lstrip("/")
-                links.append({
-                    "title":name,
-                    "apply_link":full,
-                    "source":url,
-                    "updated":str(datetime.datetime.now())
-                })
+            full = link if link.startswith("http") else url + link
 
-        return links
+            jobs.append({"title": title, "apply_link": full, "source": url})
+        return jobs
     except:
         return []
 
-sites=open("sources.txt").read().splitlines()
-all_links=[]
+all_data = []
+for site in SITES:
+    print("Scanning:", site)
+    all_data += scrape(site)
 
-for s in sites:
-    print("Scraping:",s)
-    all_links+=crawl(s)
-
-open("jobs.links.json","w").write(json.dumps(all_links,indent=4))
-print("LINKS SAVED:",len(all_links))
+json.dump(all_data, open("jobs_temp.json","w"), indent=4)
+print("Links:", len(all_data))
