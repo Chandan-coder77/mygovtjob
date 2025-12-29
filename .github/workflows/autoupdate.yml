@@ -1,12 +1,10 @@
-name: Auto Update Jobs
+name: Test Fast Update
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"   # हर 6 घंटे auto
-  workflow_dispatch:          # manual run also available
+  workflow_dispatch:    # सिर्फ manual test अभी
 
 jobs:
-  scrape:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,16 +15,16 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
-      run: pip install requests beautifulsoup4 pdfminer.six
+    - name: Install dependencies (fast)
+      run: pip install requests beautifulsoup4
 
-    - name: Run AI Fast Job Update
-      run: python scraper_detail.py
+    - name: Run Test Script
+      run: python test_local.py
 
-    - name: Commit & Push Results (Force Update)
+    - name: Save Output
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
+        git config --global user.name "Bot"
+        git config --global user.email "bot@example.com"
         git add -A
-        git commit -m "Force Update AI Jobs" || true
-        git push --force
+        git commit -m "Updated via test" || true
+        git push
