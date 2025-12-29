@@ -1,7 +1,9 @@
 import requests, bs4, json, re, datetime, os
 from pdfminer.high_level import extract_text
 
-# ---------- AI MEMORY LOAD ----------
+# ======================================================
+#   AI MEMORY INITIALIZATION
+# ======================================================
 if not os.path.exists("ai_memory.json"):
     open("ai_memory.json","w").write(json.dumps({
         "qualification_patterns":[],
@@ -11,86 +13,98 @@ if not os.path.exists("ai_memory.json"):
         "vacancy_patterns":[]
     },indent=4))
 
-ai_memory=json.load(open("ai_memory.json"))
-feedback_log=[]
-
-headers={
+ai_memory = json.load(open("ai_memory.json"))
+headers = {
 "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-# ---------- AI LEARNING FUNCTION ----------
-def learn_pattern(key,value):
+# ======================================================
+#   AI LEARN PATTERNS
+# ======================================================
+def learn(key,value):
     if value and value not in ai_memory[key]:
         ai_memory[key].append(value)
 
-# ---------- PDF Extract ----------
+# ======================================================
+#   PDF DATA READER (Fast Mode)
+# ======================================================
 def read_pdf(url):
     try:
-        file=requests.get(url,timeout=10).content
+        file = requests.get(url,timeout=8).content
         open("temp.pdf","wb").write(file)
-        text=extract_text("temp.pdf")[:3000]
-        return text
+        return extract_text("temp.pdf")[:2500]   # Speed Friendly
     except:
         return ""
 
-# ---------- Clean & Auto Fix (Self Improvement) ----------
+# ======================================================
+#   AUTO FIX USING MEMORY
+# ======================================================
 def auto_fix(field,value):
-    patterns = ai_memory.get(f"{field}_patterns",[])
-    if value in ["Not Mentioned","Check Notification","18+","As per Govt Rules"]:
-        for p in patterns:
-            if len(p)>3: return p   # best learned match
-    return value
+    fallback = value
+    if value in ["Not Mentioned","Check Notification","As per Govt Rules","18+"]:
+        for p in ai_memory[field+"_patterns"]:
+            if len(p)>3:
+                return p  # Best learned replacement
+    return fallback
 
-# ---------- Extract Job Detail ----------
+# ======================================================
+#   Extract Job Complete Detail
+# ======================================================
 def extract_details(url):
     try:
-        html=requests.get(url,headers=headers,timeout=10).text
-        soup=bs4.BeautifulSoup(html,"html.parser")
+        html = requests.get(url,headers=headers,timeout=8).text
+        soup = bs4.BeautifulSoup(html,"html.parser")
+        text = soup.get_text(" ",strip=True)
 
-        text=soup.get_text(" ",strip=True)
+        # PDF support
+        pdf = soup.find("a",href=lambda x:x and x.endswith(".pdf"))
+        if pdf: text += read_pdf(pdf.get("href"))
 
-        pdf=soup.find("a",href=lambda x:x and x.endswith(".pdf"))
-        if pdf:
-            text+=read_pdf(pdf.get("href"))
-
-        # Patterns
-        vacancy = re.search(r"(\d+)\s+Posts?",text,re.I)
-        qual = re.search(r"(10th|12th|Diploma|ITI|Graduate|Post Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BA|MA|MCA)",text,re.I)
-        salary = re.search(r"₹\s?\d{4,6}.*?\d{4,6}",text)
-        age = re.search(r"Age.*?(\d+.*?years)",text,re.I)
-        last = re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text,re.I)
-
+        # REGEX extraction
         data={
-            "vacancies": vacancy.group(1) if vacancy else "Not Mentioned",
-            "qualification": qual.group(1) if qual else "Check Notification",
-            "salary": salary.group(0) if salary else "As per Govt Rules",
-            "age_limit": age.group(1) if age else "18+",
-            "last_date": last.group(1) if last else "Not Mentioned"
+            "vacancies": re.search(r"(\d+)\s+Posts?",text,re.I),
+            "qualification": re.search(r"(10th|12th|Diploma|ITI|Graduate|Post Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BA|MA|MCA)",text,re.I),
+            "salary": re.search(r"₹\s?\d{4,7}.*?\d{4,7}",text),
+            "age_limit": re.search(r"Age.*?(\d+.*?Years)",text,re.I),
+            "last_date": re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text,re.I)
         }
 
-        # Save learning patterns
-        for k in data:
-            learn_pattern(f"{k}_patterns",data[k])
+        # Convert to clean values
+        result={ k:(v.group(1) if k=="vacancies" else v.group(0)) if v else (
+            "Not Mentioned" if k=="last_date" else
+            "Check Notification" if k=="qualification" else
+            "As per Govt Rules" if k=="salary" else
+            "18+" if k=="age_limit" else "Not Mentioned"
+        ) for k,v in data.items() }
 
-        # Self Correction
-        for key in data:
-            data[key]=auto_fix(key,data[key])
+        # Learn patterns
+        for key,val in result.items():
+            learn(key+"_patterns",val)
 
-        return data
+        # Auto Fixing
+        for key in result:
+            result[key]=auto_fix(key,result[key])
+
+        return result
     except Exception as e:
         return {"error":str(e)}
 
-# ---------- PROCESS LINKS ----------
-links=json.load(open("jobs.json"))
-new=[]
 
-for i,job in enumerate(links[:10]):   # TEST MODE = 10 links/run
-    print("AI Processing:",job["title"])
-    info=extract_details(job["apply_link"])
-    job.update(info)
-    job["updated"]=str(datetime.datetime.now())
-    new.append(job)
+# ======================================================
+#   LOAD 10 JOBS + PROCESS -> UPDATE jobs.json
+# ======================================================
+jobs = json.load(open("jobs.json"))
+updated_list = []
 
-open("jobs.json","w").write(json.dumps(new,indent=4))
+for i,job in enumerate(jobs[:10]):  # TEST MODE - Safe & Fast
+    print(f"[AI] Processing {i+1}/10 →",job["title"])
+    details = extract_details(job["apply_link"])
+    job.update(details)
+    job["updated"] = str(datetime.datetime.now())
+    updated_list.append(job)
+
+open("jobs.json","w").write(json.dumps(updated_list,indent=4))
 open("ai_memory.json","w").write(json.dumps(ai_memory,indent=4))
-print("AI learning saved.")
+
+print("\n🔥 Hybrid AI Updated Jobs.json")
+print("🧠 AI memory improved & learned patterns.")
