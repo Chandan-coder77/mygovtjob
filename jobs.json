@@ -1,10 +1,14 @@
 [
-    {
-        "title": "Test Job For AI",
-        "apply_link": "https://example.com",
-        "source": "manual_test",
-        "updated": "2025-12-29 16:51:53.078661",
-        "test_update": "OK_2025-12-29 16:05:20.763931",
-        "error": "'vacancies_patterns'"
-    }
+  {
+    "title": "Free Job Alert",
+    "apply_link": "https://www.freejobalert.com/latest-notifications/",
+    "source": "freejobalert",
+    "updated": "none"
+  },
+  {
+    "title": "Sarkari Result",
+    "apply_link": "https://www.sarkariresult.com/latestjob/",
+    "source": "sarkariresult",
+    "updated": "none"
+  }
 ]
