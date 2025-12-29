@@ -1,37 +1,35 @@
 name: Auto Update Jobs
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"
-  workflow_dispatch:
+  workflow_dispatch:     # Manual Run Only (Testing Mode)
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with: {python-version: '3.10'}
+    - name: Install Python + PDF Tools
+      run: |
+        sudo apt update
+        sudo apt install -y python3 python3-pip poppler-utils
+        pip3 install requests beautifulsoup4 pdfminer.six
 
-    - name: Install Dependencies
-      run: pip install requests beautifulsoup4 pdfminer.six
-
-    - name: Get Job Links
+    # STEP 1 — Collect links (FAST)
+    - name: Run Link Scraper
       run: python scraper_fast.py
 
-    - name: Extract Full Data
+    # STEP 2 — Extract details (Only 10 jobs)
+    - name: Run AI Detail Extractor
       run: python scraper_detail.py
 
-    - name: Merge Result
-      run: python merge.py
-
+    # Save output to repo
     - name: Commit & Push
       run: |
         git config --global user.name "AutoBot"
-        git config --global user.email "bot@github.com"
+        git config --global user.email "actions@github.com"
         git add .
-        git commit -m "Auto Updated Jobs" || echo "No changes"
-        git push
+        git commit -m "AI Auto Updated Jobs (Testing Mode)" || echo "No changes"
+        git push || echo "Push skipped"
