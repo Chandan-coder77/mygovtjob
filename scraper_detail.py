@@ -3,23 +3,25 @@ import requests, bs4, json, re, datetime, os
 # =========================
 # AI MEMORY INIT
 # =========================
+default_mem={
+    "qualification_patterns":[],
+    "salary_patterns":[],
+    "age_patterns":[],
+    "lastdate_patterns":[],
+    "vacancy_patterns":[],
+    "learn_count":0
+}
+
 if not os.path.exists("ai_memory.json"):
-    open("ai_memory.json","w").write(json.dumps({
-        "qualification_patterns":[],
-        "salary_patterns":[],
-        "age_patterns":[],
-        "lastdate_patterns":[],
-        "vacancy_patterns":[],
-        "learn_count":0
-    },indent=4))
+    open("ai_memory.json","w").write(json.dumps(default_mem,indent=4))
 
 ai=json.load(open("ai_memory.json"))
-if "learn_count" not in ai: ai["learn_count"]=0
+for k in default_mem:
+    if k not in ai: ai[k]=default_mem[k]
 
 
 # =========================
-# DESKTOP BROWSER HEADER
-# (Saved permanently as requested)
+# Browser Header (SAVED)
 # =========================
 headers = {
 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -27,16 +29,17 @@ headers = {
 
 
 # =========================
-# Learn function
+# Learn Function
 # =========================
 def learn(key,val):
-    if val not in ["Not Found","",None] and val not in ai[key]:
-        ai[key].append(val)
-        ai["learn_count"]+=1
+    if val not in ["Not Found","",None]:
+        if val not in ai[key]:
+            ai[key].append(val)
+            ai["learn_count"] += 1     # <-- Force count increase
 
 
 # =========================
-# Extract function (FAST MODE)
+# Extract Function
 # =========================
 def extract(url):
     try:
@@ -47,7 +50,7 @@ def extract(url):
 
         def find(reg):
             m=re.search(reg,text,re.I)
-            return m.group(1) if m else "Not Found"
+            return m.group(1) if m else "Unknown"
 
         data={
             "vacancies":find(r"(\d{1,4})\s*(Posts?|Vacancy)"),
@@ -65,21 +68,22 @@ def extract(url):
 
 
 # =========================
-# PROCESS ONLY 2 JOBS (FAST TEST)
-# RUN TIME < 1 MINUTE ✔
+# JOB PROCESS
 # =========================
 jobs=json.load(open("jobs.json"))
 output=[]
 
-for j in jobs[:2]:
-    print(f"\n🚀 Processing → {j['title']}")
-    d=extract(j["apply_link"])
-    j.update(d)
+for j in jobs[:2]: # fast mode
+    print(f"\n🚀 Processing: {j['title']}")
+    info=extract(j["apply_link"])
+    j.update(info)
     j["updated"]=str(datetime.datetime.now())
     output.append(j)
+
 
 open("jobs.json","w").write(json.dumps(output,indent=4))
 open("ai_memory.json","w").write(json.dumps(ai,indent=4))
 
 print("\n✨ JOB UPDATE COMPLETE")
-print("🧠 Learned Patterns:",ai["learn_count"])
+print("🧠 Memory Count:",ai["learn_count"])
+print("📌 Memory Saved Successfully")
