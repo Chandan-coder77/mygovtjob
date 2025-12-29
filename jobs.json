@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "title": "Test Job For AI",
+    "apply_link": "https://example.com",
+    "source": "manual_test",
+    "updated": "none"
+  }
+]
