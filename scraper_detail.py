@@ -1,5 +1,5 @@
 import requests, bs4, json, re, datetime, os
-#from pdfminer.high_level import extract_text   # PDF OFF (Speed Mode)
+from pdfminer.high_level import extract_text
 
 # ======================================================
 #  AI MEMORY INIT
@@ -10,40 +10,34 @@ if not os.path.exists("ai_memory.json"):
         "salary_patterns":[],
         "age_patterns":[],
         "lastdate_patterns":[],
-        "vacancy_patterns":[]
+        "vacancy_patterns":[],
+        "last_train": ""
     },indent=4))
 
 ai_memory = json.load(open("ai_memory.json"))
 
 # ======================================================
-#  DESKTOP HEADER (FAST SCRAPING)
+# Desktop Browser Header (Fast + Safe)
 # ======================================================
 headers = {
 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
 # ======================================================
-# LEARNING ENGINE
+# Learning System Memory
 # ======================================================
 def learn(key,value):
     if value and value not in ai_memory[key]:
         ai_memory[key].append(value)
 
 # ======================================================
-# PDF DISABLED FOR FAST RUN (Later enable for AI training)
+# Fast PDF Reader (PDF disabled in test for speed)
 # ======================================================
-USE_PDF = False     # <-- speed mode ON
-
-# def read_pdf(url):
-#     try:
-#         file = requests.get(url,timeout=8).content
-#         open("temp.pdf","wb").write(file)
-#         return extract_text("temp.pdf")[:2000]
-#     except:
-#         return ""
+def read_pdf(url):
+    return ""    # <--- SPEED MODE (PDF Skip) later enable
 
 # ======================================================
-# AI AUTO FIX
+# Auto Fix using Learned Patterns
 # ======================================================
 def auto_fix(field,value):
     if value in ["Not Mentioned","Check Notification","As per Govt Rules","18+"]:
@@ -52,17 +46,13 @@ def auto_fix(field,value):
     return value
 
 # ======================================================
-# EXTRACT JOB DETAILS
+# Extract Job Detail
 # ======================================================
 def extract_details(url):
     try:
         html = requests.get(url,headers=headers,timeout=8).text
         soup = bs4.BeautifulSoup(html,"html.parser")
         text = soup.get_text(" ",strip=True)
-
-        # PDF SKIPPED
-        # pdf = soup.find("a",href=lambda x:x and x.endswith(".pdf"))
-        # if pdf and USE_PDF: text += read_pdf(pdf.get("href"))
 
         fields={
             "vacancies": re.search(r"(\d{1,6})\s+Posts?",text,re.I),
@@ -82,27 +72,32 @@ def extract_details(url):
                          "18+" if k=="age_limit" else "Not Mentioned")
 
         for k,v in result.items(): learn(k+"_patterns",v)
-        for k in result: result[k] = auto_fix(k,result[k])
+        for k in result: result[k]=auto_fix(k,result[k])
         return result
 
     except Exception as e:
         return {"error":str(e)}
 
+
 # ======================================================
-# PROCESS ONLY 10 JOBS (FAST TEST MODE)
+# PROCESS LIMITED 10 JOBS — FAST TEST MODE
 # ======================================================
 jobs = json.load(open("jobs.json"))
 updated=[]
 
-for i,job in enumerate(jobs[:10]):   # only 10 = FAST RUN
-    print(f"[AI] Processing {i+1}/10 → {job['title']}")
+for i,job in enumerate(jobs[:10]):       # Only 10 jobs = fast run
+    print(f"[AI] {i+1}/10 → {job['title']}")
     details = extract_details(job["apply_link"])
     job.update(details)
     job["updated"]=str(datetime.datetime.now())
     updated.append(job)
 
+
+# ---------------- SAVE RESULT + FORCE MEMORY WRITE ----------------
+ai_memory["last_train"] = str(datetime.datetime.now())
+
 open("jobs.json","w").write(json.dumps(updated,indent=4))
 open("ai_memory.json","w").write(json.dumps(ai_memory,indent=4))
 
 print("\n🔥 FAST UPDATE COMPLETE")
-print("🧠 AI Memory Improved for next run!")
+print("🧠 Memory improved & saved")
