@@ -1,8 +1,9 @@
 [
-  {
-    "title": "Test Job For AI",
-    "apply_link": "https://example.com",
-    "source": "manual_test",
-    "updated": "none"
-  }
+    {
+        "title": "Test Job For AI",
+        "apply_link": "https://example.com",
+        "source": "manual_test",
+        "updated": "none",
+        "test_update": "OK_2025-12-29 16:05:20.763931"
+    }
 ]
