@@ -1,13 +1,14 @@
-name: Auto Update Jobs (Fast Test Mode)
+name: Auto Update Jobs
 
 on:
-  workflow_dispatch:      # Manual run button
   schedule:
-    - cron: "0 */6 * * *" # Every 6 hours auto run
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
 
@@ -17,15 +18,15 @@ jobs:
         python-version: '3.10'
 
     - name: Install dependencies
-      run: pip install requests beautifulsoup4
+      run: pip install requests beautifulsoup4 pdfminer.six
 
-    - name: Run Fast AI Detail Extractor
+    - name: Run AI Fast Job Update
       run: python scraper_detail.py
 
-    - name: Force Commit & Push
+    - name: Commit & Push Results (Force Update)
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Fast AI Update" || true
+        git commit -m "AI Auto Update" || true
         git push --force
