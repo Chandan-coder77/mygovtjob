@@ -1,44 +1,43 @@
 import requests, bs4, json
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-}
-
+# --------- FAST TEST MODE ---------
+# अभी सिर्फ 1 साइट (FreeJobAlert)
+# बाद में हम +10 sites add करेंगे
 SITES = [
-    "https://www.freejobalert.com/",
-    "https://www.sarkariresult.com/latestjob/"
+    "https://www.freejobalert.com/"
 ]
 
-LIMIT = 5   # Fast test mode
+headers={
+"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+}
 
-def scrape(url):
+jobs=[]
+
+for url in SITES:
+    print("SCRAPING:",url)
     try:
-        html = requests.get(url, headers=headers, timeout=10).text
-        soup = bs4.BeautifulSoup(html, "html.parser")
-        jobs = []
+        html=requests.get(url,headers=headers,timeout=10).text
+        soup=bs4.BeautifulSoup(html,"html.parser")
+        links=soup.find_all("a")
 
-        for a in soup.find_all("a")[:120]:
-            title = a.get_text(" ", strip=True)
-            link = a.get("href")
+        for a in links[:10]:  # << TEST: only 10 links fetch
+            title=a.get_text(strip=True)
+            link=a.get("href")
 
-            if not title or not link: continue
-            if not any(x in title.lower() for x in ["job","recruit","apply","vacancy","notification"]): continue
+            if not link or len(title)<6: continue
+            if not ("recruit" in title.lower() or "job" in title.lower() or "apply" in title.lower() or "notification" in title.lower()): continue
 
-            full = link if link.startswith("http") else url + link
-            jobs.append({ "title": title, "apply_link": full, "source": url })
+            full = link if link.startswith("http") else url+link
 
-            if len(jobs) >= LIMIT: break
+            jobs.append({
+                "title":title,
+                "apply_link":full,
+                "source":url
+            })
 
-        return jobs
-    except:
-        return []
+    except Exception as e:
+        print("ERR:",e)
 
-
-# Run and save
-data=[]
-for site in SITES:
-    print("Scanning:",site)
-    data += scrape(site)
-
-json.dump(data, open("jobs.json","w"), indent=4)
-print("🔥 Fast Test Links Saved:", len(data))
+open("jobs.json","w").write(json.dumps(jobs,indent=4))
+print("\nFAST SCRAPE COMPLETE —",len(jobs),"links saved")
+print("Next step → scraper_detail.py auto extract करेगा")
