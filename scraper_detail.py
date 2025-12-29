@@ -1,45 +1,38 @@
 import requests, bs4, json, re, datetime, os
-from pdfminer.high_level import extract_text
 
-# ================ MEMORY INIT ================
+# ---------- AI MEMORY INIT ----------
 if not os.path.exists("ai_memory.json"):
     open("ai_memory.json","w").write(json.dumps({
-        "qualification_patterns":[], "salary_patterns":[],
-        "age_patterns":[], "lastdate_patterns":[],
-        "vacancy_patterns":[]
+        "qualification_patterns":[],
+        "salary_patterns":[],
+        "age_patterns":[],
+        "lastdate_patterns":[],
+        "vacancy_patterns":[],
+        "pdf_links":[]
     },indent=4))
 
-ai_memory=json.load(open("ai_memory.json"))
+ai_memory = json.load(open("ai_memory.json"))
 
-# ================ FULL DESKTOP HEADER ================
 headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
+# ---------- LEARNING ----------
 def learn(key,val):
-    if val and val not in ai_memory[key]: ai_memory[key].append(val)
+    if val and val not in ai_memory[key]:
+        ai_memory[key].append(val)
 
-def read_pdf(url):
-    try:
-        file=requests.get(url,timeout=4).content
-        open("temp.pdf","wb").write(file)
-        return extract_text("temp.pdf")[:1200]
-    except: return ""
-
-def auto_fix(field,val):
-    if val in ["Not Mentioned","Check Notification","As per Govt Rules","18+"]:
-        for p in ai_memory[field+"_patterns"]:
-            if len(p)>3:return p
-    return val
-
+# ---------- Extract Job Data (No PDF Parsing) ----------
 def extract_details(url):
     try:
-        html=requests.get(url,headers=headers,timeout=8).text
-        soup=bs4.BeautifulSoup(html,"html.parser")
-        text=soup.get_text(" ",strip=True)
+        html = requests.get(url,headers=headers,timeout=6).text
+        soup = bs4.BeautifulSoup(html,"html.parser")
+        text = soup.get_text(" ",strip=True)
 
-        pdf=soup.find("a",href=lambda x:x and x.endswith(".pdf"))
-        if pdf:text+=read_pdf(pdf.get("href"))
+        # detect pdf only (no download)
+        pdf = soup.find("a",href=lambda x:x and x.endswith(".pdf"))
+        if pdf:
+            learn("pdf_links",pdf.get("href"))  # store for future PDF learning
 
         fields={
             "vacancies": re.search(r"(\d{1,6})\s+Posts?",text,re.I),
@@ -49,34 +42,33 @@ def extract_details(url):
             "last_date": re.search(r"Last\s*Date.*?(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})",text,re.I)
         }
 
+        # normalized result (fast)
         result={}
         for k,v in fields.items():
-            result[k] = v.group(1) if k=="vacancies" and v else \
-                        v.group(0) if v else \
-                        ("Not Mentioned" if k=="last_date" else
-                         "Check Notification" if k=="qualification" else
-                         "As per Govt Rules" if k=="salary" else
-                         "18+" if k=="age_limit" else "Not Mentioned")
+            result[k]= v.group(1) if k=="vacancies" and v else \
+                      v.group(0) if v else "Not Available"
 
-        for k,v in result.items(): learn(k+"_patterns",v)
-        for k in result: result[k]=auto_fix(k,result[k])
+            learn(k+"_patterns",result[k])  # memory train
+
         return result
 
     except Exception as e:
         return {"error":str(e)}
 
-# ================ PROCESS ONLY 5 JOBS ================
+# ---------- PROCESS ONLY 5 JOBS (FAST TEST) ----------
 jobs=json.load(open("jobs.json"))
-new=[]
+updated=[]
 
-for i,job in enumerate(jobs[:5]):   #🔥 SPEED MODE
-    print(f"[AI] {i+1}/5 → {job['title']}")
-    data=extract_details(job["apply_link"])
-    job.update(data)
-    job["updated"]=str(datetime.datetime.now())
-    new.append(job)
+for i,job in enumerate(jobs[:5]):   # TEST = 5 jobs (2 min max)
+    print(f"[FAST AI] {i+1}/5 → {job['title']}")
+    info = extract_details(job["apply_link"])
+    job.update(info)
+    job["updated"] = str(datetime.datetime.now())
+    updated.append(job)
 
-open("jobs.json","w").write(json.dumps(new,indent=4))
+open("jobs.json","w").write(json.dumps(updated,indent=4))
 open("ai_memory.json","w").write(json.dumps(ai_memory,indent=4))
-print("\n🔥 FAST MODE COMPLETE")
-print("🧠 AI learned patterns (memory updated)")
+
+print("\n🚀 Fast Test Completed")
+print("🧠 AI learning improved (patterns saved)")
+print("📄 PDF links stored for later processing")
