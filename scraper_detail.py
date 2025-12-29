@@ -12,19 +12,21 @@ if not os.path.exists("ai_memory.json"):
     },indent=4))
 
 ai=json.load(open("ai_memory.json"))
-headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
+if "learn_count" not in ai: ai["learn_count"]=0   # <-- FIX ADDED
 
-# ============ AI LEARN ============
+headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64)"}
+
+# ============ LEARN FUNCTION ============
 def learn(key,val):
     if val not in ["Not Found","",None] and val not in ai[key]:
         ai[key].append(val)
         ai["learn_count"]+=1
 
-# Extract from inner page
+# ============ EXTRACTOR ============
 def extract(url):
     try:
         print("\n🔗 Opening:",url)
-        html=requests.get(url,headers=headers,timeout=6).text
+        html=requests.get(url,headers=headers,timeout=10).text
         print("📄 HTML chars:",len(html))
 
         soup=bs4.BeautifulSoup(html,"html.parser")
@@ -49,12 +51,11 @@ def extract(url):
         print("❌ ERROR:",e)
         return {"error":str(e)}
 
-# ============ PROCESS ============
-
+# ============ JOB PROCESSING ============
 jobs=json.load(open("jobs.json"))
 output=[]
 
-for j in jobs[:3]:     # FAST TEST MODE
+for j in jobs[:2]:  # SAFE FAST MODE
     print(f"\n🚀 Processing: {j['title']}")
     d=extract(j["apply_link"])
     j.update(d)
@@ -64,5 +65,5 @@ for j in jobs[:3]:     # FAST TEST MODE
 open("jobs.json","w").write(json.dumps(output,indent=4))
 open("ai_memory.json","w").write(json.dumps(ai,indent=4))
 
-print("\n✨ Update Complete")
-print("📌 Learned Patterns:",ai["learn_count"])
+print("\n✨ JOB UPDATE COMPLETE")
+print("📌 Learned Patterns:",ai.get("learn_count","NA"))
