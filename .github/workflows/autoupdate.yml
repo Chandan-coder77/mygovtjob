@@ -19,14 +19,15 @@ jobs:
       run: |
         pip install requests bs4 pdfminer.six
 
-    # --------- 🔥 Fast Mode (only 10 jobs) ----------
     - name: Run AI detail extractor
       run: python scraper_detail.py
 
+    # ------- 🔥 Pull fix + push update -------
     - name: Commit and Push
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "AutoBot"
+        git pull origin main --rebase
         git add jobs.json ai_memory.json
-        git commit -m "Auto Updated Jobs (Test 10 items)" || echo "No changes"
-        git push
+        git commit -m "Auto Updated Jobs (Test Mode 10 items)" || echo "No changes"
+        git push origin main
