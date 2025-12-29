@@ -1,36 +1,32 @@
-name: Auto Update Jobs (FAST MODE)
+name: Auto Update Jobs
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"   # हर 6 घंटे auto
+  workflow_dispatch:          # manual run also available
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+    - uses: actions/checkout@v3
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: "3.10"
+        python-version: '3.10'
 
-    - name: Install Requirements
-      run: |
-        pip install requests bs4 pdfminer.six
+    - name: Install dependencies
+      run: pip install requests beautifulsoup4 pdfminer.six
 
-    - name: Run AI Scraper (only 10 items)
-      run: |
-        python scraper_detail.py
+    - name: Run AI Fast Job Update
+      run: python scraper_detail.py
 
-    - name: Update Repository
+    - name: Commit & Push Results (Force Update)
       run: |
-        git config --global user.name "AutoBot"
+        git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        git pull --rebase origin main              # <-- FIX to prevent rejection
-        git add jobs.json ai_memory.json
-        git commit -m "Auto Update (Fast Test Mode)" || echo "No changes to commit"
-        git push origin main || echo "No push"
+        git add -A
+        git commit -m "Force Update AI Jobs" || true
+        git push --force
