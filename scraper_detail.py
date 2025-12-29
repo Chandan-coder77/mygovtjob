@@ -1,60 +1,68 @@
 import requests, bs4, json, re, datetime, os
 
-# ================= AI MEMORY =================
+# ============ MEMORY INIT ============
 if not os.path.exists("ai_memory.json"):
     open("ai_memory.json","w").write(json.dumps({
         "qualification_patterns":[],
         "salary_patterns":[],
         "age_patterns":[],
         "lastdate_patterns":[],
-        "vacancy_patterns":[]
+        "vacancy_patterns":[],
+        "learn_count":0
     },indent=4))
 
-ai_memory=json.load(open("ai_memory.json"))
+ai=json.load(open("ai_memory.json"))
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
 
-# ================ AI Learning =================
+# ============ AI LEARN ============
 def learn(key,val):
-    if val not in ["Not Found","",None] and val not in ai_memory[key]:
-        ai_memory[key].append(val)
+    if val not in ["Not Found","",None] and val not in ai[key]:
+        ai[key].append(val)
+        ai["learn_count"]+=1
 
-# ================ Extract detail page =================
-def extract_detail(url):
+# Extract from inner page
+def extract(url):
     try:
+        print("\n🔗 Opening:",url)
         html=requests.get(url,headers=headers,timeout=6).text
+        print("📄 HTML chars:",len(html))
+
         soup=bs4.BeautifulSoup(html,"html.parser")
         text=soup.get_text(" ",strip=True)
 
-        def find(p,field):
-            m=re.search(p,text,re.I)
+        def find(regex):
+            m=re.search(regex,text,re.I)
             return m.group(1) if m else "Not Found"
 
         data={
-            "vacancies": find(r"(\d{1,5})\s*(Posts?|Vacancy|Vacancies)", "vacancy"),
-            "qualification": find(r"(10th|12th|Diploma|ITI|Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BA|MA|MCA)", "qualification"),
-            "salary": find(r"(₹\s?\d{4,7}|Pay\s*Level\s*\d+|Rs\.\s?\d+)", "salary"),
-            "age_limit": find(r"Age.*?(\d+.*?Years|\d+-\d+)", "age"),
-            "last_date": find(r"(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})", "date")
+            "vacancies":find(r"(\d{1,4})\s*(Posts?|Vacancy)"),
+            "qualification":find(r"(10th|12th|Diploma|ITI|Graduate|B\.?Tech|M\.?Tech|MBA|BSC|MSC|BA|MA|MCA)"),
+            "salary":find(r"(₹\s?\d{4,7}|Rs\.\s?\d+)"),
+            "age_limit":find(r"Age.*?(\d+.*?Years|\d+-\d+)"),
+            "last_date":find(r"(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})")
         }
 
         for k,v in data.items(): learn(f"{k}_patterns",v)
         return data
 
     except Exception as e:
+        print("❌ ERROR:",e)
         return {"error":str(e)}
 
-# ================ MAIN PROCESS ================
+# ============ PROCESS ============
+
 jobs=json.load(open("jobs.json"))
-new=[]
+output=[]
 
-for job in jobs[:3]:   # fast mode for testing
-    print("Processing:",job["title"])
-    d=extract_detail(job["apply_link"])
-    job.update(d)
-    job["updated"]=str(datetime.datetime.now())
-    new.append(job)
+for j in jobs[:3]:     # FAST TEST MODE
+    print(f"\n🚀 Processing: {j['title']}")
+    d=extract(j["apply_link"])
+    j.update(d)
+    j["updated"]=str(datetime.datetime.now())
+    output.append(j)
 
-open("jobs.json","w").write(json.dumps(new,indent=4))
-open("ai_memory.json","w").write(json.dumps(ai_memory,indent=4))
+open("jobs.json","w").write(json.dumps(output,indent=4))
+open("ai_memory.json","w").write(json.dumps(ai,indent=4))
 
-print("\n🚀 Job Updated + AI Learned Successfully")
+print("\n✨ Update Complete")
+print("📌 Learned Patterns:",ai["learn_count"])
