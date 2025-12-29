@@ -10,34 +10,38 @@ if not os.path.exists("ai_memory.json"):
         "salary_patterns":[],
         "age_patterns":[],
         "lastdate_patterns":[],
-        "vacancy_patterns":[],
-        "last_train": ""
+        "vacancy_patterns":[]
     },indent=4))
 
 ai_memory = json.load(open("ai_memory.json"))
 
 # ======================================================
-# Desktop Browser Header (Fast + Safe)
+#  FULL DESKTOP HEADER (Corrected)
 # ======================================================
 headers = {
 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
 # ======================================================
-# Learning System Memory
+# Learning function
 # ======================================================
 def learn(key,value):
     if value and value not in ai_memory[key]:
         ai_memory[key].append(value)
 
 # ======================================================
-# Fast PDF Reader (PDF disabled in test for speed)
+# Fast PDF Reader
 # ======================================================
 def read_pdf(url):
-    return ""    # <--- SPEED MODE (PDF Skip) later enable
+    try:
+        file = requests.get(url,timeout=8).content
+        open("temp.pdf","wb").write(file)
+        return extract_text("temp.pdf")[:2000]     # fast response
+    except:
+        return ""
 
 # ======================================================
-# Auto Fix using Learned Patterns
+# Auto Fix using learned patterns
 # ======================================================
 def auto_fix(field,value):
     if value in ["Not Mentioned","Check Notification","As per Govt Rules","18+"]:
@@ -46,13 +50,16 @@ def auto_fix(field,value):
     return value
 
 # ======================================================
-# Extract Job Detail
+# Job detail extraction
 # ======================================================
 def extract_details(url):
     try:
         html = requests.get(url,headers=headers,timeout=8).text
         soup = bs4.BeautifulSoup(html,"html.parser")
         text = soup.get_text(" ",strip=True)
+
+        pdf = soup.find("a",href=lambda x:x and x.endswith(".pdf"))
+        if pdf: text += read_pdf(pdf.get("href"))
 
         fields={
             "vacancies": re.search(r"(\d{1,6})\s+Posts?",text,re.I),
@@ -78,26 +85,24 @@ def extract_details(url):
     except Exception as e:
         return {"error":str(e)}
 
-
 # ======================================================
-# PROCESS LIMITED 10 JOBS — FAST TEST MODE
+# PROCESS LIMITED 10 JOBS (FAST TEST MODE)
 # ======================================================
 jobs = json.load(open("jobs.json"))
 updated=[]
 
-for i,job in enumerate(jobs[:10]):       # Only 10 jobs = fast run
-    print(f"[AI] {i+1}/10 → {job['title']}")
-    details = extract_details(job["apply_link"])
+for i,job in enumerate(jobs[:10]):
+    print(f"[AI] Processing {i+1}/10 → {job.get('title','No Title')}")
+    details = extract_details(job.get("apply_link",""))
     job.update(details)
     job["updated"]=str(datetime.datetime.now())
     updated.append(job)
 
+with open("jobs.json","w") as f:
+    json.dump(updated,f,indent=4)
 
-# ---------------- SAVE RESULT + FORCE MEMORY WRITE ----------------
-ai_memory["last_train"] = str(datetime.datetime.now())
+with open("ai_memory.json","w") as f:
+    json.dump(ai_memory,f,indent=4)
 
-open("jobs.json","w").write(json.dumps(updated,indent=4))
-open("ai_memory.json","w").write(json.dumps(ai_memory,indent=4))
-
-print("\n🔥 FAST UPDATE COMPLETE")
-print("🧠 Memory improved & saved")
+print("\n🔥 AI Updated Successfully")
+print("🧠 Memory Improved — Next run will be more accurate")
