@@ -3,7 +3,12 @@
         "title": "Free Job Alert",
         "apply_link": "https://www.freejobalert.com/latest-notifications/",
         "source": "freejobalert",
-        "updated": "2025-12-30 07:00:21.786093",
-        "error": "'vacancies_patterns'"
+        "updated": "2025-12-30 07:09:48.062439",
+        "error": "'vacancies_patterns'",
+        "vacancy": "375",
+        "qualification": "ba",
+        "salary": "Not Found",
+        "age_limit": "21-01",
+        "last_date": "26/12/2025"
     }
 ]

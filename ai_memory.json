@@ -1,8 +1,16 @@
 {
-    "qualification_patterns": [],
+    "qualification_patterns": [
+        "ba"
+    ],
     "salary_patterns": [],
-    "age_patterns": [],
-    "lastdate_patterns": [],
-    "vacancy_patterns": [],
-    "learn_count": 0
+    "age_patterns": [
+        "21-01"
+    ],
+    "lastdate_patterns": [
+        "26/12/2025"
+    ],
+    "vacancy_patterns": [
+        "375"
+    ],
+    "learn_count": 4
 }
