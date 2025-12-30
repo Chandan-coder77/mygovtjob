@@ -1,7 +1,7 @@
 import requests, bs4, json, re, datetime, os
 
 # =========================
-# CREATE/LOAD MEMORY
+# Create memory if missing
 # =========================
 default={
  "qualification_patterns":[],
@@ -20,72 +20,75 @@ for k in default:
     if k not in ai: ai[k]=default[k]
 
 
-# =========================
-# Browser Header Added
-# =========================
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"}
 
 
 # =========================
-# SAFE LEARN - FORCE UPDATE
+# Learn Tracker debug mode
 # =========================
 def learn(key,val):
-    if val and val!="Not Found" and val!="Unknown":
-        if val not in ai[key]:
-            ai[key].append(val)
-            ai["learn_count"]+=1
+    print(f"📌 Learning => {key} : {val}")
+    
+    if val==None or val=="Not Found":
+        val=f"learn_{ai['learn_count']+1}"
+
+    if val not in ai[key]:
+        ai[key].append(val)
+        ai["learn_count"]+=1
+        print("👍 Saved to memory")
     else:
-        # even if not found → add placeholder learning
-        test_val = f"learn_{ai['learn_count']+1}"
-        ai[key].append(test_val)
-        ai["learn_count"] += 1
+        print("⚠ Already exists")
 
 
 # =========================
-# SCRAPER
+# Scraper
 # =========================
 def extract(url):
+    print("\n🔗 Fetching:",url)
     try:
-        print("\n🔗",url)
-        html=requests.get(url,headers=headers,timeout=10).text
+        html=requests.get(url,headers=headers).text
         soup=bs4.BeautifulSoup(html,"html.parser")
         text=soup.get_text(" ",strip=True)
 
-        def find(p): 
+        def find(p):
             m=re.search(p,text,re.I)
             return m.group(1) if m else None
 
         data={
-          "vacancies":find(r"(\d{1,4})\s*(Posts?|Vacancy)"),
-          "qualification":find(r"(10th|12th|Diploma|ITI|Graduate|B\.?Tech|M\.?Tech|MBA)"),
-          "salary":find(r"(₹\s?\d{4,7}|Rs\.\s?\d+)"),
-          "age_limit":find(r"Age.*?(\d+.*?Years|\d+-\d+)"),
-          "last_date":find(r"(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})")
+            "vacancies":find(r"(\d{1,4})\s*(Posts?|Vacancy)"),
+            "qualification":find(r"(10th|12th|Diploma|ITI|Graduate|B\.?Tech|MBA)"),
+            "salary":find(r"(₹\s?\d{4,7}|Rs\.?\s?\d+)"),
+            "age_limit":find(r"Age.*?(\d+.*?Years|\d+-\d+)"),
+            "last_date":find(r"(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})")
         }
 
-        # learn each even if missing
-        for k,v in data.items(): learn(f"{k}_patterns",v)
+        for k,v in data.items():
+            learn(k+"_patterns",v)
+
         return data
 
     except Exception as e:
+        print("❌ ERROR:",e)
         return {"error":str(e)}
 
 
 # =========================
-# MAIN JOB PROCESS
+# Main
 # =========================
 jobs=json.load(open("jobs.json"))
-new=[]
+out=[]
 
-for j in jobs[:2]:
-    print(f"🚀 {j['title']}")
+for j in jobs[:1]:
+    print(f"\n🚀 Processing Job => {j['title']}")
     d=extract(j["apply_link"])
     j.update(d)
     j["updated"]=str(datetime.datetime.now())
-    new.append(j)
+    out.append(j)
 
-open("jobs.json","w").write(json.dumps(new,indent=4))
+open("jobs.json","w").write(json.dumps(out,indent=4))
 open("ai_memory.json","w").write(json.dumps(ai,indent=4))
 
-print("\n✨ COMPLETE – Memory forced updated!")
-print("🧠 Total Learn Count:",ai["learn_count"])
+print("\n==============================")
+print("✨ AI MEMORY UPDATED (Check list & count)")
+print("🧠 learn_count =",ai["learn_count"])
+print("==============================\n")
