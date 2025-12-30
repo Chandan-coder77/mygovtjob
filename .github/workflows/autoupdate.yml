@@ -3,7 +3,7 @@ name: FAST AI UPDATE
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"  # हर 30 मिनट में auto run
+    - cron: "*/30 * * * *"
 
 jobs:
   fast:
@@ -13,8 +13,10 @@ jobs:
     - name: Set up job
       run: echo "🚀 Fast AI Update Started"
 
-    - name: Run actions/checkout@v3
+    - name: Checkout repo
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0     # <- Pull allow करने के लिए important
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -25,25 +27,21 @@ jobs:
       run: |
         pip install requests bs4
 
-    # ===========================
-    #  RUN MAIN SCRAPER
-    # ===========================
+    # MAIN SCRAPER
     - name: Run fast scraper
       run: python scraper_detail.py
 
-    # ===========================
-    #  AUTO MEMORY CLEAN SYSTEM
-    # ===========================
+    # AUTO MEMORY CLEAN
     - name: Clean AI Memory
       run: python clean_memory.py
 
-    # ===========================
-    #  PUSH UPDATED DATA TO GITHUB
-    # ===========================
+    # PUSH SYSTEM WITH AUTO PULL FIX
     - name: Push results
       run: |
         git config --global user.name "actions-user"
         git config --global user.email "actions@github.com"
+        git pull --rebase
         git add .
-        git commit -m "Auto Updated Jobs & AI Memory" || echo "No changes to commit"
-        git push
+        git commit -m "Auto Updated Jobs & AI Memory" || echo "No changes"
+        git push || echo "Force pushing..."
+        git push --force
