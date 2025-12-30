@@ -2,8 +2,8 @@ name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # हर 6 घंटे auto run
-  workflow_dispatch:         # manual run button enable
+    - cron: "0 */6 * * *"   # ⏳ हर 6 घंटे auto run
+  workflow_dispatch:       # ▶ Manual run button enable
 
 jobs:
   scrape_and_train:
@@ -25,7 +25,7 @@ jobs:
     - name: Run Scraper
       run: python scraper_detail.py
 
-    - name: Train AI Memory (Auto-Merge)
+    - name: Train AI Memory (Auto-Merge + Cleaner)
       run: python ai_trainer.py
 
     - name: Commit & Push Results
@@ -33,5 +33,5 @@ jobs:
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Auto Update + AI Memory Trained" || echo "No changes"
+        git commit -m "Auto Update + AI Memory Trained 🤖" || echo "No changes"
         git push --force
