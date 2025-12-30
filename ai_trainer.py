@@ -1,42 +1,81 @@
 import json
-import os
 
-# ------------------- Load JSON safely -------------------
 def load_json(file):
-    if not os.path.exists(file):
+    try:
+        with open(file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
         return {}
-    with open(file, "r", encoding="utf-8") as f:
-        return json.load(f)
 
 def save_json(file, data):
     with open(file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-# ------------------- Load memory + jobs -------------------
-jobs = load_json("jobs.json")
+# ---------------- AI Memory Load ----------------
 memory = load_json("ai_memory.json")
 
-if memory == {}:
-    memory = {"qualification_patterns": [], "salary_patterns": [], "age_patterns": [],
-              "lastdate_patterns": [], "vacancy_patterns": [], "learn_count": 0}
+qualification = set(memory.get("qualification_patterns", []))
+salary = set(memory.get("salary_patterns", []))
+age = set(memory.get("age_patterns", []))
+lastdate = set(memory.get("lastdate_patterns", []))
+vacancy = set(memory.get("vacancy_patterns", []))
+learn_count = memory.get("learn_count", 0)
 
-merged = memory
+# ---------------- Jobs Scraped Load ----------------
+jobs = load_json("jobs.json")
 
-# ---------------- Merge arrays safely ----------------
-def merge_list(key):
-    if key not in merged:
-        merged[key] = []
-    for item in jobs.get(key, []):
-        if item not in merged[key]:
-            merged[key].append(item)
-            merged["learn_count"] += 1
+# If empty skip safely
+if not jobs:
+    print("No jobs detected — Training Skipped.")
+    exit()
 
-for field in ["qualification_patterns", "salary_patterns", "age_patterns",
-              "lastdate_patterns", "vacancy_patterns"]:
-    merge_list(field)
+print("\n🔍 Training Started...")
 
-# ---------------- Save updated AI Brain ----------------
-save_json("ai_memory.json", merged)
+# Smart learn from scraped patterns
+for job in jobs:
+    if isinstance(job, dict):
 
-print("\n🔥 AI Memory Updated Successfully!")
-print(f"📊 Total Learning Count: {merged['learn_count']}")
+        # Qualification learning
+        if "qualification" in job and len(job["qualification"]) < 50:
+            qualification.add(job["qualification"].lower())
+
+        # Salary learning
+        if "salary" in job:
+            salary.add(job["salary"].lower())
+
+        # Age limit
+        if "age_limit" in job:
+            age.add(job["age_limit"])
+
+        # Vacancy
+        if "vacancy" in job:
+            vacancy.add(str(job["vacancy"]))
+
+        # Last date
+        if "last_date" in job:
+            lastdate.add(job["last_date"])
+
+# Auto duplicate removal + sorting for clean memory
+qualification = sorted(set(qualification))
+salary = sorted(set(salary))
+age = sorted(set(age))
+lastdate = sorted(set(lastdate))
+vacancy = sorted(set(vacancy))
+
+# Auto learn count increase
+learn_count += 1
+
+# ---------------- Save Updated Memory ----------------
+memory_update = {
+    "qualification_patterns": qualification,
+    "salary_patterns": salary,
+    "age_patterns": age,
+    "lastdate_patterns": lastdate,
+    "vacancy_patterns": vacancy,
+    "learn_count": learn_count
+}
+
+save_json("ai_memory.json", memory_update)
+
+print("\n🚀 AI Memory Updated Successfully!")
+print(f"📈 Total Learn Count: {learn_count}")
