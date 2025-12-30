@@ -1,7 +1,11 @@
 import json
-from smart_cleaner import clean_job   # 🔥 Smart Memory Cleaner Integrated
+from smart_cleaner import clean_job                     # 🔥 Smart Cleaner Integrated
+from value_extractor import (                           # 🔥 Value Extractor V3
+    extract_salary, extract_age, extract_vacancy,
+    extract_last_date, extract_qualification
+)
 
-# ---------------- JSON Load/Save ----------------
+# ---------------- JSON Load & Save ----------------
 def load_json(file):
     try:
         with open(file, "r", encoding="utf-8") as f:
@@ -13,64 +17,62 @@ def save_json(file, data):
     with open(file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-# ---------------- Load AI Memory ----------------
+
+# ---------------- Load Existing AI Memory ----------------
 memory = load_json("ai_memory.json")
 
 qualification = set(memory.get("qualification_patterns", []))
-salary = set(memory.get("salary_patterns", []))
-age = set(memory.get("age_patterns", []))
-lastdate = set(memory.get("lastdate_patterns", []))
-vacancy = set(memory.get("vacancy_patterns", []))
-learn_count = memory.get("learn_count", 0)
+salary        = set(memory.get("salary_patterns", []))
+age           = set(memory.get("age_patterns", []))
+lastdate      = set(memory.get("lastdate_patterns", []))
+vacancy       = set(memory.get("vacancy_patterns", []))
+learn_count   = memory.get("learn_count", 0)
 
-# ---------------- Load scraped jobs ----------------
+
+# ---------------- Load Scraped JOBS Data ----------------
 jobs = load_json("jobs.json")
 
 if not jobs:
-    print("❌ No jobs found — training skipped.")
+    print("❌ No jobs found — Training Skipped!")
     exit()
 
-print("\n🔍 AI Training Started...")
+print("\n🔍 AI Training Started...\n")
 
-# ---------------- Training Engine (Auto Merge + Cleaner) ----------------
+
+# ---------------- Training (Auto-Merge + Smart Extract) ----------------
 for job in jobs:
 
-    # Convert string jobs into safe dict
     if not isinstance(job, dict):
         continue
 
-    job = clean_job(job)  # 🔥 Main Upgrade — memory cleaned & normalized
+    # 1) Clean Unwanted Words
+    job = clean_job(job)
 
-    # Qualification learn
-    if job.get("qualification") and len(job["qualification"]) < 50:
-        qualification.add(job["qualification"].lower())
+    # 2) Value Extract & Normalize
+    job["qualification"] = extract_qualification(job.get("qualification", ""))
+    job["salary"]        = extract_salary(job.get("salary", ""))
+    job["age_limit"]     = extract_age(job.get("age_limit", ""))
+    job["vacancy"]       = extract_vacancy(job.get("vacancy", ""))
+    job["last_date"]     = extract_last_date(job.get("last_date", ""))
 
-    # Salary Learn
-    if job.get("salary"):
-        salary.add(str(job["salary"]).lower())
+    # 3) Train Memory Patterns
+    if job["qualification"]: qualification.add(job["qualification"])
+    if job["salary"]:        salary.add(job["salary"])
+    if job["age_limit"]:     age.add(job["age_limit"])
+    if job["vacancy"]:       vacancy.add(job["vacancy"])
+    if job["last_date"]:     lastdate.add(job["last_date"])
 
-    # Age Learn
-    if job.get("age_limit"):
-        age.add(str(job["age_limit"]))
 
-    # Vacancy Learn
-    if job.get("vacancy"):
-        vacancy.add(str(job["vacancy"]))
-
-    # Last Date Learn
-    if job.get("last_date"):
-        lastdate.add(str(job["last_date"]))
-
-# ---------------- Memory Clean + Optimize ----------------
+# ---------------- Optimize & Update AI Brain ----------------
 qualification = sorted(qualification)
-salary = sorted(salary)
-age = sorted(age)
-lastdate = sorted(lastdate)
-vacancy = sorted(vacancy)
+salary        = sorted(salary)
+age           = sorted(age)
+lastdate      = sorted(lastdate)
+vacancy       = sorted(vacancy)
 
-learn_count += 1  # AI Experience Upgrade
+learn_count += 1
 
-# ---------------- Save AI Brain ----------------
+
 memory_update = {
     "qualification_patterns": qualification,
     "salary_patterns": salary,
@@ -82,6 +84,7 @@ memory_update = {
 
 save_json("ai_memory.json", memory_update)
 
+
 print("\n🚀 AI Memory Updated Successfully!")
 print(f"📈 Total Learn Count: {learn_count}")
-print("🧠 Smart Cleaner Active — Memory evolving automatically!")
+print("🤖 Value Extractor + Smart Cleaner Active — Auto Brain Growing!\n")
