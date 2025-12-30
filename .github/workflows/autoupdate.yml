@@ -1,41 +1,37 @@
-name: FAST AI UPDATE
+name: Auto Update Jobs
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"   # हर 30 min auto update करे
+    - cron: "0 */6 * * *"   # हर 6 घंटे auto run
+  workflow_dispatch:         # manual run button enable
 
 jobs:
-  fast:
+  scrape_and_train:
     runs-on: ubuntu-latest
 
     steps:
-
-    - name: Checkout repo
+    - name: Pull Repository
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: "3.10"
 
-    - name: Install libs
+    - name: Install Dependencies
       run: |
-        pip install requests bs4
+        pip install requests beautifulsoup4 pdfminer.six
 
-    - name: Run fast scraper
+    - name: Run Scraper
       run: python scraper_detail.py
 
-    - name: Clean AI Memory
-      run: python clean_memory.py
+    - name: Train AI Memory (Auto-Merge)
+      run: python ai_trainer.py
 
-    - name: Push results safely
+    - name: Commit & Push Results
       run: |
-        git config --global user.name "actions-user"
+        git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
-        git add .
-        git commit -m "Auto Updated Jobs & Memory" || echo "No changes"
-        git pull --rebase --strategy-option theirs || echo "Skip pull"
+        git add -A
+        git commit -m "Auto Update + AI Memory Trained" || echo "No changes"
         git push --force
