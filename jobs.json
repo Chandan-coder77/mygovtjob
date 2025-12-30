@@ -1,14 +1,22 @@
 [
-    {
-        "title": "Free Job Alert",
-        "apply_link": "https://www.freejobalert.com/latest-notifications/",
-        "source": "freejobalert",
-        "updated": "2025-12-30 07:34:18.967755",
-        "error": "'vacancies_patterns'",
-        "vacancy": "375",
-        "qualification": "ba",
-        "salary": "Not Found",
-        "age_limit": "21-01",
-        "last_date": "26/12/2025"
-    }
+  {
+    "title": "Free Job Alert",
+    "apply_link": "https://www.freejobalert.com/latest-notifications/",
+    "source": "freejobalert"
+  },
+  {
+    "title": "Sarkari Result Latest Jobs",
+    "apply_link": "https://www.sarkariresult.com/latestjob/",
+    "source": "sarkariresult"
+  },
+  {
+    "title": "MyGov Official Jobs",
+    "apply_link": "https://www.mygov.in/job-vacancy/",
+    "source": "mygov"
+  },
+  {
+    "title": "Employment News Govt",
+    "apply_link": "https://employmentnews.gov.in/",
+    "source": "employmentnews"
+  }
 ]
