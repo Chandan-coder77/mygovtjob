@@ -11,16 +11,16 @@
         "last_date": "26/12/2025",
         "ai_learning_memory_updated": {
             "ai_memory_updated": true,
-            "learned_total": 1149
+            "learned_total": 1148
         },
-        "updated": "2025-12-30 08:59:10.833277"
+        "updated": "2025-12-30 08:59:20.637333"
     },
     {
         "title": "Sarkari Result Latest Jobs",
         "apply_link": "https://www.sarkariresult.com/latestjob/",
         "source": "sarkariresult",
         "error": "HTTPSConnectionPool(host='www.sarkariresult.com', port=443): Max retries exceeded with url: /latestjob/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.sarkariresult.com', port=443): Failed to resolve 'www.sarkariresult.com' ([Errno -2] Name or service not known)\"))",
-        "updated": "2025-12-30 08:59:10.884392"
+        "updated": "2025-12-30 08:59:20.662252"
     },
     {
         "title": "MyGov Official Jobs",
@@ -31,10 +31,10 @@
         "salary": "Not Found",
         "age_limit": "Not Found",
         "last_date": "Not Found",
-        "updated": "2025-12-30 08:59:14.422860",
+        "updated": "2025-12-30 08:59:23.906484",
         "ai_learning_memory_updated": {
             "ai_memory_updated": true,
-            "learned_total": 1149
+            "learned_total": 1148
         }
     },
     {
@@ -42,6 +42,6 @@
         "apply_link": "https://employmentnews.gov.in/",
         "source": "employmentnews",
         "error": "HTTPSConnectionPool(host='employmentnews.gov.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1017)')))",
-        "updated": "2025-12-30 08:59:15.266170"
+        "updated": "2025-12-30 08:59:24.996411"
     }
 ]
