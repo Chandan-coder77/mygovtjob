@@ -1,83 +1,93 @@
 import re
 
-# ==========================================================
-# SAFE STRING WRAPPER (Core Fix for lower() error)
-# ----------------------------------------------------------
-def to_str(value):
-    return str(value).strip().replace("\n", " ") if value is not None else ""
+# =================================================================
+# SAFE STRING (int/None value भी error नहीं देगा)
+# =================================================================
+def to_str(x):
+    return str(x).strip().replace("\n"," ") if x not in [None,"None"] else ""
 
 
-# ==========================================================
-# Salary Extract
-# ==========================================================
+# =================================================================
+# SALARY (valid only if realistic)
+# =================================================================
 def extract_salary(text):
-    text = to_str(text).lower().replace(",", "")
+    text = to_str(text).lower().replace(",","")
 
-    num = re.findall(r'(\d{4,7})', text)
-    if num:
-        return f"₹{num[0]}"
+    # salary numbers (₹8000–200000 valid)
+    s = re.findall(r'\b(\d{4,7})\b', text)
+    if s:
+        num = int(s[0])
+        if 4000 < num < 200000:
+            return f"₹{num}"
 
-    # LPA detect
-    lpa = re.findall(r'(\d+\.?\d*)\s*lpa', text)
-    if lpa:
-        return f"{lpa[0]} LPA"
+    # 1.5 LPA type
+    l = re.findall(r'(\d+\.?\d*)\s*lpa', text)
+    if l:
+        return f"{l[0]} LPA"
 
-    return text
+    return ""
 
 
-# ==========================================================
-# Age Extract
-# ==========================================================
+# =================================================================
+# AGE (must be like 18-30 and realistic)
+# =================================================================
 def extract_age(text):
-    text = to_str(text).replace(" ", "")
-    m = re.findall(r'(\d{1,2}-\d{1,2})', text)
-    return m[0] if m else text
+    t = to_str(text).replace(" ","")
+    m = re.findall(r'(\d{1,2}-\d{1,2})', t)
+    if m:
+        a=m[0]
+        s,e = map(int,a.split("-"))
+        if 15 <= s <= 40 and 18 <= e <= 60:
+            return a
+    return ""
 
 
-# ==========================================================
-# Vacancy Extract
-# ==========================================================
+# =================================================================
+# VACANCY (acceptable only 5 to 50000)
+# =================================================================
 def extract_vacancy(text):
-    text = to_str(text)
-    num = re.findall(r'\d{1,4}', text)
-    return num[0] if num else text
+    n = re.findall(r'\b(\d{1,5})\b', to_str(text))
+    if n:
+        v=int(n[0])
+        if 5 < v < 50000:
+            return str(v)
+    return ""
 
 
-# ==========================================================
-# Last Date Extract
-# ==========================================================
+# =================================================================
+# LAST DATE only dd/mm/yyyy
+# =================================================================
 def extract_last_date(text):
-    text = to_str(text)
-    m = re.findall(r'(\d{1,2}/\d{1,2}/\d{4})', text)
-    return m[0] if m else text
+    d = re.findall(r'(\d{1,2}/\d{1,2}/\d{4})', to_str(text))
+    return d[0] if d else ""
 
 
-# ==========================================================
-# Qualification Extract
-# ==========================================================
+# =================================================================
+# QUALIFICATION detect from keywords
+# =================================================================
 def extract_qualification(text):
-    text = to_str(text).lower()
-    keys = ["10th","12th","iti","diploma","b.sc","ba","bsc","graduate",
-            "post graduate","m.sc","b.com","phd","engineering","mba"]
+    t = to_str(text).lower()
+    keys=["10th","12th","iti","diploma","b.sc","bsc","ba","graduate",
+          "post graduate","m.sc","b.com","mba","engineering","phd"]
     for k in keys:
-        if k in text:
+        if k in t:
             return k
-    return text
+    return ""
 
 
-# ==========================================================
-# MAIN COMBINER USED BY AI TRAINER
-# ==========================================================
+# =================================================================
+# FINAL MERGER USED IN TRAINER + SCRAPER
+# =================================================================
 def extract_values(job):
-    if not isinstance(job, dict):
+    if not isinstance(job,dict):
         return job
 
     return {
         "title": to_str(job.get("title","")),
+        "apply_link": to_str(job.get("apply_link","")),
         "qualification": extract_qualification(job.get("qualification","")),
         "salary": extract_salary(job.get("salary","")),
         "age_limit": extract_age(job.get("age_limit","")),
         "vacancy": extract_vacancy(job.get("vacancy","")),
         "last_date": extract_last_date(job.get("last_date","")),
-        "apply_link": to_str(job.get("apply_link",""))
-    }
+        }
