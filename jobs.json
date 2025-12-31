@@ -5,7 +5,7 @@
         "qualification": "",
         "salary": "",
         "age_limit": "18-35",
-        "vacancy": "2025",
+        "vacancy": "2026",
         "last_date": ""
     },
     {
@@ -536,7 +536,7 @@
         "qualification": "",
         "salary": "",
         "age_limit": "18-35",
-        "vacancy": "2025",
+        "vacancy": "2026",
         "last_date": ""
     },
     {
@@ -635,7 +635,7 @@
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
-        "vacancy": "1514",
+        "vacancy": "",
         "last_date": "17/04/2025"
     },
     {
@@ -644,7 +644,7 @@
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
-        "vacancy": "1514",
+        "vacancy": "",
         "last_date": "17/04/2025"
     },
     {
@@ -653,7 +653,7 @@
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
-        "vacancy": "1514",
+        "vacancy": "",
         "last_date": "17/04/2025"
     },
     {
@@ -662,7 +662,7 @@
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
-        "vacancy": "1514",
+        "vacancy": "",
         "last_date": "17/04/2025"
     },
     {
@@ -671,7 +671,7 @@
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
-        "vacancy": "1514",
+        "vacancy": "",
         "last_date": "17/04/2025"
     },
     {
@@ -693,62 +693,17 @@
         "last_date": ""
     },
     {
-        "title": "MoU with Rapido for listing gig based job opportunities and enabling recruitment facilitation for gig workers via the NCS portal.",
-        "apply_link": "https://ncs.gov.in/javascript:void(0);",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "MoU with Rapido for listing gig based job opportunities and enabling recruitment facilitation for gig workers via the NCS portal.",
-        "apply_link": "https://ncs.gov.in/#",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "25-30",
-        "vacancy": "1514",
-        "last_date": "17/04/2025"
-    },
-    {
-        "title": "MoU with Swiggy for posting job vacancies and facilitating recruitment opportunities for gig workers through the NCS portal.",
-        "apply_link": "https://ncs.gov.in/javascript:void(0);",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "MoU with Swiggy for posting job vacancies and facilitating recruitment opportunities for gig workers through the NCS portal.",
-        "apply_link": "https://ncs.gov.in/#",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "25-30",
-        "vacancy": "1514",
-        "last_date": "17/04/2025"
-    },
-    {
         "title": "Free non-formal vocational training to Persons with disabilities (PwDs)",
         "apply_link": "https://ncs.gov.in/Documents/Advertiment_for_NCSC-DAs.pdf",
         "qualification": "",
         "salary": "",
         "age_limit": "",
-        "vacancy": "612",
+        "vacancy": "",
         "last_date": ""
     },
     {
-        "title": "Public disclosure of marks of Recruitment Agencies",
-        "apply_link": "https://ncs.gov.in/Pages/RecruitmentAgencies.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "1514",
-        "last_date": "17/04/2025"
-    },
-    {
         "title": "Forms and Manuals",
-        "apply_link": "https://www.drdo.gov.in/careers/drdo/en/documents/form-and-manual",
+        "apply_link": "https://www.drdo.gov.in/careers/drdo/index.php/en/documents/form-and-manual",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
