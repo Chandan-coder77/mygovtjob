@@ -1,40 +1,112 @@
-import json, re
+import json, re, shutil
+from datetime import datetime
 
-with open("ai_memory.json","r") as f:
-    ai=json.load(f)
+# ================= Backup System =================
+def backup_memory():
+    try:
+        shutil.copy("ai_memory.json", "ai_memory_backup.json")
+        print("💾 Backup created: ai_memory_backup.json")
+    except:
+        print("⚠ Backup skipped (file missing)")
 
+
+# ============== Load JSON Safe ==============
+def load_json(file):
+    try:
+        with open(file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
+        return {}
+
+
+# ============== Cleaning Rules ==============
 def unique_clean(items, rule=lambda x: True):
-    clean=set()
+    clean = set()
     for i in items:
-        i=str(i).strip().replace(" ","").replace("_","")
-        if i and rule(i):
-            clean.add(i)
-    return sorted(list(clean))
+        s = str(i).strip().replace(" ", "").replace("_", "")
+        if s and rule(s):
+            clean.add(s)
+    return sorted(clean)
 
-# ---------- Validation Rules ----------
 
-is_age=lambda x: bool(re.match(r"^\d{1,2}[-/]\d{1,2}$",x)) and 1<=int(x.split("-")[0].replace("/",""))<=60
-is_vac=lambda x: x.isdigit() and 1<=int(x)<=50000
-is_date=lambda x: bool(re.match(r"^\d{1,2}/\d{1,2}/\d{4}$",x))
-is_qual=lambda x: len(x)<=20
+# Pattern Validators
+is_salary = lambda x: bool(re.match(r"^₹?\d{4,7}$", x.replace(",", ""))) or "lpa" in x.lower()
 
-# ------------- Cleaning Memory -------------
+is_age = lambda x: bool(re.match(r"^\d{1,2}-\d{1,2}$", x)) and 15 <= int(x.split("-")[0]) <= 40
 
-ai["qualification_patterns"]=unique_clean(ai["qualification_patterns"],is_qual)
-ai["age_patterns"]=unique_clean(ai["age_patterns"],is_age)
-ai["vacancy_patterns"]=unique_clean(ai["vacancy_patterns"],is_vac)
-ai["lastdate_patterns"]=unique_clean(ai["lastdate_patterns"],is_date)
+is_vac = lambda x: x.isdigit() and 1 <= int(x) <= 5000
 
-ai["learn_count"] = (
-    len(ai["qualification_patterns"])+
-    len(ai["age_patterns"])+
-    len(ai["vacancy_patterns"])+
-    len(ai["lastdate_patterns"])
-)
+def is_date(x):
+    try:
+        datetime.strptime(x, "%d/%m/%Y")
+        return True
+    except:
+        return False
 
-with open("ai_memory.json","w") as f:
-    json.dump(ai,f,indent=4)
 
-print("\n🧠 AI MEMORY CLEAN COMPLETE")
-print("📌 Total Valid Learned Patterns:",ai["learn_count"])
-print("✔ Invalid garbage data removed successfully")
+# ============== Main Cleaning Engine ==============
+def clean_memory():
+    data = load_json("ai_memory.json")
+    if not data:
+        print("❌ No memory file found!")
+        return
+
+    backup_memory()  # 🔥 Backup before modifying memory
+
+    print("\n🧹 Cleaning AI Memory…")
+
+    # Qualification (truncate weird long useless values)
+    data["qualification_patterns"] = unique_clean(
+        data.get("qualification_patterns", []),
+        lambda x: len(x) <= 20 and not x.isdigit()
+    )
+
+    # Salary optimize
+    clean_salary = []
+    for s in data.get("salary_patterns", []):
+        s = s.replace(" ", "").replace(",", "").lower()
+
+        # Normalization rules
+        if "lpa" in s:
+            num = re.findall(r"\d+\.?\d*", s)
+            if num:
+                clean_salary.append(f"{num[0]}LPA")
+                continue
+
+        num = re.findall(r"\d{4,7}", s)
+        if num:
+            clean_salary.append(f"₹{num[0]}")
+            continue
+
+    data["salary_patterns"] = sorted(set(clean_salary))
+
+    # Age clean
+    data["age_patterns"] = unique_clean(data.get("age_patterns", []), is_age)
+
+    # Vacancy compress
+    data["vacancy_patterns"] = unique_clean(data.get("vacancy_patterns", []), is_vac)
+
+    # Last date clean
+    data["lastdate_patterns"] = unique_clean(data.get("lastdate_patterns", []), is_date)
+
+    # Update learn count (only valid patterns count)
+    data["learn_count"] = (
+          len(data["qualification_patterns"])
+        + len(data["salary_patterns"])
+        + len(data["age_patterns"])
+        + len(data["vacancy_patterns"])
+        + len(data["lastdate_patterns"])
+    )
+
+    with open("ai_memory.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+    print("\n✨ AI MEMORY CLEAN COMPLETE!")
+    print(f"📊 Total Valid Patterns: {data['learn_count']}")
+    print("🔥 Garbage removed, Memory optimized & compressed!")
+    print("🛡 Backup saved safely — rollback always possible\n")
+
+
+# ============== Run ==============
+if __name__ == "__main__":
+    clean_memory()
