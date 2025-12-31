@@ -1,109 +1,153 @@
-import requests, json, re
+import requests
 from bs4 import BeautifulSoup
+import json
+import re
+import time
+import os
+from pdfminer.high_level import extract_text
 
-headers = {
+HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-URLS = ["https://www.freejobalert.com/"]
-jobs=[]
+SOURCE_FILE = "sources.txt"
+OUTPUT_FILE = "jobs.json"
 
-# ================== Home Page Job Links ==================
-def scrape_homepage(url):
-    r=requests.get(url,headers=headers,timeout=20)
-    soup=BeautifulSoup(r.text,"html.parser")
+def clean_text(text):
+    return re.sub(r'\s+', ' ', text).strip()
 
-    links=soup.select("a[href*='articles'],a[href*='recruit'],a[href*='online'],a[href*='posts']")
-    print(f"Found {len(links)} raw links")
+def extract_pdf_text(url):
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        file = "temp.pdf"
+        with open(file, "wb") as f:
+            f.write(r.content)
+        text = extract_text(file)
+        os.remove(file)
+        return clean_text(text)
+    except:
+        return ""
 
-    for a in links[:60]:
-        title=a.get_text(strip=True)
-        link=a.get("href")
+def deep_extract(url):
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-        if not link.startswith("http"):
-            link=url+link
-        
-        jobs.append({
-            "title":title,
-            "apply_link":link,
-            "qualification":"",
-            "salary":"",
-            "age_limit":"",
-            "vacancy":"",
-            "last_date":""
-        })
+        tables = soup.find_all("table")
+        text = soup.get_text(" ")
 
+        qualification = salary = age = vacancy = last_date = ""
 
-# ================== Detail Page Extract ==================
-def extract_qualification_from_page(text_block):
-    patterns=[
-        r"(matriculation[\w\s]*10th[\w\s]*pass)",
-        r"(10th[\w\s]*pass)",
-        r"(12th[\w\s]*pass)",
-        r"(any graduate|graduate|bachelor['s]* degree)",
-        r"(post graduate|master.degree|pg)",
-        r"(diploma[\w\s]*engineering)",
-        r"(iti[\w\s]*certificate)",
-        r"(b\.sc[\w\s]*|bsc[\w\s]*)",
-        r"(m\.sc[\w\s]*|msc[\w\s]*)",
-        r"(b\.tech[\w\s]*|m\.tech[\w\s]*)",
-        r"(mba[\w\s]*)",
-        r"(phd[\w\s]*)"
-    ]
+        # ---------- Scan Tables Smart ----------
+        for table in tables:
+            rows = table.find_all("tr")
+            for row in rows:
+                cols = [clean_text(i.get_text()) for i in row.find_all(["td","th"])]
 
-    t=text_block.lower()
+                if len(cols) < 2: continue
 
-    for p in patterns:
-        match=re.search(p,t)
-        if match:
-            return match.group(1).strip().title()
+                if "Qualification" in cols[0] or "Education" in cols[0]:
+                    qualification = cols[1]
+                if "Salary" in cols[0] or "Pay" in cols[0]:
+                    salary = cols[1]
+                if "Age" in cols[0]:
+                    age = cols[1]
+                if "Post" in cols[0] and re.search(r"\d", cols[1]):
+                    vacancy = cols[1]
+                if "Last Date" in cols[0] or "Last date" in cols[0]:
+                    last_date = cols[1]
 
-    return ""
+        # ---------- Backup Condition from Text (AI pattern mode) ----------
+        if qualification == "":
+            match = re.search(r'(Matric|10th|12th|Graduate|Bachelor|Diploma|ITI|Any Degree)', text, re.I)
+            if match: qualification = match.group(1)
 
+        if salary == "":
+            match = re.search(r'₹\s?\d[\d,]+', text)
+            if match: salary = match.group(0)
 
-def scrape_details():
-    for job in jobs:
+        if last_date == "":
+            match = re.search(r'\d{2}/\d{2}/\d{4}', text)
+            if match: last_date = match.group(0)
+
+        if age == "":
+            match = re.search(r'\d{2}\s?to\s?\d{2}|\d{2}-\d{2}', text)
+            if match: age = match.group(0)
+
+        # --------- PDF Link Detection ----------
+        for link in soup.find_all("a"):
+            href = link.get("href","")
+            if href.endswith(".pdf"):
+                pdf = extract_pdf_text(href if "http" in href else url+href)
+                if qualification == "":
+                    m = re.search(r'(Matric|10th|12th|Graduate|Diploma|ITI)', pdf, re.I)
+                    if m: qualification = m.group(1)
+                if salary == "":
+                    m = re.search(r'₹\s?\d[\d,]+', pdf)
+                    if m: salary = m.group(0)
+
+        return {
+            "qualification": qualification,
+            "salary": salary,
+            "age_limit": age,
+            "vacancy": vacancy,
+            "last_date": last_date
+        }
+
+    except:
+        return {}
+
+def is_valid_job(title):
+    block = ["Admit Card","Result","Hall Ticket","Answer Key"]
+    return not any(b in title for b in block)
+
+def process():
+    jobs = []
+    if not os.path.exists(SOURCE_FILE):
+        print("❌ sources.txt missing")
+        return
+
+    with open(SOURCE_FILE) as f:
+        links = [x.strip() for x in f.readlines() if x.strip()]
+
+    for url in links:
+        print(f"🔍 Checking {url}")
         try:
-            r=requests.get(job["apply_link"],headers=headers,timeout=25)
-            soup=BeautifulSoup(r.text,"html.parser")
+            r = requests.get(url, headers=HEADERS,timeout=15)
+            soup = BeautifulSoup(r.text,"html.parser")
 
-            full_text=soup.get_text(" ",strip=True).lower()
+            for a in soup.find_all("a"):
+                link = a.get("href","")
+                text = clean_text(a.get_text())
 
-            # ******** Qualification Auto Detect ********
-            qual=extract_qualification_from_page(full_text)
-            if qual: job["qualification"]=qual
+                if not is_valid_job(text): continue
+                if "recruitment" not in text.lower() and "form" not in text.lower(): continue
+                if not link.startswith("http"):
+                    link = url.rstrip("/")+"/"+link.lstrip("/")
 
-            # Salary detect
-            sal=re.findall(r"₹\s?\d{4,8}",full_text)
-            if sal: job["salary"]=sal[0]
+                print("📌 Job Found:",text)
 
-            # Age detection
-            age=re.findall(r"\d{1,2}\s?-\s?\d{1,2}",full_text)
-            if age: job["age_limit"]=age[0]
+                info = deep_extract(link)
 
-            # Vacancy
-            vac=re.findall(r"\b\d{2,5}\b",full_text)
-            if vac: job["vacancy"]=vac[0]
+                jobs.append({
+                    "title": text,
+                    "apply_link": link,
+                    "qualification": info.get("qualification",""),
+                    "salary": info.get("salary",""),
+                    "age_limit": info.get("age_limit",""),
+                    "vacancy": info.get("vacancy",""),
+                    "last_date": info.get("last_date","")
+                })
 
-            # Last Date
-            date=re.findall(r"\d{1,2}/\d{1,2}/\d{4}",full_text)
-            if date: job["last_date"]=date[-1]
+        except Exception as e:
+            print("⚠ Error:",e)
 
-        except:
-            print("skip:",job["title"])
-            continue
+        time.sleep(2)
 
+    with open(OUTPUT_FILE,"w") as f:
+        json.dump(jobs,f,indent=4)
 
-# ================= Run =================
-for site in URLS:
-    scrape_homepage(site)
+    print("✅ Scraper Stage-9 Complete — Auto Extracted 🔥")
 
-scrape_details()
-
-unique={i["apply_link"]:i for i in jobs}
-final=list(unique.values())
-
-with open("jobs.json","w",encoding="utf-8") as f:
-    json.dump(final,f,indent=4,ensure_ascii=False)
-
-print("\n🚀 Stage-7 Smart Scraper Complete | Jobs:",len(final))
+if __name__ == "__main__":
+    process()
