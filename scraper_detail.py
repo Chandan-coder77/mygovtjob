@@ -6,26 +6,25 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-URLS = ["https://www.freejobalert.com/"]
+URL = "https://www.freejobalert.com/"
 jobs = []
 
-# Step-1: find job links
-def scrape_homepage(url):
-    r = requests.get(url, headers=headers, timeout=20)
+# Fetch homepage links
+def scrape_homepage():
+    r = requests.get(URL, headers=headers, timeout=20)
     soup = BeautifulSoup(r.text, "html.parser")
 
     links = soup.select("a[href*='articles'],a[href*='recruit'],a[href*='online'],a[href*='posts']")
-    print(f"Found {len(links)} raw links")
+    print(f"Found raw links: {len(links)}")
 
-    for a in links[:50]:
+    for a in links[:60]:                              # Limit for safe run
         title = a.get_text(strip=True)
         link = a.get("href")
-
-        if not link.startswith("http"):
-            link = url + link
+        if not title or len(title) < 8: continue
+        if not link.startswith("http"): link = URL + link
 
         jobs.append({
-            "title": title,
+            "title": title.strip(),
             "apply_link": link,
             "qualification": "",
             "salary": "",
@@ -35,38 +34,37 @@ def scrape_homepage(url):
         })
 
 
-# Step-2: deep extract each job page
-def scrape_details():
-    for job in jobs:
-        try:
-            r = requests.get(job["apply_link"], headers=headers, timeout=25)
-            soup = BeautifulSoup(r.text, "html.parser")
-            text = soup.get_text(separator=" ").lower()
+# Detailed scrape of each job
+def extract_job_detail(job):
+    try:
+        r = requests.get(job["apply_link"], headers=headers, timeout=25)
+        soup = BeautifulSoup(r.text, "html.parser")
+        text = soup.get_text(" ").lower()
 
-            job["salary"] = re.findall(r'₹\s?\d{4,8}|pay\s*level\s*\d+', text)[0] if re.findall(r'₹\s?\d{4,8}|pay\s*level\s*\d+', text) else ""
-            job["age_limit"] = re.findall(r'\d{1,2}\s?to\s?\d{1,2}|\d{1,2}-\d{1,2}', text)[0] if re.findall(r'\d{1,2}\s?to\s?\d{1,2}|\d{1,2}-\d{1,2}', text) else ""
-            job["vacancy"] = re.findall(r'\b\d{2,5}\b', text)[0] if re.findall(r'\b\d{2,5}\b', text) else ""
-            job["last_date"] = re.findall(r'\d{1,2}/\d{1,2}/\d{4}', text)[0] if re.findall(r'\d{1,2}/\d{1,2}/\d{4}', text) else ""
+        # Basic extraction
+        job["salary"] = re.findall(r'₹\s?\d{4,8}', text)[0] if re.findall(r'₹\s?\d{4,8}', text) else ""
+        job["age_limit"] = re.findall(r'\d{1,2}-\d{1,2}|\d{1,2}\s?to\s?\d{1,2}', text)[0] if re.findall(r'\d{1,2}-\d{1,2}|\d{1,2}\s?to\s?\d{1,2}', text) else ""
+        job["vacancy"] = re.findall(r'\b\d{2,5}\b', text)[0] if re.findall(r'\b\d{2,5}\b', text) else ""
+        job["last_date"] = re.findall(r'\d{1,2}/\d{1,2}/\d{4}', text)[0] if re.findall(r'\d{1,2}/\d{1,2}/\d{4}', text) else ""
 
-            details = extract_values(job)
-            job.update(details)
+        details = extract_values(job)
+        job.update(details)
 
-        except Exception as e:
-            print("skip:", job["title"])
-            continue
+        return job
+    except:
+        return job
 
 
-# Run
-for site in URLS:
-    scrape_homepage(site)
+# Run scraping
+scrape_homepage()
+detailed = [extract_job_detail(j) for j in jobs]
 
-scrape_details()
-
-# remove duplicates
-unique = {i["apply_link"]: i for i in jobs}
+# Auto remove duplicates by apply_link
+unique = {i['apply_link']: i for i in detailed}
 final = list(unique.values())
 
 with open("jobs.json", "w", encoding="utf-8") as f:
     json.dump(final, f, indent=4, ensure_ascii=False)
 
-print("\n🚀 Smart Scraper Stage-3 Complete\nJobs saved:", len(final))
+print("\n🚀 Smart Scraper Updated (Clean + Extract + Unique)")
+print(f"Jobs saved: {len(final)}\n")
