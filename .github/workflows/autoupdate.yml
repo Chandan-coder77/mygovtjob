@@ -23,24 +23,33 @@ jobs:
       run: |
         pip install requests beautifulsoup4 pdfminer.six
 
+    # 🔥 Step-1: Scraper
     - name: Run Scraper
       run: python scraper_detail.py
 
+    # 🔥 Step-2: Memory Training + Extractor Base
     - name: Train AI Memory (Auto-Merge + Cleaner + Extractor + Validator)
       run: python ai_trainer.py
 
+    # 🔥 Step-3: Auto Corrector (Smart Salary/Age/LastDate/Vacancy Fix)
+    - name: AI Corrector Smart Update
+      run: python ai_corrector.py
+
+    # 🔥 Step-4: Memory Cleaner
     - name: Clean & Compress Memory (Smart Garbage Removal)
       run: python clean_memory.py
 
+    # 🔥 Step-5: Auto Backup
     - name: Auto Backup before commit
       run: |
         mkdir -p backup
         cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
 
+    # 🔥 Step-6: Commit & Push Results
     - name: Commit & Push Results
       run: |
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Auto Update + Train + Clean + Backup Complete 🤖" || echo "No changes"
+        git commit -m "Auto Update + Train + Correct + Clean + Backup Complete 🤖" || echo "No changes"
         git push --force
