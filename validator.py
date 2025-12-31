@@ -1,93 +1,94 @@
 import re
 from datetime import datetime
 
-# ================= SALARY NORMALIZER =================
-def validate_salary(value):
+# ================== SALARY AUTO FIX ==================
+def fix_salary(value):
     if not value:
         return None
 
-    text = str(value).replace(",", "").lower()
+    txt = str(value).lower().replace(",", "").replace("rs", "").strip()
 
-    # Extract numbers (₹ based)
-    nums = re.findall(r'\d{4,7}', text)
-    if nums:
-        num = int(nums[0])
-        if num > 2000000:  # unrealistic salary drop
-            return None
-        return f"₹{num:,}"
+    # Numeric salary extract
+    num = re.findall(r'\d{4,7}', txt)
+    if num:
+        return f"₹{num[0]}"
 
-    # Detect LPA
-    lpa = re.findall(r'(\d+\.?\d*)\s*lpa', text)
+    # LPA detect
+    lpa = re.findall(r'(\d+\.?\d*)\s*lpa', txt)
     if lpa:
         return f"{lpa[0]} LPA"
 
     return None
 
 
-# ================= AGE RANGE CLEANER =================
-def validate_age(value):
+# ================== AGE RANGE FIX ==================
+def fix_age(value):
     if not value:
         return None
 
     txt = str(value).replace(" ", "")
-    match = re.findall(r'(\d{1,2}-\d{1,2})', txt)
-    return match[0] if match else None
+    match = re.findall(r'(\d{1,2})\D+(\d{1,2})', txt)
+    if match:
+        a, b = match[0]
+        if 15 <= int(a) <= 60 and 15 <= int(b) <= 60:
+            return f"{a}-{b}"
+    return None
 
 
-# ================= VACANCY LIMIT FILTER =================
-def validate_vacancy(value):
+# ================== VACANCY FIX ==================
+def fix_vacancy(value):
     if not value:
         return None
 
     num = re.findall(r'\d{1,5}', str(value))
-    if num:
-        n = int(num[0])
-        if 1 <= n <= 5000:
-            return str(n)
-
+    if num and int(num[0]) <= 5000:  # safety limit
+        return num[0]
     return None
 
 
-# ================= LAST DATE REPAIR =================
-def validate_last_date(value):
+# ================== LAST DATE FIX ==================
+def fix_last_date(value):
     if not value:
         return None
 
-    match = re.findall(r'\d{1,2}/\d{1,2}/\d{4}', value)
+    match = re.findall(r'(\d{1,2}/\d{1,2}/\d{4})', value)
     if not match:
         return None
 
     date = match[0]
-
     try:
-        datetime.strptime(date, "%d/%m/%Y")  # check valid date real calendar
+        datetime.strptime(date, "%d/%m/%Y")
         return date
     except:
         return None
 
 
-# ================= FINAL JOB VALIDATION LAYER =================
+# ================== MAIN AUTO-CORRECT WRAPPER ==================
 def validate_job(job):
     fixed = {}
 
+    # qualification always lowercase
     if job.get("qualification"):
-        fixed["qualification"] = str(job["qualification"]).lower()
+        fixed["qualification"] = job["qualification"].lower()
 
+    # salary
     if job.get("salary"):
-        v = validate_salary(job["salary"])
+        v = fix_salary(job["salary"])
         if v: fixed["salary"] = v
 
+    # age
     if job.get("age_limit"):
-        v = validate_age(job["age_limit"])
+        v = fix_age(job["age_limit"])
         if v: fixed["age_limit"] = v
 
+    # vacancy
     if job.get("vacancy"):
-        v = validate_vacancy(job["vacancy"])
+        v = fix_vacancy(job["vacancy"])
         if v: fixed["vacancy"] = v
 
+    # last date
     if job.get("last_date"):
-        v = validate_last_date(job["last_date"])
+        v = fix_last_date(job["last_date"])
         if v: fixed["last_date"] = v
 
-    # जर कुछ भी validate नहीं हुआ तो job as-is return
     return fixed if fixed else job
