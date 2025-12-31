@@ -1,109 +1,63 @@
-import json
-import os
-import re
-import requests
+import json, requests, re
 from bs4 import BeautifulSoup
 
-# =========================
-# Load JSON Safe Function
-# =========================
-def load_json(file):
-    try:
-        with open(file, 'r', encoding='utf-8') as f:
-            data = f.read()
-            try:
-                return json.loads(data)              
-            except:
-                return json.loads(data.strip())
-    except:
-        return {}
-
-
-# =========================
-# Load Memory from jobs.json
-# =========================
-memory = load_json("jobs.json")
-
-if isinstance(memory, str):
-    memory = json.loads(memory)
-
-qualification_patterns = memory.get("qualification_patterns", [])
-salary_patterns = memory.get("salary_patterns", [])
-age_patterns = memory.get("age_patterns", [])
-lastdate_patterns = memory.get("lastdate_patterns", [])
-vacancy_patterns = memory.get("vacancy_patterns", [])
-
-
-# =========================
-# User-Agent (Your Required Header Included ✔)
-# =========================
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-
-# =========================
-# Job Sites to Learn from
-# =========================
+# Job main pages
 job_sites = [
     "https://www.freejobalert.com/",
-    "https://www.sarkariresult.com/",
-    "https://www.sarkariprep.in/"
+    "https://www.sarkariprep.in/",
+    "https://www.sarkariresult.com/"
 ]
 
+# Smart extract functions
+def find(pattern, text):
+    result = re.findall(pattern, text, flags=re.I)
+    return result[0] if result else ""
 
-# =========================
-# Extract Information
-# =========================
-def extract_data(text):
-    found = {
-        "qualification": [],
-        "salary": [],
-        "age": [],
-        "lastdate": [],
-        "vacancy": []
-    }
+def extract_job_blocks(soup):
+    """Try to detect job blocks automatically"""
+    blocks = soup.find_all(["li","div","article","tr","p"], limit=30)  # top 30 only
+    return [b.get_text(" ", strip=True) for b in blocks]
 
-    for q in qualification_patterns:
-        if q.lower() in text.lower():
-            found["qualification"].append(q)
+# Master scraping engine
+all_jobs = []
 
-    for s in salary_patterns:
-        if s.lower() in text.lower():
-            found["salary"].append(s)
-
-    for a in age_patterns:
-        if a in text:
-            found["age"].append(a)
-
-    for l in lastdate_patterns:
-        if l in text:
-            found["lastdate"].append(l)
-
-    for v in vacancy_patterns:
-        if v in text:
-            found["vacancy"].append(v)
-
-    return found
-
-
-# =========================
-# Scraping Runner
-# =========================
 for site in job_sites:
-    print(f"\n🌐 Fetching: {site}")
+    print(f"\n🌍 Fetching → {site}")
 
     try:
-        r = requests.get(site, headers=headers, timeout=20)
-        soup = BeautifulSoup(r.text, "html.parser")
+        r = requests.get(site, headers=headers, timeout=15)
+        soup = BeautifulSoup(r.text,"html.parser")
 
-        content = soup.get_text(separator=" ").strip()
-        result = extract_data(content)
+        blocks = extract_job_blocks(soup)
 
-        print("🔍 Extracted → ", result)
+        for blk in blocks:
+
+            job = {
+                "title": blk[:45],  # first 45 chars
+                "qualification": find(r"(10th|12th|BA|B\.?Sc|B\.?Com|Graduate|ITI|Diploma|MBA|Engineering)", blk),
+                "salary": find(r"₹\s?\d{4,7}", blk) or find(r"\d+\.?\d*\s*LPA", blk),
+                "age_limit": find(r"\d{1,2}\s?-\s?\d{1,2}", blk),
+                "vacancy": find(r"\b\d{1,4}\b", blk),
+                "last_date": find(r"\d{1,2}/\d{1,2}/\d{4}", blk),
+                "apply_link": site   # BASE SITE (later we will scrape actual post link)
+            }
+
+            # Skip empty jobs
+            if job["qualification"] or job["salary"] or job["last_date"]:
+                all_jobs.append(job)
+
+        print(f"✔ Extracted {len(all_jobs)} total jobs till now")
 
     except Exception as e:
-        print("❌ Failed at:", site, "| Error →", e)
+        print("❌ Error:", e)
 
+# Save to jobs.json
+with open("jobs.json","w",encoding="utf-8") as f:
+    json.dump(all_jobs, f, indent=4, ensure_ascii=False)
 
-print("\n✅ Scraper Finished Successfully (No Crash)")
+print("\n🚀 JOB DATA SAVED TO jobs.json")
+print(f"📌 Total Jobs Stored → {len(all_jobs)}")
