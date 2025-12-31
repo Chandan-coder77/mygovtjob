@@ -1,94 +1,109 @@
-# ======================= Stage-5 Multi Page Scraper 🚀 =======================
-import requests, json, re, time
+import requests, json, re
 from bs4 import BeautifulSoup
-from value_extractor import extract_values
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 }
 
-BASE = "https://www.freejobalert.com/"
-jobs = []
+URLS = ["https://www.freejobalert.com/"]
+jobs=[]
 
+# ================== Home Page Job Links ==================
+def scrape_homepage(url):
+    r=requests.get(url,headers=headers,timeout=20)
+    soup=BeautifulSoup(r.text,"html.parser")
 
-# ------------------------ PAGE SCRAPER (auto pagination) ------------------------
-def scrape_page(url):
-    print(f"[Page] → {url}")
-    try:
-        r = requests.get(url, headers=headers, timeout=25)
-    except:
-        print("Failed:", url)
-        return None
+    links=soup.select("a[href*='articles'],a[href*='recruit'],a[href*='online'],a[href*='posts']")
+    print(f"Found {len(links)} raw links")
 
-    soup = BeautifulSoup(r.text, "html.parser")
-    
-    # job article links
-    links = soup.select("a[href*='articles'],a[href*='recruit'],a[href*='online'],a[href*='posts']")
-    print("Links found:", len(links))
+    for a in links[:60]:
+        title=a.get_text(strip=True)
+        link=a.get("href")
 
-    for a in links[:60]:  # limit for safe
-        title = a.get_text(strip=True)
-        link = a.get("href")
-
-        if not link.startswith("http"):   # relative to full
-            link = BASE + link.lstrip("/")
-
+        if not link.startswith("http"):
+            link=url+link
+        
         jobs.append({
-            "title": title,
-            "apply_link": link,
-            "qualification": "",
-            "salary": "",
-            "age_limit": "",
-            "vacancy": "",
-            "last_date": ""
+            "title":title,
+            "apply_link":link,
+            "qualification":"",
+            "salary":"",
+            "age_limit":"",
+            "vacancy":"",
+            "last_date":""
         })
 
-    # ------------ Detect next/older button for pagination ------------
-    nxt = soup.find("a", string=re.compile("Next|Older|»|›", re.I))
-    if nxt:
-        next_url = nxt.get("href")
-        if not next_url.startswith("http"):
-            next_url = BASE + next_url.lstrip("/")
-        time.sleep(2)
-        scrape_page(next_url)  # Recursive auto next page scan
+
+# ================== Detail Page Extract ==================
+def extract_qualification_from_page(text_block):
+    patterns=[
+        r"(matriculation[\w\s]*10th[\w\s]*pass)",
+        r"(10th[\w\s]*pass)",
+        r"(12th[\w\s]*pass)",
+        r"(any graduate|graduate|bachelor['s]* degree)",
+        r"(post graduate|master.degree|pg)",
+        r"(diploma[\w\s]*engineering)",
+        r"(iti[\w\s]*certificate)",
+        r"(b\.sc[\w\s]*|bsc[\w\s]*)",
+        r"(m\.sc[\w\s]*|msc[\w\s]*)",
+        r"(b\.tech[\w\s]*|m\.tech[\w\s]*)",
+        r"(mba[\w\s]*)",
+        r"(phd[\w\s]*)"
+    ]
+
+    t=text_block.lower()
+
+    for p in patterns:
+        match=re.search(p,t)
+        if match:
+            return match.group(1).strip().title()
+
+    return ""
 
 
-# ------------------------- Extract job details deeply -------------------------
 def scrape_details():
     for job in jobs:
         try:
-            r = requests.get(job["apply_link"], headers=headers, timeout=25)
-            soup = BeautifulSoup(r.text, "html.parser")
-            text = soup.get_text(" ").lower()
+            r=requests.get(job["apply_link"],headers=headers,timeout=25)
+            soup=BeautifulSoup(r.text,"html.parser")
 
-            # Basic extraction (initial)
-            job["salary"] = re.findall(r'₹\s?\d{4,8}|pay\s*level\s*\d+', text)[0] if re.findall(r'₹\s?\d{4,8}|pay\s*level\s*\d+', text) else ""
-            job["age_limit"] = re.findall(r'\d{1,2}\s?to\s?\d{1,2}|\d{1,2}-\d{1,2}', text)[0] if re.findall(r'\d{1,2}\s?to\s?\d{1,2}|\d{1,2}-\d{1,2}', text) else ""
-            job["vacancy"] = re.findall(r'\b\d{2,5}\b', text)[0] if re.findall(r'\b\d{2,5}\b', text) else ""
-            job["last_date"] = re.findall(r'\d{1,2}/\d{1,2}/\d{4}', text)[0] if re.findall(r'\d{1,2}/\d{1,2}/\d{4}', text) else ""
+            full_text=soup.get_text(" ",strip=True).lower()
 
-            # AI based structure fix
-            job.update(extract_values(job))
+            # ******** Qualification Auto Detect ********
+            qual=extract_qualification_from_page(full_text)
+            if qual: job["qualification"]=qual
 
-        except Exception as e:
-            print("Skip:", job["title"][:30], "Reason:", e)
+            # Salary detect
+            sal=re.findall(r"₹\s?\d{4,8}",full_text)
+            if sal: job["salary"]=sal[0]
+
+            # Age detection
+            age=re.findall(r"\d{1,2}\s?-\s?\d{1,2}",full_text)
+            if age: job["age_limit"]=age[0]
+
+            # Vacancy
+            vac=re.findall(r"\b\d{2,5}\b",full_text)
+            if vac: job["vacancy"]=vac[0]
+
+            # Last Date
+            date=re.findall(r"\d{1,2}/\d{1,2}/\d{4}",full_text)
+            if date: job["last_date"]=date[-1]
+
+        except:
+            print("skip:",job["title"])
             continue
 
 
-# ============================ RUN PROCESS =============================
+# ================= Run =================
+for site in URLS:
+    scrape_homepage(site)
 
-print("\n🚀 Stage-5 Scraper Started — Multi-Page + Smart Extractor\n")
-
-scrape_page(BASE)
 scrape_details()
 
-# remove duplicate
-unique = {j["apply_link"]: j for j in jobs}
-final = list(unique.values())
+unique={i["apply_link"]:i for i in jobs}
+final=list(unique.values())
 
-with open("jobs.json", "w", encoding="utf-8") as f:
-    json.dump(final, f, indent=4, ensure_ascii=False)
+with open("jobs.json","w",encoding="utf-8") as f:
+    json.dump(final,f,indent=4,ensure_ascii=False)
 
-print("\n🔥 Stage-5 Complete: Multi-Page Scanning Done")
-print("Total Jobs Saved:", len(final))
-print("\nNext Step → AI Trainer + Corrector auto run in pipeline\n")
+print("\n🚀 Stage-7 Smart Scraper Complete | Jobs:",len(final))
