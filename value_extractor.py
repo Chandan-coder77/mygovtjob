@@ -20,7 +20,7 @@ def extract_salary(text):
         if 4000 < num < 200000:
             return f"₹{num}"
 
-    # 1.5 LPA type
+    # 1.5 LPA / 2.3 LPA detection
     l = re.findall(r'(\d+\.?\d*)\s*lpa', text)
     if l:
         return f"{l[0]} LPA"
@@ -63,15 +63,34 @@ def extract_last_date(text):
 
 
 # =================================================================
-# QUALIFICATION detect from keywords
+# QUALIFICATION — Stage-6 Smart Prioritized Extractor 🔥
 # =================================================================
 def extract_qualification(text):
     t = to_str(text).lower()
-    keys=["10th","12th","iti","diploma","b.sc","bsc","ba","graduate",
-          "post graduate","m.sc","b.com","mba","engineering","phd"]
-    for k in keys:
-        if k in t:
-            return k
+
+    priority = [
+        ("phd", "PhD"),
+        ("engineering", "Engineering"),
+        ("b.tech", "Engineering"),
+        ("m.sc", "Post Graduate"),
+        ("mba", "Post Graduate"),
+        ("m.com", "Post Graduate"),
+        ("post graduate", "Post Graduate"),
+        ("graduate", "Graduate"),
+        ("ba", "BA"),
+        ("b.sc", "B.Sc"),
+        ("bsc", "B.Sc"),
+        ("b.com", "B.Com"),
+        ("diploma", "Diploma"),
+        ("iti", "ITI"),
+        ("12th", "12th"),
+        ("10th", "10th")   # Fallback (last priority)
+    ]
+
+    for key, value in priority:
+        if key in t:
+            return value
+
     return ""
 
 
@@ -90,4 +109,4 @@ def extract_values(job):
         "age_limit": extract_age(job.get("age_limit","")),
         "vacancy": extract_vacancy(job.get("vacancy","")),
         "last_date": extract_last_date(job.get("last_date","")),
-        }
+}
