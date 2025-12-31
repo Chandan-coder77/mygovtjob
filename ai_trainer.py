@@ -1,6 +1,7 @@
 import json
-from smart_cleaner import clean_job           # Smart Clean Engine
-from value_extractor import extract_values    # 🔥 Value Normalization Engine
+from smart_cleaner import clean_job           # Clean unwanted chars
+from value_extractor import extract_values    # Extract structured values
+from validator import validate_job            # 🔥 Validate & Fix incorrect fields
 
 # ================= JSON Load/Save =================
 def load_json(file):
@@ -33,15 +34,17 @@ if not jobs:
 
 print("\n🔍 AI Training Started...\n")
 
-# ================= Training Engine =================
+# ================= Core AI Engine (Extractor + Cleaner + Validator) =================
 for job in jobs:
 
     if not isinstance(job, dict):
         continue
 
-    job = clean_job(job)       # Step 1 — Clean raw text
-    job = extract_values(job)  # Step 2 🔥 Extract structured values
+    job = clean_job(job)           # Clean messy text
+    job = extract_values(job)      # Extract values (Age, Salary, etc.)
+    job = validate_job(job)        # 🔥 Correct invalid or wrong format data
 
+    # === Learning memory update ===
     if job.get("qualification"):
         qualification.add(job["qualification"].lower())
 
@@ -78,4 +81,5 @@ save_json("ai_memory.json", memory_update)
 
 print("\n🚀 AI Memory Updated Successfully!")
 print(f"📈 Learn Count: {learn_count}")
-print("🧠 Extractor + Cleaner Active — Brain is leveling up 🔥")
+print("🧠 AI Brain V3 Active — Cleaner + Extractor + Validator Online🔥")
+print("Next stage → Auto Correction & Multi-Page Scraper Upgrade 🚀")
