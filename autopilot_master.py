@@ -1,12 +1,16 @@
 import os
 import json
 import time
+import re
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+# 🔥 PDF reader import (Stage-A2)
+from pdf_reader import extract_from_pdf, find_pdf_links
+
 # ==============================
-# 🔥 Stage-A1 Full Autopilot Master Engine
+# 🔥 Stage-A1 + A2 Autopilot Master Engine
 # ==============================
 
 JOBS_FILE = "jobs.json"
@@ -18,7 +22,7 @@ LOG_FILE = "autopilot_log.txt"
 
 def log(msg):
     print(msg)
-    with open(LOG_FILE, "a") as f:
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{datetime.now()}] {msg}\n")
 
 
@@ -26,97 +30,124 @@ def load_jobs():
     if not os.path.exists(JOBS_FILE):
         return []
     try:
-        with open(JOBS_FILE, "r") as f:
+        with open(JOBS_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     except:
         return []
 
 
 def save_jobs(data):
-    with open(JOBS_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+    with open(JOBS_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 # ==============================
-# 🔍 Smart Field Extractor V1 (Basic)
+# 🔍 Smart Field Extractor (HTML + PDF)
 # ==============================
 def extract_details_from_page(url):
+    result = {
+        "salary": "",
+        "qualification": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    }
+
     try:
         headers = {"User-Agent": "Mozilla/5.0"}
-        html = requests.get(url, headers=headers, timeout=15).text
+        response = requests.get(url, headers=headers, timeout=20)
+        html = response.text
         soup = BeautifulSoup(html, "html.parser")
 
+        # ==============================
+        # 🔥 Stage-A2 → PDF Priority Scan
+        # ==============================
+        pdf_links = find_pdf_links(html)
+        if pdf_links:
+            log(f"PDF found → {pdf_links[0]}")
+            pdf_data = extract_from_pdf(pdf_links[0])
+            return pdf_data
+
+        # ==============================
+        # HTML Text Fallback
+        # ==============================
         text = soup.get_text(" ", strip=True).lower()
 
-        salary = extract_value(text, ["salary", "pay", "₹"])
-        qualification = extract_value(text, ["qualification", "education", "degree", "10th", "12th", "graduation", "diploma"])
-        age = extract_value(text, ["age", "years", "upper age"])
-        last_date = extract_date(text)
-        vacancy = extract_numbers(text)
-
-        return {
-            "salary": salary,
-            "qualification": qualification,
-            "age_limit": age,
-            "vacancy": vacancy,
-            "last_date": last_date
-        }
+        result["salary"] = extract_value(text, ["₹", "salary", "pay scale", "pay level"])
+        result["qualification"] = extract_value(
+            text,
+            ["qualification", "education", "10th", "12th", "iti", "diploma", "graduate", "b.sc", "b.tech", "engineering"]
+        )
+        result["age_limit"] = extract_age(text)
+        result["last_date"] = extract_date(text)
+        result["vacancy"] = extract_vacancy(text)
 
     except Exception as e:
-        log(f"[Error scraping details] {url} -> {e}")
-        return {}
+        log(f"[ERROR] {url} -> {e}")
 
+    return result
+
+
+# ==============================
+# Extraction Helpers
+# ==============================
 
 def extract_value(text, keywords):
     for key in keywords:
         if key in text:
-            part = text[text.index(key):text.index(key) + 70]
-            return " ".join(part.split()[:7])
+            idx = text.index(key)
+            chunk = text[idx: idx + 80]
+            return " ".join(chunk.split()[:8])
     return ""
 
 
 def extract_date(text):
-    import re
-    dates = re.findall(r"\d{1,2}/\d{1,2}/\d{4}", text)
+    dates = re.findall(r"\b\d{1,2}/\d{1,2}/\d{4}\b", text)
     return dates[0] if dates else ""
 
 
-def extract_numbers(text):
-    import re
-    nums = re.findall(r"\d{2,5}", text)
+def extract_age(text):
+    age = re.findall(r"\b\d{2}\s?-\s?\d{2}\b", text)
+    return age[0].replace(" ", "") if age else ""
+
+
+def extract_vacancy(text):
+    v = re.findall(r"vacanc(?:y|ies)\s*[:\-]?\s*(\d{1,5})", text)
+    if v:
+        return v[0]
+    nums = re.findall(r"\b\d{2,5}\b", text)
     return nums[0] if nums else ""
 
 
 # ==============================
-# 🚀 Autopilot Engine
+# 🚀 Autopilot Engine Runner
 # ==============================
 def autopilot_run():
-    log("=== Autopilot Engine Started ===")
+    log("=== 🚀 Autopilot Engine Started ===")
 
     jobs = load_jobs()
     updated_jobs = []
 
     for job in jobs:
         url = job.get("apply_link")
-        log(f"Scanning: {job.get('title')}")
+        log(f"Scanning → {job.get('title')}")
 
         data = extract_details_from_page(url)
 
-        # intelligent update logic
+        # Smart merge logic
         for key in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
-            if (not job.get(key)) or len(str(job.get(key))) < 2:
-                if data.get(key):
-                    job[key] = data[key]
+            if not job.get(key) and data.get(key):
+                job[key] = data[key]
 
         updated_jobs.append(job)
-        time.sleep(2)  # prevent blocking
+        time.sleep(2)  # anti-block safe delay
 
     save_jobs(updated_jobs)
-    log("=== Autopilot Engine Complete ===")
+    log("=== ✅ Autopilot Engine Completed ===")
 
 
 # ==============================
-# Run Directly
+# Direct Run
 # ==============================
 if __name__ == "__main__":
     autopilot_run()
