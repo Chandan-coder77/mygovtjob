@@ -15,7 +15,7 @@
         "salary": "",
         "age_limit": "25-26",
         "vacancy": "28",
-        "last_date": "02/01/2026"
+        "last_date": ""
     },
     {
         "title": "OSSSC 3,250 CRE Online Form 2026",
@@ -42,15 +42,6 @@
         "salary": "₹74000",
         "age_limit": "",
         "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "SBI 996 SCO Online Form 2025",
-        "apply_link": "https://www.freejobalert.com/articles/sbi-sco-specialist-cadre-officers-recruitment-2025-apply-online-for-996-posts-3031856",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "26-42",
-        "vacancy": "996",
         "last_date": ""
     },
     {
@@ -88,6 +79,15 @@
         "age_limit": "18-40",
         "vacancy": "4009",
         "last_date": "21/01/2026"
+    },
+    {
+        "title": "SBI 996 SCO Online Form 2025",
+        "apply_link": "https://www.freejobalert.com/articles/sbi-sco-specialist-cadre-officers-recruitment-2025-apply-online-for-996-posts-3031856",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "26-42",
+        "vacancy": "1146",
+        "last_date": ""
     },
     {
         "title": "Aadhaar Supervisor/Operator Online Form 2026",
@@ -149,7 +149,7 @@
         "qualification": "",
         "salary": "",
         "age_limit": "26-42",
-        "vacancy": "996",
+        "vacancy": "1146",
         "last_date": ""
     },
     {
@@ -270,15 +270,6 @@
         "last_date": ""
     },
     {
-        "title": "SBI 996 SCO Online Form 2025",
-        "apply_link": "https://www.freejobalert.com/articles/sbi-sco-specialist-cadre-officers-recruitment-2025-apply-online-for-996-posts-3031856",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "26-42",
-        "vacancy": "996",
-        "last_date": ""
-    },
-    {
         "title": "BSF Constable GD Online Form 2025-26",
         "apply_link": "https://www.freejobalert.com/articles/bsf-sports-quota-recruitment-2025-apply-online-for-549-constable-posts-3033250",
         "qualification": "",
@@ -312,6 +303,51 @@
         "salary": "₹100000",
         "age_limit": "",
         "vacancy": "2025",
+        "last_date": ""
+    },
+    {
+        "title": "Kerala PSC Clerk, LDC and Other Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/kerala-psc-recruitment-2026-apply-online-for-116-clerk-ldc-and-other-posts-3034017",
+        "qualification": "10th",
+        "salary": "₹123700",
+        "age_limit": "18-40",
+        "vacancy": "116",
+        "last_date": ""
+    },
+    {
+        "title": "PSSSB Junior Engineer Online Form 2025-26",
+        "apply_link": "https://www.freejobalert.com/articles/psssb-junior-engineer-recruitment-2025-26-apply-online-for-157-posts-3033429",
+        "qualification": "diploma",
+        "salary": "",
+        "age_limit": "18-37",
+        "vacancy": "157",
+        "last_date": ""
+    },
+    {
+        "title": "OPSC OCS Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/opsc-ocs-recruitment-2026-apply-online-for-314-group-a-group-b-posts-3033991",
+        "qualification": "ba",
+        "salary": "₹56100",
+        "age_limit": "21-42",
+        "vacancy": "314",
+        "last_date": "27/02/2026"
+    },
+    {
+        "title": "ECHS Medical Officer, Clerk and More Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/echs-recruitment-2026-apply-offline-for-175-medical-officer-clerk-and-more-posts-3033983",
+        "qualification": "diploma",
+        "salary": "₹21800",
+        "age_limit": "",
+        "vacancy": "175",
+        "last_date": ""
+    },
+    {
+        "title": "JK Police 669 Constable Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/jk-police-constable-recruitment-2026-apply-online-for-669-posts-3033977",
+        "qualification": "",
+        "salary": "₹19900",
+        "age_limit": "",
+        "vacancy": "669",
         "last_date": ""
     },
     {
@@ -438,42 +474,6 @@
         "salary": "₹26000",
         "age_limit": "",
         "vacancy": "6",
-        "last_date": ""
-    },
-    {
-        "title": "TGSRTC TST, MST Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tgsrtc-recruitment-2026-apply-online-for-198-tst-mst-posts-3033555",
-        "qualification": "",
-        "salary": "₹27080",
-        "age_limit": "",
-        "vacancy": "198",
-        "last_date": ""
-    },
-    {
-        "title": "OSSC CGL Group B, Group C Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ossc-cgl-recruitment-2026-apply-online-for-1576-group-b-group-c-posts-3032784",
-        "qualification": "ba",
-        "salary": "",
-        "age_limit": "21-42",
-        "vacancy": "2025",
-        "last_date": "19/12/2025"
-    },
-    {
-        "title": "PSSSB 406 Group D Online Form 2025",
-        "apply_link": "https://www.freejobalert.com/articles/psssb-group-d-recruitment-2025-apply-online-for-331-posts-3030478",
-        "qualification": "",
-        "salary": "₹18000",
-        "age_limit": "18-37",
-        "vacancy": "406",
-        "last_date": ""
-    },
-    {
-        "title": "UP 7994 Lekhpal Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upsssc-rajasva-lekhpal-recruitment-2026-apply-online-for-7994-posts-3032952",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "18-40",
-        "vacancy": "7994",
         "last_date": ""
     },
     {
@@ -627,6 +627,78 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "404",
+        "last_date": ""
+    },
+    {
+        "title": "Career Information",
+        "apply_link": "https://www.ncs.gov.in/content-repository/Pages/BrowseBySectors.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Career Information",
+        "apply_link": "https://www.ncs.gov.in/content-repository/Pages/BrowseBySectors.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Key Performance Indicators",
+        "apply_link": "http://www.labour.gov.in/rfd",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2005",
+        "last_date": "15/11/2010"
+    },
+    {
+        "title": "Recruitment Agents / International Employers",
+        "apply_link": "https://emigrate.gov.in/#/emigrate/emigrant/list-of-active-ra",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Free non-formal vocational training to Persons with disabilities (PwDs)",
+        "apply_link": "https://ncs.gov.in/Documents/Advertiment_for_NCSC-DAs.pdf",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
