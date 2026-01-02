@@ -16,6 +16,15 @@ from pdf_reader import extract_from_pdf, find_pdf_links
 JOBS_FILE = "jobs.json"
 LOG_FILE = "autopilot_log.txt"
 
+# ✅ Strong Browser-like Headers (IMPORTANT)
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    )
+}
+
 # ==============================
 # Utility Functions
 # ==============================
@@ -54,8 +63,7 @@ def extract_details_from_page(url):
     }
 
     try:
-        headers = {"User-Agent": "Mozilla/5.0"}
-        response = requests.get(url, headers=headers, timeout=20)
+        response = requests.get(url, headers=HEADERS, timeout=25)
         html = response.text
         soup = BeautifulSoup(html, "html.parser")
 
@@ -64,7 +72,7 @@ def extract_details_from_page(url):
         # ==============================
         pdf_links = find_pdf_links(html)
         if pdf_links:
-            log(f"PDF found → {pdf_links[0]}")
+            log(f"📄 PDF found → {pdf_links[0]}")
             pdf_data = extract_from_pdf(pdf_links[0])
             return pdf_data
 
@@ -73,11 +81,19 @@ def extract_details_from_page(url):
         # ==============================
         text = soup.get_text(" ", strip=True).lower()
 
-        result["salary"] = extract_value(text, ["₹", "salary", "pay scale", "pay level"])
+        result["salary"] = extract_value(
+            text, ["₹", "salary", "pay scale", "pay level"]
+        )
+
         result["qualification"] = extract_value(
             text,
-            ["qualification", "education", "10th", "12th", "iti", "diploma", "graduate", "b.sc", "b.tech", "engineering"]
+            [
+                "qualification", "education", "10th", "12th",
+                "iti", "diploma", "graduate", "b.sc",
+                "b.tech", "engineering"
+            ]
         )
+
         result["age_limit"] = extract_age(text)
         result["last_date"] = extract_date(text)
         result["vacancy"] = extract_vacancy(text)
@@ -96,8 +112,8 @@ def extract_value(text, keywords):
     for key in keywords:
         if key in text:
             idx = text.index(key)
-            chunk = text[idx: idx + 80]
-            return " ".join(chunk.split()[:8])
+            chunk = text[idx: idx + 100]
+            return " ".join(chunk.split()[:10])
     return ""
 
 
@@ -130,17 +146,17 @@ def autopilot_run():
 
     for job in jobs:
         url = job.get("apply_link")
-        log(f"Scanning → {job.get('title')}")
+        log(f"🔍 Scanning → {job.get('title')}")
 
         data = extract_details_from_page(url)
 
-        # Smart merge logic
+        # Smart merge logic (blank-only fill)
         for key in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
             if not job.get(key) and data.get(key):
                 job[key] = data[key]
 
         updated_jobs.append(job)
-        time.sleep(2)  # anti-block safe delay
+        time.sleep(2)  # anti-block delay
 
     save_jobs(updated_jobs)
     log("=== ✅ Autopilot Engine Completed ===")
