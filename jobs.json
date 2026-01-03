@@ -13,9 +13,9 @@
         "apply_link": "https://www.freejobalert.com/examwise-information/188919/",
         "qualification": "",
         "salary": "",
-        "age_limit": "",
+        "age_limit": "25-26",
         "vacancy": "28",
-        "last_date": ""
+        "last_date": "03/01/2026"
     },
     {
         "title": "OSSSC 3,250 CRE Online Form 2026",
@@ -306,6 +306,15 @@
         "last_date": ""
     },
     {
+        "title": "MPPSC SSE Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/mppsc-sse-recruitment-2026-apply-online-for-191-posts-3034077",
+        "qualification": "graduate",
+        "salary": "",
+        "age_limit": "21-40",
+        "vacancy": "20",
+        "last_date": "01/04/2026"
+    },
+    {
         "title": "VMC 554 PHW, FW Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/vmc-recruitment-2026-apply-online-for-549-public-health-worker-field-worker-posts-3034048",
         "qualification": "10th",
@@ -483,16 +492,16 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2025",
-        "last_date": "15/5/2011"
+        "last_date": "03/01/2026"
     },
     {
         "title": "AISSEE 2025 Online Form",
         "apply_link": "https://www.freejobalert.com/aissee/1133144/",
-        "qualification": "iti",
+        "qualification": "graduate",
         "salary": "",
         "age_limit": "",
         "vacancy": "2025",
-        "last_date": ""
+        "last_date": "03/01/2026"
     },
     {
         "title": "MAH B.Ed CET 2025 Online Form",
@@ -501,7 +510,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2025",
-        "last_date": "28/01/2025"
+        "last_date": "03/01/2026"
     },
     {
         "title": "MAH MCA CET 2025 Online Form",
@@ -510,7 +519,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2025",
-        "last_date": "31/03/2026"
+        "last_date": "03/01/2026"
     },
     {
         "title": "UBTER JEEP 2025 Online Form",
@@ -519,7 +528,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2025",
-        "last_date": ""
+        "last_date": "03/01/2026"
     },
     {
         "title": "MAH MBA/ MMS CET 2025 Online Form",
@@ -528,7 +537,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2025",
-        "last_date": "31/03/2026"
+        "last_date": "03/01/2026"
     },
     {
         "title": "Anganwadi Recruitment",
@@ -627,6 +636,78 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "404",
+        "last_date": ""
+    },
+    {
+        "title": "Career Information",
+        "apply_link": "https://www.ncs.gov.in/content-repository/Pages/BrowseBySectors.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Career Information",
+        "apply_link": "https://www.ncs.gov.in/content-repository/Pages/BrowseBySectors.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "17/04/2025"
+    },
+    {
+        "title": "Key Performance Indicators",
+        "apply_link": "http://www.labour.gov.in/rfd",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2005",
+        "last_date": "15/11/2010"
+    },
+    {
+        "title": "Recruitment Agents / International Employers",
+        "apply_link": "https://emigrate.gov.in/#/emigrate/emigrant/list-of-active-ra",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Free non-formal vocational training to Persons with disabilities (PwDs)",
+        "apply_link": "https://ncs.gov.in/Documents/Advertiment_for_NCSC-DAs.pdf",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
