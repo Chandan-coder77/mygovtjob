@@ -6,17 +6,19 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-# 🔥 PDF reader import (Stage-A2)
+# 🔥 Stage-A2 PDF reader
 from pdf_reader import extract_from_pdf, find_pdf_links
 
-# ==============================
-# 🔥 Stage-A1 + A2 Autopilot Master Engine
-# ==============================
+# 🔥 Stage-A3 Navigator brain
+from navigator_a3 import crawl_with_depth, extract_best_text
 
+# ==============================
+# CONFIG
+# ==============================
 JOBS_FILE = "jobs.json"
 LOG_FILE = "autopilot_log.txt"
 
-# ✅ Strong Browser-like Headers (IMPORTANT)
+# ✅ Strong Browser-like headers
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -26,9 +28,8 @@ HEADERS = {
 }
 
 # ==============================
-# Utility Functions
+# Utility
 # ==============================
-
 def log(msg):
     print(msg)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
@@ -51,7 +52,7 @@ def save_jobs(data):
 
 
 # ==============================
-# 🔍 Smart Field Extractor (HTML + PDF)
+# 🔍 CORE EXTRACTOR (HTML + PDF + MULTI-PAGE)
 # ==============================
 def extract_details_from_page(url):
     result = {
@@ -63,12 +64,13 @@ def extract_details_from_page(url):
     }
 
     try:
+        # -------- MAIN PAGE --------
         response = requests.get(url, headers=HEADERS, timeout=25)
         html = response.text
         soup = BeautifulSoup(html, "html.parser")
 
         # ==============================
-        # 🔥 Stage-A2 → PDF Priority Scan
+        # Stage-A2 → PDF Priority
         # ==============================
         pdf_links = find_pdf_links(html)
         if pdf_links:
@@ -77,26 +79,34 @@ def extract_details_from_page(url):
             return pdf_data
 
         # ==============================
-        # HTML Text Fallback
+        # Stage-A3 → Multi-Page Crawl
         # ==============================
-        text = soup.get_text(" ", strip=True).lower()
+        log("🔁 Stage-A3: crawling internal pages…")
+        pages = crawl_with_depth(url, depth=2)
+        texts = extract_best_text(pages)
 
+        combined_text = " ".join(texts).lower()
+
+        # ==============================
+        # FINAL EXTRACTION (from combined brain)
+        # ==============================
         result["salary"] = extract_value(
-            text, ["₹", "salary", "pay scale", "pay level"]
+            combined_text,
+            ["₹", "salary", "pay scale", "pay level", "per month"]
         )
 
         result["qualification"] = extract_value(
-            text,
+            combined_text,
             [
                 "qualification", "education", "10th", "12th",
                 "iti", "diploma", "graduate", "b.sc",
-                "b.tech", "engineering"
+                "b.tech", "engineering", "degree"
             ]
         )
 
-        result["age_limit"] = extract_age(text)
-        result["last_date"] = extract_date(text)
-        result["vacancy"] = extract_vacancy(text)
+        result["age_limit"] = extract_age(combined_text)
+        result["last_date"] = extract_date(combined_text)
+        result["vacancy"] = extract_vacancy(combined_text)
 
     except Exception as e:
         log(f"[ERROR] {url} -> {e}")
@@ -107,13 +117,12 @@ def extract_details_from_page(url):
 # ==============================
 # Extraction Helpers
 # ==============================
-
 def extract_value(text, keywords):
     for key in keywords:
         if key in text:
             idx = text.index(key)
-            chunk = text[idx: idx + 100]
-            return " ".join(chunk.split()[:10])
+            chunk = text[idx: idx + 120]
+            return " ".join(chunk.split()[:12])
     return ""
 
 
@@ -136,34 +145,35 @@ def extract_vacancy(text):
 
 
 # ==============================
-# 🚀 Autopilot Engine Runner
+# 🚀 AUTOPILOT RUNNER
 # ==============================
 def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started ===")
+    log("=== 🚀 Autopilot Engine Started (A1+A2+A3) ===")
 
     jobs = load_jobs()
     updated_jobs = []
 
     for job in jobs:
         url = job.get("apply_link")
-        log(f"🔍 Scanning → {job.get('title')}")
+        title = job.get("title", "")
+        log(f"🔍 Scanning → {title}")
 
         data = extract_details_from_page(url)
 
-        # Smart merge logic (blank-only fill)
+        # 🔥 Smart merge (only fill blanks)
         for key in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
             if not job.get(key) and data.get(key):
                 job[key] = data[key]
 
         updated_jobs.append(job)
-        time.sleep(2)  # anti-block delay
+        time.sleep(2)  # anti-block safety
 
     save_jobs(updated_jobs)
     log("=== ✅ Autopilot Engine Completed ===")
 
 
 # ==============================
-# Direct Run
+# DIRECT RUN
 # ==============================
 if __name__ == "__main__":
     autopilot_run()
