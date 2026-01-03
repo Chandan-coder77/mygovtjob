@@ -19,6 +19,9 @@ from navigator_a3 import (
 # 🔥 Stage-A4
 from confidence_engine import evaluate_job, CONFIDENCE_THRESHOLD
 
+# 🔥 Stage-A4.2 Global Optimizer (NEW)
+from global_optimizer import optimize_jobs
+
 # ==============================
 # CONFIG
 # ==============================
@@ -173,13 +176,13 @@ def extract_vacancy(text):
 
 
 # ==============================
-# 🚀 AUTOPILOT RUNNER (A4.1)
+# 🚀 AUTOPILOT RUNNER (A4.1 + A4.2)
 # ==============================
 def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started (A4.1 ACTIVE) ===")
+    log("=== 🚀 Autopilot Engine Started (A4.1 + Global Optimizer) ===")
 
     jobs = load_jobs()
-    final_jobs = []
+    collected_jobs = []
 
     for job in jobs:
         log(f"🔍 Scanning → {job.get('title')}")
@@ -196,14 +199,17 @@ def autopilot_run():
 
         if job["accepted"]:
             log(f"✅ ACCEPTED | confidence={job['final_confidence']} | source={source}")
-            final_jobs.append(job)
+            collected_jobs.append(job)
         else:
             log(f"❌ REJECTED | confidence={job['final_confidence']}")
 
-        time.sleep(1.5)  # 🔥 reduced delay
+        time.sleep(1.5)
+
+    # 🔥 GLOBAL OPTIMIZATION (A4.2)
+    final_jobs = optimize_jobs(collected_jobs)
 
     save_jobs(final_jobs)
-    log("=== ✅ Autopilot Engine Completed (A4.1) ===")
+    log("=== ✅ Autopilot Engine Completed (A4.1 + A4.2) ===")
 
 
 if __name__ == "__main__":
