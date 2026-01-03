@@ -16,13 +16,15 @@ from navigator_a3 import (
     select_best_text
 )
 
+# 🔥 Stage-A4 Confidence Engine
+from confidence_engine import evaluate_job
+
 # ==============================
 # CONFIG
 # ==============================
 JOBS_FILE = "jobs.json"
 LOG_FILE = "autopilot_log.txt"
 
-# ✅ Strong Browser-like headers
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -56,7 +58,7 @@ def save_jobs(data):
 
 
 # ==============================
-# 🔍 CORE EXTRACTOR (HTML + PDF + MULTI-PAGE)
+# 🔍 CORE EXTRACTOR
 # ==============================
 def extract_details_from_page(url):
     result = {
@@ -64,59 +66,46 @@ def extract_details_from_page(url):
         "qualification": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
+        "last_date": "",
+        "_source": "HTML"
     }
 
     try:
-        # ==============================
-        # MAIN PAGE LOAD
-        # ==============================
         response = requests.get(url, headers=HEADERS, timeout=25)
         html = response.text
         soup = BeautifulSoup(html, "html.parser")
 
-        # ==============================
-        # Stage-A2 → PDF Priority
-        # ==============================
+        # ---------- PDF PRIORITY ----------
         pdf_links = find_pdf_links(html)
         if pdf_links:
             log(f"📄 PDF found → {pdf_links[0]}")
             pdf_data = extract_from_pdf(pdf_links[0])
             if pdf_data:
-                log("✅ Data extracted from PDF")
+                pdf_data["_source"] = "PDF"
                 return pdf_data
 
-        # ==============================
-        # Stage-A3 → Multi-Page Crawl
-        # ==============================
-        log("🔁 Stage-A3: crawling internal pages…")
+        # ---------- MULTI PAGE CRAWL ----------
+        log("🔁 Stage-A3 crawling pages")
         pages = crawl_with_depth(url, depth=2)
 
         texts = extract_best_text(pages)
         best_text, score = select_best_text(texts)
 
         if score > 0:
-            log(f"🧠 Best data selected (confidence={score})")
             combined_text = best_text.lower()
+            result["_source"] = "HTML"
         else:
-            log("⚠️ Fallback to main page text")
             combined_text = soup.get_text(" ", strip=True).lower()
 
-        # ==============================
-        # FINAL EXTRACTION
-        # ==============================
+        # ---------- EXTRACTION ----------
         result["salary"] = extract_value(
-            combined_text,
-            ["₹", "salary", "pay scale", "pay level", "per month"]
+            combined_text, ["₹", "salary", "pay scale", "pay level"]
         )
 
         result["qualification"] = extract_value(
             combined_text,
-            [
-                "qualification", "education", "10th", "12th",
-                "iti", "diploma", "graduate", "b.sc",
-                "b.tech", "engineering", "degree"
-            ]
+            ["qualification", "education", "10th", "12th",
+             "iti", "diploma", "graduate", "degree"]
         )
 
         result["age_limit"] = extract_age(combined_text)
@@ -130,25 +119,24 @@ def extract_details_from_page(url):
 
 
 # ==============================
-# Extraction Helpers
+# Helpers
 # ==============================
 def extract_value(text, keywords):
-    for key in keywords:
-        if key in text:
-            idx = text.index(key)
-            chunk = text[idx: idx + 120]
-            return " ".join(chunk.split()[:12])
+    for k in keywords:
+        if k in text:
+            i = text.index(k)
+            return " ".join(text[i:i+120].split()[:12])
     return ""
 
 
 def extract_date(text):
-    dates = re.findall(r"\b\d{1,2}/\d{1,2}/\d{4}\b", text)
-    return dates[0] if dates else ""
+    d = re.findall(r"\b\d{1,2}/\d{1,2}/\d{4}\b", text)
+    return d[0] if d else ""
 
 
 def extract_age(text):
-    age = re.findall(r"\b\d{2}\s?-\s?\d{2}\b", text)
-    return age[0].replace(" ", "") if age else ""
+    a = re.findall(r"\b\d{2}\s?-\s?\d{2}\b", text)
+    return a[0].replace(" ", "") if a else ""
 
 
 def extract_vacancy(text):
@@ -160,35 +148,38 @@ def extract_vacancy(text):
 
 
 # ==============================
-# 🚀 AUTOPILOT RUNNER
+# 🚀 AUTOPILOT RUNNER (A4 ACTIVE)
 # ==============================
 def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started (A1 + A2 + A3 FINAL) ===")
+    log("=== 🚀 Autopilot Engine Started (A1+A2+A3+A4) ===")
 
     jobs = load_jobs()
-    updated_jobs = []
+    final_jobs = []
 
     for job in jobs:
-        url = job.get("apply_link")
-        title = job.get("title", "")
-        log(f"🔍 Scanning → {title}")
+        log(f"🔍 Scanning → {job.get('title')}")
+        data = extract_details_from_page(job.get("apply_link"))
 
-        data = extract_details_from_page(url)
+        # merge blanks
+        for k in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
+            if not job.get(k) and data.get(k):
+                job[k] = data[k]
 
-        # 🔥 Smart merge (only fill blanks)
-        for key in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
-            if not job.get(key) and data.get(key):
-                job[key] = data[key]
+        # 🔥 Stage-A4 Confidence Evaluation
+        source = data.get("_source", "HTML")
+        job = evaluate_job(job, source=source)
 
-        updated_jobs.append(job)
-        time.sleep(2)  # anti-block safety
+        if job.get("accepted"):
+            log(f"✅ Accepted (confidence={job['final_confidence']})")
+            final_jobs.append(job)
+        else:
+            log(f"❌ Rejected low confidence ({job['final_confidence']})")
 
-    save_jobs(updated_jobs)
+        time.sleep(2)
+
+    save_jobs(final_jobs)
     log("=== ✅ Autopilot Engine Completed ===")
 
 
-# ==============================
-# DIRECT RUN
-# ==============================
 if __name__ == "__main__":
     autopilot_run()
