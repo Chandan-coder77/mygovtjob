@@ -10,7 +10,11 @@ from datetime import datetime
 from pdf_reader import extract_from_pdf, find_pdf_links
 
 # 🔥 Stage-A3 Navigator brain
-from navigator_a3 import crawl_with_depth, extract_best_text
+from navigator_a3 import (
+    crawl_with_depth,
+    extract_best_text,
+    select_best_text
+)
 
 # ==============================
 # CONFIG
@@ -64,7 +68,9 @@ def extract_details_from_page(url):
     }
 
     try:
-        # -------- MAIN PAGE --------
+        # ==============================
+        # MAIN PAGE LOAD
+        # ==============================
         response = requests.get(url, headers=HEADERS, timeout=25)
         html = response.text
         soup = BeautifulSoup(html, "html.parser")
@@ -76,19 +82,28 @@ def extract_details_from_page(url):
         if pdf_links:
             log(f"📄 PDF found → {pdf_links[0]}")
             pdf_data = extract_from_pdf(pdf_links[0])
-            return pdf_data
+            if pdf_data:
+                log("✅ Data extracted from PDF")
+                return pdf_data
 
         # ==============================
         # Stage-A3 → Multi-Page Crawl
         # ==============================
         log("🔁 Stage-A3: crawling internal pages…")
         pages = crawl_with_depth(url, depth=2)
-        texts = extract_best_text(pages)
 
-        combined_text = " ".join(texts).lower()
+        texts = extract_best_text(pages)
+        best_text, score = select_best_text(texts)
+
+        if score > 0:
+            log(f"🧠 Best data selected (confidence={score})")
+            combined_text = best_text.lower()
+        else:
+            log("⚠️ Fallback to main page text")
+            combined_text = soup.get_text(" ", strip=True).lower()
 
         # ==============================
-        # FINAL EXTRACTION (from combined brain)
+        # FINAL EXTRACTION
         # ==============================
         result["salary"] = extract_value(
             combined_text,
@@ -148,7 +163,7 @@ def extract_vacancy(text):
 # 🚀 AUTOPILOT RUNNER
 # ==============================
 def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started (A1+A2+A3) ===")
+    log("=== 🚀 Autopilot Engine Started (A1 + A2 + A3 FINAL) ===")
 
     jobs = load_jobs()
     updated_jobs = []
