@@ -6,18 +6,18 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-# 🔥 Stage-A2 PDF reader
+# 🔥 Stage-A2
 from pdf_reader import extract_from_pdf, find_pdf_links
 
-# 🔥 Stage-A3 Navigator brain
+# 🔥 Stage-A3
 from navigator_a3 import (
     crawl_with_depth,
     extract_best_text,
     select_best_text
 )
 
-# 🔥 Stage-A4 Confidence Engine
-from confidence_engine import evaluate_job
+# 🔥 Stage-A4
+from confidence_engine import evaluate_job, CONFIDENCE_THRESHOLD
 
 # ==============================
 # CONFIG
@@ -32,6 +32,8 @@ HEADERS = {
         "Chrome/120.0 Safari/537.36"
     )
 }
+
+CRAWLED_CACHE = set()   # 🔥 A4.1 cache
 
 # ==============================
 # Utility
@@ -58,7 +60,7 @@ def save_jobs(data):
 
 
 # ==============================
-# 🔍 CORE EXTRACTOR
+# 🔍 CORE EXTRACTOR (A4.1 OPTIMIZED)
 # ==============================
 def extract_details_from_page(url):
     result = {
@@ -70,21 +72,42 @@ def extract_details_from_page(url):
         "_source": "HTML"
     }
 
+    # 🔥 CACHE CHECK
+    if url in CRAWLED_CACHE:
+        log("⚡ Skipped (cached URL)")
+        return result
+
+    CRAWLED_CACHE.add(url)
+
     try:
         response = requests.get(url, headers=HEADERS, timeout=25)
         html = response.text
         soup = BeautifulSoup(html, "html.parser")
 
-        # ---------- PDF PRIORITY ----------
+        # ==============================
+        # PDF PRIORITY
+        # ==============================
         pdf_links = find_pdf_links(html)
         if pdf_links:
-            log(f"📄 PDF found → {pdf_links[0]}")
-            pdf_data = extract_from_pdf(pdf_links[0])
+            pdf_url = pdf_links[0]
+            log(f"📄 PDF detected → {pdf_url}")
+
+            pdf_data = extract_from_pdf(pdf_url)
             if pdf_data:
                 pdf_data["_source"] = "PDF"
-                return pdf_data
 
-        # ---------- MULTI PAGE CRAWL ----------
+                temp_job = evaluate_job(pdf_data, source="PDF")
+                log(f"🧠 confidence={temp_job['final_confidence']} | source=PDF")
+
+                if temp_job["final_confidence"] >= CONFIDENCE_THRESHOLD:
+                    log("⚡ Early STOP (PDF high confidence)")
+                    return pdf_data
+                else:
+                    log("↩ PDF low confidence, fallback to HTML")
+
+        # ==============================
+        # MULTI PAGE CRAWL
+        # ==============================
         log("🔁 Stage-A3 crawling pages")
         pages = crawl_with_depth(url, depth=2)
 
@@ -97,7 +120,9 @@ def extract_details_from_page(url):
         else:
             combined_text = soup.get_text(" ", strip=True).lower()
 
-        # ---------- EXTRACTION ----------
+        # ==============================
+        # EXTRACTION
+        # ==============================
         result["salary"] = extract_value(
             combined_text, ["₹", "salary", "pay scale", "pay level"]
         )
@@ -148,16 +173,17 @@ def extract_vacancy(text):
 
 
 # ==============================
-# 🚀 AUTOPILOT RUNNER (A4 ACTIVE)
+# 🚀 AUTOPILOT RUNNER (A4.1)
 # ==============================
 def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started (A1+A2+A3+A4) ===")
+    log("=== 🚀 Autopilot Engine Started (A4.1 ACTIVE) ===")
 
     jobs = load_jobs()
     final_jobs = []
 
     for job in jobs:
         log(f"🔍 Scanning → {job.get('title')}")
+
         data = extract_details_from_page(job.get("apply_link"))
 
         # merge blanks
@@ -165,20 +191,19 @@ def autopilot_run():
             if not job.get(k) and data.get(k):
                 job[k] = data[k]
 
-        # 🔥 Stage-A4 Confidence Evaluation
         source = data.get("_source", "HTML")
         job = evaluate_job(job, source=source)
 
-        if job.get("accepted"):
-            log(f"✅ Accepted (confidence={job['final_confidence']})")
+        if job["accepted"]:
+            log(f"✅ ACCEPTED | confidence={job['final_confidence']} | source={source}")
             final_jobs.append(job)
         else:
-            log(f"❌ Rejected low confidence ({job['final_confidence']})")
+            log(f"❌ REJECTED | confidence={job['final_confidence']}")
 
-        time.sleep(2)
+        time.sleep(1.5)  # 🔥 reduced delay
 
     save_jobs(final_jobs)
-    log("=== ✅ Autopilot Engine Completed ===")
+    log("=== ✅ Autopilot Engine Completed (A4.1) ===")
 
 
 if __name__ == "__main__":
