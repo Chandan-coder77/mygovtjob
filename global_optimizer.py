@@ -1,77 +1,111 @@
 # ==============================
-# 🌍 Stage-A4.2 Global Optimizer
+# 🌍 Stage-A4.2 Global Data Intelligence Layer (FINAL)
 # ==============================
 
 import re
+import hashlib
 from datetime import datetime
+from confidence_engine import CONFIDENCE_THRESHOLD
 
 YEAR_PATTERN = re.compile(r"^20\d{2}$")
-
 
 # ------------------------------
 # Utility
 # ------------------------------
+def normalize(text):
+    if not text:
+        return ""
+    text = text.lower()
+    text = re.sub(r"\(.*?\)|\[.*?\]", "", text)  # remove brackets
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def is_year(value):
     if not value:
         return False
     return bool(YEAR_PATTERN.match(str(value).strip()))
 
 
-def normalize_title(title):
-    return re.sub(r"\s+", " ", title.lower()).strip()
+def job_fingerprint(job):
+    """
+    Strong duplicate identifier
+    """
+    base = normalize(job.get("title", "")) + "|" + normalize(job.get("apply_link", ""))
+    return hashlib.md5(base.encode()).hexdigest()
 
 
 # ------------------------------
-# 1️⃣ Year vs Vacancy Fix
+# 1️⃣ Year vs Vacancy Global Fix
 # ------------------------------
 def fix_year_vacancy(job):
-    vacancy = job.get("vacancy", "")
+    vacancy = str(job.get("vacancy", "")).strip()
+
     if is_year(vacancy):
         job["vacancy"] = ""
-        job["year_detected"] = vacancy
         job["vacancy_fixed"] = True
+        job["vacancy_fix_reason"] = "year_detected"
     else:
         job["vacancy_fixed"] = False
+
     return job
 
 
 # ------------------------------
-# 2️⃣ Confidence History
+# 2️⃣ Confidence History Memory
 # ------------------------------
 def update_confidence_history(job):
     history = job.get("confidence_history", [])
+
     history.append({
         "time": datetime.now().isoformat(),
-        "confidence": job.get("final_confidence", 0)
+        "confidence": job.get("final_confidence", 0),
+        "source": job.get("confidence_source", "HTML")
     })
+
     job["confidence_history"] = history
     return job
 
 
 # ------------------------------
-# 3️⃣ Duplicate Job Merge
+# 3️⃣ Smart Field Merge
+# ------------------------------
+def merge_job_fields(old, new):
+    """
+    Field-wise merge (best value wins)
+    """
+    for field in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
+        if not old.get(field) and new.get(field):
+            old[field] = new[field]
+
+    # keep highest confidence
+    old["final_confidence"] = max(
+        old.get("final_confidence", 0),
+        new.get("final_confidence", 0)
+    )
+
+    return old
+
+
+# ------------------------------
+# 4️⃣ Duplicate Job Merge (Smart)
 # ------------------------------
 def merge_duplicates(jobs):
-    merged = {}
+    registry = {}
+
     for job in jobs:
-        key = (
-            normalize_title(job.get("title", "")),
-            job.get("apply_link", "")
-        )
+        fid = job_fingerprint(job)
 
-        if key not in merged:
-            merged[key] = job
+        if fid not in registry:
+            registry[fid] = job
         else:
-            # keep higher confidence
-            old = merged[key]
-            if job.get("final_confidence", 0) > old.get("final_confidence", 0):
-                merged[key] = job
+            registry[fid] = merge_job_fields(registry[fid], job)
 
-    return list(merged.values())
+    return list(registry.values())
 
 
 # ------------------------------
-# 4️⃣ URL Cache Filter
+# 5️⃣ URL Cache Filter
 # ------------------------------
 def apply_url_cache(jobs):
     seen = set()
@@ -87,9 +121,14 @@ def apply_url_cache(jobs):
 
 
 # ------------------------------
-# 🔥 MAIN OPTIMIZER
+# 🔥 MAIN OPTIMIZER (Stage-A4.2)
 # ------------------------------
 def optimize_jobs(jobs):
+    """
+    Input: accepted jobs from A4.1
+    Output: clean, deduplicated, corrected jobs.json
+    """
+
     optimized = []
 
     for job in jobs:
@@ -100,4 +139,11 @@ def optimize_jobs(jobs):
     optimized = merge_duplicates(optimized)
     optimized = apply_url_cache(optimized)
 
-    return optimized
+    # final confidence filter
+    final_jobs = []
+    for job in optimized:
+        if job.get("final_confidence", 0) >= CONFIDENCE_THRESHOLD:
+            job["optimized_at"] = datetime.now().isoformat()
+            final_jobs.append(job)
+
+    return final_jobs
