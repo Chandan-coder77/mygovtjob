@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-import re
+import time
 
 HEADERS = {
     "User-Agent": (
@@ -17,19 +17,33 @@ KEYWORDS = [
 ]
 
 # ==============================
-# 🔗 Crawl pages
+# 🔒 HARD LIMIT CONFIG
+# ==============================
+MAX_PAGES = 6          # 🚫 total pages max
+MAX_TIME_SEC = 25      # 🚫 per job crawl time
+
+# ==============================
+# 🔗 SAFE CRAWLER
 # ==============================
 def crawl_with_depth(start_url, depth=2):
     visited = set()
     pages = []
+    start_time = time.time()
 
     def crawl(url, d):
-        if url in visited or d < 0:
+        # ⛔ STOP CONDITIONS
+        if (
+            url in visited or
+            d < 0 or
+            len(pages) >= MAX_PAGES or
+            time.time() - start_time > MAX_TIME_SEC
+        ):
             return
+
         visited.add(url)
 
         try:
-            r = requests.get(url, headers=HEADERS, timeout=20)
+            r = requests.get(url, headers=HEADERS, timeout=15)
             soup = BeautifulSoup(r.text, "html.parser")
 
             pages.append({
@@ -39,8 +53,8 @@ def crawl_with_depth(start_url, depth=2):
             })
 
             for a in soup.find_all("a", href=True):
-                href = a["href"].lower()
                 text = a.get_text(" ", strip=True).lower()
+                href = a["href"].lower()
 
                 if any(k in href or k in text for k in KEYWORDS):
                     crawl(urljoin(url, a["href"]), d - 1)
@@ -53,7 +67,7 @@ def crawl_with_depth(start_url, depth=2):
 
 
 # ==============================
-# 🧠 Extract texts
+# 🧠 TEXT EXTRACTOR
 # ==============================
 def extract_best_text(pages):
     texts = []
@@ -65,11 +79,12 @@ def extract_best_text(pages):
         text = soup.get_text(" ", strip=True)
         if len(text) > 300:
             texts.append(text)
+
     return texts
 
 
 # ==============================
-# 📊 Score
+# 📊 SCORE
 # ==============================
 def confidence_score(text):
     rules = {
@@ -89,7 +104,7 @@ def confidence_score(text):
 
 
 # ==============================
-# 🏆 Select best
+# 🏆 SELECT BEST
 # ==============================
 def select_best_text(texts):
     best, best_score = "", 0
