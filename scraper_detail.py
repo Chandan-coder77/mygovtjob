@@ -6,10 +6,9 @@ import time
 import os
 import warnings
 from urllib.parse import urljoin, urlparse
-from pdfminer.high_level import extract_text
 
 # ==============================
-# 🔕 Suppress XML warning
+# 🔕 Suppress warnings
 # ==============================
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
@@ -34,15 +33,8 @@ KEYWORDS = [
 
 BLOCK_WORDS = [
     "admit card", "result", "answer key",
-    "hall ticket", "syllabus"
+    "hall ticket", "syllabus", "exam", "panel", "cbt"
 ]
-
-SIDE_LINK_HINTS = [
-    "notification", "advertisement",
-    "details", "pdf", "download"
-]
-
-MAX_SIDE_LINKS = 2   # ⚡ speed control
 
 # ==============================
 # Utility
@@ -60,99 +52,65 @@ def normalize_url(base, link):
     return urljoin(base, link)
 
 # ==============================
-# PDF Extract (SAFE)
+# 🔍 DETAIL EXTRACT (SAFE + LIGHT)
 # ==============================
-def extract_pdf_text(url):
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=15)
-        tmp = "temp.pdf"
-        with open(tmp, "wb") as f:
-            f.write(r.content)
-
-        text = extract_text(tmp)
-        os.remove(tmp)
-        return clean_text(text)
-    except:
-        return ""
-
-# ==============================
-# Detail Extract (HTML + Table)
-# ==============================
-def extract_details_from_html(html):
+def extract_details(html):
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text(" ", strip=True)
 
-    qualification = salary = age = vacancy = last_date = ""
-
-    # -------- TABLE PRIORITY --------
-    for table in soup.find_all("table"):
-        for row in table.find_all("tr"):
-            cols = [clean_text(c.get_text()) for c in row.find_all(["td","th"])]
-            if len(cols) < 2:
-                continue
-
-            key = cols[0].lower()
-            val = cols[1]
-
-            if "qualification" in key or "education" in key:
-                qualification = val
-            elif "salary" in key or "pay" in key:
-                salary = val
-            elif "age" in key:
-                age = val
-            elif "vacanc" in key or "post" in key:
-                vacancy = val
-            elif "last date" in key:
-                last_date = val
-
-    # -------- TEXT FALLBACK --------
-    if not qualification:
-        m = re.search(r'(10th|12th|iti|diploma|graduate|degree|b\.?tech|mba)', text, re.I)
-        if m: qualification = m.group(1)
-
-    if not salary:
-        m = re.search(r'₹\s?\d[\d,]+', text)
-        if m: salary = m.group(0)
-
-    if not age:
-        m = re.search(r'\d{2}\s?-\s?\d{2}', text)
-        if m: age = m.group(0)
-
-    if not vacancy:
-        m = re.search(r'vacanc(?:y|ies).*?(\d{1,5})', text, re.I)
-        if m: vacancy = m.group(1)
-
-    if not last_date:
-        m = re.search(r'\d{2}/\d{2}/\d{4}', text)
-        if m: last_date = m.group(0)
-
-    return {
-        "qualification": qualification,
-        "salary": salary,
-        "age_limit": age,
-        "vacancy": vacancy,
-        "last_date": last_date
+    data = {
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
     }
 
+    # TABLE FIRST
+    for row in soup.find_all("tr"):
+        cols = [clean_text(c.get_text()) for c in row.find_all(["td", "th"])]
+        if len(cols) < 2:
+            continue
+
+        key = cols[0].lower()
+        val = cols[1]
+
+        if "qualification" in key or "education" in key:
+            data["qualification"] = val
+        elif "salary" in key or "pay" in key:
+            data["salary"] = val
+        elif "age" in key:
+            data["age_limit"] = val
+        elif "vacanc" in key or "post" in key:
+            data["vacancy"] = val
+        elif "last date" in key:
+            data["last_date"] = val
+
+    # TEXT FALLBACK
+    if not data["qualification"]:
+        m = re.search(r'(10th|12th|iti|diploma|graduate|degree|b\.?tech|mba)', text, re.I)
+        if m:
+            data["qualification"] = m.group(1)
+
+    if not data["salary"]:
+        m = re.search(r'₹\s?\d[\d,]+', text)
+        if m:
+            data["salary"] = m.group(0)
+
+    if not data["age_limit"]:
+        m = re.search(r'\d{2}\s?-\s?\d{2}', text)
+        if m:
+            data["age_limit"] = m.group(0)
+
+    if not data["last_date"]:
+        m = re.search(r'\d{2}/\d{2}/\d{4}', text)
+        if m:
+            data["last_date"] = m.group(0)
+
+    return data
+
 # ==============================
-# 🔎 SIDE LINK CRAWLER
-# ==============================
-def crawl_side_links(base_url, soup):
-    links = []
-    for a in soup.find_all("a", href=True):
-        text = a.get_text(" ", strip=True).lower()
-        href = a["href"].lower()
-
-        if any(h in text or h in href for h in SIDE_LINK_HINTS):
-            links.append(normalize_url(base_url, a["href"]))
-
-        if len(links) >= MAX_SIDE_LINKS:
-            break
-
-    return links
-
-# ==============================
-# 🚀 MAIN SCRAPER
+# 🚀 MAIN SCRAPER (ODISHA SAFE)
 # ==============================
 def process():
     jobs = []
@@ -163,15 +121,14 @@ def process():
         return
 
     with open(SOURCE_FILE, "r", encoding="utf-8") as f:
-        sources = [x.strip() for x in f if x.strip()]
+        sources = [x.strip() for x in f if x.strip() and x.startswith("http")]
 
     for source_url in sources:
         print(f"🔍 Checking {source_url}")
 
         try:
-            r = requests.get(source_url, headers=HEADERS, timeout=15)
+            r = requests.get(source_url, headers=HEADERS, timeout=20)
             soup = BeautifulSoup(r.text, "html.parser")
-
             base = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(source_url))
 
             for a in soup.find_all("a", href=True):
@@ -182,8 +139,8 @@ def process():
                 job_url = normalize_url(base, a["href"])
                 if job_url in seen:
                     continue
-
                 seen.add(job_url)
+
                 print(f"📌 Job Found: {title}")
 
                 job = {
@@ -194,29 +151,19 @@ def process():
                     "age_limit": "",
                     "vacancy": "",
                     "last_date": "",
+                    "status": "PENDING_DETAIL",   # 🔥 VERY IMPORTANT
+                    "source": source_url
                 }
 
-                # ==============================
-                # Detail Page
-                # ==============================
+                # TRY DETAIL PAGE (NON-BLOCKING)
                 try:
                     r2 = requests.get(job_url, headers=HEADERS, timeout=15)
-                    details = extract_details_from_html(r2.text)
+                    details = extract_details(r2.text)
                     job.update(details)
 
-                    soup2 = BeautifulSoup(r2.text, "html.parser")
-
-                    # ---------- SIDE LINKS ----------
-                    side_links = crawl_side_links(job_url, soup2)
-                    for link in side_links:
-                        if link.endswith(".pdf"):
-                            pdf_text = extract_pdf_text(link)
-                            pdf_data = extract_details_from_html(pdf_text)
-                            job.update({k:v for k,v in pdf_data.items() if not job.get(k)})
-                        else:
-                            r3 = requests.get(link, headers=HEADERS, timeout=15)
-                            html_data = extract_details_from_html(r3.text)
-                            job.update({k:v for k,v in html_data.items() if not job.get(k)})
+                    # अगर कुछ भी मिला तो ACCEPTED
+                    if any(job[k] for k in ["qualification","salary","age_limit","vacancy","last_date"]):
+                        job["status"] = "DETAIL_OK"
 
                 except:
                     pass
@@ -231,7 +178,7 @@ def process():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(jobs, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ SMART Scraper Complete — {len(jobs)} jobs collected 🚀")
+    print(f"✅ SCRAPER COMPLETE — {len(jobs)} jobs saved 🚀")
 
 # ==============================
 if __name__ == "__main__":
