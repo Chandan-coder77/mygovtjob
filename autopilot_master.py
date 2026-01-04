@@ -1,3 +1,7 @@
+# ==============================
+# 🚀 AUTOPILOT MASTER (SAFE MODE)
+# ==============================
+
 import os
 import json
 import time
@@ -6,20 +10,9 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-# 🔥 Stage-A2
 from pdf_reader import extract_from_pdf, find_pdf_links
-
-# 🔥 Stage-A3
-from navigator_a3 import (
-    crawl_with_depth,
-    extract_best_text,
-    select_best_text
-)
-
-# 🔥 Stage-A4
+from navigator_a3 import crawl_with_depth, extract_best_text, select_best_text
 from confidence_engine import evaluate_job, CONFIDENCE_THRESHOLD
-
-# 🔥 Stage-A4.2 Global Optimizer (NEW)
 from global_optimizer import optimize_jobs
 
 # ==============================
@@ -27,6 +20,9 @@ from global_optimizer import optimize_jobs
 # ==============================
 JOBS_FILE = "jobs.json"
 LOG_FILE = "autopilot_log.txt"
+
+MAX_JOBS_PER_RUN = 50        # 🔥 MAIN FIX
+MAX_JOB_TIME = 35            # ⏱ per job seconds
 
 HEADERS = {
     "User-Agent": (
@@ -36,16 +32,13 @@ HEADERS = {
     )
 }
 
-CRAWLED_CACHE = set()   # 🔥 A4.1 cache
+CRAWLED_CACHE = set()
 
-# ==============================
-# Utility
 # ==============================
 def log(msg):
     print(msg)
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"[{datetime.now()}] {msg}\n")
-
 
 def load_jobs():
     if not os.path.exists(JOBS_FILE):
@@ -56,16 +49,14 @@ def load_jobs():
     except:
         return []
 
-
 def save_jobs(data):
     with open(JOBS_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-
-# ==============================
-# 🔍 CORE EXTRACTOR (A4.1 OPTIMIZED)
 # ==============================
 def extract_details_from_page(url):
+    start = time.time()
+
     result = {
         "salary": "",
         "qualification": "",
@@ -75,142 +66,84 @@ def extract_details_from_page(url):
         "_source": "HTML"
     }
 
-    # 🔥 CACHE CHECK
     if url in CRAWLED_CACHE:
-        log("⚡ Skipped (cached URL)")
         return result
 
     CRAWLED_CACHE.add(url)
 
     try:
-        response = requests.get(url, headers=HEADERS, timeout=25)
-        html = response.text
-        soup = BeautifulSoup(html, "html.parser")
+        r = requests.get(url, headers=HEADERS, timeout=20)
+        soup = BeautifulSoup(r.text, "html.parser")
 
-        # ==============================
-        # PDF PRIORITY
-        # ==============================
-        pdf_links = find_pdf_links(html)
-        if pdf_links:
-            pdf_url = pdf_links[0]
-            log(f"📄 PDF detected → {pdf_url}")
+        # ⏱ TIME GUARD
+        if time.time() - start > MAX_JOB_TIME:
+            return result
 
-            pdf_data = extract_from_pdf(pdf_url)
-            if pdf_data:
-                pdf_data["_source"] = "PDF"
-
-                temp_job = evaluate_job(pdf_data, source="PDF")
-                log(f"🧠 confidence={temp_job['final_confidence']} | source=PDF")
-
-                if temp_job["final_confidence"] >= CONFIDENCE_THRESHOLD:
-                    log("⚡ Early STOP (PDF high confidence)")
-                    return pdf_data
-                else:
-                    log("↩ PDF low confidence, fallback to HTML")
-
-        # ==============================
-        # MULTI PAGE CRAWL
-        # ==============================
-        log("🔁 Stage-A3 crawling pages")
         pages = crawl_with_depth(url, depth=2)
-
         texts = extract_best_text(pages)
         best_text, score = select_best_text(texts)
 
-        if score > 0:
-            combined_text = best_text.lower()
-            result["_source"] = "HTML"
-        else:
-            combined_text = soup.get_text(" ", strip=True).lower()
+        combined = best_text.lower() if score > 0 else soup.get_text(" ", strip=True).lower()
 
-        # ==============================
-        # EXTRACTION
-        # ==============================
-        result["salary"] = extract_value(
-            combined_text, ["₹", "salary", "pay scale", "pay level"]
-        )
+        result["salary"] = extract_value(combined, ["₹", "salary", "pay"])
+        result["qualification"] = extract_value(combined, ["qualification", "education", "degree", "iti"])
+        result["age_limit"] = extract_age(combined)
+        result["last_date"] = extract_date(combined)
+        result["vacancy"] = extract_vacancy(combined)
 
-        result["qualification"] = extract_value(
-            combined_text,
-            ["qualification", "education", "10th", "12th",
-             "iti", "diploma", "graduate", "degree"]
-        )
-
-        result["age_limit"] = extract_age(combined_text)
-        result["last_date"] = extract_date(combined_text)
-        result["vacancy"] = extract_vacancy(combined_text)
-
-    except Exception as e:
-        log(f"[ERROR] {url} -> {e}")
+    except:
+        pass
 
     return result
 
-
 # ==============================
-# Helpers
-# ==============================
-def extract_value(text, keywords):
-    for k in keywords:
+def extract_value(text, keys):
+    for k in keys:
         if k in text:
             i = text.index(k)
             return " ".join(text[i:i+120].split()[:12])
     return ""
 
-
 def extract_date(text):
-    d = re.findall(r"\b\d{1,2}/\d{1,2}/\d{4}\b", text)
+    d = re.findall(r"\d{1,2}/\d{1,2}/\d{4}", text)
     return d[0] if d else ""
 
-
 def extract_age(text):
-    a = re.findall(r"\b\d{2}\s?-\s?\d{2}\b", text)
-    return a[0].replace(" ", "") if a else ""
-
+    a = re.findall(r"\d{2}\s?-\s?\d{2}", text)
+    return a[0] if a else ""
 
 def extract_vacancy(text):
     v = re.findall(r"vacanc(?:y|ies)\s*[:\-]?\s*(\d{1,5})", text)
-    if v:
-        return v[0]
-    nums = re.findall(r"\b\d{2,5}\b", text)
-    return nums[0] if nums else ""
+    return v[0] if v else ""
 
-
-# ==============================
-# 🚀 AUTOPILOT RUNNER (A4.1 + A4.2)
 # ==============================
 def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started (A4.1 + Global Optimizer) ===")
+    log("=== 🚀 Autopilot Engine Started (SAFE MODE) ===")
 
-    jobs = load_jobs()
-    collected_jobs = []
+    jobs = load_jobs()[:MAX_JOBS_PER_RUN]
+    accepted = []
 
     for job in jobs:
-        log(f"🔍 Scanning → {job.get('title')}")
+        log(f"🔍 {job.get('title')}")
 
         data = extract_details_from_page(job.get("apply_link"))
-
-        # merge blanks
         for k in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
             if not job.get(k) and data.get(k):
                 job[k] = data[k]
 
-        source = data.get("_source", "HTML")
-        job = evaluate_job(job, source=source)
+        job = evaluate_job(job, source=data.get("_source", "HTML"))
 
         if job["accepted"]:
-            log(f"✅ ACCEPTED | confidence={job['final_confidence']} | source={source}")
-            collected_jobs.append(job)
+            accepted.append(job)
+            log(f"✅ ACCEPTED {job['final_confidence']}")
         else:
-            log(f"❌ REJECTED | confidence={job['final_confidence']}")
+            log(f"❌ REJECTED {job['final_confidence']}")
 
-        time.sleep(1.5)
+    final = optimize_jobs(accepted)
+    save_jobs(final)
 
-    # 🔥 GLOBAL OPTIMIZATION (A4.2)
-    final_jobs = optimize_jobs(collected_jobs)
+    log("=== ✅ Autopilot Engine Completed (A4.2 CONFIRMED) ===")
 
-    save_jobs(final_jobs)
-    log("=== ✅ Autopilot Engine Completed (A4.1 + A4.2) ===")
-
-
+# ==============================
 if __name__ == "__main__":
     autopilot_run()
