@@ -1,5 +1,5 @@
 # ==============================
-# 🚀 AUTOPILOT MASTER (SAFE MODE)
+# 🚀 AUTOPILOT MASTER (SAFE MODE - HARD FIXED)
 # ==============================
 
 import os
@@ -10,9 +10,8 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-from pdf_reader import extract_from_pdf, find_pdf_links
 from navigator_a3 import crawl_with_depth, extract_best_text, select_best_text
-from confidence_engine import evaluate_job, CONFIDENCE_THRESHOLD
+from confidence_engine import evaluate_job
 from global_optimizer import optimize_jobs
 
 # ==============================
@@ -45,20 +44,28 @@ def log(msg):
 # ==============================
 def load_jobs():
     if not os.path.exists(JOBS_FILE):
+        log("❌ jobs.json not found")
         return []
 
     try:
         with open(JOBS_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-            # ✅ FORCE LIST
-            if isinstance(data, list):
-                return data
+        # ✅ ALWAYS RETURN LIST OF DICTS
+        clean = []
+        if isinstance(data, list):
+            for j in data:
+                if isinstance(j, dict):
+                    clean.append(j)
+                else:
+                    log(f"⚠ Skipped invalid job entry: {type(j)}")
 
-            if isinstance(data, dict):
-                return list(data.values())
+        elif isinstance(data, dict):
+            for v in data.values():
+                if isinstance(v, dict):
+                    clean.append(v)
 
-            return []
+        return clean
 
     except Exception as e:
         log(f"❌ jobs.json load failed: {e}")
@@ -81,7 +88,10 @@ def extract_details_from_page(url):
         "_source": "HTML"
     }
 
-    if not url or url in CRAWLED_CACHE:
+    if not url or not isinstance(url, str):
+        return result
+
+    if url in CRAWLED_CACHE:
         return result
 
     CRAWLED_CACHE.add(url)
@@ -118,6 +128,8 @@ def extract_details_from_page(url):
 
 # ==============================
 def extract_value(text, keys):
+    if not isinstance(text, str):
+        return ""
     for k in keys:
         if k in text:
             i = text.find(k)
@@ -142,35 +154,40 @@ def autopilot_run():
 
     jobs_all = load_jobs()
 
-    if not isinstance(jobs_all, list):
-        log("❌ Jobs data invalid, aborting autopilot")
+    if not jobs_all:
+        log("❌ No valid jobs found, aborting autopilot")
         return
 
     jobs = jobs_all[:MAX_JOBS_PER_RUN]
     accepted = []
-    processed = []
 
     for job in jobs:
-        log(f"🔍 {job.get('title','UNKNOWN')}")
+        if not isinstance(job, dict):
+            log("⚠ Skipped non-dict job safely")
+            continue
 
-        data = extract_details_from_page(job.get("apply_link"))
+        title = job.get("title", "UNKNOWN")
+        log(f"🔍 {title}")
 
-        for k in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
-            if not job.get(k) and data.get(k):
-                job[k] = data[k]
+        try:
+            data = extract_details_from_page(job.get("apply_link", ""))
 
-        job = evaluate_job(job, source=data.get("_source", "HTML"))
-        processed.append(job)
+            for k in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
+                if not job.get(k) and data.get(k):
+                    job[k] = data[k]
 
-        if job.get("accepted"):
-            accepted.append(job)
-            log(f"✅ ACCEPTED {job.get('final_confidence')}")
-        else:
-            log(f"❌ REJECTED {job.get('final_confidence')}")
+            job = evaluate_job(job, source=data.get("_source", "HTML"))
+
+            if job.get("accepted"):
+                accepted.append(job)
+                log(f"✅ ACCEPTED {job.get('final_confidence')}")
+            else:
+                log(f"❌ REJECTED {job.get('final_confidence')}")
+
+        except Exception as e:
+            log(f"⚠ Job failed safely: {e}")
 
     final = optimize_jobs(accepted)
-
-    # 🔥 MERGE BACK (important)
     save_jobs(final)
 
     log("=== ✅ Autopilot Engine Completed (A4.2 CONFIRMED) ===")
