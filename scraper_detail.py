@@ -19,16 +19,22 @@ HEADERS = {
 SOURCE_FILE = "sources.txt"
 OUTPUT_FILE = "jobs.json"
 
+# ✅ STRONG POSITIVE SIGNALS (job related)
 KEYWORDS = [
-    "recruitment", "online", "vacancy",
-    "apply", "posts", "notification", "advertisement"
+    "recruitment", "vacancy", "notification",
+    "apply", "online form", "advertisement",
+    "posts", "engagement", "appointment"
 ]
 
+# ❌ HARD BLOCK (never jobs)
 BLOCK_WORDS = [
-    "result", "answer key", "admit card",
-    "syllabus", "exam", "panel", "cbt"
+    "result", "answer key", "admit card", "syllabus",
+    "exam", "panel", "cbt", "calendar", "faq",
+    "guidelines", "policy", "login", "registration",
+    "rules", "tender", "corrigendum", "notice board"
 ]
 
+# Odisha specific relax (but still job-only)
 ODISHA_HINTS = ["osssc", "ossc", "opsc", "odisha"]
 
 # ==============================
@@ -40,24 +46,20 @@ def clean_text(t):
 def normalize_url(base, link):
     return urljoin(base, link)
 
-def is_valid_title(title, source):
+def looks_like_job(title: str) -> bool:
     t = title.lower()
-
+    if len(t) < 15:
+        return False
     if any(b in t for b in BLOCK_WORDS):
         return False
-
-    # Odisha sites ko relax karo
-    if any(o in source.lower() for o in ODISHA_HINTS):
-        return True
-
     return any(k in t for k in KEYWORDS)
 
 # ==============================
-# DETAIL EXTRACT
+# DETAIL EXTRACT (SAFE)
 # ==============================
 def extract_details(html):
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text(" ", strip=True)
+    text = soup.get_text(" ", strip=True).lower()
 
     data = {
         "qualification": "",
@@ -67,6 +69,7 @@ def extract_details(html):
         "last_date": ""
     }
 
+    # TABLE PRIORITY
     for row in soup.find_all("tr"):
         cols = [clean_text(c.get_text()) for c in row.find_all(["td","th"])]
         if len(cols) < 2:
@@ -86,6 +89,7 @@ def extract_details(html):
         elif "last date" in k:
             data["last_date"] = v
 
+    # TEXT FALLBACK
     if not data["qualification"]:
         m = re.search(r'(10th|12th|iti|diploma|graduate|degree|b\.?tech|mba)', text, re.I)
         if m: data["qualification"] = m.group(1)
@@ -99,13 +103,13 @@ def extract_details(html):
         if m: data["age_limit"] = m.group(0)
 
     if not data["last_date"]:
-        m = re.search(r'\d{2}/\d{2}/\d{4}', text)
+        m = re.search(r'\d{1,2}/\d{1,2}/\d{4}', text)
         if m: data["last_date"] = m.group(0)
 
     return data
 
 # ==============================
-# 🚀 MAIN
+# 🚀 MAIN SCRAPER
 # ==============================
 def process():
     jobs = []
@@ -131,7 +135,8 @@ def process():
                 if not title:
                     continue
 
-                if not is_valid_title(title, source):
+                # 🔥 CORE FILTER
+                if not looks_like_job(title):
                     continue
 
                 job_url = normalize_url(base, a["href"])
@@ -152,6 +157,7 @@ def process():
                     "status": "BASIC_OK"
                 }
 
+                # DETAIL PAGE TRY
                 try:
                     r2 = requests.get(job_url, headers=HEADERS, timeout=15)
                     details = extract_details(r2.text)
@@ -164,13 +170,14 @@ def process():
                     pass
 
                 jobs.append(job)
-                print(f"📌 Saved: {title}")
+                print(f"📌 Job Saved: {title}")
 
         except Exception as e:
             print(f"⚠ Error: {e}")
 
         time.sleep(1)
 
+    # 🔥 AUTOPILOT-COMPATIBLE OUTPUT
     final = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_jobs": len(jobs),
@@ -180,7 +187,7 @@ def process():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(final, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ DONE — {len(jobs)} jobs saved")
+    print(f"✅ DONE — {len(jobs)} REAL JOBS saved")
 
 # ==============================
 if __name__ == "__main__":
