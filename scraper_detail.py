@@ -13,28 +13,38 @@ warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 # CONFIG
 # ==============================
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,"
+        "application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-IN,en;q=0.9",
+    "Connection": "keep-alive",
 }
 
 SOURCE_FILE = "sources.txt"
 OUTPUT_FILE = "jobs.json"
 
-# ✅ STRONG POSITIVE SIGNALS (job related)
+# ✅ REAL JOB SIGNALS
 KEYWORDS = [
     "recruitment", "vacancy", "notification",
     "apply", "online form", "advertisement",
-    "posts", "engagement", "appointment"
+    "posts", "appointment", "engagement"
 ]
 
-# ❌ HARD BLOCK (never jobs)
+# ❌ NEVER JOBS
 BLOCK_WORDS = [
-    "result", "answer key", "admit card", "syllabus",
-    "exam", "panel", "cbt", "calendar", "faq",
-    "guidelines", "policy", "login", "registration",
-    "rules", "tender", "corrigendum", "notice board"
+    "result", "answer key", "admit card",
+    "syllabus", "exam", "panel", "cbt",
+    "calendar", "faq", "guidelines",
+    "policy", "login", "registration",
+    "rules", "tender", "corrigendum"
 ]
 
-# Odisha specific relax (but still job-only)
 ODISHA_HINTS = ["osssc", "ossc", "opsc", "odisha"]
 
 # ==============================
@@ -55,7 +65,7 @@ def looks_like_job(title: str) -> bool:
     return any(k in t for k in KEYWORDS)
 
 # ==============================
-# DETAIL EXTRACT (SAFE)
+# DETAIL EXTRACT
 # ==============================
 def extract_details(html):
     soup = BeautifulSoup(html, "html.parser")
@@ -69,7 +79,7 @@ def extract_details(html):
         "last_date": ""
     }
 
-    # TABLE PRIORITY
+    # TABLE FIRST
     for row in soup.find_all("tr"):
         cols = [clean_text(c.get_text()) for c in row.find_all(["td","th"])]
         if len(cols) < 2:
@@ -126,7 +136,7 @@ def process():
         print(f"🔍 Checking {source}")
 
         try:
-            r = requests.get(source, headers=HEADERS, timeout=20)
+            r = requests.get(source, headers=HEADERS, timeout=25)
             soup = BeautifulSoup(r.text, "html.parser")
             base = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(source))
 
@@ -135,7 +145,6 @@ def process():
                 if not title:
                     continue
 
-                # 🔥 CORE FILTER
                 if not looks_like_job(title):
                     continue
 
@@ -157,9 +166,8 @@ def process():
                     "status": "BASIC_OK"
                 }
 
-                # DETAIL PAGE TRY
                 try:
-                    r2 = requests.get(job_url, headers=HEADERS, timeout=15)
+                    r2 = requests.get(job_url, headers=HEADERS, timeout=20)
                     details = extract_details(r2.text)
                     job.update(details)
 
@@ -177,7 +185,6 @@ def process():
 
         time.sleep(1)
 
-    # 🔥 AUTOPILOT-COMPATIBLE OUTPUT
     final = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_jobs": len(jobs),
