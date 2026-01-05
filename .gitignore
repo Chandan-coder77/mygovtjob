@@ -1,0 +1,25 @@
+# =====================
+# Python cache
+# =====================
+__pycache__/
+*.pyc
+*.pyo
+
+# =====================
+# Temp / Runtime files
+# =====================
+temp.pdf
+temp_pdf.txt
+autopilot_log.txt
+fix_lock.txt
+
+# =====================
+# Backup & logs
+# =====================
+ai_memory_backup.json
+backup/
+
+# =====================
+# Local / test files
+# =====================
+test_local.py
