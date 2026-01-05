@@ -34,58 +34,55 @@ jobs:
 
     # ===============================
     # Step-3: Raw Scraper (A5.1)
-    # Heavy crawl from sources
     # ===============================
     - name: Run Scraper (Source Collector)
       run: python scraper_detail.py
 
     # ===============================
     # Step-4: Job Intelligence Filter (A5.2.1)
-    # Exam / CET / Apply Online / Noise removal
     # ===============================
     - name: Run Job Intelligence Filter (A5.2)
       run: python job_intelligence_filter.py
 
     # ===============================
     # Step-5: Autopilot Master (A4.1 + A4.2 + A5.2.2)
-    # Confidence engine + zero-job protection
     # ===============================
     - name: Run Autopilot Master (Confidence + Global Optimizer)
       run: python autopilot_master.py
 
     # ===============================
     # Step-5.5: Job Sanity Corrector (A5.3)
-    # Invalid dates / panels / FAQ / PDF sanity
     # ===============================
     - name: Run Job Sanity Corrector (A5.3)
       run: python job_sanity_corrector.py
 
     # ===============================
     # Step-5.7: Job Detail Extractor (A5.4.1)
-    # HTML + PDF se REAL vacancy, age, salary, last_date
     # ===============================
     - name: Run Job Detail Extractor (A5.4.1)
       run: python job_detail_extractor.py
 
     # ===============================
     # Step-5.8: Job Field Sanity v2 (A5.4.3)
-    # Year vs Vacancy fix
-    # Impossible dates clean
-    # Salary / age boundary sanity
     # ===============================
     - name: Run Job Field Sanity v2 (A5.4.3)
       run: python job_field_sanity_v2.py
 
     # ===============================
-    # 🔥 Step-5.9: Global Deduplicator (A5.5)
-    # Duplicate removal + priority merge
-    # FINAL USER-READY jobs.json
+    # Step-5.9: Global Deduplicator (A5.5)
     # ===============================
     - name: Run Global Job Deduplicator (A5.5)
       run: python job_global_deduplicator.py
 
     # ===============================
-    # Step-6: AI Trainer (Pattern Learning)
+    # 🔥 Step-6.1: Job Type Classifier (A6.1)
+    # Active / Archived / Portal / Blog / Rejected
+    # ===============================
+    - name: Run Job Type & Nature Classifier (A6.1)
+      run: python job_type_classifier.py
+
+    # ===============================
+    # Step-6.2: AI Trainer (Pattern Learning)
     # ===============================
     - name: Train AI Memory
       run: python ai_trainer.py
@@ -118,5 +115,5 @@ jobs:
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Auto Update + A5.5 Global Dedup + Field Sanity + Detail Extract 🤖" || echo "No changes"
+        git commit -m "Auto Update + A6.1 Job Type Classifier + A5.5 Dedup 🤖" || echo "No changes"
         git push --force
