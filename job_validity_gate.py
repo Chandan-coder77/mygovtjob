@@ -1,141 +1,90 @@
-# ==============================
-# Stage-A6.1 : Job Validity Gate
-# ==============================
-# Removes:
-# - Click here / Apply link pages
-# - Portal homepages
-# - Recruitment agencies
-# - Old archive notifications
-# - Non-job informational pages
-#
-# Keeps only REAL recruitment jobs
-# ==============================
-
 import json
-import re
+import os
 from datetime import datetime
 
-INPUT_FILE = "jobs.json"
-OUTPUT_FILE = "jobs.json"   # overwrite safely
+JOBS_FILE = "jobs.json"
 
-CURRENT_YEAR = datetime.now().year
+def load_jobs():
+    if not os.path.exists(JOBS_FILE):
+        return []
+    with open(JOBS_FILE, "r", encoding="utf-8") as f:
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
 
-# ------------------------------
-# Hard reject keywords (TITLE)
-# ------------------------------
-REJECT_TITLE_KEYWORDS = [
-    "click here",
-    "apply here",
-    "homepage",
-    "recruitment board",
-    "recruitment agency",
-    "public disclosure",
-    "list of",
-    "portal",
-    "dashboard",
-    "home page",
-    "login",
-    "registration"
-]
+def save_jobs(jobs):
+    with open(JOBS_FILE, "w", encoding="utf-8") as f:
+        json.dump(jobs, f, ensure_ascii=False, indent=4)
 
-# ------------------------------
-# Hard reject domains
-# ------------------------------
-REJECT_DOMAINS = [
-    "rrbapply.gov.in",
-    "recruitmentrrb.in",
-    "ncs.gov.in",
-    "emigrate.gov.in"
-]
+def classify_job_visibility(job):
+    """
+    IMPORTANT RULE:
+    ❌ Never delete
+    ❌ Never hide
+    ✅ Only TAG + NOTE
+    """
 
-# ------------------------------
-# Valid job signal keywords
-# ------------------------------
-JOB_SIGNAL_KEYWORDS = [
-    "recruitment",
-    "vacancy",
-    "online form",
-    "apply online",
-    "posts",
-    "notification",
-    "exam",
-    "constable",
-    "officer",
-    "assistant",
-    "engineer",
-    "teacher",
-    "apprentice"
-]
-
-# ------------------------------
-# Utility functions
-# ------------------------------
-def contains_any(text, keywords):
-    text = text.lower()
-    return any(k in text for k in keywords)
-
-def extract_years(text):
-    return re.findall(r"(20\d{2})", text)
-
-def is_old_year(years):
-    for y in years:
-        if int(y) < CURRENT_YEAR:
-            return True
-    return False
-
-def valid_job(job):
     title = (job.get("title") or "").lower()
     link = (job.get("apply_link") or "").lower()
 
-    # 1️⃣ Reject obvious junk titles
-    if contains_any(title, REJECT_TITLE_KEYWORDS):
-        return False
+    visibility = "SHOW"          # default: always show
+    nature = "ACTIVE_JOB"        # default nature
+    note = ""
 
-    # 2️⃣ Reject known portal / agency domains
-    for d in REJECT_DOMAINS:
-        if d in link:
-            return False
+    # -------- Portal / Info pages --------
+    if any(x in title for x in [
+        "click here",
+        "apply here",
+        "official website",
+        "portal",
+        "home page",
+        "act, rules",
+        "notification"
+    ]):
+        nature = "PORTAL_PAGE"
+        note = "Official portal / information page"
 
-    # 3️⃣ Reject if NO job signal present
-    combined_text = title + " " + link
-    if not contains_any(combined_text, JOB_SIGNAL_KEYWORDS):
-        return False
+    # -------- Very old year detection (only label) --------
+    if any(y in title for y in ["2018", "2019", "2020", "2021"]):
+        nature = "ARCHIVED_JOB"
+        note = "Old recruitment reference (archived)"
 
-    # 4️⃣ Reject OLD archive years
-    years = extract_years(title + " " + link)
-    if years and is_old_year(years):
-        return False
+    # -------- Missing critical data (still show) --------
+    if not job.get("last_date"):
+        note = note or "Last date not mentioned yet"
 
-    return True
+    if not job.get("vacancy"):
+        note = note or "Vacancy details not mentioned"
 
-# ------------------------------
-# Main execution
-# ------------------------------
+    # -------- Apply link sanity --------
+    if link.endswith(".pdf"):
+        nature = nature if nature != "ACTIVE_JOB" else "PDF_NOTIFICATION"
+        note = note or "Details available in PDF"
+
+    # -------- Attach fields --------
+    job["job_visibility"] = visibility              # ALWAYS SHOW
+    job["job_nature"] = nature
+    job["validity_checked"] = True
+    job["validity_checked_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    if note:
+        job["job_note"] = note
+
+    return job
+
 def main():
-    try:
-        with open(INPUT_FILE, "r", encoding="utf-8") as f:
-            jobs = json.load(f)
-    except Exception as e:
-        print("❌ Failed to load jobs.json:", e)
+    jobs = load_jobs()
+    if not jobs:
+        print("No jobs found for validity gate.")
         return
 
-    cleaned = []
-    removed = 0
-
+    updated_jobs = []
     for job in jobs:
-        if valid_job(job):
-            job["validity_checked"] = True
-            job["validity_checked_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            cleaned.append(job)
-        else:
-            removed += 1
+        updated_jobs.append(classify_job_visibility(job))
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(cleaned, f, indent=4, ensure_ascii=False)
-
-    print("✅ A6.1 Job Validity Gate Completed")
-    print(f"🟢 Kept jobs   : {len(cleaned)}")
-    print(f"🔴 Removed    : {removed}")
+    save_jobs(updated_jobs)
+    print(f"Job Validity Gate applied safely on {len(updated_jobs)} jobs.")
 
 if __name__ == "__main__":
     main()
