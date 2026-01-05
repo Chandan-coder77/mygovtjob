@@ -276,7 +276,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "05/01/2026"
+        "last_date": "02/03/2026"
     },
     {
         "title": "UP Police 32,679 Constable Online Form 2026",
@@ -303,7 +303,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "05/01/2026"
+        "last_date": ""
     },
     {
         "title": "OSSC CPGL Online Form 2026",
@@ -312,7 +312,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "05/01/2026"
+        "last_date": "01/01/2025"
     },
     {
         "title": "MPPSC 949 Assistant Professor Recruitment 2026",
@@ -321,7 +321,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "05/01/2026"
+        "last_date": ""
     },
     {
         "title": "OSSC Food Safety Officer Online Form 2026",
@@ -339,7 +339,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "05/01/2026"
+        "last_date": "01/01/2025"
     },
     {
         "title": "AISSEE 2025 Online Form",
@@ -349,6 +349,53 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": "05/01/2026"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "source": "https://www.ncs.gov.in/",
+        "scraped_at": "2026-01-05 09:16:50",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "",
+        "stage": "A5.1",
+        "status": "SOFT_ACCEPTED",
+        "intent_status": "JOB_CONFIRMED",
+        "confidence_score": 75,
+        "intent_reason": "JOB_KEYWORD",
+        "intent_checked_at": "2026-01-05 09:20:40",
+        "sanity_checked": true,
+        "sanity_checked_at": "2026-01-05 09:20:40"
+    },
+    {
+        "title": "Vacancy Through Emigrate Portal",
+        "apply_link": "https://www.ncs.gov.in/job-seeker/_layouts/15/NCSP/job-seeker/ViewEMigrateJobs.aspx",
+        "source": "https://www.ncs.gov.in/",
+        "scraped_at": "2026-01-05 09:16:50",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "",
+        "stage": "A5.1",
+        "status": "SOFT_ACCEPTED",
+        "intent_status": "JOB_CONFIRMED",
+        "confidence_score": 75,
+        "intent_reason": "JOB_KEYWORD",
+        "intent_checked_at": "2026-01-05 09:20:40",
+        "sanity_checked": true,
+        "sanity_checked_at": "2026-01-05 09:20:40"
+    },
+    {
+        "title": "Recruitment Agents / International Employers",
+        "apply_link": "https://emigrate.gov.in/#/emigrate/emigrant/list-of-active-ra",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
     },
     {
         "title": "रेलवे भर्ती बोर्ड, चंडीगढ़Railway Recruitment Board, Chandigarh",
@@ -378,24 +425,6 @@
         "last_date": ""
     },
     {
-        "title": "पैरामेडिकल पदों हेतु अनंतिम रूप से चयनित अभ्यर्थियों का पार्ट-पैनल-2 Part Panel-2 of the candidates provisionally selected for paramedical posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/042024PMED-PP2.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "पैरामेडिकल के विभिन्न पदों हेतु चयनित अभ्यर्थियों का पार्ट-पैनल-1 Part Panel-1 of the candidates selected for various paramedical posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/042024PMED-PP1.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Detailed Centralised Employment Notification No. 05/2025 for various posts of JE / DMS & others",
         "apply_link": "https://rrbcdg.gov.in/uploads/2025/05-JE/052025JE-CEN.pdf",
         "qualification": "",
@@ -414,15 +443,6 @@
         "last_date": ""
     },
     {
-        "title": "सीईएन 07/2025 के आवेदनार्थ प्रायः पूछे जाने वाले प्रश्नों के उत्तर / Frequently asked questions regarding application process for NTPC posts under CEN 07/2025",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2025/07-NTPCUG/072025NTPCUG-ApplicationFAQs.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Detailed Centralised Employment Notification no. 06/2025 for various Graduate posts of Non-Technical Popular Categories",
         "apply_link": "https://rrbcdg.gov.in/uploads/2025/06-NTPCG/062025NTPCG-CEN.pdf",
         "qualification": "10th",
@@ -432,45 +452,9 @@
         "last_date": ""
     },
     {
-        "title": "सीईएन 06/2025 के आवेदनार्थ प्रायः पूछे जाने वाले प्रश्नों के उत्तर / Frequently asked questions regarding application process for NTPC posts under CEN 06/2025",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2025/06-NTPCG/062025NTPCG-ApplicationFAQs.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "पैरामेडिकल के विभिन्न पदों हेतु चयनित अभ्यर्थियों का मुख्य पैनल Main Panel of the candidates selected for various paramedical posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/042024PMed-MainPanel.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "तकनीशियन के विभिन्न पदों हेतु चयनित अभ्यर्थियों का पार्ट पैनल 2 Part Panel 2 of the candidates selected for various posts of Technicians",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/02-TECH/022024Tech-PP2.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Detailed Centralised Employment Notification No. 04/2025 for the post of Section Controller",
         "apply_link": "https://rrbcdg.gov.in/uploads/2025/04-SCTRL/CEN042024-SectionController.pdf",
         "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "सब इन्स्पेक्टर के पद हेतु चयनित अभ्यर्थियों के लिए क्षेत्र-आवंटन सूचना और निर्देश Zone Allotment notification and instructions for candidates selected for the post of Sub-Inspector",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/RPF01-SI/RPFSI012024-Zone_Allotment_Notice.pdf",
-        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -497,15 +481,6 @@
     {
         "title": "Corrigendum-1 to the CEN 07/2024 regarding Important-Dates & Suitability of PwD Candidates for various posts of ministerial & isolated categories",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/07-M&I/2024-07 - Corrigendum1.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "FAQs regarding application process for various posts in Pay Level-1 of 7th CPC",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/08-LVL1/2024-08 FAQs.pdf",
         "qualification": "",
         "salary": "",
         "age_limit": "",
@@ -540,15 +515,6 @@
         "last_date": ""
     },
     {
-        "title": "FAQs regarding application process for various posts of Ministerial & Isolated categories",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/07-M&I/2024-07 - FAQs.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Centralised Employment Notice No.07/2024 for recruitment of various posts of Ministerial & Isolated categories",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/07-M&I/2024-07 - CEN Min & Iso.pdf",
         "qualification": "iti",
@@ -561,33 +527,6 @@
         "title": "Indicative notice regarding recruitment for various posts of Ministerial & Isolated Categories",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/07-M&I/2024-07 - Indicative Notice.pdf",
         "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Additional Panel-7 for paramedical posts of CEN-02/2019",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/02-PMED/02-2019 AP7.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Corrigendum-3 regarding revision in PwBD (LD) posts with inclusion of Spinal Deformity (SD) and Spinal Injury (SI) cases",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/06-NTPCUG/Corrigendum-3.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Corrigendum-4 regarding revision in PwBD (LD) posts with inclusion of Spinal Deformity (SD) and Spinal Injury (SI) cases",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/05-NTPCG/Corrigendum-4.pdf",
-        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -621,27 +560,9 @@
         "last_date": ""
     },
     {
-        "title": "FAQs regarding application process for various undergraduate posts of CEN 06/2024",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/06-NTPCUG/06-2024 FAQs.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Centralised Employment Notice No. 06/2024 for recruitment of various undergraduate posts of Non-Technical Popular Categories",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/06-NTPCUG/Detailed CEN 06-2024 NTPC.pdf",
         "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "FAQs regarding application process for various Graduate posts of CEN 05/2024",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/05-NTPCG/05-2024 FAQs.pdf",
-        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -666,26 +587,8 @@
         "last_date": ""
     },
     {
-        "title": "Corrigendum-2 regarding lasik surgery (medical standard) for paramedical posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/2024-4 Corrigendum-2.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Corrigendum-1 for the vacancies of Paramedical posts in Centralised Employment Notice",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/2024-4 Corrigendum-1.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "FAQs regarding application process for various posts of Paramedical categories in CEN 04/2024",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/FAQ paramedical 02-2024.pdf",
         "qualification": "",
         "salary": "",
         "age_limit": "",
@@ -702,72 +605,9 @@
         "last_date": ""
     },
     {
-        "title": "Additional Panel-6 for paramedical posts of CEN-02/2019",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/02-PMED/02-2019 AP6.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "FAQs regarding application process for various posts of JE / DMS / CMA / CS / MS in CEN 03/2024",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/03-JE/FAQ CEN 03 2024 JEs English.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Centralised Employment Notice No. 03/2024 for recruitment of various posts of Junior Engineer (JE), Depot Material Superintendent (DMS), Chemical & Metallurgical Assistant (CMA), Chemical Supervisor (Research) and Metallurgical Supervisor (Research)",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/03-JE/CEN 03 2024_JE.pdf",
         "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Additional Panel-5 for paramedical posts of CEN-02/2019",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/02-PMED/02-2019 AP5.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Additional Panel-4 for paramedical posts of CEN-02/2019",
-        "apply_link": "https://rrbcdg.gov.in/2019/02-PMED/02-2019 AP4.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Additional Panel-3 for paramedical posts of CEN-02/2019",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/02-PMED/02-2019 AP3.pdf",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Additional Panel-7 for the posts of Technicians of CEN-01/2018",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2018/01-ALP&T/01-2018 AP7.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Additional Panel-6 for the posts of Technicians of CEN-01/2018",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2018/01-TECH/01-2018 AP6.pdf",
-        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
