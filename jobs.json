@@ -36,15 +36,6 @@
         "last_date": "05/01/2026"
     },
     {
-        "title": "Bank of India Credit Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bank-of-india-credit-officer-recruitment-2025-apply-online-for-514-posts-3033017",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "25-40",
-        "vacancy": "514",
-        "last_date": "05/01/2026"
-    },
-    {
         "title": "IOCL Non Executive Online Form 2025",
         "apply_link": "https://www.freejobalert.com/articles/iocl-non-executive-recruitment-2025-apply-online-for-394-posts-3033195",
         "qualification": "10th",
@@ -60,6 +51,15 @@
         "salary": "₹19500",
         "age_limit": "18-40",
         "vacancy": "",
+        "last_date": "05/01/2026"
+    },
+    {
+        "title": "BTSC Junior Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/btsc-junior-engineer-recruitment-2026-apply-online-for-2809-posts-3032777",
+        "qualification": "10th",
+        "salary": "₹9300",
+        "age_limit": "18-37",
+        "vacancy": "2809",
         "last_date": "05/01/2026"
     },
     {
@@ -114,15 +114,6 @@
         "salary": "₹13000",
         "age_limit": "20-28",
         "vacancy": "400",
-        "last_date": "05/01/2026"
-    },
-    {
-        "title": "NABFINS CSO Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nabfins-cso-recruitment-2026-apply-online-for-customer-service-officer-posts-3033913",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
         "last_date": "05/01/2026"
     },
     {
@@ -195,6 +186,24 @@
         "salary": "₹30000",
         "age_limit": "28-56",
         "vacancy": "107",
+        "last_date": "05/01/2026"
+    },
+    {
+        "title": "UIIC 153 Apprentices Online Form 2025",
+        "apply_link": "https://www.freejobalert.com/articles/uiic-apprentices-recruitment-2025-apply-online-for-153-posts-3033152",
+        "qualification": "10th",
+        "salary": "₹9000",
+        "age_limit": "21-28",
+        "vacancy": "153",
+        "last_date": "05/01/2026"
+    },
+    {
+        "title": "NFSU Various Vacancies Online Form 2025",
+        "apply_link": "https://www.freejobalert.com/articles/nfsu-recruitment-2025-apply-online-for-30-laboratory-assistant-junior-scientific-officer-and-other-posts-3033097",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "30",
         "last_date": "05/01/2026"
     },
     {
@@ -349,6 +358,69 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": "05/01/2026"
+    },
+    {
+        "title": "Public disclosure of marks of Recruitment Agencies",
+        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
+        "source": "https://www.ncs.gov.in/",
+        "scraped_at": "2026-01-05 19:00:04",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "",
+        "stage": "A5.1",
+        "status": "SOFT_ACCEPTED",
+        "intent_status": "JOB_CONFIRMED",
+        "confidence_score": 75,
+        "intent_reason": "JOB_KEYWORD",
+        "intent_checked_at": "2026-01-05 19:04:20",
+        "sanity_checked": true,
+        "sanity_checked_at": "2026-01-05 19:04:20",
+        "detail_checked": true,
+        "detail_checked_at": "2026-01-05 19:04:52",
+        "field_sanity": "FIXED",
+        "field_sanity_at": "2026-01-05 19:08:22",
+        "deduplicated": true,
+        "deduplicated_at": "2026-01-05 19:08:22",
+        "validity_checked": true,
+        "validity_checked_at": "2026-01-05 19:08:22"
+    },
+    {
+        "title": "Vacancy Through Emigrate Portal",
+        "apply_link": "https://www.ncs.gov.in/job-seeker/_layouts/15/NCSP/job-seeker/ViewEMigrateJobs.aspx",
+        "source": "https://www.ncs.gov.in/",
+        "scraped_at": "2026-01-05 19:00:04",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "",
+        "stage": "A5.1",
+        "status": "SOFT_ACCEPTED",
+        "intent_status": "JOB_CONFIRMED",
+        "confidence_score": 75,
+        "intent_reason": "JOB_KEYWORD",
+        "intent_checked_at": "2026-01-05 19:04:20",
+        "sanity_checked": true,
+        "sanity_checked_at": "2026-01-05 19:04:20",
+        "detail_checked": true,
+        "detail_checked_at": "2026-01-05 19:04:55",
+        "field_sanity": "FIXED",
+        "field_sanity_at": "2026-01-05 19:08:22",
+        "deduplicated": true,
+        "deduplicated_at": "2026-01-05 19:08:22",
+        "validity_checked": true,
+        "validity_checked_at": "2026-01-05 19:08:22"
+    },
+    {
+        "title": "Recruitment Agents / International Employers",
+        "apply_link": "https://emigrate.gov.in/#/emigrate/emigrant/list-of-active-ra",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
     },
     {
         "title": "रेलवे भर्ती बोर्ड, चंडीगढ़Railway Recruitment Board, Chandigarh",
