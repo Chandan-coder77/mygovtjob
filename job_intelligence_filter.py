@@ -1,74 +1,85 @@
-# ==============================
-# 🧠 STAGE-A5.2.2
-# JOB INTENT INTELLIGENCE FILTER
-# ==============================
+# ==========================================================
+# 🧠 STAGE-A5.2.2 (ADVANCED)
+# JOB INTENT INTELLIGENCE FILTER – PRODUCTION VERSION
+# ==========================================================
 
 import json
 import re
 import os
 from datetime import datetime
+from urllib.parse import urlparse
 
 INPUT_FILE = "jobs.json"
 OUTPUT_FILE = "jobs.json"
 
-# ------------------------------
-# KEYWORDS
-# ------------------------------
-JOB_KEYWORDS = [
-    "recruitment", "vacancy", "vacancies", "posts", "hiring",
-    "assistant", "officer", "engineer", "clerk", "constable",
-    "manager", "technician", "apprentice", "trainee",
-    "group a", "group b", "group c"
+# ----------------------------------------------------------
+# TRUST & CONTEXT
+# ----------------------------------------------------------
+TRUSTED_DOMAINS = [
+    ".gov.in",
+    ".nic.in",
+    "freejobalert.com",
+    "rrb",
+    "opsc",
+    "ossc",
+    "osssc"
 ]
 
+# ----------------------------------------------------------
+# JOB SIGNAL KEYWORDS
+# ----------------------------------------------------------
+JOB_KEYWORDS = [
+    "recruitment", "vacancy", "vacancies", "posts",
+    "assistant", "officer", "engineer", "clerk",
+    "constable", "manager", "technician",
+    "apprentice", "trainee", "foreman",
+    "group a", "group b", "group c",
+    "junior", "senior", "grade"
+]
+
+# ----------------------------------------------------------
+# HARD REJECT KEYWORDS (NON-JOBS)
+# ----------------------------------------------------------
 REJECT_KEYWORDS = [
     "exam", "test", "cet", "cuet", "jee", "neet",
-    "admission", "syllabus", "answer key", "result",
-    "cutoff", "cut-off", "merit list",
+    "admission", "syllabus", "answer key",
+    "result", "cutoff", "cut-off",
+    "merit list", "hall ticket",
     "notification status", "status",
-    "apply online", "apply here"
+    "apply online", "apply here",
+    "schedule", "time table"
 ]
 
-PDF_JOB_HINTS = ["cen", "advertisement", "employment notice"]
+# ----------------------------------------------------------
+# PDF STRONG SIGNALS
+# ----------------------------------------------------------
+PDF_JOB_HINTS = [
+    "advertisement",
+    "employment notice",
+    "cen",
+    "recruitment notice",
+    "detailed notification"
+]
 
-# ------------------------------
-def is_valid_job(job):
-    title = job.get("title", "").lower()
-    link = job.get("apply_link", "").lower()
+# ----------------------------------------------------------
+# ROLE / STRUCTURE PATTERNS
+# ----------------------------------------------------------
+ROLE_PATTERNS = [
+    r"\b\d+\s+posts?\b",
+    r"\bposts?\s+of\b",
+    r"\bpay level\b",
+    r"\bpay scale\b",
+    r"\blevel-\d+\b",
+    r"\bgrade pay\b"
+]
 
-    # ❌ Reject obvious non-jobs
-    for bad in REJECT_KEYWORDS:
-        if bad in title:
-            return False
+# ==========================================================
+def is_trusted_source(link: str) -> bool:
+    return any(t in link for t in TRUSTED_DOMAINS)
 
-    # ❌ Reject exams / admissions
-    if re.search(r"\b(cet|cuet|exam|admission)\b", title):
-        return False
-
-    # ❌ Reject empty / generic titles
-    if len(title.split()) <= 2:
-        return False
-
-    # ✅ Accept PDF recruitment notices
-    if link.endswith(".pdf"):
-        if any(h in title for h in PDF_JOB_HINTS):
-            return True
-
-    # ✅ Accept if job keywords present
-    if any(k in title for k in JOB_KEYWORDS):
-        return True
-
-    # ✅ Accept if vacancy number looks real (not year)
-    v = job.get("vacancy", "")
-    if v.isdigit():
-        if int(v) > 10 and int(v) < 100000:
-            return True
-
-    return False
-
-# ------------------------------
-def normalize_job(job):
-    # Fix year mistaken as vacancy
+# ==========================================================
+def normalize_job(job: dict) -> dict:
+    # Fix vacancy mistaken as year
     v = job.get("vacancy", "")
     if v.isdigit() and len(v) == 4:
         job["vacancy"] = ""
@@ -80,7 +91,58 @@ def normalize_job(job):
 
     return job
 
-# ------------------------------
+# ==========================================================
+def is_valid_job(job: dict) -> tuple:
+    title = job.get("title", "").lower()
+    link = job.get("apply_link", "").lower()
+
+    # ---------- HARD REJECT ----------
+    for bad in REJECT_KEYWORDS:
+        if bad in title:
+            return False, "HARD_REJECT"
+
+    if len(title.split()) <= 2:
+        return False, "TOO_GENERIC"
+
+    # ---------- PDF STRONG ACCEPT ----------
+    if link.endswith(".pdf"):
+        return True, "PDF_RECRUITMENT"
+
+    # ---------- ROLE PATTERN ACCEPT ----------
+    for pat in ROLE_PATTERNS:
+        if re.search(pat, title):
+            return True, "ROLE_PATTERN"
+
+    # ---------- KEYWORD ACCEPT ----------
+    for kw in JOB_KEYWORDS:
+        if kw in title:
+            return True, "JOB_KEYWORD"
+
+    # ---------- VACANCY NUMBER ACCEPT ----------
+    v = job.get("vacancy", "")
+    if v.isdigit():
+        n = int(v)
+        if 5 <= n <= 100000:
+            return True, "VACANCY_COUNT"
+
+    # ---------- TRUSTED DOMAIN SOFT ACCEPT ----------
+    if is_trusted_source(link):
+        return True, "TRUSTED_SOURCE_SOFT"
+
+    return False, "NO_JOB_SIGNAL"
+
+# ==========================================================
+def confidence_score(reason: str) -> int:
+    score_map = {
+        "PDF_RECRUITMENT": 95,
+        "ROLE_PATTERN": 85,
+        "VACANCY_COUNT": 80,
+        "JOB_KEYWORD": 75,
+        "TRUSTED_SOURCE_SOFT": 60
+    }
+    return score_map.get(reason, 0)
+
+# ==========================================================
 def run_filter():
     if not os.path.exists(INPUT_FILE):
         print("❌ jobs.json not found")
@@ -89,26 +151,30 @@ def run_filter():
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    filtered = []
+    accepted = []
     rejected = 0
 
     for job in data:
         job = normalize_job(job)
+        valid, reason = is_valid_job(job)
 
-        if is_valid_job(job):
-            job["intent_status"] = "JOB_CONFIRMED"
-            filtered.append(job)
+        if valid:
+            job["intent_status"] = "JOB_CONFIRMED" if confidence_score(reason) >= 75 else "JOB_POSSIBLE"
+            job["confidence_score"] = confidence_score(reason)
+            job["intent_reason"] = reason
+            job["intent_checked_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            accepted.append(job)
         else:
             rejected += 1
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(filtered, f, indent=4, ensure_ascii=False)
+        json.dump(accepted, f, indent=4, ensure_ascii=False)
 
-    print("✅ STAGE-A5.2.2 COMPLETE")
-    print(f"📌 Accepted Jobs : {len(filtered)}")
+    print("✅ STAGE-A5.2.2 ADVANCED COMPLETE")
+    print(f"📌 Accepted Jobs : {len(accepted)}")
     print(f"🗑 Rejected Items: {rejected}")
-    print("🧠 Job Intent Intelligence Applied")
+    print("🧠 Job Intent Intelligence (Advanced) Applied")
 
-# ------------------------------
+# ==========================================================
 if __name__ == "__main__":
     run_filter()
