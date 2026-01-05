@@ -1,139 +1,114 @@
-# ============================================
-# 🧠 STAGE-A5.2.1 — JOB INTELLIGENCE FILTER
-# ============================================
+# ==============================
+# 🧠 STAGE-A5.2.2
+# JOB INTENT INTELLIGENCE FILTER
+# ==============================
 
-import json, re
+import json
+import re
+import os
 from datetime import datetime
 
 INPUT_FILE = "jobs.json"
-FINAL_FILE = "jobs_final.json"
-REJECT_FILE = "jobs_rejected.json"
-PENDING_FILE = "jobs_pending.json"
+OUTPUT_FILE = "jobs.json"
 
-CURRENT_YEAR = datetime.now().year
-
-# --------------------------------------------
-# KEYWORD RULES
-# --------------------------------------------
-JOB_POSITIVE = [
-    "recruitment", "online form", "vacancy",
-    "apply online", "posts", "various posts",
-    "cen", "employment notice"
+# ------------------------------
+# KEYWORDS
+# ------------------------------
+JOB_KEYWORDS = [
+    "recruitment", "vacancy", "vacancies", "posts", "hiring",
+    "assistant", "officer", "engineer", "clerk", "constable",
+    "manager", "technician", "apprentice", "trainee",
+    "group a", "group b", "group c"
 ]
 
-JOB_NEGATIVE = [
-    "notification", "latest", "upcoming",
-    "exam", "cet", "entrance", "test",
-    "result", "cutoff", "answer key",
-    "admit card", "syllabus",
-    "panel", "schedule", "timetable",
-    "agm", "shareholder", "tender",
-    "eoi", "expression of interest",
-    "faq", "indicative", "corrigendum"
+REJECT_KEYWORDS = [
+    "exam", "test", "cet", "cuet", "jee", "neet",
+    "admission", "syllabus", "answer key", "result",
+    "cutoff", "cut-off", "merit list",
+    "notification status", "status",
+    "apply online", "apply here"
 ]
 
-PDF_NEGATIVE = [
-    "panel", "result", "schedule",
-    "faq", "indicative", "corrigendum"
-]
+PDF_JOB_HINTS = ["cen", "advertisement", "employment notice"]
 
-PDF_POSITIVE = [
-    "recruitment", "cen", "vacancy", "apply"
-]
-
-# --------------------------------------------
-# HELPERS
-# --------------------------------------------
-def text_has_any(text, words):
-    text = text.lower()
-    return any(w in text for w in words)
-
-def valid_date(date_str):
-    if not date_str or not isinstance(date_str, str):
-        return False
-    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", date_str)
-    if not m:
-        return False
-    d, mth, y = map(int, m.groups())
-    if d < 1 or d > 31: return False
-    if mth < 1 or mth > 12: return False
-    if y < CURRENT_YEAR - 1: return False
-    if y > CURRENT_YEAR + 2: return False
-    return True
-
-def confidence_score(job):
-    score = 0
+# ------------------------------
+def is_valid_job(job):
     title = job.get("title", "").lower()
     link = job.get("apply_link", "").lower()
 
-    if text_has_any(title, JOB_POSITIVE): score += 25
-    if job.get("vacancy"): score += 30
-    if job.get("salary"): score += 15
-    if valid_date(job.get("last_date")): score += 10
+    # ❌ Reject obvious non-jobs
+    for bad in REJECT_KEYWORDS:
+        if bad in title:
+            return False
 
-    if text_has_any(title, JOB_NEGATIVE): score -= 50
-    if link.endswith(".pdf") and text_has_any(link, PDF_NEGATIVE): score -= 40
-    if link.endswith(".pdf") and text_has_any(link, PDF_POSITIVE): score += 40
+    # ❌ Reject exams / admissions
+    if re.search(r"\b(cet|cuet|exam|admission)\b", title):
+        return False
 
-    return score
+    # ❌ Reject empty / generic titles
+    if len(title.split()) <= 2:
+        return False
 
-# --------------------------------------------
-# MAIN PROCESS
-# --------------------------------------------
-def run():
+    # ✅ Accept PDF recruitment notices
+    if link.endswith(".pdf"):
+        if any(h in title for h in PDF_JOB_HINTS):
+            return True
+
+    # ✅ Accept if job keywords present
+    if any(k in title for k in JOB_KEYWORDS):
+        return True
+
+    # ✅ Accept if vacancy number looks real (not year)
+    v = job.get("vacancy", "")
+    if v.isdigit():
+        if int(v) > 10 and int(v) < 100000:
+            return True
+
+    return False
+
+# ------------------------------
+def normalize_job(job):
+    # Fix year mistaken as vacancy
+    v = job.get("vacancy", "")
+    if v.isdigit() and len(v) == 4:
+        job["vacancy"] = ""
+
+    # Fix impossible dates
+    d = job.get("last_date", "")
+    if not re.match(r"\d{2}/\d{2}/\d{4}", d):
+        job["last_date"] = ""
+
+    return job
+
+# ------------------------------
+def run_filter():
+    if not os.path.exists(INPUT_FILE):
+        print("❌ jobs.json not found")
+        return
+
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        jobs = json.load(f)
+        data = json.load(f)
 
-    final_jobs = []
-    rejected = []
-    pending = []
+    filtered = []
+    rejected = 0
 
-    for job in jobs:
-        title = job.get("title", "").lower()
-        link = job.get("apply_link", "").lower()
+    for job in data:
+        job = normalize_job(job)
 
-        score = confidence_score(job)
-        job["confidence_score"] = score
-
-        # HARD REJECT CONDITIONS
-        if text_has_any(title, JOB_NEGATIVE):
-            job["reject_reason"] = "NOT_A_RECRUITMENT"
-            rejected.append(job)
-            continue
-
-        if job.get("last_date") and not valid_date(job["last_date"]):
-            job["reject_reason"] = "INVALID_DATE"
-            rejected.append(job)
-            continue
-
-        # ACCEPT / PENDING
-        if score >= 40:
-            job["status"] = "FINAL_ACCEPTED"
-            final_jobs.append(job)
-        elif 20 <= score < 40:
-            job["status"] = "PENDING_REVIEW"
-            pending.append(job)
+        if is_valid_job(job):
+            job["intent_status"] = "JOB_CONFIRMED"
+            filtered.append(job)
         else:
-            job["reject_reason"] = "LOW_CONFIDENCE"
-            rejected.append(job)
+            rejected += 1
 
-    # ----------------------------------------
-    # SAVE OUTPUTS
-    # ----------------------------------------
-    with open(FINAL_FILE, "w", encoding="utf-8") as f:
-        json.dump(final_jobs, f, indent=4, ensure_ascii=False)
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(filtered, f, indent=4, ensure_ascii=False)
 
-    with open(REJECT_FILE, "w", encoding="utf-8") as f:
-        json.dump(rejected, f, indent=4, ensure_ascii=False)
+    print("✅ STAGE-A5.2.2 COMPLETE")
+    print(f"📌 Accepted Jobs : {len(filtered)}")
+    print(f"🗑 Rejected Items: {rejected}")
+    print("🧠 Job Intent Intelligence Applied")
 
-    with open(PENDING_FILE, "w", encoding="utf-8") as f:
-        json.dump(pending, f, indent=4, ensure_ascii=False)
-
-    print("\n🧠 STAGE-A5.2.1 COMPLETE")
-    print(f"✅ FINAL JOBS     : {len(final_jobs)}")
-    print(f"⏳ PENDING JOBS   : {len(pending)}")
-    print(f"❌ REJECTED JOBS  : {len(rejected)}\n")
-
-# --------------------------------------------
+# ------------------------------
 if __name__ == "__main__":
-    run()
+    run_filter()
