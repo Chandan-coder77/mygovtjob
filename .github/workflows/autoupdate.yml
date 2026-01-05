@@ -2,7 +2,7 @@ name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # ⏳ हर 6 घंटे पर auto update
+    - cron: "0 */6 * * *"   # ⏳ Har 6 ghante auto run
   workflow_dispatch:        # ▶ Manual run
 
 jobs:
@@ -11,58 +11,88 @@ jobs:
 
     steps:
 
-    # Step-0: Pull fresh repo
+    # ===============================
+    # Step-0: Pull Repository
+    # ===============================
     - name: Pull Repository
       uses: actions/checkout@v3
 
-    # Step-1: Python setup
+    # ===============================
+    # Step-1: Python Setup
+    # ===============================
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.10"
 
-    # Step-2: Install dependencies
+    # ===============================
+    # Step-2: Install Dependencies
+    # ===============================
     - name: Install Dependencies
       run: |
         pip install requests beautifulsoup4 pdfminer.six lxml
 
-    # Step-3: Raw Scraper (Heavy crawl)
+    # ===============================
+    # Step-3: Raw Scraper (A5.1)
+    # Heavy crawl from sources
+    # ===============================
     - name: Run Scraper (Source Collector)
       run: python scraper_detail.py
 
-    # 🔥 Step-4: Stage-A5.2.1 — Job Intelligence Filter
-    # (Exam / Notification / Apply Online / Noise removal)
+    # ===============================
+    # Step-4: Job Intelligence Filter (A5.2.1)
+    # Exam / CET / Apply Online / Noise removal
+    # ===============================
     - name: Run Job Intelligence Filter (A5.2)
       run: python job_intelligence_filter.py
 
-    # 🚀 Step-5: AUTOPILOT MASTER (A4.1 + A4.2)
-    # Confidence + Global Optimizer
+    # ===============================
+    # Step-5: Autopilot Master (A4.1 + A4.2 + A5.2.2)
+    # Confidence engine + zero-job protection
+    # ===============================
     - name: Run Autopilot Master (Confidence + Global Optimizer)
       run: python autopilot_master.py
 
-    # Step-6: AI Trainer (Pattern learning)
+    # ===============================
+    # Step-5.5: Job Sanity Corrector (A5.3)
+    # Invalid dates / panels / FAQ / PDF sanity
+    # ===============================
+    - name: Run Job Sanity Corrector (A5.3)
+      run: python job_sanity_corrector.py
+
+    # ===============================
+    # Step-6: AI Trainer (Pattern Learning)
+    # ===============================
     - name: Train AI Memory
       run: python ai_trainer.py
 
+    # ===============================
     # Step-7: AI Corrector Deep Engine
+    # ===============================
     - name: AI Corrector Smart Update (V2)
       run: python ai_corrector_v2.py
 
-    # Step-8: Clean & compress memory
+    # ===============================
+    # Step-8: Clean & Compress AI Memory
+    # ===============================
     - name: Clean & Compress AI Memory
       run: python clean_memory.py
 
-    # Step-9: Auto backup
+    # ===============================
+    # Step-9: Auto Backup
+    # ===============================
     - name: Auto Backup before commit
       run: |
         mkdir -p backup
         cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
 
+    # ===============================
     # Step-10: Commit & Push
+    # ===============================
     - name: Commit & Push Results
       run: |
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Auto Update + A5.2 Job Filter + Autopilot + Train + Correct 🤖" || echo "No changes"
+        git commit -m "Auto Update + A5.3 Sanity + Autopilot + AI Train 🤖" || echo "No changes"
         git push --force
