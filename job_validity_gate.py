@@ -1,90 +1,93 @@
+# =========================================
+# STAGE-A6 : JOB VALIDITY GATE (FINAL FIXED)
+# RULE:
+# - ACTIVE jobs only
+# - Expired last_date → REMOVE
+# - Very old year + no last_date → REMOVE
+# =========================================
+
 import json
 import os
 from datetime import datetime
 
-JOBS_FILE = "jobs.json"
+INPUT_FILE = "jobs.json"
+OUTPUT_FILE = "jobs.json"
 
-def load_jobs():
-    if not os.path.exists(JOBS_FILE):
-        return []
-    with open(JOBS_FILE, "r", encoding="utf-8") as f:
+CURRENT_YEAR = datetime.now().year
+
+DATE_FORMATS = [
+    "%d/%m/%Y",
+    "%d-%m-%Y",
+    "%Y-%m-%d"
+]
+
+# -------------------------
+def parse_date(date_str):
+    if not date_str:
+        return None
+    for fmt in DATE_FORMATS:
         try:
-            return json.load(f)
-        except json.JSONDecodeError:
-            return []
+            return datetime.strptime(date_str.strip(), fmt).date()
+        except:
+            continue
+    return None
 
-def save_jobs(jobs):
-    with open(JOBS_FILE, "w", encoding="utf-8") as f:
-        json.dump(jobs, f, ensure_ascii=False, indent=4)
+# -------------------------
+def extract_year_from_title(title):
+    for y in range(2000, CURRENT_YEAR + 1):
+        if str(y) in title:
+            return y
+    return None
 
-def classify_job_visibility(job):
-    """
-    IMPORTANT RULE:
-    ❌ Never delete
-    ❌ Never hide
-    ✅ Only TAG + NOTE
-    """
+# -------------------------
+def is_invalid_job(job):
+    title = job.get("title", "")
+    last_date_raw = job.get("last_date", "").strip()
 
-    title = (job.get("title") or "").lower()
-    link = (job.get("apply_link") or "").lower()
+    # 1️⃣ If last_date exists → check expiry
+    if last_date_raw:
+        parsed = parse_date(last_date_raw)
+        if parsed and parsed < datetime.now().date():
+            return True  # expired
+        return False  # valid future date
 
-    visibility = "SHOW"          # default: always show
-    nature = "ACTIVE_JOB"        # default nature
-    note = ""
+    # 2️⃣ No last_date → check year from title
+    title_year = extract_year_from_title(title)
 
-    # -------- Portal / Info pages --------
-    if any(x in title for x in [
-        "click here",
-        "apply here",
-        "official website",
-        "portal",
-        "home page",
-        "act, rules",
-        "notification"
-    ]):
-        nature = "PORTAL_PAGE"
-        note = "Official portal / information page"
+    if title_year and title_year <= CURRENT_YEAR - 3:
+        # Example: 2021 or older in 2026
+        return True
 
-    # -------- Very old year detection (only label) --------
-    if any(y in title for y in ["2018", "2019", "2020", "2021"]):
-        nature = "ARCHIVED_JOB"
-        note = "Old recruitment reference (archived)"
+    return False  # otherwise keep
 
-    # -------- Missing critical data (still show) --------
-    if not job.get("last_date"):
-        note = note or "Last date not mentioned yet"
-
-    if not job.get("vacancy"):
-        note = note or "Vacancy details not mentioned"
-
-    # -------- Apply link sanity --------
-    if link.endswith(".pdf"):
-        nature = nature if nature != "ACTIVE_JOB" else "PDF_NOTIFICATION"
-        note = note or "Details available in PDF"
-
-    # -------- Attach fields --------
-    job["job_visibility"] = visibility              # ALWAYS SHOW
-    job["job_nature"] = nature
-    job["validity_checked"] = True
-    job["validity_checked_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    if note:
-        job["job_note"] = note
-
-    return job
-
-def main():
-    jobs = load_jobs()
-    if not jobs:
-        print("No jobs found for validity gate.")
+# -------------------------
+def run_validity_gate():
+    if not os.path.exists(INPUT_FILE):
+        print("❌ jobs.json not found")
         return
 
-    updated_jobs = []
+    with open(INPUT_FILE, "r", encoding="utf-8") as f:
+        jobs = json.load(f)
+
+    kept = []
+    removed = 0
+
     for job in jobs:
-        updated_jobs.append(classify_job_visibility(job))
+        if is_invalid_job(job):
+            removed += 1
+            continue
 
-    save_jobs(updated_jobs)
-    print(f"Job Validity Gate applied safely on {len(updated_jobs)} jobs.")
+        job["validity_checked"] = True
+        job["validity_checked_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        kept.append(job)
 
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(kept, f, indent=4, ensure_ascii=False)
+
+    print("✅ JOB VALIDITY GATE APPLIED")
+    print(f"🟢 Active jobs kept : {len(kept)}")
+    print(f"🔴 Invalid jobs removed : {removed}")
+
+# -------------------------
 if __name__ == "__main__":
-    main()
+    run_validity_gate()
