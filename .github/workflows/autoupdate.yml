@@ -61,11 +61,20 @@ jobs:
       run: python job_sanity_corrector.py
 
     # ===============================
-    # Step-5.7: Job Detail Extractor (A5.4.1) 🔥
+    # Step-5.7: Job Detail Extractor (A5.4.1)
     # HTML + PDF se REAL vacancy, age, salary, last_date
     # ===============================
     - name: Run Job Detail Extractor (A5.4.1)
       run: python job_detail_extractor.py
+
+    # ===============================
+    # 🔥 Step-5.8: Job Field Sanity v2 (A5.4.3)
+    # Year vs Vacancy fix
+    # Impossible dates clean
+    # Salary / age boundary sanity
+    # ===============================
+    - name: Run Job Field Sanity v2 (A5.4.3)
+      run: python job_field_sanity_v2.py
 
     # ===============================
     # Step-6: AI Trainer (Pattern Learning)
@@ -101,5 +110,5 @@ jobs:
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Auto Update + A5.4 Detail Extract + Sanity + Autopilot 🤖" || echo "No changes"
+        git commit -m "Auto Update + A5.4.3 Field Sanity + Detail Extract + Autopilot 🤖" || echo "No changes"
         git push --force
