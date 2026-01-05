@@ -1,50 +1,5 @@
 [
     {
-        "title": "Notifications",
-        "apply_link": "https://www.freejobalert.com",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Latest Notifications",
-        "apply_link": "https://www.freejobalert.com/latest-notifications/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "58/11/2320"
-    },
-    {
-        "title": "Upcoming Notifications",
-        "apply_link": "https://www.freejobalert.com/upcoming-notifications/21614/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2024",
-        "last_date": "13/05/2022"
-    },
-    {
-        "title": "Anganwadi Recruitment",
-        "apply_link": "https://www.freejobalert.com/anganwadi-recruitment/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "Notification Status",
-        "apply_link": "https://www.freejobalert.com/notification-status/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2024",
-        "last_date": "09/09/2023"
-    },
-    {
         "title": "OSSSC 3,250 CRE Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/osssc-cre-recruitment-2026-apply-online-for-ri-ari-and-icds-supervisor-and-other-posts-3033515",
         "qualification": "10th",
@@ -78,7 +33,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "27/05/2013"
+        "last_date": "05/01/2026"
     },
     {
         "title": "Bank of India Credit Officer Online Form 2026",
@@ -123,7 +78,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
+        "last_date": "05/01/2026"
     },
     {
         "title": "OSSSC CRE Online Form 2026",
@@ -258,7 +213,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
+        "last_date": "05/01/2026"
     },
     {
         "title": "APMSRB Assistant Professor Online Form 2026",
@@ -285,7 +240,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "10/01/2026"
+        "last_date": "05/01/2026"
     },
     {
         "title": "OPSC OCS Online Form 2026",
@@ -387,15 +342,6 @@
         "last_date": "05/01/2026"
     },
     {
-        "title": "CUET (PG) 2025 Online Form",
-        "apply_link": "https://www.freejobalert.com/cuet-pg-2025/1134788/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "15/5/2011"
-    },
-    {
         "title": "AISSEE 2025 Online Form",
         "apply_link": "https://www.freejobalert.com/aissee/1133144/",
         "qualification": "10th",
@@ -405,63 +351,9 @@
         "last_date": "05/01/2026"
     },
     {
-        "title": "MAH B.Ed CET 2025 Online Form",
-        "apply_link": "https://www.freejobalert.com/mah-bed-cet/1134438/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "28/01/2025"
-    },
-    {
-        "title": "MAH MCA CET 2025 Online Form",
-        "apply_link": "https://www.freejobalert.com/mah-mca-cet/1133598/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "31/03/2026"
-    },
-    {
-        "title": "UBTER JEEP 2025 Online Form",
-        "apply_link": "https://www.freejobalert.com/ubtejeep/1133198/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "05/01/2026"
-    },
-    {
-        "title": "MAH MBA/ MMS CET 2025 Online Form",
-        "apply_link": "https://www.freejobalert.com/mah-mba-mms-cet/1133228/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "31/03/2026"
-    },
-    {
         "title": "रेलवे भर्ती बोर्ड, चंडीगढ़Railway Recruitment Board, Chandigarh",
         "apply_link": "https://rrbcdg.gov.in/index.php",
         "qualification": "12th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Notices",
-        "apply_link": "https://rrbcdg.gov.in/employment-notices.php",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Apply Online",
-        "apply_link": "https://www.rrbapply.gov.in/",
-        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -488,24 +380,6 @@
     {
         "title": "पैरामेडिकल पदों हेतु अनंतिम रूप से चयनित अभ्यर्थियों का पार्ट-पैनल-2 Part Panel-2 of the candidates provisionally selected for paramedical posts",
         "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/042024PMED-PP2.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Regarding status of application for Paramedical posts under CEN 03/2025",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2025/03-PMED/032025PMed-ApplicationStatus.pdf",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Revised Tentative Schedule of Computer Based Test for various Level-1 (Grp-D) posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/08-LVL1/082024LVL1-CBTSchedule.pdf",
         "qualification": "",
         "salary": "",
         "age_limit": "",
@@ -585,15 +459,6 @@
         "last_date": ""
     },
     {
-        "title": "Regarding status of application for Level-1 (Group-D) posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/08-LVL1/082024-Lvl1_ApplicationStatus.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Detailed Centralised Employment Notification No. 04/2025 for the post of Section Controller",
         "apply_link": "https://rrbcdg.gov.in/uploads/2025/04-SCTRL/CEN042024-SectionController.pdf",
         "qualification": "iti",
@@ -612,24 +477,6 @@
         "last_date": ""
     },
     {
-        "title": "लेवल-1 (ग्रुप-डी) के विभिन्न पदों हेतु कंप्यूटर आधारित परीक्षा (सीबीटी) का संभावित कार्यक्रम Tentative Schedule of Computer Based Test for various Level-1 (Grp-D) posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/08-LVL1/082024GrpD-CBTSchedule.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Tentative schedule of Computer Based Test for various Ministerial & Isolated posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/07-M&I/072024-CBT_Schedule.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Detailed Centralised Employment Notification no. 03/2025 for various Paramedical posts",
         "apply_link": "https://rrbcdg.gov.in/uploads/2025/03-PMED/CEN 03_2025.pdf",
         "qualification": "",
@@ -639,62 +486,8 @@
         "last_date": ""
     },
     {
-        "title": "Revised Tentative Schedule, City-Intimation Slip and Helpdesk Link for Undergraduate Posts under Non-Technical Popular Categories",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/06-NTPCUG/062024-CBT1_CitySlip.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Regarding status of application for Ministerial & Isolated posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/07-M&I/072024-ApplicationStatus.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Regarding status of application for NTPC Undergraduate posts",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/06-NTPCUG/062024-ApplicationStatus.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Detailed Centralised Employment Notification no. 02/2025 for various posts of Technicians",
         "apply_link": "https://rrbcdg.gov.in/uploads/2025/02-TECH/022025-CEN_updated.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Document Verification schedule for Level 6, 5 & 2 posts of NTPC-2019 to be held on 14-05-2025",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/01-NTPC/NTPC2019-DV_14-05-2025.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Tentative schedule of the Computer-Based Test (CBT) for various paramedical posts under CEN 04/2024",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2024/04-PMED/CEN04-2024_Paramedical-TentativeSchedulefor_CBT.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Document Verification schedule for Level 5 & 6 posts of NTPC-2019 to be held on 25-03-2025",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/01-NTPC/201901-NTPC DV Schedule 25.03.2025.pdf",
         "qualification": "",
         "salary": "",
         "age_limit": "",
@@ -776,15 +569,6 @@
     {
         "title": "Additional Panel-7 for paramedical posts of CEN-02/2019",
         "apply_link": "https://rrbcdg.gov.in/uploads/2019/02-PMED/02-2019 AP7.pdf",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Document Verification schedule for Level-5 & 6 posts of NTPC-2019 to be held on 04-11-2024",
-        "apply_link": "https://rrbcdg.gov.in/uploads/2019/01-NTPC/NTPC2019 DV Schedule 04.11.2024.pdf",
         "qualification": "",
         "salary": "",
         "age_limit": "",
@@ -1053,15 +837,6 @@
         "last_date": ""
     },
     {
-        "title": "Recruitment Notices",
-        "apply_link": "https://www.rrbcdg.gov.in/employment-notices.php",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "CEN-08/2025 : Isolated Category Posts",
         "apply_link": "https://www.rrbcdg.gov.in/2025-08-isol.php",
         "qualification": "iti",
@@ -1188,24 +963,6 @@
         "last_date": ""
     },
     {
-        "title": "Railway Recruitment",
-        "apply_link": "https://odishajobs.in/railway-recruitment/",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Railway Recruitment",
-        "apply_link": "https://odishajobs.in/category/railway-recruitment-board/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "OSSSC New Combine Recruitment 2024",
         "apply_link": "https://odishajobs.in/osssc-new-combine-recruitment-2024-apply/",
         "qualification": "10th",
@@ -1230,15 +987,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "SSC GD Vacancy 2025 Apply Online",
-        "apply_link": "https://odishajobs.in/ssc-gd-vacancy-2024-apply-online-ssc-gd-recruitment-2024-ssc-gd-recruitment-2025-apply-online-for-39481-posts/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2024",
         "last_date": ""
     },
     {
@@ -1287,15 +1035,6 @@
         "last_date": ""
     },
     {
-        "title": "Odishajobs- JSW Steel Requirement 2025- Hiring Fresher Diploma Engineer Trainees – 2025 | Multiple Branches | Apply Online",
-        "apply_link": "https://odishajobs.in/jsw-steel-requirement-2025-hiring-fresher-diploma-engineer-trainees-2025-multiple-branches-apply-online/",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Odishajobs- Bajaj Auto Limited Hiring Production Trainees – Waluj Plant, Maharashtra | Apply Now",
         "apply_link": "https://odishajobs.in/odishajobs-bajaj-auto-limited-hiring-production-trainees-waluj-plant-maharashtra-apply-now/",
         "qualification": "iti",
@@ -1323,15 +1062,6 @@
         "last_date": ""
     },
     {
-        "title": "Odishajobs Hiring Alert: B.Sc. Chemistry Freshers Wanted at Aarti Steels Ltd – Apply Now for a Golden Career Opportunity in Odisha",
-        "apply_link": "https://odishajobs.in/odishajobs-hiring-alert-b-sc-chemistry-freshers-wanted-at-aarti-steels-ltd-apply-now-for-a-golden-career-opportunity-in-odisha/",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "OPTCL Junior Maintenance and Operator 2025 | OPTCL Recruitment 2025",
         "apply_link": "https://odishajobs.in/optcl-recruitment-2025-apply-now-odishajobs/",
         "qualification": "10th",
@@ -1341,29 +1071,11 @@
         "last_date": ""
     },
     {
-        "title": "Odishajobs- Aarti Steels Ltd Hiring – Area Incharge (Scrap) | Apply Now in Cuttack, Odisha",
-        "apply_link": "https://odishajobs.in/odishajobs-aarti-steels-ltd-hiring-area-incharge-scrap-apply-now-in-cuttack-odisha/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Odishajobs- District Court Cuttack Junior Clerk Cum Copyist, Salaried Amin Recruitment 2025 Job Posts 34 Vacancies",
         "apply_link": "https://odishajobs.in/odishajobs-district-court-cuttack-junior-clerk-cum-copyist-salaried-amin-recruitment-2025-job-posts-34-vacancies/",
         "qualification": "10th",
         "salary": "₹19900",
         "age_limit": "18-32",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Odishajobs: Tata Steel Hiring BSc Graduates for Quality Jobs in Sahibabad – Apply Now via Odishajobs",
-        "apply_link": "https://odishajobs.in/odishajobs-tata-steel-hiring-bsc-graduates-for-quality-jobs-in-sahibabad-apply-now-via-odishajobs/",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
         "vacancy": "",
         "last_date": ""
     },
@@ -1395,15 +1107,6 @@
         "last_date": ""
     },
     {
-        "title": "Bihar ITI CAT Admission 2025 | Bihar ITI CAT Admission Online Form 2025",
-        "apply_link": "https://odishajobs.in/bihar-iti-cat-admission-2025-bihar-iti-cat-admission-online-form-2025/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "UPSC CAPF 2025 | UPSC AC Recruitment 2025 | UPSC CAPF Assistant Commandant Online Form 2025",
         "apply_link": "https://odishajobs.in/upsc-capf-2025-upsc-ac-recruitment-2025-upsc-capf-assistant-commandant-online-form-2025/",
         "qualification": "iti",
@@ -1413,15 +1116,6 @@
         "last_date": ""
     },
     {
-        "title": "IDBI Bank JAM Recruitment 2025 | IDBI Bank Junior Assistant Manager 2025 Apply Online",
-        "apply_link": "https://odishajobs.in/idbi-bank-jam-recruitment-2025-idbi-bank-junior-assistant-manager-2025-apply-online/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2025",
-        "last_date": "01/03/2025"
-    },
-    {
         "title": "Odisha Police Constable Recruitment 2024: Application Deadline Extended to October 30 for 1,360 Vacancies",
         "apply_link": "https://odishajobs.in/odisha-police-constable-recruitment-2024-application/",
         "qualification": "iti",
@@ -1429,24 +1123,6 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
-    },
-    {
-        "title": "RRB NTPC Recruitment 2024 – Apply Online for 3693 Posts",
-        "apply_link": "https://odishajobs.in/rrb-ntpc-recruitment-2024-apply-online-for-3693/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "3445",
-        "last_date": "12/3/2021"
-    },
-    {
-        "title": "Konkan Railway Recruitment 2024- Apply Online for 190 Posts",
-        "apply_link": "https://odishajobs.in/konkan-railway-recruitment-2024-apply-online/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "190",
-        "last_date": "03/10/2024"
     },
     {
         "title": "Patiala Railway Recruitment 2024- Patiala Locomotive Works, Patiala (Punjab)",
@@ -1476,105 +1152,6 @@
         "last_date": "13/10/2024"
     },
     {
-        "title": "Apply Online",
-        "apply_link": "https://www.ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Notifications",
-        "apply_link": "https://www.ossc.gov.in/Pages/View_Content.aspx?id=iQvy8ONZ1XeCyxFZaY2SfA==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://www.ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Instructions to Apply online",
-        "apply_link": "https://www.ossc.gov.in/Pages/View_Content.aspx?id=N8ibxZoX/R42cMO03brPUw==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Apply Online",
-        "apply_link": "https://www.osssc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "RECRUITMENT",
-        "apply_link": "https://www.osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://www.osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Notifications",
-        "apply_link": "https://www.osssc.gov.in/Pages/Notification.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Apply Online",
-        "apply_link": "https://opscechayan.in/",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Notifications",
-        "apply_link": "https://www.opsc.gov.in/Pages/View_Content.aspx?id=iQvy8ONZ1XeCyxFZaY2SfA==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://www.opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Act, Rules and Notifications",
         "apply_link": "https://www.barc.gov.in/about/act.html",
         "qualification": "iti",
@@ -1584,54 +1161,9 @@
         "last_date": "07/09/2021"
     },
     {
-        "title": "Recruitment",
-        "apply_link": "https://www.barc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "direct recruitment",
-        "apply_link": "https://www.barc.gov.in/direct_apply.html",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Various vacancy at Bhabha Atomic Research Centre",
         "apply_link": "https://www.barc.gov.in/recruitment.html",
         "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Job Notifications",
-        "apply_link": "https://bel-india.in/job-notifications/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Notification",
-        "apply_link": "https://mudira.nalcoindia.co.in:3443/CUSTOMER/notification",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "16/10/2025"
-    },
-    {
-        "title": "Gazette Notification",
-        "apply_link": "https://nalcoindia.com/wp-content/uploads/2018/12/rti-act-2005.pdf",
-        "qualification": "iti",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
