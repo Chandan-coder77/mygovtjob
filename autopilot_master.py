@@ -1,197 +1,144 @@
-# ==============================
-# 🚀 AUTOPILOT MASTER (SAFE MODE - HARD FIXED)
-# ==============================
-
-import os
-import json
-import time
-import re
-import requests
-from bs4 import BeautifulSoup
+import json, os, re
 from datetime import datetime
 
-from navigator_a3 import crawl_with_depth, extract_best_text, select_best_text
-from confidence_engine import evaluate_job
-from global_optimizer import optimize_jobs
-
-# ==============================
+# =========================
 # CONFIG
-# ==============================
-JOBS_FILE = "jobs.json"
-LOG_FILE = "autopilot_log.txt"
+# =========================
+RAW_FILE = "jobs_raw.json"        # Stage-A5.1 output
+PENDING_FILE = "jobs_pending.json"
+FINAL_FILE = "jobs.json"
 
-MAX_JOBS_PER_RUN = 50        # 🔥 SAFE LIMIT
-MAX_JOB_TIME = 35            # ⏱ seconds per job
+MIN_FINAL_CONFIDENCE = 40         # Promotion threshold
+FALLBACK_PROMOTION_PERCENT = 0.2  # 20% fallback if FINAL empty
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0 Safari/537.36"
-    )
-}
+BLOCK_KEYWORDS = [
+    "result", "cutoff", "answer key", "admit card",
+    "syllabus", "exam", "panel", "agm",
+    "annual report", "shareholder", "dividend",
+    "eoi", "expression of interest", "mou", "tender"
+]
 
-CRAWLED_CACHE = set()
+STRONG_JOB_KEYWORDS = [
+    "recruitment", "online form", "vacancy",
+    "apply", "posts", "appointment"
+]
 
-# ==============================
-def log(msg):
-    print(msg)
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(f"[{datetime.now()}] {msg}\n")
+# =========================
+# UTILS
+# =========================
+def load_json(path, default):
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return default
+    return default
 
-# ==============================
-# 🔥 HARD SAFE JOB LOADER
-# ==============================
-def load_jobs():
-    if not os.path.exists(JOBS_FILE):
-        log("❌ jobs.json not found")
-        return []
-
-    try:
-        with open(JOBS_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        # ✅ ALWAYS RETURN LIST OF DICTS
-        clean = []
-        if isinstance(data, list):
-            for j in data:
-                if isinstance(j, dict):
-                    clean.append(j)
-                else:
-                    log(f"⚠ Skipped invalid job entry: {type(j)}")
-
-        elif isinstance(data, dict):
-            for v in data.values():
-                if isinstance(v, dict):
-                    clean.append(v)
-
-        return clean
-
-    except Exception as e:
-        log(f"❌ jobs.json load failed: {e}")
-        return []
-
-def save_jobs(data):
-    with open(JOBS_FILE, "w", encoding="utf-8") as f:
+def save_json(path, data):
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-# ==============================
-def extract_details_from_page(url):
-    start = time.time()
+def clean_text(t):
+    return re.sub(r"\s+", " ", (t or "")).strip().lower()
 
-    result = {
-        "salary": "",
-        "qualification": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "",
-        "_source": "HTML"
-    }
+# =========================
+# CONFIDENCE ENGINE (A5.2)
+# =========================
+def calculate_confidence(job):
+    score = 0
+    title = clean_text(job.get("title", ""))
+    link = clean_text(job.get("apply_link", ""))
 
-    if not url or not isinstance(url, str):
-        return result
+    # Hard block
+    if any(b in title for b in BLOCK_KEYWORDS):
+        return -100
 
-    if url in CRAWLED_CACHE:
-        return result
+    # Strong job signals
+    if any(k in title for k in STRONG_JOB_KEYWORDS):
+        score += 20
 
-    CRAWLED_CACHE.add(url)
+    # PDF boost
+    if ".pdf" in link:
+        score += 40
 
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=20)
-        soup = BeautifulSoup(r.text, "html.parser")
+    # Field-based scoring
+    if job.get("vacancy"):
+        score += 30
+    if job.get("last_date"):
+        score += 20
+    if job.get("salary"):
+        score += 10
+    if job.get("qualification"):
+        score += 10
 
-        if time.time() - start > MAX_JOB_TIME:
-            return result
+    # Govt domain boost
+    if any(x in link for x in [".gov.in", ".nic.in"]):
+        score += 10
 
-        pages = crawl_with_depth(url, depth=2)
-        texts = extract_best_text(pages)
-        best_text, score = select_best_text(texts)
+    return score
 
-        combined = (
-            best_text.lower()
-            if score > 0 and isinstance(best_text, str)
-            else soup.get_text(" ", strip=True).lower()
-        )
+# =========================
+# AUTOPILOT A5.2
+# =========================
+def run_autopilot():
+    print("=== 🚀 Autopilot Engine Started (Stage-A5.2 SAFE MODE) ===")
 
-        result["salary"] = extract_value(combined, ["₹", "salary", "pay"])
-        result["qualification"] = extract_value(
-            combined, ["qualification", "education", "degree", "iti", "diploma"]
-        )
-        result["age_limit"] = extract_age(combined)
-        result["last_date"] = extract_date(combined)
-        result["vacancy"] = extract_vacancy(combined)
-
-    except Exception as e:
-        log(f"⚠ Detail extract failed: {e}")
-
-    return result
-
-# ==============================
-def extract_value(text, keys):
-    if not isinstance(text, str):
-        return ""
-    for k in keys:
-        if k in text:
-            i = text.find(k)
-            return " ".join(text[i:i+140].split()[:14])
-    return ""
-
-def extract_date(text):
-    d = re.findall(r"\d{1,2}/\d{1,2}/\d{4}", text)
-    return d[0] if d else ""
-
-def extract_age(text):
-    a = re.findall(r"\d{2}\s?-\s?\d{2}", text)
-    return a[0] if a else ""
-
-def extract_vacancy(text):
-    v = re.findall(r"vacanc(?:y|ies)\s*[:\-]?\s*(\d{1,5})", text)
-    return v[0] if v else ""
-
-# ==============================
-def autopilot_run():
-    log("=== 🚀 Autopilot Engine Started (SAFE MODE) ===")
-
-    jobs_all = load_jobs()
-
-    if not jobs_all:
-        log("❌ No valid jobs found, aborting autopilot")
+    raw_jobs = load_json(RAW_FILE, [])
+    if not raw_jobs:
+        print("❌ jobs_raw.json empty or missing — aborting safely")
         return
 
-    jobs = jobs_all[:MAX_JOBS_PER_RUN]
-    accepted = []
+    final_jobs = []
+    pending_jobs = []
 
-    for job in jobs:
-        if not isinstance(job, dict):
-            log("⚠ Skipped non-dict job safely")
+    for job in raw_jobs:
+        conf = calculate_confidence(job)
+        job["confidence"] = conf
+        job["evaluated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        if conf < 0:
+            job["status"] = "BLOCKED"
             continue
 
-        title = job.get("title", "UNKNOWN")
-        log(f"🔍 {title}")
+        if conf >= MIN_FINAL_CONFIDENCE:
+            job["status"] = "FINAL"
+            final_jobs.append(job)
+        else:
+            job["status"] = "PENDING"
+            pending_jobs.append(job)
 
-        try:
-            data = extract_details_from_page(job.get("apply_link", ""))
+    # =========================
+    # FAIL-SAFE: NEVER ZERO JOB
+    # =========================
+    if not final_jobs and pending_jobs:
+        promote_count = max(1, int(len(pending_jobs) * FALLBACK_PROMOTION_PERCENT))
+        pending_jobs.sort(key=lambda x: x.get("confidence", 0), reverse=True)
 
-            for k in ["salary", "qualification", "age_limit", "vacancy", "last_date"]:
-                if not job.get(k) and data.get(k):
-                    job[k] = data[k]
+        fallback = pending_jobs[:promote_count]
+        for j in fallback:
+            j["status"] = "FINAL_FALLBACK"
+            final_jobs.append(j)
 
-            job = evaluate_job(job, source=data.get("_source", "HTML"))
+        pending_jobs = pending_jobs[promote_count:]
+        print(f"⚠️ FINAL empty → promoted {len(final_jobs)} from PENDING (failsafe)")
 
-            if job.get("accepted"):
-                accepted.append(job)
-                log(f"✅ ACCEPTED {job.get('final_confidence')}")
-            else:
-                log(f"❌ REJECTED {job.get('final_confidence')}")
+    # =========================
+    # WRITE OUTPUTS
+    # =========================
+    save_json(PENDING_FILE, {
+        "stage": "A5.2",
+        "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "total_pending": len(pending_jobs),
+        "jobs": pending_jobs
+    })
 
-        except Exception as e:
-            log(f"⚠ Job failed safely: {e}")
+    save_json(FINAL_FILE, final_jobs)
 
-    final = optimize_jobs(accepted)
-    save_jobs(final)
+    print(f"✅ FINAL jobs saved: {len(final_jobs)}")
+    print(f"🕒 Pending jobs saved: {len(pending_jobs)}")
+    print("🧠 Stage-A5.2 COMPLETE — Zero-job protection ACTIVE")
 
-    log("=== ✅ Autopilot Engine Completed (A4.2 CONFIRMED) ===")
-
-# ==============================
+# =========================
 if __name__ == "__main__":
-    autopilot_run()
+    run_autopilot()
