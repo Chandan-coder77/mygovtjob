@@ -1,16 +1,31 @@
-import json, os, re
+# ==========================================================
+# 🧠 AUTOPILOT MASTER
+# STAGE-A5.2 (CONFIDENCE + INTENT INTEGRATION)
+# ==========================================================
+
+import json
+import os
+import re
+import subprocess
 from datetime import datetime
 
 # =========================
-# CONFIG
+# FILES
 # =========================
-RAW_FILE = "jobs_raw.json"        # Stage-A5.1 output
+RAW_FILE = "jobs_raw.json"          # Stage-A5.1 output
+INTENT_FILE = "jobs.json"           # After job_intent_filter.py
 PENDING_FILE = "jobs_pending.json"
 FINAL_FILE = "jobs.json"
 
-MIN_FINAL_CONFIDENCE = 40         # Promotion threshold
-FALLBACK_PROMOTION_PERCENT = 0.2  # 20% fallback if FINAL empty
+# =========================
+# THRESHOLDS
+# =========================
+MIN_FINAL_CONFIDENCE = 40
+FALLBACK_PROMOTION_PERCENT = 0.25   # 25% safety net
 
+# =========================
+# BLOCK KEYWORDS (HARD)
+# =========================
 BLOCK_KEYWORDS = [
     "result", "cutoff", "answer key", "admit card",
     "syllabus", "exam", "panel", "agm",
@@ -20,7 +35,7 @@ BLOCK_KEYWORDS = [
 
 STRONG_JOB_KEYWORDS = [
     "recruitment", "online form", "vacancy",
-    "apply", "posts", "appointment"
+    "posts", "appointment", "apply"
 ]
 
 # =========================
@@ -43,26 +58,26 @@ def clean_text(t):
     return re.sub(r"\s+", " ", (t or "")).strip().lower()
 
 # =========================
-# CONFIDENCE ENGINE (A5.2)
+# CONFIDENCE ENGINE
 # =========================
 def calculate_confidence(job):
     score = 0
-    title = clean_text(job.get("title", ""))
-    link = clean_text(job.get("apply_link", ""))
+    title = clean_text(job.get("title"))
+    link = clean_text(job.get("apply_link"))
 
-    # Hard block
+    # HARD BLOCK
     if any(b in title for b in BLOCK_KEYWORDS):
         return -100
 
-    # Strong job signals
+    # STRONG JOB SIGNALS
     if any(k in title for k in STRONG_JOB_KEYWORDS):
-        score += 20
+        score += 25
 
-    # PDF boost
-    if ".pdf" in link:
+    # PDF BOOST
+    if link.endswith(".pdf"):
         score += 40
 
-    # Field-based scoring
+    # FIELD SIGNALS
     if job.get("vacancy"):
         score += 30
     if job.get("last_date"):
@@ -72,27 +87,62 @@ def calculate_confidence(job):
     if job.get("qualification"):
         score += 10
 
-    # Govt domain boost
+    # GOVT DOMAIN BOOST
     if any(x in link for x in [".gov.in", ".nic.in"]):
         score += 10
+
+    # INTENT FILTER BOOST
+    if job.get("intent_status") == "JOB_CONFIRMED":
+        score += 30
+    elif job.get("intent_status") == "JOB_POSSIBLE":
+        score += 15
 
     return score
 
 # =========================
-# AUTOPILOT A5.2
+# AUTOPILOT RUN
 # =========================
 def run_autopilot():
-    print("=== 🚀 Autopilot Engine Started (Stage-A5.2 SAFE MODE) ===")
+    print("=== 🚀 Autopilot Engine Started (Stage-A5.2 FULL MODE) ===")
 
+    # --------------------------------------------------
+    # STEP 1: LOAD RAW JOBS
+    # --------------------------------------------------
     raw_jobs = load_json(RAW_FILE, [])
     if not raw_jobs:
-        print("❌ jobs_raw.json empty or missing — aborting safely")
+        print("❌ jobs_raw.json missing/empty — aborting safely")
         return
 
+    print(f"📥 RAW jobs loaded: {len(raw_jobs)}")
+
+    # --------------------------------------------------
+    # STEP 2: WRITE RAW → jobs.json for intent filter
+    # --------------------------------------------------
+    save_json(INTENT_FILE, raw_jobs)
+
+    # --------------------------------------------------
+    # STEP 3: RUN JOB INTENT FILTER (A5.2.2)
+    # --------------------------------------------------
+    print("🧠 Running Job Intent Intelligence Filter (A5.2.2)...")
+    try:
+        subprocess.run(["python", "job_intent_filter.py"], check=True)
+    except Exception as e:
+        print(f"⚠️ Intent filter failed: {e}")
+
+    intent_jobs = load_json(INTENT_FILE, [])
+    if not intent_jobs:
+        print("⚠️ Intent filter returned 0 jobs — fallback to RAW")
+        intent_jobs = raw_jobs
+
+    print(f"🧩 Jobs after intent filter: {len(intent_jobs)}")
+
+    # --------------------------------------------------
+    # STEP 4: CONFIDENCE EVALUATION
+    # --------------------------------------------------
     final_jobs = []
     pending_jobs = []
 
-    for job in raw_jobs:
+    for job in intent_jobs:
         conf = calculate_confidence(job)
         job["confidence"] = conf
         job["evaluated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -108,9 +158,9 @@ def run_autopilot():
             job["status"] = "PENDING"
             pending_jobs.append(job)
 
-    # =========================
-    # FAIL-SAFE: NEVER ZERO JOB
-    # =========================
+    # --------------------------------------------------
+    # FAIL SAFE: NEVER ZERO FINAL JOB
+    # --------------------------------------------------
     if not final_jobs and pending_jobs:
         promote_count = max(1, int(len(pending_jobs) * FALLBACK_PROMOTION_PERCENT))
         pending_jobs.sort(key=lambda x: x.get("confidence", 0), reverse=True)
@@ -121,11 +171,11 @@ def run_autopilot():
             final_jobs.append(j)
 
         pending_jobs = pending_jobs[promote_count:]
-        print(f"⚠️ FINAL empty → promoted {len(final_jobs)} from PENDING (failsafe)")
+        print(f"⚠️ FINAL empty → promoted {len(final_jobs)} jobs from PENDING")
 
-    # =========================
-    # WRITE OUTPUTS
-    # =========================
+    # --------------------------------------------------
+    # SAVE OUTPUTS
+    # --------------------------------------------------
     save_json(PENDING_FILE, {
         "stage": "A5.2",
         "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -135,9 +185,10 @@ def run_autopilot():
 
     save_json(FINAL_FILE, final_jobs)
 
-    print(f"✅ FINAL jobs saved: {len(final_jobs)}")
-    print(f"🕒 Pending jobs saved: {len(pending_jobs)}")
-    print("🧠 Stage-A5.2 COMPLETE — Zero-job protection ACTIVE")
+    print("✅ AUTOPILOT COMPLETE")
+    print(f"📌 FINAL jobs: {len(final_jobs)}")
+    print(f"🕒 PENDING jobs: {len(pending_jobs)}")
+    print("🛡 Zero-job protection ACTIVE")
 
 # =========================
 if __name__ == "__main__":
