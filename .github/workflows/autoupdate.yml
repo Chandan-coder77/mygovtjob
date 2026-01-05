@@ -39,13 +39,13 @@ jobs:
       run: python scraper_detail.py
 
     # ===============================
-    # Step-4: Job Intelligence Filter (A5.2.1)
+    # Step-4: Job Intelligence Filter (A5.2)
     # ===============================
     - name: Run Job Intelligence Filter (A5.2)
       run: python job_intelligence_filter.py
 
     # ===============================
-    # Step-5: Autopilot Master (A4.1 + A4.2 + A5.2.2)
+    # Step-5: Autopilot Master (A4 + A5.2.2)
     # ===============================
     - name: Run Autopilot Master (Confidence + Global Optimizer)
       run: python autopilot_master.py
@@ -75,11 +75,11 @@ jobs:
       run: python job_global_deduplicator.py
 
     # ===============================
-    # 🔥 Step-6.1: Job Type Classifier (A6.1)
-    # Active / Archived / Portal / Blog / Rejected
+    # 🔥 Step-6.1: Job Validity Gate (A6.1)
+    # Removes portal / click here / archive / junk
     # ===============================
-    - name: Run Job Type & Nature Classifier (A6.1)
-      run: python job_type_classifier.py
+    - name: Run Job Validity Gate (A6.1)
+      run: python job_validity_gate.py
 
     # ===============================
     # Step-6.2: AI Trainer (Pattern Learning)
@@ -115,5 +115,5 @@ jobs:
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
         git add -A
-        git commit -m "Auto Update + A6.1 Job Type Classifier + A5.5 Dedup 🤖" || echo "No changes"
+        git commit -m "Auto Update + A6.1 Job Validity Gate + A5.5 Dedup 🤖" || echo "No changes"
         git push --force
