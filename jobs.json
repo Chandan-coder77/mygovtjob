@@ -1,66 +1,12 @@
 [
     {
-        "title": "OSSSC 3,250 CRE Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/osssc-cre-recruitment-2026-apply-online-for-ri-ari-and-icds-supervisor-and-other-posts-3033515",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "250",
-        "last_date": "29/01/2026"
-    },
-    {
         "title": "RRB 22000 Group D Online form 2026",
         "apply_link": "https://www.freejobalert.com/articles/rrb-group-d-recruitment-2026-apply-online-for-22000-posts-3033409",
         "qualification": "10th",
         "salary": "₹18000",
         "age_limit": "18-33",
         "vacancy": "22000",
-        "last_date": "20/02/2026"
-    },
-    {
-        "title": "BARC Scientific Officers Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/barc-recruitment-2026-apply-online-for-scientific-officers-posts-3033160",
-        "qualification": "10th",
-        "salary": "₹74000",
-        "age_limit": "18-31",
-        "vacancy": "",
-        "last_date": "31/12/1989"
-    },
-    {
-        "title": "BSF Constable GD Online Form 2025-26",
-        "apply_link": "https://www.freejobalert.com/articles/bsf-sports-quota-recruitment-2025-apply-online-for-549-constable-posts-3033250",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-23",
-        "vacancy": "549",
-        "last_date": "15/01/2026"
-    },
-    {
-        "title": "IOCL Non Executive Online Form 2025",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-non-executive-recruitment-2025-apply-online-for-394-posts-3033195",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "18-26",
-        "vacancy": "394",
-        "last_date": "39/1/2019"
-    },
-    {
-        "title": "MPPKVVCL 4009 Various Vacancies Online Form 2025-26",
-        "apply_link": "https://www.freejobalert.com/articles/mppkvvcl-recruitment-2026-apply-online-for-4009-assistant-engineer-junior-engineer-and-other-posts-3033169",
-        "qualification": "10th",
-        "salary": "₹19500",
-        "age_limit": "18-40",
-        "vacancy": "",
-        "last_date": "21/01/2026"
-    },
-    {
-        "title": "BTSC Junior Engineer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/btsc-junior-engineer-recruitment-2026-apply-online-for-2809-posts-3032777",
-        "qualification": "10th",
-        "salary": "₹9300",
-        "age_limit": "18-37",
-        "vacancy": "2809",
-        "last_date": "12/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "SBI 1146 SCO Online Form 2025",
@@ -69,7 +15,52 @@
         "salary": "",
         "age_limit": "26-42",
         "vacancy": "",
-        "last_date": "10/01/2026"
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "BARC Scientific Officers Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/barc-recruitment-2026-apply-online-for-scientific-officers-posts-3033160",
+        "qualification": "10th",
+        "salary": "₹74000",
+        "age_limit": "18-31",
+        "vacancy": "",
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "BSF Constable GD Online Form 2025-26",
+        "apply_link": "https://www.freejobalert.com/articles/bsf-sports-quota-recruitment-2025-apply-online-for-549-constable-posts-3033250",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-23",
+        "vacancy": "549",
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "IOCL Non Executive Online Form 2025",
+        "apply_link": "https://www.freejobalert.com/articles/iocl-non-executive-recruitment-2025-apply-online-for-394-posts-3033195",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "18-26",
+        "vacancy": "394",
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "MPPKVVCL 4009 Various Vacancies Online Form 2025-26",
+        "apply_link": "https://www.freejobalert.com/articles/mppkvvcl-recruitment-2026-apply-online-for-4009-assistant-engineer-junior-engineer-and-other-posts-3033169",
+        "qualification": "10th",
+        "salary": "₹19500",
+        "age_limit": "18-40",
+        "vacancy": "",
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "BTSC Junior Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/btsc-junior-engineer-recruitment-2026-apply-online-for-2809-posts-3032777",
+        "qualification": "10th",
+        "salary": "₹9300",
+        "age_limit": "18-37",
+        "vacancy": "2809",
+        "last_date": "06/01/2026"
     },
     {
         "title": "Aadhaar Supervisor/Operator Online Form 2026",
@@ -78,7 +69,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "282",
-        "last_date": "31/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "OSSSC CRE Online Form 2026",
@@ -87,7 +78,7 @@
         "salary": "₹25500",
         "age_limit": "21-32",
         "vacancy": "",
-        "last_date": "30/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "IOCL 501 Apprentice Online Form 2026",
@@ -96,7 +87,7 @@
         "salary": "",
         "age_limit": "18-24",
         "vacancy": "501",
-        "last_date": "12/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "NCERT Non Teaching Online Form 2026",
@@ -105,7 +96,7 @@
         "salary": "₹6600",
         "age_limit": "18-50",
         "vacancy": "173",
-        "last_date": "16/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "Bank of India (BOI) Apprentices trainee Online Form 202526",
@@ -114,7 +105,16 @@
         "salary": "₹13000",
         "age_limit": "20-28",
         "vacancy": "400",
-        "last_date": "10/01/2026"
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "Indian Army 350 SSC Tech Men Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/indian-army-ssc-tech-men-recruitment-2026-apply-online-3034038",
+        "qualification": "10th",
+        "salary": "₹56100",
+        "age_limit": "20-27",
+        "vacancy": "350",
+        "last_date": "06/01/2026"
     },
     {
         "title": "Federal Bank Office Assistant Recruitment 2026",
@@ -123,7 +123,7 @@
         "salary": "₹19500",
         "age_limit": "18-20",
         "vacancy": "",
-        "last_date": "11/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "NALCO Graduate Engineer Trainee online Form 2026",
@@ -132,7 +132,7 @@
         "salary": "₹40000",
         "age_limit": "",
         "vacancy": "110",
-        "last_date": "22/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "BEL 119 Trainee Engineer, Trainee Officer Posts Offline Form 2026",
@@ -141,7 +141,7 @@
         "salary": "₹30000",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "09/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "ITI Young Professional Online Form 2025-26",
@@ -150,7 +150,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "215",
-        "last_date": ""
+        "last_date": "06/01/2026"
     },
     {
         "title": "NABARD Young Professional Online Form 2026",
@@ -159,7 +159,7 @@
         "salary": "₹70000",
         "age_limit": "21-30",
         "vacancy": "44",
-        "last_date": ""
+        "last_date": "06/01/2026"
     },
     {
         "title": "CSL Workmen Online Form 2025",
@@ -168,7 +168,7 @@
         "salary": "₹41055",
         "age_limit": "",
         "vacancy": "132",
-        "last_date": "12/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "RITES Engineering Professionals Online Form 2025-26",
@@ -177,7 +177,7 @@
         "salary": "₹40000",
         "age_limit": "",
         "vacancy": "18",
-        "last_date": "27/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "GRSE Officers Vacancies Online Form 2025-26",
@@ -186,7 +186,7 @@
         "salary": "₹30000",
         "age_limit": "28-56",
         "vacancy": "107",
-        "last_date": "09/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "UIIC 153 Apprentices Online Form 2025",
@@ -195,16 +195,34 @@
         "salary": "₹9000",
         "age_limit": "21-28",
         "vacancy": "153",
-        "last_date": "20/01/2026"
+        "last_date": "06/01/2026"
     },
     {
-        "title": "NFSU Various Vacancies Online Form 2025",
-        "apply_link": "https://www.freejobalert.com/articles/nfsu-recruitment-2025-apply-online-for-30-laboratory-assistant-junior-scientific-officer-and-other-posts-3033097",
+        "title": "OSSSC 3,250 CRE Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/osssc-cre-recruitment-2026-apply-online-for-ri-ari-and-icds-supervisor-and-other-posts-3033515",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹35400",
         "age_limit": "",
-        "vacancy": "30",
-        "last_date": "18/01/2026"
+        "vacancy": "250",
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "MP Apex Bank 2076 Clerk, Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/mp-apex-bank-recruitment-2026-apply-online-for-2076-clerk-officers-posts-3034242",
+        "qualification": "10th",
+        "salary": "₹19500",
+        "age_limit": "18-35",
+        "vacancy": "",
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "ECIL Apprentices Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ecil-apprentices-recruitment-2026-apply-online-for-248-posts-3034223",
+        "qualification": "10th",
+        "salary": "₹9000",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "06/01/2026"
     },
     {
         "title": "Cochin Shipyard CSL Workman Online Form 2026",
@@ -213,7 +231,7 @@
         "salary": "₹22500",
         "age_limit": "",
         "vacancy": "210",
-        "last_date": "23/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "RSSB 259 Forester Online Form 2026",
@@ -222,7 +240,16 @@
         "salary": "₹56100",
         "age_limit": "18-40",
         "vacancy": "259",
-        "last_date": "04/02/2026"
+        "last_date": "06/01/2026"
+    },
+    {
+        "title": "MPPSC Ayurveda Medical Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/mppsc-ayurveda-medical-officer-recruitment-2026-apply-online-for-130-posts-3034179",
+        "qualification": "10th",
+        "salary": "₹56100",
+        "age_limit": "21-40",
+        "vacancy": "130",
+        "last_date": "06/01/2026"
     },
     {
         "title": "NPCIL 114 Various Vacancies Online Form 2026",
@@ -231,7 +258,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "04/02/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "JKPSC 480 Medical Officer Recruitment 2026",
@@ -240,7 +267,7 @@
         "salary": "",
         "age_limit": "18-40",
         "vacancy": "480",
-        "last_date": "04/02/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "APMSRB Assistant Professor Online Form 2026",
@@ -249,7 +276,7 @@
         "salary": "₹68900",
         "age_limit": "18-42",
         "vacancy": "220",
-        "last_date": "04/03/2025"
+        "last_date": "06/01/2026"
     },
     {
         "title": "MPPSC SSE Online Form 2026",
@@ -258,7 +285,7 @@
         "salary": "₹9300",
         "age_limit": "21-40",
         "vacancy": "191",
-        "last_date": "09/02/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "VMC 554 PHW, FW Online Form 2026",
@@ -267,7 +294,7 @@
         "salary": "₹16462",
         "age_limit": "18-45",
         "vacancy": "",
-        "last_date": "10/01/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "OPSC OCS Online Form 2026",
@@ -276,7 +303,7 @@
         "salary": "₹56100",
         "age_limit": "21-42",
         "vacancy": "",
-        "last_date": "27/02/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "Kerala PSC Clerk, LDC and Other Online Form 2026",
@@ -285,7 +312,7 @@
         "salary": "",
         "age_limit": "18-40",
         "vacancy": "",
-        "last_date": "04/02/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "PSSSB Junior Engineer Online Form 2025-26",
@@ -294,7 +321,7 @@
         "salary": "₹35400",
         "age_limit": "18-37",
         "vacancy": "157",
-        "last_date": "21/10/2020"
+        "last_date": "06/01/2026"
     },
     {
         "title": "JK Police 669 Constable Online Form 2026",
@@ -303,7 +330,7 @@
         "salary": "₹19900",
         "age_limit": "18-28",
         "vacancy": "669",
-        "last_date": "02/03/2026"
+        "last_date": "06/01/2026"
     },
     {
         "title": "UP Police 32,679 Constable Online Form 2026",
@@ -312,25 +339,7 @@
         "salary": "₹21700",
         "age_limit": "18-22",
         "vacancy": "679",
-        "last_date": "02/02/2026"
-    },
-    {
-        "title": "PGIMER Group A, Group B and C Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/pgimer-recruitment-2026-apply-online-for-59-group-a-group-b-and-c-posts-3033921",
-        "qualification": "10th",
-        "salary": "₹18000",
-        "age_limit": "",
-        "vacancy": "55",
-        "last_date": "16/02/2026"
-    },
-    {
-        "title": "OSSC CPGL Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ossc-combined-post-graduate-level-cpgl-recruitment-2026-apply-online-for-102-posts-3033932",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "21-42",
-        "vacancy": "102",
-        "last_date": "01/01/2025"
+        "last_date": "06/01/2026"
     },
     {
         "title": "AISSEE 2025 Online Form",
@@ -338,7 +347,7 @@
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "47",
+        "vacancy": "",
         "last_date": ""
     },
     {
