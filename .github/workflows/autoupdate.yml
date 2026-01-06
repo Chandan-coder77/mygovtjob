@@ -1,24 +1,24 @@
-name: Master Job Engine – Auto Update
+name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # ⏳ Har 6 ghante run
-  workflow_dispatch:        # ▶ Manual run option
+    - cron: "0 */6 * * *"   # ⏳ Har 6 ghante auto run
+  workflow_dispatch:        # ▶ Manual run
 
 jobs:
-  run_master_engine:
+  scrape_and_train:
     runs-on: ubuntu-latest
 
     steps:
 
     # ===============================
-    # Step-0: Checkout Repository
+    # Step-0: Pull Repository
     # ===============================
-    - name: Checkout Repository
+    - name: Pull Repository
       uses: actions/checkout@v3
 
     # ===============================
-    # Step-1: Setup Python
+    # Step-1: Python Setup
     # ===============================
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -30,24 +30,33 @@ jobs:
     # ===============================
     - name: Install Dependencies
       run: |
-        pip install requests beautifulsoup4 lxml
+        pip install requests beautifulsoup4 pdfminer.six lxml
 
     # ===============================
     # Step-3: Run MASTER JOB ENGINE
+    # (single source of truth)
     # ===============================
     - name: Run Master Job Engine
       env:
         HF_API_KEY: ${{ secrets.HF_API_KEY }}
-      run: |
-        python master_job_engine.py
+      run: python master_job_engine.py
 
     # ===============================
-    # Step-4: Commit & Push Results
+    # 🔥 Step-4: SAFE Commit & Push (SOLUTION-B)
+    # No conflict, future-proof
     # ===============================
-    - name: Commit & Push jobs.json
+    - name: Commit & Push Results (Safe)
       run: |
-        git config --global user.name "GitHub Job Bot"
+        git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
-        git add jobs.json
-        git commit -m "🔄 Auto update jobs via Master Job Engine" || echo "No changes"
-        git push
+
+        # 🔄 Always sync with remote first
+        git fetch origin
+        git reset --hard origin/main
+
+        # 📦 Commit latest generated files
+        git add -A
+        git commit -m "Auto Update via Master Job Engine 🤖" || echo "No changes to commit"
+
+        # 🚀 Force push safely
+        git push origin main --force
