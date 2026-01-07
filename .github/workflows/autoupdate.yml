@@ -82,13 +82,12 @@ jobs:
       # =====================================================
       # 🔥 Step-6.9: MASTER JOB ENGINE (Accuracy Booster)
       # Uses:
-      # - Apache Tika FastAPI (external)
-      # - HuggingFace APIs
+      # - Render Tika FastAPI (external)
+      # - HuggingFace FREE APIs
       # =====================================================
       - name: Run Master Job Engine
         env:
           HF_API_KEY: ${{ secrets.HF_API_KEY }}
-          TIKA_API_URL: https://your-tika-service.onrender.com/extract
         run: python master_job_engine.py
 
       # ===============================
