@@ -9,6 +9,15 @@ jobs:
   scrape_and_train:
     runs-on: ubuntu-latest
 
+    # ===============================
+    # 🔥 Apache Tika Service (PDF Engine)
+    # ===============================
+    services:
+      tika:
+        image: apache/tika:2.9.0
+        ports:
+          - 9998:9998
+
     steps:
       # ===============================
       # Step-0: Pull Repository
@@ -79,6 +88,17 @@ jobs:
       - name: Run Job Validity Gate
         run: python job_validity_gate.py
 
+      # =====================================================
+      # 🔥 Step-6.9: MASTER JOB ENGINE (Accuracy Booster)
+      # Uses:
+      # - Apache Tika (PDF)
+      # - HuggingFace APIs (NER, Translation, Classification)
+      # =====================================================
+      - name: Run Master Job Engine (Accuracy Booster)
+        env:
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+        run: python master_job_engine.py
+
       # ===============================
       # Step-6.2: AI Trainer
       # ===============================
@@ -106,12 +126,12 @@ jobs:
           cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
 
       # ===============================
-      # Step-10: Commit & Push
+      # Step-10: Commit & Push (SAFE)
       # ===============================
       - name: Commit & Push Results
         run: |
           git config --global user.name "GitHub AI Bot"
           git config --global user.email "actions@github.com"
           git add -A
-          git commit -m "Auto Update Jobs" || echo "No changes"
+          git commit -m "Auto Update Jobs + Master Engine Accuracy Boost 🤖" || echo "No changes"
           git push --force
