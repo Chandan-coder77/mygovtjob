@@ -15,7 +15,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "1146",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "IOCL 501 Apprentice Online Form 2026",
@@ -60,7 +60,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "1100",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "Bank of India (BOI) Apprentices trainee Online Form 2025-26",
@@ -87,7 +87,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "282",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "OSSSC CRE Online Form 2026",
@@ -96,7 +96,7 @@
         "salary": "₹25500",
         "age_limit": "",
         "vacancy": "896",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "NALCO Graduate Engineer Trainee online Form 2026",
@@ -123,7 +123,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "215",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "NABARD Young Professional Online Form 2026",
@@ -132,7 +132,7 @@
         "salary": "₹70000",
         "age_limit": "",
         "vacancy": "44",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "CSL Workmen Online Form 2025",
@@ -150,7 +150,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "18",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "BARC Scientific Officers Online Form 2026",
@@ -186,7 +186,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "107",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "UIIC 153 Apprentices Online Form 2025",
@@ -213,7 +213,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "1352",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "PSSSB Junior Engineer Online Form 2025-26",
@@ -240,7 +240,7 @@
         "salary": "₹35400",
         "age_limit": "",
         "vacancy": "250",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "ECIL Apprentices Online Form 2026",
@@ -248,7 +248,7 @@
         "qualification": "10th",
         "salary": "₹9000",
         "age_limit": "",
-        "vacancy": "34",
+        "vacancy": "",
         "last_date": "06/01/2026"
     },
     {
@@ -268,15 +268,6 @@
         "age_limit": "18-40",
         "vacancy": "259",
         "last_date": "06/01/2026"
-    },
-    {
-        "title": "MPPSC Ayurveda Medical Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/mppsc-ayurveda-medical-officer-recruitment-2026-apply-online-for-130-posts-3034179",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "130",
-        "last_date": "13/03/2026"
     },
     {
         "title": "NPCIL 114 Various Vacancies Online Form 2026",
@@ -339,41 +330,12 @@
         "salary": "",
         "age_limit": "34-38",
         "vacancy": "",
-        "last_date": "07/01/2026"
+        "last_date": ""
     },
     {
         "title": "AISSEE 2025 Online Form",
         "apply_link": "https://www.freejobalert.com/aissee/1133144/",
         "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "34",
-        "last_date": ""
-    },
-    {
-        "title": "Public disclosure of marks of Recruitment Agencies",
-        "apply_link": "https://www.ncs.gov.in/Pages/RecruitmentAgencies.aspx",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "17/04/2025",
-        "category": "OTHER",
-        "status": "EXPIRED"
-    },
-    {
-        "title": "Vacancy Through Emigrate Portal",
-        "apply_link": "https://www.ncs.gov.in/job-seeker/_layouts/15/NCSP/job-seeker/ViewEMigrateJobs.aspx",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "12/30/2025",
-        "category": "OTHER",
-        "status": "ACTIVE"
-    },
-    {
-        "title": "Recruitment Agents / International Employers",
-        "apply_link": "https://emigrate.gov.in/#/emigrate/emigrant/list-of-active-ra",
-        "qualification": "iti",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -693,6 +655,15 @@
         "age_limit": "24-24",
         "vacancy": "8113",
         "last_date": "13/10/2024"
+    },
+    {
+        "title": "How to Apply",
+        "apply_link": "https://www.skillodisha.gov.in/howtoapply_nano.php",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
     },
     {
         "title": "Act, Rules and Notifications",
