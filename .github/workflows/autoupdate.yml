@@ -3,20 +3,11 @@ name: Auto Update Jobs
 on:
   schedule:
     - cron: "0 */6 * * *"   # Har 6 ghante auto run
-  workflow_dispatch:        # Manual run
+  workflow_dispatch:
 
 jobs:
   scrape_and_train:
     runs-on: ubuntu-latest
-
-    # ===============================
-    # 🔥 Apache Tika Service (PDF Engine)
-    # ===============================
-    services:
-      tika:
-        image: apache/tika:2.9.0
-        ports:
-          - 9998:9998
 
     steps:
       # ===============================
@@ -43,47 +34,47 @@ jobs:
       # ===============================
       # Step-3: Raw Scraper (A5.1)
       # ===============================
-      - name: Run Scraper (Source Collector)
+      - name: Run Scraper
         run: python scraper_detail.py
 
       # ===============================
       # Step-4: Job Intelligence Filter (A5.2)
       # ===============================
-      - name: Run Job Intelligence Filter (A5.2)
+      - name: Run Job Intelligence Filter
         run: python job_intelligence_filter.py
 
       # ===============================
-      # Step-5: Autopilot Master (A4 + A5.2.2)
+      # Step-5: Autopilot Master
       # ===============================
       - name: Run Autopilot Master
         run: python autopilot_master.py
 
       # ===============================
-      # Step-5.5: Job Sanity Corrector (A5.3)
+      # Step-5.5: Job Sanity Corrector
       # ===============================
       - name: Run Job Sanity Corrector
         run: python job_sanity_corrector.py
 
       # ===============================
-      # Step-5.7: Job Detail Extractor (A5.4.1)
+      # Step-5.7: Job Detail Extractor
       # ===============================
       - name: Run Job Detail Extractor
         run: python job_detail_extractor.py
 
       # ===============================
-      # Step-5.8: Job Field Sanity v2 (A5.4.3)
+      # Step-5.8: Job Field Sanity v2
       # ===============================
       - name: Run Job Field Sanity v2
         run: python job_field_sanity_v2.py
 
       # ===============================
-      # Step-5.9: Global Deduplicator (A5.5)
+      # Step-5.9: Global Deduplicator
       # ===============================
       - name: Run Global Job Deduplicator
         run: python job_global_deduplicator.py
 
       # ===============================
-      # Step-6.1: Job Validity Gate (A6.1)
+      # Step-6.1: Job Validity Gate
       # ===============================
       - name: Run Job Validity Gate
         run: python job_validity_gate.py
@@ -91,12 +82,13 @@ jobs:
       # =====================================================
       # 🔥 Step-6.9: MASTER JOB ENGINE (Accuracy Booster)
       # Uses:
-      # - Apache Tika (PDF)
-      # - HuggingFace APIs (NER, Translation, Classification)
+      # - Apache Tika FastAPI (external)
+      # - HuggingFace APIs
       # =====================================================
-      - name: Run Master Job Engine (Accuracy Booster)
+      - name: Run Master Job Engine
         env:
           HF_API_KEY: ${{ secrets.HF_API_KEY }}
+          TIKA_API_URL: https://your-tika-service.onrender.com/extract
         run: python master_job_engine.py
 
       # ===============================
@@ -106,13 +98,13 @@ jobs:
         run: python ai_trainer.py
 
       # ===============================
-      # Step-7: AI Corrector Deep Engine
+      # Step-7: AI Corrector
       # ===============================
       - name: AI Corrector Smart Update
         run: python ai_corrector_v2.py
 
       # ===============================
-      # Step-8: Clean & Compress AI Memory
+      # Step-8: Clean Memory
       # ===============================
       - name: Clean & Compress AI Memory
         run: python clean_memory.py
@@ -120,13 +112,13 @@ jobs:
       # ===============================
       # Step-9: Auto Backup
       # ===============================
-      - name: Auto Backup before commit
+      - name: Auto Backup
         run: |
           mkdir -p backup
           cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
 
       # ===============================
-      # Step-10: Commit & Push (SAFE)
+      # Step-10: Commit & Push
       # ===============================
       - name: Commit & Push Results
         run: |
