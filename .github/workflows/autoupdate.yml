@@ -2,8 +2,8 @@ name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # ⏳ Har 6 ghante auto run
-  workflow_dispatch:        # ▶ Manual run
+    - cron: "0 */6 * * *"   # â³ Har 6 ghante auto run
+  workflow_dispatch:        # â–¶ Manual run
 
 jobs:
   scrape_and_train:
@@ -33,30 +33,87 @@ jobs:
         pip install requests beautifulsoup4 pdfminer.six lxml
 
     # ===============================
-    # Step-3: Run MASTER JOB ENGINE
-    # (single source of truth)
+    # Step-3: Raw Scraper (A5.1)
     # ===============================
-    - name: Run Master Job Engine
-      env:
-        HF_API_KEY: ${{ secrets.HF_API_KEY }}
-      run: python master_job_engine.py
+    - name: Run Scraper (Source Collector)
+      run: python scraper_detail.py
 
     # ===============================
-    # 🔥 Step-4: SAFE Commit & Push (SOLUTION-B)
-    # No conflict, future-proof
+    # Step-4: Job Intelligence Filter (A5.2)
     # ===============================
-    - name: Commit & Push Results (Safe)
+    - name: Run Job Intelligence Filter (A5.2)
+      run: python job_intelligence_filter.py
+
+    # ===============================
+    # Step-5: Autopilot Master (A4 + A5.2.2)
+    # ===============================
+    - name: Run Autopilot Master (Confidence + Global Optimizer)
+      run: python autopilot_master.py
+
+    # ===============================
+    # Step-5.5: Job Sanity Corrector (A5.3)
+    # ===============================
+    - name: Run Job Sanity Corrector (A5.3)
+      run: python job_sanity_corrector.py
+
+    # ===============================
+    # Step-5.7: Job Detail Extractor (A5.4.1)
+    # ===============================
+    - name: Run Job Detail Extractor (A5.4.1)
+      run: python job_detail_extractor.py
+
+    # ===============================
+    # Step-5.8: Job Field Sanity v2 (A5.4.3)
+    # ===============================
+    - name: Run Job Field Sanity v2 (A5.4.3)
+      run: python job_field_sanity_v2.py
+
+    # ===============================
+    # Step-5.9: Global Deduplicator (A5.5)
+    # ===============================
+    - name: Run Global Job Deduplicator (A5.5)
+      run: python job_global_deduplicator.py
+
+    # ===============================
+    # ðŸ”¥ Step-6.1: Job Validity Gate (A6.1)
+    # Removes portal / click here / archive / junk
+    # ===============================
+    - name: Run Job Validity Gate (A6.1)
+      run: python job_validity_gate.py
+
+    # ===============================
+    # Step-6.2: AI Trainer (Pattern Learning)
+    # ===============================
+    - name: Train AI Memory
+      run: python ai_trainer.py
+
+    # ===============================
+    # Step-7: AI Corrector Deep Engine
+    # ===============================
+    - name: AI Corrector Smart Update (V2)
+      run: python ai_corrector_v2.py
+
+    # ===============================
+    # Step-8: Clean & Compress AI Memory
+    # ===============================
+    - name: Clean & Compress AI Memory
+      run: python clean_memory.py
+
+    # ===============================
+    # Step-9: Auto Backup
+    # ===============================
+    - name: Auto Backup before commit
+      run: |
+        mkdir -p backup
+        cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
+
+    # ===============================
+    # Step-10: Commit & Push
+    # ===============================
+    - name: Commit & Push Results
       run: |
         git config --global user.name "GitHub AI Bot"
         git config --global user.email "actions@github.com"
-
-        # 🔄 Always sync with remote first
-        git fetch origin
-        git reset --hard origin/main
-
-        # 📦 Commit latest generated files
         git add -A
-        git commit -m "Auto Update via Master Job Engine 🤖" || echo "No changes to commit"
-
-        # 🚀 Force push safely
-        git push origin main --force
+        git commit -m "Auto Update + A6.1 Job Validity Gate + A5.5 Dedup ðŸ¤–" || echo "No changes"
+        git push --force
