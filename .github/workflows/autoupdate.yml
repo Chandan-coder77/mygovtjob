@@ -2,7 +2,7 @@ name: Auto Update Jobs
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # Har 6 ghante auto run
+    - cron: "0 */6 * * *"   # ⏳ Har 6 ghante
   workflow_dispatch:
 
 jobs:
@@ -32,13 +32,13 @@ jobs:
           pip install requests beautifulsoup4 pdfminer.six lxml
 
       # ===============================
-      # Step-3: Raw Scraper (A5A.1)
+      # Step-3: Raw Scraper
       # ===============================
       - name: Run Scraper
         run: python scraper_detail.py
 
       # ===============================
-      # Step-4: Job Intelligence Filter (A5.2)
+      # Step-4: Job Intelligence Filter
       # ===============================
       - name: Run Job Intelligence Filter
         run: python job_intelligence_filter.py
@@ -62,7 +62,7 @@ jobs:
         run: python job_detail_extractor.py
 
       # ===============================
-      # Step-5.8: Job Field Sanity v2
+      # Step-5.8: Job Field Sanity
       # ===============================
       - name: Run Job Field Sanity v2
         run: python job_field_sanity_v2.py
@@ -80,29 +80,11 @@ jobs:
         run: python job_validity_gate.py
 
       # =====================================================
-      # 🔹 Step-6.9: MASTER JOB ENGINE v1
-      # Rule + PDF + Basic AI Assist
-      # =====================================================
-      - name: Run Master Job Engine v1
-        env:
-          HF_API_KEY: ${{ secrets.HF_API_KEY }}
-        run: python master_job_engine.py
-
-      # =====================================================
-      # 🔹 Step-7: MASTER JOB ENGINE v2
-      # Full page read + HF Q/A
-      # =====================================================
-      - name: Run Master Job Engine v2 (Deep Accuracy)
-        env:
-          HF_API_KEY: ${{ secrets.HF_API_KEY }}
-        run: python master_job_engine_v2.py
-
-      # =====================================================
-      # 🔥🔥 Step-8: MASTER JOB ENGINE v3 (FINAL BRAIN)
-      # - Full semantic understanding
-      # - Sentence based extraction
-      # - Job title + age + salary + date + vacancy
-      # - Uses ChatAnywhere / OpenAI compatible API
+      # 🔥 Step-7: MASTER JOB ENGINE v3 (FINAL BRAIN)
+      # - Odisha + All India only
+      # - Trusted sources only
+      # - Semantic understanding
+      # - EXACT qualification as per post
       # - 200 calls/day safe
       # =====================================================
       - name: Run Master Job Engine v3 (Semantic AI)
@@ -111,25 +93,25 @@ jobs:
         run: python master_job_engine_v3.py
 
       # ===============================
-      # Step-9: AI Trainer
+      # Step-8: AI Trainer
       # ===============================
       - name: Train AI Memory
         run: python ai_trainer.py
 
       # ===============================
-      # Step-10: AI Corrector
+      # Step-9: AI Corrector
       # ===============================
       - name: AI Corrector Smart Update
         run: python ai_corrector_v2.py
 
       # ===============================
-      # Step-11: Clean Memory
+      # Step-10: Clean Memory
       # ===============================
       - name: Clean & Compress AI Memory
         run: python clean_memory.py
 
       # ===============================
-      # Step-12: Auto Backup
+      # Step-11: Auto Backup
       # ===============================
       - name: Auto Backup
         run: |
@@ -137,12 +119,12 @@ jobs:
           cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
 
       # ===============================
-      # Step-13: Commit & Push
+      # Step-12: Commit & Push
       # ===============================
       - name: Commit & Push Results
         run: |
           git config --global user.name "GitHub AI Bot"
           git config --global user.email "actions@github.com"
           git add -A
-          git commit -m "Auto Update Jobs + Master Engine v3 Semantic AI 🚀" || echo "No changes"
+          git commit -m "Auto Update Jobs – Master Engine v3 (Odisha Mode) 🚀" || echo "No changes"
           git push --force
