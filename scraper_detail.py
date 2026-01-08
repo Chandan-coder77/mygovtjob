@@ -1,109 +1,94 @@
-import requests, json, time, os
+import requests, json, re, time, os
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 from datetime import datetime
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0 Safari/537.36"
-    )
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/120.0 Safari/537.36"
 }
 
 SOURCE_FILE = "trusted_sources.json"
 OUTPUT_FILE = "jobs.json"
 
+KEYWORDS = [
+    "recruitment", "online form", "vacancy",
+    "apply", "posts", "notification"
+]
+
+BLOCK_WORDS = [
+    "result", "cutoff", "answer key",
+    "admit card", "syllabus", "exam"
+]
+
 def clean(text):
-    return " ".join(text.split())
+    return re.sub(r"\s+", " ", text).strip()
 
-def load_sources():
-    with open(SOURCE_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-def load_existing_jobs():
-    if not os.path.exists(OUTPUT_FILE):
-        return []
-    try:
-        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return data if isinstance(data, list) else []
-    except:
-        return []
-
-def is_probable_job_link(text, href):
-    text = text.lower()
-    href = href.lower()
-
-    keywords = [
-        "recruitment", "apply", "vacancy", "posts",
-        "notification", "career", "employment"
-    ]
-
-    return any(k in text for k in keywords) or any(k in href for k in keywords)
+def is_job_title(title):
+    t = title.lower()
+    if any(b in t for b in BLOCK_WORDS):
+        return False
+    return any(k in t for k in KEYWORDS)
 
 def process():
-    sources = load_sources()
-    existing_jobs = load_existing_jobs()
-    seen_links = {job.get("apply_link") for job in existing_jobs}
+    jobs = []
+    seen = set()
 
-    new_jobs = []
+    if not os.path.exists(SOURCE_FILE):
+        print("❌ trusted_sources.json missing")
+        return
+
+    with open(SOURCE_FILE, "r", encoding="utf-8") as f:
+        sources = json.load(f)   # ✅ list of URLs
 
     for source in sources:
-        url = source["url"]
-        scope = source.get("scope", "ALL")
-
-        print(f"🔍 Scraping: {url}")
-
+        print(f"🔍 Checking {source}")
         try:
-            r = requests.get(url, headers=HEADERS, timeout=25)
+            r = requests.get(source, headers=HEADERS, timeout=25)
             soup = BeautifulSoup(r.text, "html.parser")
-            base = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(url))
+            base = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(source))
 
             for a in soup.find_all("a", href=True):
                 title = clean(a.get_text())
-                if not title or len(title) < 6:
+                if not title:
+                    continue
+
+                if not is_job_title(title):
                     continue
 
                 link = urljoin(base, a["href"])
-
-                if link in seen_links:
+                if link in seen:
                     continue
-
-                if not is_probable_job_link(title, link):
-                    continue
+                seen.add(link)
 
                 job = {
                     "title": title,
                     "apply_link": link,
+                    "source": source,
+                    "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                     "qualification": "",
                     "salary": "",
                     "age_limit": "",
                     "vacancy": "",
                     "last_date": "",
-                    "source": url,
-                    "scope": scope,
-                    "scraped_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    "stage": "A5.1",
+                    "status": "SOFT_ACCEPTED"
                 }
 
-                new_jobs.append(job)
-                seen_links.add(link)
-
-                print(f"✅ FOUND: {title}")
+                jobs.append(job)
+                print(f"✅ SOFT-ACCEPTED: {title}")
 
         except Exception as e:
-            print(f"⚠ Error at {url}: {e}")
+            print(f"⚠ Error at source {source} → {e}")
 
         time.sleep(1)
 
-    final_jobs = existing_jobs + new_jobs
-
+    # ✅ Always write list
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(final_jobs, f, indent=2, ensure_ascii=False)
+        json.dump(jobs, f, indent=2, ensure_ascii=False)
 
-    print("\n🔥 SCRAPER DONE")
-    print(f"➕ New jobs added: {len(new_jobs)}")
-    print(f"📦 Total jobs now : {len(final_jobs)}")
+    print(f"\n🔥 DONE — {len(jobs)} jobs SOFT-ACCEPTED into jobs.json")
 
 if __name__ == "__main__":
     process()
