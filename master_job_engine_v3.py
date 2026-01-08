@@ -1,16 +1,17 @@
 """
-MASTER JOB ENGINE v3 – FULL SEMANTIC AI (CLOUD LLM)
+MASTER JOB ENGINE v3 – ODISHA MODE (FULL SEMANTIC AI)
 Author: You
 Purpose: Human-level job data extraction
 Engine: OpenAI-compatible API (ChatAnywhere)
 
 FEATURES:
-✔ Reads full page like human
+✔ Odisha state jobs + All India jobs ONLY
+✔ Reads full page + side links (notification/details/PDF)
 ✔ Understands English / Hindi / Odia
-✔ Extracts JOB TITLE from all possible formats
+✔ Job title extracted from all possible formats
+✔ Qualification EXACT as per post (no downgrade / no guess)
 ✔ Fixes wrong dates (8511 / 0002 / 1980 etc.)
-✔ Converts sentence → structured data
-✔ STRICT JSON only
+✔ STRICT JSON output
 ✔ 1 job = 1 API call (200/day safe)
 """
 
@@ -20,13 +21,15 @@ import os
 import re
 import datetime
 from typing import Dict, List
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 # ==================================================
 # CONFIG
 # ==================================================
 
 LLM_API_URL = "https://api.chatanywhere.tech/v1/chat/completions"
-LLM_MODEL = "gpt-4o-mini"   # Primary (200/day)
+LLM_MODEL = "gpt-4o-mini"          # 200 calls/day
 API_KEY = os.getenv("AI_LLM_API_KEY")
 
 HEADERS = {
@@ -63,32 +66,58 @@ def normalize_date(date_str: str) -> str:
     except:
         return ""
 
+# ==================================================
+# SOURCE TEXT ENGINE (MAIN + SIDE LINKS)
+# ==================================================
+
 def fetch_page_text(url: str) -> str:
+    """
+    Fetch:
+    - Main job page text
+    - Side links text (notification / advertisement / details / PDF)
+    Merge everything into ONE source text
+    """
     try:
         r = requests.get(url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
-        return clean_text(r.text)
+        soup = BeautifulSoup(r.text, "lxml")
+
+        texts = []
+        texts.append(soup.get_text(separator=" "))
+
+        side_links = []
+        for a in soup.find_all("a", href=True):
+            href = a["href"].lower()
+            if any(x in href for x in [
+                "notification",
+                "advertisement",
+                "details",
+                "notice",
+                "pdf"
+            ]):
+                side_links.append(urljoin(url, a["href"]))
+
+        # limit side links for safety
+        for link in side_links[:3]:
+            try:
+                sr = requests.get(link, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=15)
+                texts.append(sr.text)
+            except:
+                continue
+
+        return clean_text(" ".join(texts))
+
     except:
         return ""
 
 # ==================================================
-# LLM CORE (FULL BRAIN)
+# LLM CORE (FULL SEMANTIC EXTRACTION)
 # ==================================================
 
 def llm_extract(full_text: str) -> Dict:
-    """
-    Job title possibilities AI must consider:
-    - Page <title>
-    - H1 / H2 heading
-    - "Recruitment of X Posts"
-    - "X Online Form 2026"
-    - "Advertisement No."
-    - Government notification line
-    """
-
     prompt = f"""
 You are an expert government job data extractor.
 
-Read the FULL page carefully from start to end.
+Read the FULL text carefully from start to end.
 
 Extract ONLY these fields:
 - job_title
@@ -100,16 +129,16 @@ Extract ONLY these fields:
 
 Rules:
 - job_title = official recruitment name
+  (from heading / notification / advertisement line)
 - Ignore junk like "click here", portals, navigation
-- Understand sentences (not regex)
-- Convert words to numbers:
-  * Matriculation = 10th
-  * Intermediate = 12th
-- Age sentence → "18-33"
+- Qualification must be EXACT AS PER POST
+  (Do NOT downgrade or upgrade)
+- Understand sentences, tables, paragraphs
+- Convert age sentence → "18-33"
 - Salary like "Pay Level-3 (₹21,700 – 69,100)" → "₹21700-69100"
 - Normalize date to DD/MM/YYYY
 - Reject impossible dates (year < 2000 or > 2100)
-- If not found, return empty string
+- If information not found, return empty string
 - Output STRICT JSON only
 - No explanation
 
@@ -122,7 +151,7 @@ TEXT:
     payload = {
         "model": LLM_MODEL,
         "messages": [
-            {"role": "system", "content": "You extract structured job data only."},
+            {"role": "system", "content": "You extract structured government job data only."},
             {"role": "user", "content": prompt}
         ],
         "temperature": 0,
@@ -144,12 +173,26 @@ TEXT:
 
         return data
 
-    except Exception:
+    except:
         return {}
 
 # ==================================================
-# MASTER ENGINE
+# MASTER ENGINE (ODISHA MODE)
 # ==================================================
+
+def is_allowed_job(url: str) -> bool:
+    """
+    Allow:
+    - Odisha state jobs
+    - All India jobs
+    Block:
+    - Other state-only portals
+    """
+    url = url.lower()
+    odisha_keywords = ["odisha", "orissa", "osssc", "opsc", "odishajobs"]
+    all_india_keywords = ["rrb", "sbi", "iocl", "bank", "army", "psu", "gov"]
+
+    return any(k in url for k in odisha_keywords + all_india_keywords)
 
 def run_engine(jobs: List[Dict]) -> List[Dict]:
     final = []
@@ -161,7 +204,7 @@ def run_engine(jobs: List[Dict]) -> List[Dict]:
             continue
 
         url = job.get("apply_link", "")
-        if not url:
+        if not url or not is_allowed_job(url):
             final.append(job)
             continue
 
@@ -201,6 +244,6 @@ if __name__ == "__main__":
     with open("jobs.json", "w", encoding="utf-8") as f:
         json.dump(updated_jobs, f, indent=2, ensure_ascii=False)
 
-    print("🔥 MASTER JOB ENGINE v3 COMPLETED")
+    print("🔥 MASTER JOB ENGINE v3 (ODISHA MODE) COMPLETED")
     print("✔ Model:", LLM_MODEL)
     print("✔ Jobs processed:", len(updated_jobs))
