@@ -4,8 +4,8 @@ Author: You
 Purpose: Human-level job data extraction with source control
 
 FEATURES:
-✔ Odisha + All India only
-✔ Trusted source allowlist (no fake sites)
+✔ Odisha + All India only (trusted domains)
+✔ Trusted source allowlist (single list mode)
 ✔ EXACT qualification as per post (no downgrade)
 ✔ Sentence understanding (no regex guessing)
 ✔ Date sanity (no 8511 / 0002 bugs)
@@ -44,13 +44,11 @@ MAX_DAILY_CALLS = 200
 TEXT_LIMIT = 12000
 
 # ==================================================
-# LOAD TRUSTED SOURCES
+# LOAD TRUSTED SOURCES (SINGLE LIST MODE)
 # ==================================================
 
 with open("trusted_sources.json", "r", encoding="utf-8") as f:
-    TRUSTED = json.load(f)
-
-TRUSTED_DOMAINS = set(TRUSTED["all_india"] + TRUSTED["odisha"])
+    TRUSTED_DOMAINS = set(json.load(f))
 
 # ==================================================
 # UTILS
@@ -165,6 +163,7 @@ def run_engine(jobs: List[Dict]) -> List[Dict]:
 
     for job in jobs:
         url = job.get("apply_link", "")
+
         if not url or not is_trusted_source(url):
             final.append(job)
             continue
