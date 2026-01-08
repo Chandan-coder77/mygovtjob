@@ -3,47 +3,65 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 from datetime import datetime
 
+# ==================================================
+# CONFIG
+# ==================================================
+
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) "
-                  "Chrome/120.0 Safari/537.36"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0 Safari/537.36"
+    )
 }
 
-SOURCE_FILE = "sources.txt"
+SOURCE_FILE = "trusted_sources.json"   # ✅ NEW (Odisha + All India)
 OUTPUT_FILE = "jobs.json"
 
 KEYWORDS = [
-    "recruitment", "online form", "vacancy",
-    "apply", "posts", "notification"
+    "recruitment", "online form", "vacancy", "posts",
+    "notification", "apply online", "apply now"
 ]
 
 BLOCK_WORDS = [
-    "result", "cutoff", "answer key",
-    "admit card", "syllabus", "exam"
+    "result", "cutoff", "answer key", "admit card",
+    "syllabus", "exam", "score", "merit list",
+    "click here", "login", "registration"
 ]
 
-def clean(text):
+# ==================================================
+# HELPERS
+# ==================================================
+
+def clean(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
-def is_job_title(title):
+def is_job_title(title: str) -> bool:
     t = title.lower()
+    if len(t) < 8:
+        return False
     if any(b in t for b in BLOCK_WORDS):
         return False
     return any(k in t for k in KEYWORDS)
 
+# ==================================================
+# SCRAPER
+# ==================================================
+
 def process():
-    jobs = []
-    seen = set()
+    scraped_jobs = []
+    seen_links = set()
 
     if not os.path.exists(SOURCE_FILE):
-        print("❌ sources.txt missing")
+        print("❌ trusted_sources.json missing — abort")
         return
 
     with open(SOURCE_FILE, "r", encoding="utf-8") as f:
-        sources = [x.strip() for x in f if x.strip().startswith("http")]
+        sources = json.load(f)
 
     for source in sources:
-        print(f"🔍 Checking {source}")
+        print(f"\n🔍 Checking source: {source}")
+
         try:
             r = requests.get(source, headers=HEADERS, timeout=25)
             soup = BeautifulSoup(r.text, "html.parser")
@@ -58,9 +76,10 @@ def process():
                     continue
 
                 link = urljoin(base, a["href"])
-                if link in seen:
+
+                if link in seen_links:
                     continue
-                seen.add(link)
+                seen_links.add(link)
 
                 job = {
                     "title": title,
@@ -76,19 +95,29 @@ def process():
                     "status": "SOFT_ACCEPTED"
                 }
 
-                jobs.append(job)
+                scraped_jobs.append(job)
                 print(f"✅ SOFT-ACCEPTED: {title}")
 
         except Exception as e:
-            print(f"⚠ Error at source {source} → {e}")
+            print(f"⚠ Error at {source} → {e}")
 
         time.sleep(1)
 
-    # 🔥 CRITICAL: ALWAYS WRITE LIST
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(jobs, f, indent=4, ensure_ascii=False)
+    # ==================================================
+    # 🔥 SAFETY LOGIC (MOST IMPORTANT)
+    # ==================================================
+    if not scraped_jobs:
+        print("\n⚠️ NO jobs scraped — keeping existing jobs.json SAFE")
+        return   # ❌ DO NOT overwrite jobs.json
 
-    print(f"\n🔥 DONE — {len(jobs)} jobs SOFT-ACCEPTED into jobs.json")
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(scraped_jobs, f, indent=2, ensure_ascii=False)
+
+    print(f"\n🔥 DONE — {len(scraped_jobs)} jobs SOFT-ACCEPTED into jobs.json")
+
+# ==================================================
+# RUN
+# ==================================================
 
 if __name__ == "__main__":
     process()
