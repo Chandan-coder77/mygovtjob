@@ -8,7 +8,8 @@ FEATURES:
 ✔ Trusted source allowlist (single list mode)
 ✔ EXACT qualification as per post (no downgrade)
 ✔ Sentence understanding (no regex guessing)
-✔ Date sanity (no 8511 / 0002 bugs)
+✔ Date sanity + TODAY expiry filter
+✔ No expired jobs (auto removed)
 ✔ 1 job = 1 API call (200/day safe)
 ✔ STRICT JSON output
 """
@@ -45,6 +46,7 @@ TEXT_LIMIT = 12000
 
 # ==================================================
 # LOAD TRUSTED SOURCES (SINGLE LIST MODE)
+# trusted_sources.json must be a LIST
 # ==================================================
 
 with open("trusted_sources.json", "r", encoding="utf-8") as f:
@@ -80,9 +82,23 @@ def normalize_date(date_str: str) -> str:
     except:
         return ""
 
+def is_future_date(date_str: str) -> bool:
+    """
+    Keep only jobs whose last_date >= TODAY
+    """
+    try:
+        d = datetime.datetime.strptime(date_str, "%d/%m/%Y").date()
+        return d >= TODAY
+    except:
+        return False
+
 def fetch_page_text(url: str) -> str:
     try:
-        r = requests.get(url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
+        r = requests.get(
+            url,
+            headers={"User-Agent": HEADERS["User-Agent"]},
+            timeout=20
+        )
         return clean_text(r.text)
     except:
         return ""
@@ -136,7 +152,12 @@ TEXT:
     }
 
     try:
-        r = requests.post(LLM_API_URL, headers=HEADERS, json=payload, timeout=120)
+        r = requests.post(
+            LLM_API_URL,
+            headers=HEADERS,
+            json=payload,
+            timeout=120
+        )
         content = r.json()["choices"][0]["message"]["content"]
 
         match = re.search(r"\{.*\}", content, re.S)
@@ -164,17 +185,17 @@ def run_engine(jobs: List[Dict]) -> List[Dict]:
     for job in jobs:
         url = job.get("apply_link", "")
 
+        # Skip untrusted or empty links
         if not url or not is_trusted_source(url):
-            final.append(job)
             continue
 
+        # API limit safety
         if used_calls >= MAX_DAILY_CALLS:
             final.append(job)
             continue
 
         page_text = fetch_page_text(url)
         if not page_text:
-            final.append(job)
             continue
 
         extracted = llm_extract(page_text)
@@ -189,6 +210,12 @@ def run_engine(jobs: List[Dict]) -> List[Dict]:
             "vacancy": extracted.get("vacancy", ""),
             "last_date": extracted.get("last_date", "")
         }
+
+        # 🔥 TODAY BASED EXPIRY FILTER
+        last_date = merged.get("last_date", "").strip()
+        if last_date:
+            if not is_future_date(last_date):
+                continue  # ❌ expired job removed
 
         final.append(merged)
 
