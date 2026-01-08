@@ -20,16 +20,14 @@ HEADERS = {
 }
 
 SOURCE_FILE = "trusted_sources.json"
-OUTPUT_FILE = "jobs.json"
+OUTPUT_FILE = "jobs_raw.json"   # 🔥 IMPORTANT: RAW output
 
-# 🔥 Loose keywords (job miss nahi honi chahiye)
 KEYWORDS = [
     "recruitment", "apply", "online", "form",
     "vacancy", "vacancies", "posts", "post",
     "bharti", "नियुक्ति", "jobs"
 ]
 
-# ❌ Sirf non-job pages block
 BLOCK_WORDS = [
     "result", "cutoff", "answer key",
     "admit card", "syllabus"
@@ -39,10 +37,10 @@ BLOCK_WORDS = [
 # HELPERS
 # ==================================================
 
-def clean(text: str) -> str:
-    return re.sub(r"\s+", " ", text).strip()
+def clean(text):
+    return re.sub(r"\s+", " ", (text or "")).strip()
 
-def is_job_title(title: str) -> bool:
+def is_job_title(title):
     t = title.lower()
     if len(t) < 6:
         return False
@@ -50,7 +48,15 @@ def is_job_title(title: str) -> bool:
         return False
     return any(k in t for k in KEYWORDS)
 
-def get_domain(url: str) -> str:
+def normalize_domain(d):
+    d = d.strip()
+    d = d.replace("http://", "").replace("https://", "")
+    return d.rstrip("/")
+
+def build_homepage(domain):
+    return "https://" + domain
+
+def get_domain(url):
     try:
         return urlparse(url).netloc.replace("www.", "")
     except:
@@ -68,45 +74,40 @@ def process():
         print("❌ trusted_sources.json missing")
         return
 
-    # ✅ trusted_sources.json = list of domains
     with open(SOURCE_FILE, "r", encoding="utf-8") as f:
-        trusted_domains = json.load(f)
+        raw_domains = json.load(f)
+
+    # ✅ normalize domains
+    trusted_domains = [normalize_domain(d) for d in raw_domains]
 
     print(f"🔐 Trusted domains loaded: {len(trusted_domains)}")
 
-    # 🌐 Convert domain → homepage URL
-    sources = [f"https://{d}" for d in trusted_domains]
+    sources = [build_homepage(d) for d in trusted_domains]
 
     for source in sources:
         print(f"\n🔍 Checking: {source}")
         try:
             r = requests.get(source, headers=HEADERS, timeout=25)
             soup = BeautifulSoup(r.text, "html.parser")
-
-            base = "{uri.scheme}://{uri.netloc}".format(
-                uri=urlparse(source)
-            )
+            base = f"{urlparse(source).scheme}://{urlparse(source).netloc}"
 
             for a in soup.find_all("a", href=True):
                 title = clean(a.get_text())
-                if not title:
-                    continue
-
-                if not is_job_title(title):
+                if not title or not is_job_title(title):
                     continue
 
                 link = urljoin(base, a["href"])
+                domain = get_domain(link)
 
-                # 🔐 Extra safety: domain check
-                if get_domain(link) not in trusted_domains:
+                # 🔐 allow sub-pages also
+                if not any(domain.endswith(td) for td in trusted_domains):
                     continue
 
                 if link in seen_links:
                     continue
-
                 seen_links.add(link)
 
-                job = {
+                jobs.append({
                     "title": title,
                     "apply_link": link,
                     "source": source,
@@ -118,9 +119,8 @@ def process():
                     "last_date": "",
                     "stage": "A5.1",
                     "status": "SOFT_ACCEPTED"
-                }
+                })
 
-                jobs.append(job)
                 print(f"✅ SOFT-ACCEPTED: {title}")
 
         except Exception as e:
@@ -128,11 +128,15 @@ def process():
 
         time.sleep(1)
 
-    # 🔥 IMPORTANT: overwrite jobs.json ONLY with scraped jobs
+    # 🛡 FAIL-SAFE: never empty
+    if not jobs:
+        print("⚠ No jobs scraped — keeping previous data safe")
+        return
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(jobs, f, indent=2, ensure_ascii=False)
 
-    print(f"\n🔥 DONE — {len(jobs)} jobs SOFT-ACCEPTED into jobs.json")
+    print(f"\n🔥 DONE — {len(jobs)} jobs written to {OUTPUT_FILE}")
 
 # ==================================================
 # RUN
