@@ -1,18 +1,16 @@
 """
-MASTER JOB ENGINE v3 – ODISHA MODE (FULL SEMANTIC AI)
+MASTER JOB ENGINE v3 – ODISHA MODE (CONTROLLED AI)
 Author: You
-Purpose: Human-level job data extraction
-Engine: OpenAI-compatible API (ChatAnywhere)
+Purpose: Human-level job data extraction with source control
 
 FEATURES:
-✔ Odisha state jobs + All India jobs ONLY
-✔ Reads full page + side links (notification/details/PDF)
-✔ Understands English / Hindi / Odia
-✔ Job title extracted from all possible formats
-✔ Qualification EXACT as per post (no downgrade / no guess)
-✔ Fixes wrong dates (8511 / 0002 / 1980 etc.)
-✔ STRICT JSON output
+✔ Odisha + All India only
+✔ Trusted source allowlist (no fake sites)
+✔ EXACT qualification as per post (no downgrade)
+✔ Sentence understanding (no regex guessing)
+✔ Date sanity (no 8511 / 0002 bugs)
 ✔ 1 job = 1 API call (200/day safe)
+✔ STRICT JSON output
 """
 
 import requests
@@ -21,15 +19,14 @@ import os
 import re
 import datetime
 from typing import Dict, List
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin
+from urllib.parse import urlparse
 
 # ==================================================
 # CONFIG
 # ==================================================
 
 LLM_API_URL = "https://api.chatanywhere.tech/v1/chat/completions"
-LLM_MODEL = "gpt-4o-mini"          # 200 calls/day
+LLM_MODEL = "gpt-4o-mini"   # 200/day safe
 API_KEY = os.getenv("AI_LLM_API_KEY")
 
 HEADERS = {
@@ -47,8 +44,27 @@ MAX_DAILY_CALLS = 200
 TEXT_LIMIT = 12000
 
 # ==================================================
+# LOAD TRUSTED SOURCES
+# ==================================================
+
+with open("trusted_sources.json", "r", encoding="utf-8") as f:
+    TRUSTED = json.load(f)
+
+TRUSTED_DOMAINS = set(TRUSTED["all_india"] + TRUSTED["odisha"])
+
+# ==================================================
 # UTILS
 # ==================================================
+
+def get_domain(url: str) -> str:
+    try:
+        return urlparse(url).netloc.replace("www.", "")
+    except:
+        return ""
+
+def is_trusted_source(url: str) -> bool:
+    domain = get_domain(url)
+    return any(domain.endswith(d) for d in TRUSTED_DOMAINS)
 
 def clean_text(text: str) -> str:
     text = re.sub(r"<script.*?>.*?</script>", " ", text, flags=re.S)
@@ -66,58 +82,22 @@ def normalize_date(date_str: str) -> str:
     except:
         return ""
 
-# ==================================================
-# SOURCE TEXT ENGINE (MAIN + SIDE LINKS)
-# ==================================================
-
 def fetch_page_text(url: str) -> str:
-    """
-    Fetch:
-    - Main job page text
-    - Side links text (notification / advertisement / details / PDF)
-    Merge everything into ONE source text
-    """
     try:
         r = requests.get(url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
-        soup = BeautifulSoup(r.text, "lxml")
-
-        texts = []
-        texts.append(soup.get_text(separator=" "))
-
-        side_links = []
-        for a in soup.find_all("a", href=True):
-            href = a["href"].lower()
-            if any(x in href for x in [
-                "notification",
-                "advertisement",
-                "details",
-                "notice",
-                "pdf"
-            ]):
-                side_links.append(urljoin(url, a["href"]))
-
-        # limit side links for safety
-        for link in side_links[:3]:
-            try:
-                sr = requests.get(link, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=15)
-                texts.append(sr.text)
-            except:
-                continue
-
-        return clean_text(" ".join(texts))
-
+        return clean_text(r.text)
     except:
         return ""
 
 # ==================================================
-# LLM CORE (FULL SEMANTIC EXTRACTION)
+# LLM CORE
 # ==================================================
 
 def llm_extract(full_text: str) -> Dict:
     prompt = f"""
 You are an expert government job data extractor.
 
-Read the FULL text carefully from start to end.
+Read the FULL page carefully from start to end.
 
 Extract ONLY these fields:
 - job_title
@@ -129,16 +109,15 @@ Extract ONLY these fields:
 
 Rules:
 - job_title = official recruitment name
-  (from heading / notification / advertisement line)
-- Ignore junk like "click here", portals, navigation
-- Qualification must be EXACT AS PER POST
-  (Do NOT downgrade or upgrade)
-- Understand sentences, tables, paragraphs
-- Convert age sentence → "18-33"
-- Salary like "Pay Level-3 (₹21,700 – 69,100)" → "₹21700-69100"
+- qualification = EXACT as per post (no downgrade)
+- Understand sentences, tables, notices
+- Convert words to numbers if written
+- Salary example:
+  Pay Level-3 (₹21,700 – 69,100) → ₹21700-69100
+- Age sentence → 18-33
 - Normalize date to DD/MM/YYYY
-- Reject impossible dates (year < 2000 or > 2100)
-- If information not found, return empty string
+- Reject impossible dates
+- If not found, return empty string
 - Output STRICT JSON only
 - No explanation
 
@@ -151,7 +130,7 @@ TEXT:
     payload = {
         "model": LLM_MODEL,
         "messages": [
-            {"role": "system", "content": "You extract structured government job data only."},
+            {"role": "system", "content": "Extract structured job data only."},
             {"role": "user", "content": prompt}
         ],
         "temperature": 0,
@@ -177,34 +156,20 @@ TEXT:
         return {}
 
 # ==================================================
-# MASTER ENGINE (ODISHA MODE)
+# MASTER ENGINE
 # ==================================================
-
-def is_allowed_job(url: str) -> bool:
-    """
-    Allow:
-    - Odisha state jobs
-    - All India jobs
-    Block:
-    - Other state-only portals
-    """
-    url = url.lower()
-    odisha_keywords = ["odisha", "orissa", "osssc", "opsc", "odishajobs"]
-    all_india_keywords = ["rrb", "sbi", "iocl", "bank", "army", "psu", "gov"]
-
-    return any(k in url for k in odisha_keywords + all_india_keywords)
 
 def run_engine(jobs: List[Dict]) -> List[Dict]:
     final = []
     used_calls = 0
 
     for job in jobs:
-        if used_calls >= MAX_DAILY_CALLS:
+        url = job.get("apply_link", "")
+        if not url or not is_trusted_source(url):
             final.append(job)
             continue
 
-        url = job.get("apply_link", "")
-        if not url or not is_allowed_job(url):
+        if used_calls >= MAX_DAILY_CALLS:
             final.append(job)
             continue
 
