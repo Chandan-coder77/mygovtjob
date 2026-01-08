@@ -32,19 +32,19 @@ jobs:
           pip install requests beautifulsoup4 pdfminer.six lxml
 
       # ===============================
-      # Step-3: Raw Scraper
+      # Step-3: Raw Scraper (A5.1)
       # ===============================
       - name: Run Scraper
         run: python scraper_detail.py
 
       # ===============================
-      # Step-4: Job Intelligence Filter
+      # Step-4: Job Intelligence Filter (A5.2)
       # ===============================
       - name: Run Job Intelligence Filter
         run: python job_intelligence_filter.py
 
       # ===============================
-      # Step-5: Autopilot Master
+      # Step-5: Autopilot Master (A5.2 FULL)
       # ===============================
       - name: Run Autopilot Master
         run: python autopilot_master.py
@@ -62,7 +62,7 @@ jobs:
         run: python job_detail_extractor.py
 
       # ===============================
-      # Step-5.8: Job Field Sanity
+      # Step-5.8: Job Field Sanity v2
       # ===============================
       - name: Run Job Field Sanity v2
         run: python job_field_sanity_v2.py
@@ -80,12 +80,26 @@ jobs:
         run: python job_validity_gate.py
 
       # =====================================================
-      # 🔥 Step-7: MASTER JOB ENGINE v3 (FINAL BRAIN)
-      # - Odisha + All India only
-      # - Trusted sources only
-      # - Semantic understanding
-      # - EXACT qualification as per post
-      # - 200 calls/day safe
+      # 🔹 Step-6.9: MASTER JOB ENGINE v1
+      # Rule-based + PDF aware (NO AI hallucination)
+      # =====================================================
+      - name: Run Master Job Engine v1
+        env:
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+        run: python master_job_engine.py
+
+      # =====================================================
+      # 🔹 Step-7: MASTER JOB ENGINE v2
+      # Deep page read + structured AI assist
+      # =====================================================
+      - name: Run Master Job Engine v2 (Deep Accuracy)
+        env:
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
+        run: python master_job_engine_v2.py
+
+      # =====================================================
+      # 🔥 Step-8: MASTER JOB ENGINE v3 (FINAL BRAIN)
+      # Semantic + sentence understanding
       # =====================================================
       - name: Run Master Job Engine v3 (Semantic AI)
         env:
@@ -93,25 +107,25 @@ jobs:
         run: python master_job_engine_v3.py
 
       # ===============================
-      # Step-8: AI Trainer
+      # Step-9: AI Trainer
       # ===============================
       - name: Train AI Memory
         run: python ai_trainer.py
 
       # ===============================
-      # Step-9: AI Corrector
+      # Step-10: AI Corrector
       # ===============================
       - name: AI Corrector Smart Update
         run: python ai_corrector_v2.py
 
       # ===============================
-      # Step-10: Clean Memory
+      # Step-11: Clean Memory
       # ===============================
       - name: Clean & Compress AI Memory
         run: python clean_memory.py
 
       # ===============================
-      # Step-11: Auto Backup
+      # Step-12: Auto Backup
       # ===============================
       - name: Auto Backup
         run: |
@@ -119,12 +133,12 @@ jobs:
           cp ai_memory.json backup/ai_memory_$(date +'%d-%m-%Y_%H-%M-%S').json || echo "Backup skipped"
 
       # ===============================
-      # Step-12: Commit & Push
+      # Step-13: Commit & Push
       # ===============================
       - name: Commit & Push Results
         run: |
           git config --global user.name "GitHub AI Bot"
           git config --global user.email "actions@github.com"
           git add -A
-          git commit -m "Auto Update Jobs – Master Engine v3 (Odisha Mode) 🚀" || echo "No changes"
+          git commit -m "Auto Update Jobs – Master Engines v1+v2+v3 (Odisha + All India) 🚀" || echo "No changes"
           git push --force
