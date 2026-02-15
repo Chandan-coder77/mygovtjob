@@ -1,13 +1,13 @@
 {
     "stage": "A5.2",
-    "updated": "2026-02-14 18:24:28",
-    "total_pending": 93,
+    "updated": "2026-02-15 01:24:06",
+    "total_pending": 140,
     "jobs": [
         {
             "title": "All India Govt Jobs",
             "apply_link": "https://www.freejobalert.com/government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -16,13 +16,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "State Govt Jobs",
             "apply_link": "https://www.freejobalert.com/state-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -31,13 +31,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Bank Jobs",
             "apply_link": "https://www.freejobalert.com/bank-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -46,13 +46,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Teaching Jobs",
             "apply_link": "https://www.freejobalert.com/teaching-faculty-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -61,13 +61,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Engineering Jobs",
             "apply_link": "https://www.freejobalert.com/engineering-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -76,13 +76,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Railway Jobs",
             "apply_link": "https://www.freejobalert.com/railway-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -91,13 +91,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Police/Defence Jobs",
             "apply_link": "https://www.freejobalert.com/police-defence-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -106,13 +106,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Search Jobs",
             "apply_link": "https://www.freejobalert.com/search-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -121,13 +121,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Anganwadi Recruitment",
             "apply_link": "https://www.freejobalert.com/anganwadi-recruitment/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -136,13 +136,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Work From Home Jobs",
             "apply_link": "https://www.freejobalert.com/work-from-home-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -151,13 +151,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Part Time Jobs",
             "apply_link": "https://www.freejobalert.com/part-time-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -166,13 +166,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Steno Jobs",
             "apply_link": "https://www.freejobalert.com/stenographer-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -181,13 +181,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Sports Quota Jobs",
             "apply_link": "https://www.freejobalert.com/sports-quota-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -196,13 +196,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Ex-Servicemen Jobs",
             "apply_link": "https://www.freejobalert.com/ex-serviceman-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -211,13 +211,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "PWD Jobs",
             "apply_link": "https://www.freejobalert.com/pwd-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -226,13 +226,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Legal Jobs",
             "apply_link": "https://www.freejobalert.com/law-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -241,13 +241,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "India Post GDS Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/indian-post-office-gds-recruitment-2026-3036182",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -256,13 +256,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Aadhaar Operator Supervisor Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/aadhaar-operator-supervisor-recruitment-2026-apply-online-form-for-282-posts-3037367",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -271,13 +271,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Indian Army Agniveer Recruitment Rally Notification 2026",
             "apply_link": "https://www.freejobalert.com/articles/indian-army-agniveer-recruitment-rally-notification-2026-3037253",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -286,13 +286,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "RRB 22000 Group D Online form 2026",
             "apply_link": "https://www.freejobalert.com/articles/rrb-group-d-recruitment-2026-apply-online-for-22000-posts-3033409",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -301,13 +301,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "AIIMS NORCET 10 Recruitment Short Notice 2026",
             "apply_link": "https://www.freejobalert.com/articles/aiims-norcet-10-recruitment-notification-2026-3037255",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -316,13 +316,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "NTPC Executive Trainees 515 Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/ntpc-executive-trainees-recruitment-2026-apply-online-for-515-posts-3036972",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -331,13 +331,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "PNB Bank 5138 Apprentices Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/pnb-bank-apprentices-recruitment-2026-3036642",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -346,13 +346,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "CDAC 805 Various Vacancies Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/cdac-recruitment-2026-apply-online-for-805-project-engineer-project-technician-and-other-posts-3036228",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -361,13 +361,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "UPSC CSE Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/upsc-cse-2026-3036518",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -376,13 +376,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "SBI 2273 CBO Recruitment 2026",
             "apply_link": "https://www.freejobalert.com/articles/state-bank-of-india-sbi-cbo-recruitment-2026-apply-online-for-2273-posts-3035979",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -391,13 +391,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Maharashtra Police Bharti Physical Test Hall Ticket 2026",
             "apply_link": "https://www.freejobalert.com/articles/maharashtra-police-bharti-physical-test-hall-ticket-2026-3036742",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -406,13 +406,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "10TH (70,015 Jobs)",
+            "title": "10TH (67,786 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/10th-pass-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -421,13 +421,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "8TH (724 Jobs)",
+            "title": "8TH (711 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/8th-pass-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -436,13 +436,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "12TH (44,005 Jobs)",
+            "title": "12TH (43,990 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/12th-pass-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -451,13 +451,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "Diploma (11,408 Jobs)",
+            "title": "Diploma (11,405 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/diploma-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -466,13 +466,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "ITI (31,319 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/iti-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -481,13 +481,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "B.Tech/B.E (11,525 Jobs)",
+            "title": "B.Tech/B.E (11,488 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/btech-be-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -496,13 +496,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "B.com (4,642 Jobs)",
+            "title": "B.com (4,628 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/bcom-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -511,13 +511,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "Any Graduate (17,084 Jobs)",
+            "title": "Any Graduate (16,941 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/any-graduate-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -526,13 +526,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
-            "title": "Any Post Graduate (1,577 Jobs)",
+            "title": "Any Post Graduate (1,566 Jobs)",
             "apply_link": "https://www.freejobalert.com/search-jobs/any-post-graduate-government-jobs/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -541,13 +541,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "NCERT Academic Position Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/ncert-academic-position-recruitment-2026-apply-online-for-117-posts-3036282",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -556,13 +556,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Indian Army NCC Special Entry Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/indian-army-ncc-special-entry-recruitment-2026-apply-online-for-70-posts-3037201",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -571,13 +571,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "HAL 151 Various Vacancies Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/hal-recruitment-2026-apply-online-for-151-technician-fireman-and-more-posts-3037112",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -586,13 +586,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "NIC Scientific/Technical Assistant Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/nic-scientific-technical-assistant-recruitment-2026-apply-online-for-376-posts-3036978",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -601,13 +601,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "CSU Non Teaching Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/csu-non-teaching-recruitment-2026-apply-online-for-43-posts-3036821",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -616,13 +616,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Cochin Shipyard CSL 260 Workmen Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/cochin-shipyard-csl-workmen-recruitment-2026-apply-online-for-260-fabrication-assistant-outfit-assistant-posts-3035427",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -631,13 +631,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Bank of Baroda Professionals Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-professionals-recruitment-2026-apply-online-for-419-posts-3036678",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -646,13 +646,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "BSNL SET Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/bsnl-set-recruitment-2026-apply-online-for-120-senior-executive-trainee-posts-3036058",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -661,13 +661,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "UPSC IFS Recruitment Notification 2026",
             "apply_link": "https://www.freejobalert.com/articles/upsc-ifs-recruitment-notification-2026-3036540",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -676,13 +676,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "GSSC 722 Group C Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/gssc-recruitment-2026-apply-online-for-722-police-constable-forest-guard-and-more-posts-3037378",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -691,13 +691,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "BESCOM 520 Apprentice Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/bescom-recruitment-2026-apply-online-for-520-apprentice-posts-3037375",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -706,13 +706,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "PSSSB 197 Excise and Taxation Inspector Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/psssb-excise-and-taxation-inspector-recruitment-2026-apply-online-for-197-posts-3036648",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -721,13 +721,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "HESCOM Apprentice Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/hescom-apprentice-recruitment-2026-apply-online-for-388-posts-3037329",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -736,13 +736,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "JPSC Lecturer Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/jpsc-lecturer-recruitment-2026-apply-online-for-349-posts-3037326",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -751,13 +751,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "BTSC Various Vacncies Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/btsc-recruitment-2026-apply-online-for-92-dairy-field-officer-dairy-technical-officer-posts-3037298",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -766,13 +766,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "GSRTC Helper Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/gsrtc-helper-recruitment-2026-apply-online-for-297-posts-3037294",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -781,13 +781,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Bihar Panchayati Raj Vibhag Audit Officer Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/bihar-panchayati-raj-vibhag-recruitment-2026-apply-online-for-203-district-audit-officer-and-senior-audit-officer-posts-3037249",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -796,13 +796,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "SSJU 90 Teaching and Non Teaching Posts Offline Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/ssju-recruitment-2026-apply-offline-for-90-teaching-and-non-teaching-posts-3037170",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -811,13 +811,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "IREL Apprentices Offline Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/irel-apprentices-recruitment-2026-apply-offline-for-89-posts-3037160",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -826,13 +826,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "CG Vyapam 200 Sub Inspector Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/cg-vyapam-sub-inspector-recruitment-2026-apply-online-for-200-posts-3037158",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -841,13 +841,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "IOCL Paradip Refinery Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/iocl-paradip-refinery-recruitment-2026-apply-online-for-342-trade-and-technician-apprentice-posts-3037153",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -856,13 +856,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "NLC Trade Apprentice Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/nlc-trade-apprentice-recruitment-2026-apply-online-for-607-posts-3037150",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -871,13 +871,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Bundelkhand University Teaching Faculty Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/bundelkhand-university-teaching-faculty-recruitment-2026-apply-online-for-143-posts-3037139",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -886,13 +886,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "DLSA Almora Paralegal Volunteer Offline Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/dlsa-almora-paralegal-volunteer-recruitment-2026-apply-offline-for-121-posts-3037109",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -901,13 +901,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "HPSC HCS Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/hpsc-hcs-recruitment-2026-apply-online-for-102-posts-3036129",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -916,13 +916,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "IOCL Barauni Refinery Apprentice Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/iocl-barauni-refinery-apprentice-recruitment-2026-apply-online-for-224-posts-3037018",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -931,13 +931,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "HPRCA 390 Assistant Staff Nurse Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/hprca-assistant-staff-nurse-recruitment-2026-apply-online-for-390-posts-3037013",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -946,13 +946,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "SEBI Young Professional Online Form 2026",
             "apply_link": "https://www.freejobalert.com/articles/sebi-young-professional-recruitment-2026-apply-online-for-91-posts-3036959",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -961,13 +961,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "CUET (PG) 2025 Online Form",
             "apply_link": "https://www.freejobalert.com/cuet-pg-2025/1134788/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -976,13 +976,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "AISSEE 2025 Online Form",
             "apply_link": "https://www.freejobalert.com/aissee/1133144/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -991,13 +991,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "MAH B.Ed CET 2025 Online Form",
             "apply_link": "https://www.freejobalert.com/mah-bed-cet/1134438/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1006,13 +1006,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "MAH MCA CET 2025 Online Form",
             "apply_link": "https://www.freejobalert.com/mah-mca-cet/1133598/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1021,13 +1021,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "UBTER JEEP 2025 Online Form",
             "apply_link": "https://www.freejobalert.com/ubtejeep/1133198/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1036,13 +1036,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "MAH MBA/ MMS CET 2025 Online Form",
             "apply_link": "https://www.freejobalert.com/mah-mba-mms-cet/1133228/",
             "source": "https://freejobalert.com",
-            "scraped_at": "2026-02-14 18:21:41",
+            "scraped_at": "2026-02-15 01:21:17",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1051,13 +1051,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Right to Information",
             "apply_link": "https://bel-india.in/right-to-information/",
             "source": "https://bel-india.in",
-            "scraped_at": "2026-02-14 18:21:43",
+            "scraped_at": "2026-02-15 01:21:19",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1066,13 +1066,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "General Information",
             "apply_link": "https://bel-india.in/investors/#generalinfo",
             "source": "https://bel-india.in",
-            "scraped_at": "2026-02-14 18:21:43",
+            "scraped_at": "2026-02-15 01:21:19",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1081,13 +1081,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Vendor Information",
             "apply_link": "https://bel-india.in/suppliers/#vendorinformation",
             "source": "https://bel-india.in",
-            "scraped_at": "2026-02-14 18:21:43",
+            "scraped_at": "2026-02-15 01:21:19",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1096,13 +1096,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Formal Letter of Appointment of Independent Directors",
             "apply_link": "https://nalcoindia.com/investor-services/directors/formal-letter-of-appointment-of-independent-directors/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1111,13 +1111,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Download Forms",
             "apply_link": "https://nalcoindia.com/investor-services/information-for-shareholders/download-forms/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1126,13 +1126,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Contact information of the designated officials of the listed entity who are responsible for assisting and handling investor grievances",
             "apply_link": "https://nalcoindia.com/investor-services/contact-us/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1141,13 +1141,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Financial information-Notice",
             "apply_link": "https://nalcoindia.com/investor-services/notices/board-meeting/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1156,13 +1156,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Disclosure of the policy for determination of materiality of events or information",
             "apply_link": "https://nalcoindia.com/company/policies-docs/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1171,13 +1171,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Disclosure of contact details of key managerial personnel who are authorized for the purpose of determining materiality of an event or information",
             "apply_link": "https://nalcoindia.com/contact-us/key-persons/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1186,13 +1186,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Web Information Manager",
             "apply_link": "https://nalcoindia.com/contact-us/web-information-manager/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1201,13 +1201,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Query/Appeal Online",
             "apply_link": "https://nalcoindia.com/citizen-corner/rti/query-appeal-online/",
             "source": "https://nalcoindia.com",
-            "scraped_at": "2026-02-14 18:21:47",
+            "scraped_at": "2026-02-15 01:21:23",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1216,13 +1216,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Vigilance - Online Integrity Pledge",
             "apply_link": "https://grse.in/vigilance-online-integrity-pledge/",
             "source": "https://grse.in",
-            "scraped_at": "2026-02-14 18:21:50",
+            "scraped_at": "2026-02-15 01:21:26",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1231,13 +1231,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 0,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Employment Notification No. 2025/02(O) – DOWNLOAD CALL LETTERS FOR INTERVIEW FOR THE POSTS OF AM (SAFETY), AM (ELECTRONICS), AM (IT)",
             "apply_link": "https://grse.in/career/",
             "source": "https://grse.in",
-            "scraped_at": "2026-02-14 18:21:50",
+            "scraped_at": "2026-02-15 01:21:26",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1246,13 +1246,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 25,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "MOIL Limited has not developed or authorized any mobile app for any financial transactions or online gaming. Any such claims or apps are completely fraudulent and unauthorized.",
             "apply_link": "https://moil.nic.in/hi/content/254/MOIL Limited has not developed or authorized any m",
             "source": "https://moil.nic.in",
-            "scraped_at": "2026-02-14 18:21:54",
+            "scraped_at": "2026-02-15 01:21:30",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1261,13 +1261,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 10,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "MOIL achieves Best-Ever November Production and Sales Performance...",
             "apply_link": "https://moil.nic.in/hi/news-detail/3/186/Latest News",
             "source": "https://moil.nic.in",
-            "scraped_at": "2026-02-14 18:21:54",
+            "scraped_at": "2026-02-15 01:21:30",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1276,13 +1276,733 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 10,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Railway Recruitment",
+            "apply_link": "https://odishajobs.in/railway-recruitment/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Private Jobs",
+            "apply_link": "https://odishajobs.in/private-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odisha Govt Jobs",
+            "apply_link": "https://odishajobs.in/odisha-govt-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Latest Jobs",
+            "apply_link": "https://odishajobs.in/latest-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Private Jobs",
+            "apply_link": "https://odishajobs.in/category/private-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Latest Jobs",
+            "apply_link": "https://odishajobs.in/category/latest-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odisha Jobs Alerts",
+            "apply_link": "https://odishajobs.in/category/odisha-jobs-alerts/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Railway Recruitment",
+            "apply_link": "https://odishajobs.in/category/railway-recruitment-board/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odisha Jobs",
+            "apply_link": "https://odishajobs.in/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "OSSSC New Combine Recruitment 2024",
+            "apply_link": "https://odishajobs.in/osssc-new-combine-recruitment-2024-apply/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "UPSSSC Junior Engineer JE Recruitment 2024",
+            "apply_link": "https://odishajobs.in/upsssc-junior-engineer-je-civil-recruitment-2024-apply-online-date-extended-for-4376-post/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Jobs In Odisha Tata Steel Recruitment 2024",
+            "apply_link": "https://odishajobs.in/private-jobs-in-odisha-tata-steel-recruitment-2024-odisha-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "SSC GD Vacancy 2025 Apply Online",
+            "apply_link": "https://odishajobs.in/ssc-gd-vacancy-2024-apply-online-ssc-gd-recruitment-2024-ssc-gd-recruitment-2025-apply-online-for-39481-posts/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "RRB Para-medical Categories Recruitment 2024",
+            "apply_link": "https://odishajobs.in/rrb-recruitment-2024-para-medical-recruitment/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "RRB JE Recruitment 2024",
+            "apply_link": "https://odishajobs.in/rrb-je-recruitment-2024-rrb-recruitment-2024/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "OSSSC Recruitment 2025-26 Notification Out | RI, ARI, AMIN, Forester & Forest Guard | odishajobs",
+            "apply_link": "https://odishajobs.in/osssc-recruitment-2025-26-notification-out-ri-ari-amin-forester-forest-guard-odishajobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs : Aarti Steel Limited Recruitment 2025 – ITI Fitter Jobs at Steel Plant | Apply Now",
+            "apply_link": "https://odishajobs.in/odishajobs-aarti-steel-limited-recruitment-2025-iti-fitter-jobs-at-steel-plant-apply-now/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs: ArcelorMittal Nippon Steel Recruitment 2025 – Shift In Charge / Engineer Instrumentation Jobs in Hazira, Surat (AM/NS) India.",
+            "apply_link": "https://odishajobs.in/odishajobs-arcelormittal-nippon-steel-recruitment-2025-jobs-in-hazira-surat/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- JSW Steel Recruitment 2025 Walk-in Interview in Ranchi for Coal & Iron Ore Mines Jobs",
+            "apply_link": "https://odishajobs.in/odishajobs-jsw-steel-recruitment-2025-walk-in-interview-in-ranchi-for-coal-iron-ore-mines-jobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- JSW Steel Requirement 2025- Hiring Fresher Diploma Engineer Trainees – 2025 | Multiple Branches | Apply Online",
+            "apply_link": "https://odishajobs.in/jsw-steel-requirement-2025-hiring-fresher-diploma-engineer-trainees-2025-multiple-branches-apply-online/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- Bajaj Auto Limited Hiring Production Trainees – Waluj Plant, Maharashtra | Apply Now",
+            "apply_link": "https://odishajobs.in/odishajobs-bajaj-auto-limited-hiring-production-trainees-waluj-plant-maharashtra-apply-now/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "RSSB Recruitment 2025 | Rajasthan Forest Guard Vacancy 2025",
+            "apply_link": "https://odishajobs.in/rssb-recruitment-2025-rajasthan-forest-guard-vacancy-2025/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs: Open Die Press Operator/Engineer at Viraj Profiles Pvt Ltd – Immediate Joiners Only",
+            "apply_link": "https://odishajobs.in/odishajobs-open-die-press-operator-engineer-at-viraj-profiles-pvt-ltd-immediate-joiners-only/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- IMFA Hiring for Greenfield Ferro Chrome Project – Be Part of Odisha’s Industrial Growth Story",
+            "apply_link": "https://odishajobs.in/odishajobs-imfa-hiring-for-greenfield-ferro-chrome-project/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- JSW BPSL Recruitment 2025 – Crane Maintenance Engineer Jobs in Odisha Apply Now",
+            "apply_link": "https://odishajobs.in/odishajobs-jsw-bpsl-recruitment-2025-crane-maintenance-engineer-jobs-in-odisha/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs Hiring Alert: B.Sc. Chemistry Freshers Wanted at Aarti Steels Ltd – Apply Now for a Golden Career Opportunity in Odisha",
+            "apply_link": "https://odishajobs.in/odishajobs-hiring-alert-b-sc-chemistry-freshers-wanted-at-aarti-steels-ltd-apply-now-for-a-golden-career-opportunity-in-odisha/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "OPTCL Junior Maintenance and Operator 2025 | OPTCL Recruitment 2025",
+            "apply_link": "https://odishajobs.in/optcl-recruitment-2025-apply-now-odishajobs/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- Aarti Steels Ltd Hiring – Area Incharge (Scrap) | Apply Now in Cuttack, Odisha",
+            "apply_link": "https://odishajobs.in/odishajobs-aarti-steels-ltd-hiring-area-incharge-scrap-apply-now-in-cuttack-odisha/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- District Court Cuttack Junior Clerk Cum Copyist, Salaried Amin Recruitment 2025 Job Posts 34 Vacancies",
+            "apply_link": "https://odishajobs.in/odishajobs-district-court-cuttack-junior-clerk-cum-copyist-salaried-amin-recruitment-2025-job-posts-34-vacancies/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- JSW Steel Recruitment 2025 Hiring Now! Build a Career as Strong as Steel | Apply Now – odishajobs.in",
+            "apply_link": "https://odishajobs.in/odishajobs-jsw-steel-recruitment-2025-jsw-steel-ltd/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- NMDC Field Attendant, Electrician and More Recruitment 2025 Job Posts 995 Vacancies, Odishajobs.in",
+            "apply_link": "https://odishajobs.in/odishajobs-nmdc-field-attendant-electrician-and-more-recruitment-2025-job-posts-995-vacancies-odishajobs-in/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odishajobs- BOB Office Assistant Recruitment 2025 Job Posts 500 Vacancies",
+            "apply_link": "https://odishajobs.in/odishajobs-bob-office-assistant-recruitment-2025-job-posts-500-vacancies/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Bihar ITI CAT Admission 2025 | Bihar ITI CAT Admission Online Form 2025",
+            "apply_link": "https://odishajobs.in/bihar-iti-cat-admission-2025-bihar-iti-cat-admission-online-form-2025/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "UPSC CAPF 2025 | UPSC AC Recruitment 2025 | UPSC CAPF Assistant Commandant Online Form 2025",
+            "apply_link": "https://odishajobs.in/upsc-capf-2025-upsc-ac-recruitment-2025-upsc-capf-assistant-commandant-online-form-2025/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "IDBI Bank JAM Recruitment 2025 | IDBI Bank Junior Assistant Manager 2025 Apply Online",
+            "apply_link": "https://odishajobs.in/idbi-bank-jam-recruitment-2025-idbi-bank-junior-assistant-manager-2025-apply-online/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Odisha Police Constable Recruitment 2024: Application Deadline Extended to October 30 for 1,360 Vacancies",
+            "apply_link": "https://odishajobs.in/odisha-police-constable-recruitment-2024-application/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "RRB NTPC Recruitment 2024 – Apply Online for 3693 Posts",
+            "apply_link": "https://odishajobs.in/rrb-ntpc-recruitment-2024-apply-online-for-3693/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Konkan Railway Recruitment 2024- Apply Online for 190 Posts",
+            "apply_link": "https://odishajobs.in/konkan-railway-recruitment-2024-apply-online/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Patiala Railway Recruitment 2024- Patiala Locomotive Works, Patiala (Punjab)",
+            "apply_link": "https://odishajobs.in/patiala-railway-recruitment-2024-patiala-locomotive/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Recruitment 2024 – Standard Skkytop Rise Pvt LtdLocation: Gandhidham, Gujarat",
+            "apply_link": "https://odishajobs.in/recruitment-2024-solar-gandhidham-gujarat/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "RRB NTPC Recruitment 2024 | Odishajobs For 8113 Posts",
+            "apply_link": "https://odishajobs.in/rrb-ntpc-recruitment-2024-odishajobs-for-8113-posts/",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 25,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "odishajobs.in",
+            "apply_link": "http://odishajobs.in",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "odishajobs.in",
+            "apply_link": "https://odishajobs.in/?customize_changeset_uuid=3a3f9a29-860c-4126-91f8-dd944a37e806&customize_messenger_channel=preview-0&customize_autosaved=on",
+            "source": "https://odishajobs.in",
+            "scraped_at": "2026-02-15 01:21:33",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 0,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Apply Online",
+            "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+            "source": "https://ossc.gov.in",
+            "scraped_at": "2026-02-15 01:22:06",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 35,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Post Notice",
+            "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=U3PWGkGagu03FdnSOD665w==",
+            "source": "https://ossc.gov.in",
+            "scraped_at": "2026-02-15 01:22:06",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 10,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Recruitment Calendar",
+            "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+            "source": "https://ossc.gov.in",
+            "scraped_at": "2026-02-15 01:22:06",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 35,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Attestation & Bio Data Form",
+            "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=M4ZLp2jMx/L7RLr5Gfi2Eg==",
+            "source": "https://ossc.gov.in",
+            "scraped_at": "2026-02-15 01:22:06",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 10,
+            "evaluated_at": "2026-02-15 01:24:06"
+        },
+        {
+            "title": "Instructions to Apply online",
+            "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N8ibxZoX/R42cMO03brPUw==",
+            "source": "https://ossc.gov.in",
+            "scraped_at": "2026-02-15 01:22:06",
+            "qualification": "",
+            "salary": "",
+            "age_limit": "",
+            "vacancy": "",
+            "last_date": "",
+            "stage": "A5.1",
+            "status": "PENDING",
+            "confidence": 35,
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Apply Online",
             "apply_link": "https://osssc.gov.in/Pages/Post_detail_information.aspx",
             "source": "https://osssc.gov.in",
-            "scraped_at": "2026-02-14 18:22:56",
+            "scraped_at": "2026-02-15 01:22:11",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1291,13 +2011,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 35,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Formation",
             "apply_link": "https://osssc.gov.in/Pages/Formation.aspx",
             "source": "https://osssc.gov.in",
-            "scraped_at": "2026-02-14 18:22:56",
+            "scraped_at": "2026-02-15 01:22:11",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1306,13 +2026,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 10,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "RECRUITMENT",
             "apply_link": "https://osssc.gov.in",
             "source": "https://osssc.gov.in",
-            "scraped_at": "2026-02-14 18:22:56",
+            "scraped_at": "2026-02-15 01:22:11",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1321,13 +2041,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 35,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Recruitment Calender",
             "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
             "source": "https://osssc.gov.in",
-            "scraped_at": "2026-02-14 18:22:56",
+            "scraped_at": "2026-02-15 01:22:11",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1336,13 +2056,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 35,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Reforms",
             "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=RiFLvYbyp07MVRoKL3JIZQ==",
             "source": "https://opsc.gov.in",
-            "scraped_at": "2026-02-14 18:22:59",
+            "scraped_at": "2026-02-15 01:22:14",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1351,13 +2071,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 10,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Recruitment Calendar",
             "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
             "source": "https://opsc.gov.in",
-            "scraped_at": "2026-02-14 18:22:59",
+            "scraped_at": "2026-02-15 01:22:14",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1366,13 +2086,13 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 35,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         },
         {
             "title": "Attestation & Bio Data Form",
             "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=M4ZLp2jMx/L7RLr5Gfi2Eg==",
             "source": "https://opsc.gov.in",
-            "scraped_at": "2026-02-14 18:22:59",
+            "scraped_at": "2026-02-15 01:22:14",
             "qualification": "",
             "salary": "",
             "age_limit": "",
@@ -1381,22 +2101,7 @@
             "stage": "A5.1",
             "status": "PENDING",
             "confidence": 10,
-            "evaluated_at": "2026-02-14 18:24:28"
-        },
-        {
-            "title": "Online Service",
-            "apply_link": "https://sctevt.odisha.gov.in/en/online-service-diploma",
-            "source": "https://sctevtodisha.nic.in",
-            "scraped_at": "2026-02-14 18:24:00",
-            "qualification": "",
-            "salary": "",
-            "age_limit": "",
-            "vacancy": "",
-            "last_date": "",
-            "stage": "A5.1",
-            "status": "PENDING",
-            "confidence": 10,
-            "evaluated_at": "2026-02-14 18:24:28"
+            "evaluated_at": "2026-02-15 01:24:06"
         }
     ]
 }
