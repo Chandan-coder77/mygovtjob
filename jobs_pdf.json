@@ -3,7 +3,7 @@
         "title": "Download Call Letter for DIRECT RECRUITMENT FOR THE POSTS OF ELECTRICIAN, MCO(FITTER), MCO(WELDER), MINE FOREMAN, SELECT GRADE MINE FOREMAN, MINE MATE & BLASTER",
         "apply_link": "https://moil.nic.in/upload_files/yquejn9.pdf",
         "source": "https://moil.nic.in",
-        "scraped_at": "2026-03-01 18:21:20",
+        "scraped_at": "2026-03-02 01:15:43",
         "qualification": "",
         "salary": "",
         "age_limit": "",
@@ -12,13 +12,13 @@
         "stage": "A5.1",
         "status": "FINAL",
         "confidence": 75,
-        "evaluated_at": "2026-03-01 18:24:23",
+        "evaluated_at": "2026-03-02 01:18:42",
         "sanity_checked": true,
-        "sanity_checked_at": "2026-03-01 18:24:23",
+        "sanity_checked_at": "2026-03-02 01:18:42",
         "detail_checked": true,
-        "detail_checked_at": "2026-03-01 18:24:26",
+        "detail_checked_at": "2026-03-02 01:18:46",
         "field_sanity": "FIXED",
-        "field_sanity_at": "2026-03-01 18:24:26",
+        "field_sanity_at": "2026-03-02 01:18:46",
         "bucket": "PDF_NOTICE"
     }
 ]
