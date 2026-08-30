@@ -1,263 +1,29 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "title": "Vendor Registration Form",
+        "apply_link": "https://nalcoindia.com/wp-content/uploads/2018/12/Vendor_RegistrationForm.pdf",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Information regarding import substitution & De-proprietarisation",
+        "apply_link": "https://nalcoindia.com/wp-content/uploads/2018/12/Information_regarding_import_substitution-and-De-proprietarisation-new.pdf",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "PAN, KYC Details and Nomination Form",
+        "apply_link": "https://nalcoindia.com/wp-content/uploads/2025/07/KYC-Forms.pdf",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Anganwadi Recruitment",
-        "apply_link": "https://www.freejobalert.com/anganwadi-recruitment/",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "IOB 291 Generalist/ Specialist Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/iob-generalist-so-recruitment-2026-apply-online-for-291-manager-assistant-manager-and-senior-manager-posts-3065221",
-        "qualification": "10th",
-        "salary": "₹48480",
-        "age_limit": "",
-        "vacancy": "291",
-        "last_date": ""
-    },
-    {
-        "title": "India Post GDS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/india-post-gds-recruitment-2026-apply-online-for-gramin-dak-sevak-posts-3064877",
-        "qualification": "10th",
-        "salary": "₹12000",
-        "age_limit": "",
-        "vacancy": "23",
-        "last_date": "33/1/2013"
-    },
-    {
-        "title": "RRB 4029 JE Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-je-recruitment-2026-apply-online-for-4098-junior-engineer-posts-3059556",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "4029",
-        "last_date": ""
-    },
-    {
-        "title": "SBI 9124 Clerk Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sbi-junior-associate-clerk-recruitment-2026-apply-online-for-9124-posts-3062434",
-        "qualification": "10th",
-        "salary": "₹26730",
-        "age_limit": "",
-        "vacancy": "7",
-        "last_date": "34/1/2014"
-    },
-    {
-        "title": "Bank of Baroda 2482 LBO Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-lbo-recruitment-2026-apply-online-for-2482-local-bank-officer-posts-3063349",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": "3/2/2013"
-    },
-    {
-        "title": "RRC NCR 1853 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrc-ncr-apprentice-recruitment-2026-apply-online-for-1853-posts-3057253",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "NIC Scientific/Technical Assistant-A Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nic-scientific-technical-assistant-recruitment-2026-apply-online-for-376-posts-3064655",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "376",
-        "last_date": "30/09/2026"
-    },
-    {
-        "title": "NGEL 147 Engineer, Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ngel-recruitment-2026-apply-online-for-147-engineer-executive-posts-3062328",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "147",
-        "last_date": ""
-    },
-    {
-        "title": "IOCL 470 Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-officers-recruitment-2026-apply-online-for-engineers-quality-control-officers-and-more-posts-3062287",
-        "qualification": "10th",
-        "salary": "₹30000",
-        "age_limit": "18-25",
-        "vacancy": "470",
-        "last_date": "31/01/2019"
-    },
-    {
-        "title": "Karnataka 15000 Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/karnataka-teacher-recruitment-2026-apply-online-for-15000-posts-3062634",
-        "qualification": "10th",
-        "salary": "₹44425",
-        "age_limit": "",
-        "vacancy": "15",
-        "last_date": ""
-    },
-    {
-        "title": "ISRO ICRB 175 Scientist/Engineer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/isro-icrb-scientist-engineer-recruitment-2026-apply-online-for-175-posts-3065062",
-        "qualification": "10th",
-        "salary": "₹56100",
-        "age_limit": "",
-        "vacancy": "175",
-        "last_date": "13/95/2023"
-    },
-    {
-        "title": "POWERGRID 270 Apprentices Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/powergrid-apprentices-recruitment-2026-apply-online-3064109",
-        "qualification": "10th",
-        "salary": "₹13500",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "BPSC TRE4.0 Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bpsc-tre-40-notification-2026-32-388-school-teacher-posts-3063451",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "South Indian Bank Junior Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/south-indian-bank-junior-officer-recruitment-2026-apply-online-for-business-promotion-officer-posts-3063822",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "ICF 1010 Act Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/icf-act-apprentice-recruitment-2026-apply-online-for-1010-posts-3062144",
-        "qualification": "10th",
-        "salary": "₹8200",
-        "age_limit": "",
-        "vacancy": "1010",
-        "last_date": ""
-    },
-    {
-        "title": "UCO Bank Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/uco-bank-manager-recruitment-2026-apply-online-for-20-posts-3065315",
-        "qualification": "10th",
-        "salary": "₹64820",
-        "age_limit": "",
-        "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "TMB Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tmb-recruitment-2026-apply-online-for-agricultural-officer-specialist-officer-and-more-posts-3065131",
-        "qualification": "10th",
-        "salary": "₹50000",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "31/07/2026"
-    },
-    {
-        "title": "IOCL 433 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-apprentice-recruitment-2026-apply-online-for-433-technician-graduate-and-trade-apprentice-posts-3061929",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Aadhaar Supervisor Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aadhaar-supervisor-recruitment-2026-notification-out-apply-online-3065102",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "NABFINS CSE, CSO Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nabfins-cse-cso-recruitment-2026-apply-online-for-customer-service-officer-customer-service-executive-posts-3065098",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "RRC WR Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrc-wr-sports-quota-recruitment-2026-apply-online-for-64-posts-3064914",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-25",
-        "vacancy": "2026",
-        "last_date": "33/1/2013"
-    },
-    {
-        "title": "RFCL Engineer, Manager & Officer Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rfcl-recruitment-2026-apply-online-for-40-engineer-manager-and-officer-posts-3064788",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "40",
-        "last_date": "33/1/2013"
-    },
-    {
-        "title": "RVUNL 2005 JE, Junior Accountant and More Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rvunl-recruitment-2026-apply-online-for-2005-junior-engineer-junior-accountant-and-more-posts-3055345",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "IOCL Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-recruitment-2026-apply-online-for-production-manager-senior-production-manager-and-senior-manager-posts-3064614",
-        "qualification": "10th",
-        "salary": "₹80000",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "JKSSB 357 Draftsman, Works Supervisor Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jkssb-recruitment-2026-357-draftsman-works-supervisor-posts-3057021",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "357",
         "last_date": ""
     }
 ]
