@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -117,6 +135,15 @@
         "last_date": "30/09/2026"
     },
     {
+        "title": "UPSC 212 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upsc-recruitment-2026-apply-online-for-212-specialist-assistant-professor-and-more-posts-3067335",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "212",
+        "last_date": ""
+    },
+    {
         "title": "PGIMER 243 Nursing Officer Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/pgimer-nursing-officer-recruitment-2026-apply-online-for-243-posts-3067054",
         "qualification": "10th",
@@ -144,13 +171,22 @@
         "last_date": ""
     },
     {
-        "title": "UIIC 225 Administrative Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/uiic-administrative-officer-recruitment-2026-apply-online-for-225-posts-3066445",
+        "title": "NCRTC Supervisor-I and Junior Maintainer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ncrtc-recruitment-2026-apply-online-for-90-supervisor-and-junior-maintainer-posts-3067341",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹37000",
         "age_limit": "",
-        "vacancy": "225",
-        "last_date": ""
+        "vacancy": "2026",
+        "last_date": "09/10/2026"
+    },
+    {
+        "title": "RCFL 94 Management Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rcfl-management-trainee-recruitment-2026-apply-online-for-94-posts-3061029",
+        "qualification": "10th",
+        "salary": "₹60000",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "24/08/2026"
     },
     {
         "title": "ISRO SAC JRF, RA and More Posts Online Form 2026",
@@ -198,22 +234,58 @@
         "last_date": "29/09/2026"
     },
     {
-        "title": "EIL Experienced Personnel Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/eil-experienced-personnel-recruitment-2026-apply-online-for-61-engineer-deputy-manager-and-more-posts-3066847",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "26-27",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "Prasar Bharati Marketing Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/prasar-bharati-marketing-executive-recruitment-2026-apply-online-for-20-posts-3066813",
+        "title": "SECL Mining Sirdar and More Posts Scorecard 2026",
+        "apply_link": "https://www.freejobalert.com/articles/secl-mining-sirdar-and-more-posts-scorecard-2026-3067339",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "20",
-        "last_date": "16/28/2026"
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "SSSB Punjab JE Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/sssb-punjab-je-recruitment-2026-apply-online-for-junior-engineer-posts-3041364",
+        "qualification": "10th",
+        "salary": "₹35400",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "15/09/2026"
+    },
+    {
+        "title": "OPTCL 100 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/optcl-apprentice-recruitment-2026-apply-online-for-100-diploma-graduate-iti-apprentice-posts-3067414",
+        "qualification": "10th",
+        "salary": "₹12300",
+        "age_limit": "",
+        "vacancy": "100",
+        "last_date": "13/9/2026"
+    },
+    {
+        "title": "CPCL 60 Junior Engineering Assistant Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cpcl-junior-engineering-assistant-recruitment-2026-apply-online-for-60-posts-3063135",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "39/1/2019"
+    },
+    {
+        "title": "NIT Agartala Non Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nit-agartala-non-teaching-recruitment-2026-apply-online-for-51-technician-lab-attendant-and-more-posts-3067360",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "20/01/2013"
+    },
+    {
+        "title": "UPSSSC Senior Instructor Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upsssc-senior-instructor-recruitment-2026-apply-online-for-132-posts-3067345",
+        "qualification": "10th",
+        "salary": "₹35400",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
     },
     {
         "title": "TSLPRB 7112 Police Constable Online Form 2026",
@@ -222,51 +294,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "JKSSB 518 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jkssb-recruitment-2026-apply-online-for-518-horticulture-technician-junior-staff-nurse-and-more-posts-3061465",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "518",
-        "last_date": ""
-    },
-    {
-        "title": "UP Anganwadi Worker Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/up-anganwadi-worker-recruitment-2026-apply-online-for-172-posts-in-amethi-district-3067086",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "APPSC Group A B Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/arunachal-pradesh-psc-group-a-and-b-recruitment-2026-apply-online-for-37-assistant-public-prosecutor-sub-treasury-officer-and-more-posts-3067078",
-        "qualification": "10th",
-        "salary": "₹56100",
-        "age_limit": "",
-        "vacancy": "37",
-        "last_date": "12/10/2026"
-    },
-    {
-        "title": "MP Police 507 Subedar and SI Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/mp-police-si-recruitment-2026-apply-online-for-504-subedar-and-sub-inspector-posts-3065810",
-        "qualification": "10th",
-        "salary": "₹36200",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "UPSSSC 1251 Livestock Extension Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upsssc-livestock-extension-officer-recruitment-2026-apply-online-for-1251-posts-3062262",
-        "qualification": "10th",
-        "salary": "₹29200",
-        "age_limit": "",
-        "vacancy": "1251",
         "last_date": ""
     }
 ]
