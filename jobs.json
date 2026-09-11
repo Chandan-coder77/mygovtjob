@@ -1,7 +1,7 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -9,9 +9,9 @@
         "last_date": ""
     },
     {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -232,5 +232,68 @@
         "age_limit": "",
         "vacancy": "38",
         "last_date": "29/09/2026"
+    },
+    {
+        "title": "SECL Mining Sirdar and More Posts Scorecard 2026",
+        "apply_link": "https://www.freejobalert.com/articles/secl-mining-sirdar-and-more-posts-scorecard-2026-3067339",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "BLW Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/blw-sports-quota-recruitment-2026-apply-online-for-25-posts-3067470",
+        "qualification": "10th",
+        "salary": "₹50000",
+        "age_limit": "",
+        "vacancy": "25",
+        "last_date": ""
+    },
+    {
+        "title": "ISRO IPRC Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/isro-iprc-recruitment-2026-apply-online-for-22-technical-assistant-technician-and-skilled-posts-3067463",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "SSSB Punjab JE Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/sssb-punjab-je-recruitment-2026-apply-online-for-junior-engineer-posts-3041364",
+        "qualification": "10th",
+        "salary": "₹35400",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "15/09/2026"
+    },
+    {
+        "title": "OPTCL 100 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/optcl-apprentice-recruitment-2026-apply-online-for-100-diploma-graduate-iti-apprentice-posts-3067414",
+        "qualification": "10th",
+        "salary": "₹12300",
+        "age_limit": "",
+        "vacancy": "100",
+        "last_date": "13/9/2026"
+    },
+    {
+        "title": "CPCL 60 Junior Engineering Assistant Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cpcl-junior-engineering-assistant-recruitment-2026-apply-online-for-60-posts-3063135",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "39/1/2019"
+    },
+    {
+        "title": "NIT Agartala Non Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nit-agartala-non-teaching-recruitment-2026-apply-online-for-51-technician-lab-attendant-and-more-posts-3067360",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "20/01/2013"
     }
 ]
