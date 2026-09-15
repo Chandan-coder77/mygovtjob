@@ -1,7 +1,16 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
-        "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -99,6 +108,15 @@
         "last_date": ""
     },
     {
+        "title": "RRB 590 Paramedical Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-paramedical-recruitment-2026-apply-online-for-560-posts-3066740",
+        "qualification": "10th",
+        "salary": "₹44900",
+        "age_limit": "18-40",
+        "vacancy": "590",
+        "last_date": ""
+    },
+    {
         "title": "Karnataka 15000 Teacher Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/karnataka-teacher-recruitment-2026-apply-online-for-15000-posts-3062634",
         "qualification": "10th",
@@ -135,8 +153,17 @@
         "last_date": ""
     },
     {
-        "title": "RRB 560 Paramedical Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-paramedical-recruitment-2026-apply-online-for-560-posts-3066740",
+        "title": "ISRO IPRC Fireman, Technician & More Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/isro-iprc-recruitment-2026-apply-online-for-22-technical-assistant-technician-and-skilled-posts-3067463",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "31/01/2019"
+    },
+    {
+        "title": "CPRI 110 Assistant, MTS and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cpri-recruitment-2026-apply-online-for-110-assistant-mts-and-more-posts-3067640",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
@@ -151,15 +178,6 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": ""
-    },
-    {
-        "title": "ISRO IPRC Fireman, Technician & More Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/isro-iprc-recruitment-2026-apply-online-for-22-technical-assistant-technician-and-skilled-posts-3067463",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "31/01/2019"
     },
     {
         "title": "GAIL Executive Trainee Online Form 2026",
@@ -243,66 +261,12 @@
         "last_date": ""
     },
     {
-        "title": "KEA 210 Various Vacancies Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/kea-kalyana-karnataka-recruitment-2026-apply-online-for-210-electrician-water-supply-operator-and-more-posts-3067512",
+        "title": "GADVASU Non Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gadvasu-non-teaching-recruitment-2026-apply-online-for-45-storekeeper-clerk-steno-typist-posts-3067679",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "210",
-        "last_date": ""
-    },
-    {
-        "title": "Jharkhand 772 Home Guard Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jharkhand-home-guard-recruitment-2026-apply-online-for-772-home-guard-rural-and-urban-posts-3067607",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "772",
-        "last_date": ""
-    },
-    {
-        "title": "NHM Assam 78 Medical Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nhm-assam-medical-officer-recruitment-2026-apply-online-for-78-posts-3067600",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": "3/65/2025"
-    },
-    {
-        "title": "Ladakh Police Constable Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ladakh-police-constable-recruitment-2026-apply-online-for-331-posts-3067554",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "331",
-        "last_date": ""
-    },
-    {
-        "title": "MPESB Naib Tehsildar Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/mpesb-naib-tehsildar-recruitment-2026-apply-online-for-73-posts-3067527",
-        "qualification": "10th",
-        "salary": "₹36200",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "Goa SSC DEO, Junior Assistant and More Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/goa-ssc-recruitment-2026-apply-online-for-215-deo-junior-assistant-and-more-posts-3066404",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "222",
-        "last_date": "11/09/2026"
-    },
-    {
-        "title": "BLW Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/blw-sports-quota-recruitment-2026-apply-online-for-25-posts-3067470",
-        "qualification": "10th",
-        "salary": "₹50000",
-        "age_limit": "",
-        "vacancy": "25",
+        "vacancy": "45",
         "last_date": ""
     }
 ]
