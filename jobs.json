@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -303,6 +285,24 @@
         "salary": "₹36200",
         "age_limit": "",
         "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "Goa SSC DEO, Junior Assistant and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/goa-ssc-recruitment-2026-apply-online-for-215-deo-junior-assistant-and-more-posts-3066404",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "222",
+        "last_date": "11/09/2026"
+    },
+    {
+        "title": "BLW Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/blw-sports-quota-recruitment-2026-apply-online-for-25-posts-3067470",
+        "qualification": "10th",
+        "salary": "₹50000",
+        "age_limit": "",
+        "vacancy": "25",
         "last_date": ""
     }
 ]
