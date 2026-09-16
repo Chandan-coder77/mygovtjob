@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -277,23 +295,5 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
-    },
-    {
-        "title": "VMC 178 Various Posts Online form 2026 2026",
-        "apply_link": "https://www.freejobalert.com/articles/vmc-recruitment-2026-apply-online-for-178-draftsman-work-assistant-and-more-posts-3067779",
-        "qualification": "10th",
-        "salary": "₹20000",
-        "age_limit": "",
-        "vacancy": "178",
-        "last_date": "25/09/2026"
-    },
-    {
-        "title": "AIIMS Gorakhpur Faculty Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aiims-gorakhpur-faculty-recruitment-2026-apply-online-for-68-professor-associate-professor-and-more-posts-3067769",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "68",
-        "last_date": "2/6/2016"
     }
 ]
