@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -238,6 +256,42 @@
         "apply_link": "https://www.freejobalert.com/articles/india-optel-recruitment-2026-apply-offline-for-160-project-technician-junior-project-engineer-and-more-posts-3067477",
         "qualification": "10th",
         "salary": "₹20000",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "GAIL Executive Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gail-executive-trainee-recruitment-2026-apply-online-3065746",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "39/1/2019"
+    },
+    {
+        "title": "NCRTC Supervisor-I and Junior Maintainer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ncrtc-recruitment-2026-apply-online-for-90-supervisor-and-junior-maintainer-posts-3067341",
+        "qualification": "10th",
+        "salary": "₹37000",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "09/10/2026"
+    },
+    {
+        "title": "RCFL 94 Management Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rcfl-management-trainee-recruitment-2026-apply-online-for-94-posts-3061029",
+        "qualification": "10th",
+        "salary": "₹60000",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "24/08/2026"
+    },
+    {
+        "title": "SLPRB AP 2050 Constbale, SI, Driver and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/slprb-ap-police-recruitment-2026-apply-online-for-2050-constbale-si-driver-and-more-posts-3067847",
+        "qualification": "10th",
+        "salary": "₹45830",
         "age_limit": "",
         "vacancy": "2026",
         "last_date": ""
