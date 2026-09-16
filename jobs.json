@@ -1,41 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -105,7 +69,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2026",
-        "last_date": "3/2/2013"
+        "last_date": ""
     },
     {
         "title": "Bank of Baroda 1100 SO Online Form 2026",
@@ -114,7 +78,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "3/2/2013"
+        "last_date": ""
     },
     {
         "title": "NIC 376 Scientific/Technical Assistant-A Online Form 2026",
@@ -177,6 +141,42 @@
         "salary": "",
         "age_limit": "28-40",
         "vacancy": "205",
+        "last_date": ""
+    },
+    {
+        "title": "BEL Sr. DGM Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bel-senior-deputy-general-manager-recruitment-2026-apply-online-for-06-posts-3067844",
+        "qualification": "10th",
+        "salary": "₹90000",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "EIL Associate Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/eil-associate-engineer-recruitment-2026-apply-online-for-15-posts-3067831",
+        "qualification": "10th",
+        "salary": "₹80000",
+        "age_limit": "",
+        "vacancy": "15",
+        "last_date": ""
+    },
+    {
+        "title": "Exim Bank Business Development Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/exim-bank-business-development-officer-recruitment-2026-apply-online-for-12-posts-3067808",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "NABFINS CSO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nabfins-customer-service-officer-recruitment-2026-3067819",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
         "last_date": ""
     },
     {
@@ -261,39 +261,30 @@
         "last_date": "07/10/2026"
     },
     {
-        "title": "BCPL Non Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bcpl-non-executive-recruitment-2026-apply-online-for-24-foreman-technician-and-more-posts-3066999",
+        "title": "SLPRB AP 2050 Constbale, SI, Driver and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/slprb-ap-police-recruitment-2026-apply-online-for-2050-constbale-si-driver-and-more-posts-3067847",
+        "qualification": "10th",
+        "salary": "₹45830",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "Delhi Transco Assistant Manager Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/delhi-transco-assistant-manager-trainee-recruitment-2026-apply-online-for-65-posts-3064104",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "21",
+        "vacancy": "65",
         "last_date": "39/1/2019"
     },
     {
-        "title": "CBI Special Public Prosecutor Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/cbi-special-public-prosecutor-recruitment-2026-3066923",
+        "title": "UPESSC 12,405 Primary Assistant Teacher Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-primary-assistant-teacher-recruitment-2026-apply-online-for-12405-posts-3067782",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "",
-        "last_date": "25/19/2023"
-    },
-    {
-        "title": "Balmer Lawrie Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/balmer-lawrie-recruitment-2026-apply-online-for-38-junior-officer-assistant-manager-and-more-posts-3066913",
-        "qualification": "10th",
-        "salary": "₹36977",
-        "age_limit": "",
-        "vacancy": "38",
-        "last_date": "29/09/2026"
-    },
-    {
-        "title": "SECL Mining Sirdar and More Posts Scorecard 2026",
-        "apply_link": "https://www.freejobalert.com/articles/secl-mining-sirdar-and-more-posts-scorecard-2026-3067339",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
+        "vacancy": "12",
         "last_date": ""
     }
 ]
