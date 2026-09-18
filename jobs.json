@@ -1,41 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -171,6 +135,24 @@
         "last_date": ""
     },
     {
+        "title": "CPRI 110 Assistant, MTS and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cpri-recruitment-2026-apply-online-for-110-assistant-mts-and-more-posts-3067640",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "110",
+        "last_date": ""
+    },
+    {
+        "title": "Southern Railway Scouts and Guides Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/southern-railway-scouts-and-guides-quota-recruitment-2026-apply-online-for-17-posts-3068313",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "17",
+        "last_date": ""
+    },
+    {
         "title": "KVIC Various Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/kvic-recruitment-2026-apply-online-for-50-young-professional-advisor-and-senior-consultant-posts-3068220",
         "qualification": "10th",
@@ -267,6 +249,24 @@
         "salary": "₹80000",
         "age_limit": "",
         "vacancy": "15",
+        "last_date": ""
+    },
+    {
+        "title": "Exim Bank Business Development Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/exim-bank-business-development-officer-recruitment-2026-apply-online-for-12-posts-3067808",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "NABFINS CSO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nabfins-customer-service-officer-recruitment-2026-3067819",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
         "last_date": ""
     }
 ]
