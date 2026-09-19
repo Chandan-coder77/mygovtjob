@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -270,30 +288,21 @@
         "last_date": ""
     },
     {
-        "title": "TGPSC 130 Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tgpsc-manager-recruitment-2026-apply-online-for-130-posts-3068341",
+        "title": "KSLU Assistant Professor and Guest Faculty Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/kslu-recruitment-2026-apply-online-for-31-assistant-professor-and-guest-faculty-posts-3068378",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹50000",
         "age_limit": "",
-        "vacancy": "130",
-        "last_date": "28/12/2015"
-    },
-    {
-        "title": "HPPSC 228 Medical Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hppsc-medical-officer-recruitment-2026-apply-online-for-228-posts-3068329",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "228",
+        "vacancy": "31",
         "last_date": ""
     },
     {
-        "title": "South Zone Cultural Centre Various posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/south-zone-cultural-centre-recruitment-2026-apply-offline-for-25-assistant-assistant-engineer-and-more-posts-3068321",
+        "title": "GMRC Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gmrc-recruitment-2026-notification-out-apply-online-for-48-manager-engineer-and-more-posts-3068358",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹120000",
         "age_limit": "",
-        "vacancy": "25",
+        "vacancy": "48",
         "last_date": ""
     }
 ]
