@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -303,6 +285,24 @@
         "salary": "₹50000",
         "age_limit": "",
         "vacancy": "31",
+        "last_date": ""
+    },
+    {
+        "title": "GMRC Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gmrc-recruitment-2026-notification-out-apply-online-for-48-manager-engineer-and-more-posts-3068358",
+        "qualification": "10th",
+        "salary": "₹120000",
+        "age_limit": "",
+        "vacancy": "48",
+        "last_date": ""
+    },
+    {
+        "title": "HPSC Food Safety Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hpsc-fso-recruitment-2026-apply-online-for-45-food-safety-officer-posts-3068315",
+        "qualification": "10th",
+        "salary": "₹9300",
+        "age_limit": "",
+        "vacancy": "45",
         "last_date": ""
     }
 ]
