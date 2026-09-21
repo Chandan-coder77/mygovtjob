@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -51,6 +33,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "RRB 3,477 NTPC Graduate 06/2026 Online Form",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-graduate-recruitment-062026-notification-apply-online-for-3-477-posts-3068511",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
@@ -162,6 +153,42 @@
         "last_date": ""
     },
     {
+        "title": "NTPC Assistant Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ntpc-assistant-officer-recruitment-2026-apply-online-for-15-posts-3068557",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "15",
+        "last_date": ""
+    },
+    {
+        "title": "ITBP Head Constable Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/itbp-head-constable-motor-mechanic-recruitment-2026-apply-online-for-21-posts-3068550",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "21",
+        "last_date": ""
+    },
+    {
+        "title": "HCL Executive Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hcl-executive-recruitment-2026-apply-online-for-43-posts-3067952",
+        "qualification": "10th",
+        "salary": "₹75400",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "01/09/2026"
+    },
+    {
+        "title": "Southern Railway Scouts and Guides Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/southern-railway-scouts-and-guides-quota-recruitment-2026-apply-online-for-17-posts-3068313",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "17",
+        "last_date": ""
+    },
+    {
         "title": "HITES Various Manager Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/hites-manager-recruitment-2026-apply-online-for-21-chief-manager-senior-operations-manager-and-operations-manager-posts-3068428",
         "qualification": "10th",
@@ -178,15 +205,6 @@
         "age_limit": "18-25",
         "vacancy": "110",
         "last_date": "31/01/2019"
-    },
-    {
-        "title": "Southern Railway Scouts and Guides Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/southern-railway-scouts-and-guides-quota-recruitment-2026-apply-online-for-17-posts-3068313",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "17",
-        "last_date": ""
     },
     {
         "title": "KVIC Various Posts Online Form 2026",
@@ -225,15 +243,6 @@
         "last_date": ""
     },
     {
-        "title": "HCL Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hcl-executive-recruitment-2026-apply-online-for-43-posts-3067952",
-        "qualification": "10th",
-        "salary": "₹75400",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "01/09/2026"
-    },
-    {
         "title": "SBI SCO Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/sbi-sco-recruitment-2026-apply-online-for-07-marketing-executive-faculty-and-more-posts-3067922",
         "qualification": "10th",
@@ -261,12 +270,12 @@
         "last_date": ""
     },
     {
-        "title": "RITES Assistant Manager, Senior Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rites-recruitment-2026-apply-online-for-05-assistant-manager-senior-manager-posts-3067860",
+        "title": "Gujarat Anganwadi 6,843 AWW & AWH Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gujarat-anganwadi-recruitment-2026-apply-online-for-6843-anganwadi-worker-and-helper-posts-3068594",
         "qualification": "10th",
-        "salary": "₹50000",
+        "salary": "",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "6",
         "last_date": ""
     }
 ]
