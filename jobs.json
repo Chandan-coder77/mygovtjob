@@ -63,13 +63,13 @@
         "last_date": "33/1/2013"
     },
     {
-        "title": "SSC 1748 JE Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ssc-je-recruitment-2026-notification-out-apply-online-for-1748-junior-engineer-posts-3065989",
+        "title": "SSC 2536 CHSL Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ssc-chsl-recruitment-2026-apply-online-for-2536-posts-3066658",
         "qualification": "10th",
-        "salary": "₹35400",
+        "salary": "",
         "age_limit": "",
-        "vacancy": "1748",
-        "last_date": "20/1/2016"
+        "vacancy": "2026",
+        "last_date": "33/1/2013"
     },
     {
         "title": "Bank of Baroda 1100 SO Online Form 2026",
@@ -78,7 +78,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "3/2/2013"
+        "last_date": ""
     },
     {
         "title": "NIC 376 Scientific/Technical Assistant-A Online Form 2026",
@@ -202,9 +202,9 @@
         "apply_link": "https://www.freejobalert.com/articles/cpri-recruitment-2026-apply-online-for-110-assistant-mts-and-more-posts-3067640",
         "qualification": "10th",
         "salary": "",
-        "age_limit": "",
+        "age_limit": "18-25",
         "vacancy": "110",
-        "last_date": ""
+        "last_date": "31/01/2019"
     },
     {
         "title": "KVIC Various Posts Online Form 2026",
@@ -258,6 +258,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "149",
+        "last_date": ""
+    },
+    {
+        "title": "CWSSU 149 Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cwssu-recruitment-2026-apply-online-for-149-professor-associate-professor-assistant-professor-posts-3068780",
+        "qualification": "10th",
+        "salary": "₹57700",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     }
 ]
