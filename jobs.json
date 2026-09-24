@@ -18,33 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Anganwadi Recruitment",
         "apply_link": "https://www.freejobalert.com/anganwadi-recruitment/",
         "qualification": "10th",
@@ -243,6 +216,24 @@
         "last_date": "01/09/2026"
     },
     {
+        "title": "Bihar BTSC Fisheries Extension Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bihar-btsc-fisheries-extension-officer-recruitment-2026-apply-online-for-231-matsya-prasar-padadhikari-posts-3069340",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "BTSC 787 Touring Veterinary Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bihar-btsc-touring-veterinary-officer-recruitment-2026-apply-online-for-787-posts-3069335",
+        "qualification": "10th",
+        "salary": "₹53100",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Maitreyi College Non Teaching Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/maitreyi-college-non-teaching-recruitment-2026-apply-online-for-52-lab-assistant-junior-assistant-and-more-posts-3068939",
         "qualification": "10th",
@@ -277,32 +268,5 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
-    },
-    {
-        "title": "GPSC Class 1 and Class 2 Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gpsc-class-1-and-class-2-recruitment-2026-apply-online-for-26-marine-engineer-manager-and-more-posts-3069162",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "26",
-        "last_date": ""
-    },
-    {
-        "title": "Hanumakonda Anganwadi Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hanumakonda-anganwadi-teacher-recruitment-2026-apply-online-for-55-posts-3069100",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "55",
-        "last_date": ""
-    },
-    {
-        "title": "TGPSC 130 Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tgpsc-manager-recruitment-2026-apply-online-for-130-posts-3068341",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "130",
-        "last_date": "28/12/2015"
     }
 ]
