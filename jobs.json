@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -34,6 +16,15 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": ""
+    },
+    {
+        "title": "Bank of Baroda 1100 SO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-so-recruitment-2026-apply-online-for-1100-wealth-executive-credit-analyst-posts-3066180",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "3/2/2013"
     },
     {
         "title": "IBPS 13706 RRB CRP-XV Online Form 2026",
@@ -114,6 +105,24 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "MECL Executive Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/mecl-executive-trainee-recruitment-2026-3061230",
+        "qualification": "10th",
+        "salary": "₹40000",
+        "age_limit": "",
+        "vacancy": "13",
+        "last_date": ""
+    },
+    {
+        "title": "PMBI 178 Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/pmbi-recruitment-2026-apply-offline-for-178-pharmacist-executive-and-more-posts-3066206",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
         "last_date": ""
     },
     {
@@ -198,22 +207,58 @@
         "last_date": "01/09/2026"
     },
     {
-        "title": "Southern Railway Scouts and Guides Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/southern-railway-scouts-and-guides-quota-recruitment-2026-apply-online-for-17-posts-3068313",
+        "title": "GTBH Delhi Senior Resident Doctors Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gtbh-delhi-senior-resident-doctors-recruitment-2026-apply-online-for-89-posts-3069441",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "17",
+        "vacancy": "2026",
         "last_date": ""
     },
     {
-        "title": "HITES Various Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hites-manager-recruitment-2026-apply-online-for-21-chief-manager-senior-operations-manager-and-operations-manager-posts-3068428",
+        "title": "BKNMU Non-Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bknmu-non-teaching-recruitment-2026-apply-online-for-11-junior-clerk-assistant-engineer-and-more-posts-3069394",
         "qualification": "10th",
-        "salary": "₹20600",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "11",
+        "last_date": "25/09/2026"
+    },
+    {
+        "title": "CBIT Teaching and Non Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cbit-teaching-and-non-teaching-recruitment-2026-3069380",
+        "qualification": "10th",
+        "salary": "",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "01/09/2026"
+        "last_date": ""
+    },
+    {
+        "title": "Rajasthan 24752 Safai Karmachari Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rajasthan-safai-karmachari-recruitment-2026-apply-online-for-24752-posts-3060551",
+        "qualification": "10th",
+        "salary": "₹7410",
+        "age_limit": "",
+        "vacancy": "24",
+        "last_date": "24/09/2026"
+    },
+    {
+        "title": "HPPSC ADO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hppsc-ado-recruitment-2026-apply-online-for-23-agriculture-development-officer-posts-3069362",
+        "qualification": "10th",
+        "salary": "₹29500",
+        "age_limit": "",
+        "vacancy": "23",
+        "last_date": ""
+    },
+    {
+        "title": "IIT (BHU) Varanasi Non-Faculty Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/iit-bhu-varanasi-non-faculty-recruitment-2026-apply-online-for-55-junior-engineer-junior-technician-and-more-posts-3064699",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "21",
+        "last_date": ""
     },
     {
         "title": "Bihar BTSC Fisheries Extension Officer Online Form 2026",
@@ -258,51 +303,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "13",
-        "last_date": ""
-    },
-    {
-        "title": "IGNOU Teaching Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ignou-teaching-recruitment-2026-apply-online-42-professor-associate-assistant-professor-posts-3068316",
-        "qualification": "10th",
-        "salary": "₹144200",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "GPSC Class 1 and Class 2 Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gpsc-class-1-and-class-2-recruitment-2026-apply-online-for-26-marine-engineer-manager-and-more-posts-3069162",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "26",
-        "last_date": ""
-    },
-    {
-        "title": "Hanumakonda Anganwadi Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hanumakonda-anganwadi-teacher-recruitment-2026-apply-online-for-55-posts-3069100",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "55",
-        "last_date": ""
-    },
-    {
-        "title": "TGPSC 130 Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tgpsc-manager-recruitment-2026-apply-online-for-130-posts-3068341",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "130",
-        "last_date": "28/12/2015"
-    },
-    {
-        "title": "Abhyudaya Bank Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/abhyudaya-bank-recruitment-2026-apply-online-for-manager-credit-officer-and-more-posts-3069058",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
         "last_date": ""
     }
 ]
