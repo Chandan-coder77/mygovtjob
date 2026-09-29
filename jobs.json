@@ -1,7 +1,7 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -9,9 +9,9 @@
         "last_date": ""
     },
     {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -238,42 +238,6 @@
         "apply_link": "https://www.freejobalert.com/articles/gsssb-staff-nurse-recruitment-2026-apply-online-for-131-posts-3070030",
         "qualification": "10th",
         "salary": "₹40800",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "IOCL Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-apprentice-recruitment-2026-apply-online-for-58-trade-technician-apprentice-posts-3070008",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "58",
-        "last_date": "39/1/2019"
-    },
-    {
-        "title": "Gujarat High Court Group C Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gujarat-high-court-group-c-recruitment-2026-apply-online-for-30-librarian-librarian-cum-research-assistant-posts-3069904",
-        "qualification": "10th",
-        "salary": "₹25500",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": "28/09/2026"
-    },
-    {
-        "title": "DMHO Nalgonda Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dmho-nalgonda-recruitment-2026-apply-offline-for-24-lab-technician-staff-nurse-and-more-posts-3069755",
-        "qualification": "10th",
-        "salary": "₹27300",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "HP High Court Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hp-high-court-recruitment-2026-apply-online-for-15-librarian-peon-and-more-posts-3069748",
-        "qualification": "10th",
-        "salary": "",
         "age_limit": "",
         "vacancy": "2026",
         "last_date": ""
