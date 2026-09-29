@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "RECRUITMENT",
         "apply_link": "https://osssc.gov.in",
         "qualification": "iti",
@@ -126,6 +144,33 @@
         "last_date": ""
     },
     {
+        "title": "ITBP Constable (GD) Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/itbpf-sports-quota-recruitment-2026-notification-out-apply-online-for-126-constable-gd-posts-3070096",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "126",
+        "last_date": "43/11/0015"
+    },
+    {
+        "title": "TMB Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/tmb-branch-head-recruitment-2026-apply-online-3069829",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "31/07/2026"
+    },
+    {
+        "title": "UIIC 225 Administrative Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/uiic-administrative-officer-recruitment-2026-apply-online-for-225-posts-3066445",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "225",
+        "last_date": ""
+    },
+    {
         "title": "Naval Dockyard Mumbai Apprentice Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/naval-dockyard-mumbai-apprentice-recruitment-2026-apply-online-for-283-posts-3069911",
         "qualification": "10th",
@@ -142,15 +187,6 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": "39/1/2019"
-    },
-    {
-        "title": "TMB Branch Head Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tmb-branch-head-recruitment-2026-apply-online-3069829",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
     },
     {
         "title": "ITBP Head Constable Online Form 2026",
@@ -222,24 +258,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "6",
-        "last_date": ""
-    },
-    {
-        "title": "TMB Senior Relationship Manager, Relationship Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tmb-recruitment-2026-apply-online-for-senior-relationship-manager-relationship-manager-posts-3069007",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "GSSSB 131 Staff Nurse Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gsssb-staff-nurse-recruitment-2026-apply-online-for-131-posts-3070030",
-        "qualification": "10th",
-        "salary": "₹40800",
-        "age_limit": "",
-        "vacancy": "2026",
         "last_date": ""
     }
 ]
