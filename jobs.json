@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -81,15 +63,6 @@
         "last_date": ""
     },
     {
-        "title": "SSC 1871 SI CAPF Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ssc-cpo-si-capf-recruitment-2026-3067208",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "33/1/2013"
-    },
-    {
         "title": "Bank of Baroda 1100 SO Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-so-recruitment-2026-apply-online-for-1100-wealth-executive-credit-analyst-posts-3066180",
         "qualification": "10th",
@@ -97,15 +70,6 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": "3/2/2013"
-    },
-    {
-        "title": "NIC 376 Scientific/Technical Assistant-A Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nic-scientific-technical-assistant-recruitment-2026-apply-online-for-376-posts-3064655",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "376",
-        "last_date": "30/09/2026"
     },
     {
         "title": "ITBP Constable (GD) Sports Quota Online Form 2026",
@@ -225,6 +189,15 @@
         "last_date": ""
     },
     {
+        "title": "HLL Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hll-recruitment-2026-apply-online-for-16-manager-associate-general-manager-and-more-posts-3065655",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "16",
+        "last_date": ""
+    },
+    {
         "title": "ECIL 310 ITI Trade Apprentices Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/ecil-iti-trade-apprentices-recruitment-2026-apply-online-for-310-posts-3070559",
         "qualification": "10th",
@@ -250,41 +223,5 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": "16/27/2023"
-    },
-    {
-        "title": "SAIL BSP 710 Apprentice Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sail-bsp-apprentice-recruitment-2026-apply-online-for-710-trade-technician-and-graduate-apprentice-posts-3070376",
-        "qualification": "10th",
-        "salary": "₹9600",
-        "age_limit": "",
-        "vacancy": "710",
-        "last_date": ""
-    },
-    {
-        "title": "JSSC JTAACCE 7299 Para Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jssc-jtaacce-para-teacher-recruitment-2026-3059915",
-        "qualification": "10th",
-        "salary": "₹25500",
-        "age_limit": "",
-        "vacancy": "7299",
-        "last_date": ""
-    },
-    {
-        "title": "CG Vyapam Lecturer Online Form 2026 (854 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/cg-vyapam-lecturer-recruitment-2026-apply-online-for-854-posts-3070213",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "NIT Agartala Non Teaching Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nit-agartala-non-teaching-recruitment-2026-apply-online-for-51-technician-lab-attendant-and-more-posts-3067360",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "20/01/2013"
     }
 ]
