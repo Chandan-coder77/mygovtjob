@@ -1,7 +1,7 @@
 [
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -9,9 +9,9 @@
         "last_date": ""
     },
     {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -72,15 +72,6 @@
         "last_date": ""
     },
     {
-        "title": "Bank of Baroda 1100 SO Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-so-recruitment-2026-apply-online-for-1100-wealth-executive-credit-analyst-posts-3066180",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "3/2/2013"
-    },
-    {
         "title": "CRPF 521 Sports Quota Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
         "qualification": "10th",
@@ -114,6 +105,15 @@
         "salary": "₹44900",
         "age_limit": "",
         "vacancy": "590",
+        "last_date": ""
+    },
+    {
+        "title": "IFFCO Agriculture Graduate Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/iffco-agt-recruitment-2026-apply-online-for-agriculture-graduate-trainee-posts-3070745",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
@@ -153,15 +153,6 @@
         "last_date": "31/07/2026"
     },
     {
-        "title": "UIIC 225 Administrative Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/uiic-administrative-officer-recruitment-2026-apply-online-for-225-posts-3066445",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "225",
-        "last_date": ""
-    },
-    {
         "title": "Naval Dockyard Mumbai Apprentice Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/naval-dockyard-mumbai-apprentice-recruitment-2026-apply-online-for-283-posts-3069911",
         "qualification": "10th",
@@ -187,6 +178,15 @@
         "age_limit": "",
         "vacancy": "21",
         "last_date": "36/2/2013"
+    },
+    {
+        "title": "EIL Associate Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/eil-associate-engineer-recruitment-2026-apply-online-for-20-posts-3069514",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
     },
     {
         "title": "Bengaluru Rural District Court 86 Various Posts Online Form 2026",
@@ -218,6 +218,42 @@
     {
         "title": "ECIL 310 ITI Trade Apprentices Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/ecil-iti-trade-apprentices-recruitment-2026-apply-online-for-310-posts-3070559",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "ESIC Lucknow Various Posts Walk-in Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/esic-lucknow-recruitment-2026-walkin-for-45-specialists-senior-residents-and-more-posts-3070469",
+        "qualification": "10th",
+        "salary": "₹50000",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "16/27/2023"
+    },
+    {
+        "title": "SAIL BSP 710 Apprentice Recruitment 2026",
+        "apply_link": "https://www.freejobalert.com/articles/sail-bsp-apprentice-recruitment-2026-apply-online-for-710-trade-technician-and-graduate-apprentice-posts-3070376",
+        "qualification": "10th",
+        "salary": "₹9600",
+        "age_limit": "",
+        "vacancy": "710",
+        "last_date": ""
+    },
+    {
+        "title": "JSSC JTAACCE 7299 Para Teacher Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/jssc-jtaacce-para-teacher-recruitment-2026-3059915",
+        "qualification": "10th",
+        "salary": "₹25500",
+        "age_limit": "",
+        "vacancy": "7299",
+        "last_date": ""
+    },
+    {
+        "title": "CG Vyapam Lecturer Online Form 2026 (854 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/cg-vyapam-lecturer-recruitment-2026-apply-online-for-854-posts-3070213",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
