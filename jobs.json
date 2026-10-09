@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -231,24 +249,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "40",
-        "last_date": ""
-    },
-    {
-        "title": "NIT Calicut Apprentices Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nit-calicut-apprentices-recruitment-2026-apply-online-for-30-graduate-and-technician-apprentice-posts-3071785",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "30",
-        "last_date": ""
-    },
-    {
-        "title": "DMHO Jogulamba Gadwal Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dmho-jogulamba-gadwal-recruitment-2026-apply-offline-for-49-pharmacist-staff-nurse-mpw-and-more-posts-3071715",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "49",
         "last_date": ""
     }
 ]
