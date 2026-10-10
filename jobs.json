@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -153,12 +135,12 @@
         "last_date": ""
     },
     {
-        "title": "LIC HFL Management Trainee Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-management-trainee-recruitment-2026-apply-online-for-50-posts-3072516",
+        "title": "CCRAS Fellowships Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ccras-recruitment-2026-apply-online-for-20-ph-d-fellowships-junior-research-fellowships-posts-3072625",
         "qualification": "10th",
-        "salary": "₹40000",
+        "salary": "",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "20",
         "last_date": ""
     },
     {
@@ -167,7 +149,16 @@
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "74",
+        "vacancy": "137",
+        "last_date": ""
+    },
+    {
+        "title": "LIC HFL Management Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-management-trainee-recruitment-2026-apply-online-for-50-posts-3072516",
+        "qualification": "10th",
+        "salary": "₹40000",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
@@ -234,6 +225,24 @@
         "last_date": ""
     },
     {
+        "title": "Gujarat Anganwadi 6,843 AWW & AWH Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gujarat-anganwadi-recruitment-2026-apply-online-for-6843-anganwadi-worker-and-helper-posts-3068594",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "6",
+        "last_date": ""
+    },
+    {
+        "title": "NIA Various Posts Offline Form 2026 (50 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nia-recruitment-2026-apply-offline-for-50-ldc-stenographer-and-more-posts-3072611",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "50",
+        "last_date": ""
+    },
+    {
         "title": "APPSC Various Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/appsc-recruitment-2026-apply-online-for-90-hostel-welfare-officer-assistant-social-welfare-officer-assistant-tribal-welfare-officer-posts-3067672",
         "qualification": "10th",
@@ -241,14 +250,5 @@
         "age_limit": "",
         "vacancy": "114",
         "last_date": "06/12/2016"
-    },
-    {
-        "title": "District AYUSH Society Bhiwani Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/district-ayush-society-bhiwani-recruitment-2026-apply-offline-for-25-attendant-yoga-instructor-and-more-posts-3072547",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "25",
-        "last_date": "27/10/2026"
     }
 ]
