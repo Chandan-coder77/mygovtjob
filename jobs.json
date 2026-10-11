@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -168,7 +150,7 @@
         "salary": "₹40000",
         "age_limit": "",
         "vacancy": "13",
-        "last_date": "21/07/2026"
+        "last_date": ""
     },
     {
         "title": "HLL Lifecare Various Posts Online Form 2026",
@@ -196,15 +178,6 @@
         "age_limit": "",
         "vacancy": "283",
         "last_date": "36/2/2013"
-    },
-    {
-        "title": "DAV Staff Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dav-staff-recruitment-2026-apply-online-for-ldc-pgt-prt-and-more-posts-3067967",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "15-20",
-        "vacancy": "2026",
-        "last_date": ""
     },
     {
         "title": "DIC State Coordinator Online Form 2026",
@@ -250,5 +223,23 @@
         "age_limit": "",
         "vacancy": "114",
         "last_date": "06/12/2016"
+    },
+    {
+        "title": "District AYUSH Society Bhiwani Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/district-ayush-society-bhiwani-recruitment-2026-apply-offline-for-25-attendant-yoga-instructor-and-more-posts-3072547",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "25",
+        "last_date": "27/10/2026"
+    },
+    {
+        "title": "TMC 72 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/tmc-recruitment-2026-apply-online-for-72-udc-stenographer-technician-and-other-posts-3072543",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "72",
+        "last_date": ""
     }
 ]
