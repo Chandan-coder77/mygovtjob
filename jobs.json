@@ -1,5 +1,23 @@
 [
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -150,7 +168,7 @@
         "salary": "₹40000",
         "age_limit": "",
         "vacancy": "13",
-        "last_date": ""
+        "last_date": "21/07/2026"
     },
     {
         "title": "HLL Lifecare Various Posts Online Form 2026",
@@ -223,23 +241,5 @@
         "age_limit": "",
         "vacancy": "114",
         "last_date": "06/12/2016"
-    },
-    {
-        "title": "District AYUSH Society Bhiwani Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/district-ayush-society-bhiwani-recruitment-2026-apply-offline-for-25-attendant-yoga-instructor-and-more-posts-3072547",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "25",
-        "last_date": "27/10/2026"
-    },
-    {
-        "title": "TMC 72 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tmc-recruitment-2026-apply-online-for-72-udc-stenographer-technician-and-other-posts-3072543",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "72",
-        "last_date": ""
     }
 ]
