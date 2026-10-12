@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "RECRUITMENT",
         "apply_link": "https://osssc.gov.in",
         "qualification": "iti",
@@ -54,6 +72,15 @@
         "last_date": ""
     },
     {
+        "title": "CRPF 521 Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "ITBP 126 Constable (GD) Sports Quota Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/itbpf-sports-quota-recruitment-2026-notification-out-apply-online-for-126-constable-gd-posts-3070096",
         "qualification": "10th",
@@ -74,15 +101,6 @@
     {
         "title": "CDAC 844 Various Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/c-dac-recruitment-2026-apply-online-for-project-engineer-project-manager-and-more-posts-3070943",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "CRPF 521 Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
@@ -133,6 +151,24 @@
         "age_limit": "",
         "vacancy": "6",
         "last_date": ""
+    },
+    {
+        "title": "ICG CGEPT 365 Navik, Yantrik Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/icg-cgept-recruitment-2026-apply-online-for-365-posts-3071126",
+        "qualification": "10th",
+        "salary": "₹29200",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "BGCL Executive Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bgcl-recruitment-2026-apply-online-for-29-assistant-associate-associate-and-more-posts-3072646",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "29",
+        "last_date": "39/1/2019"
     },
     {
         "title": "CCRAS Fellowships Online Form 2026",
@@ -198,48 +234,30 @@
         "last_date": "36/2/2013"
     },
     {
-        "title": "DIC State Coordinator Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dic-state-coordinator-recruitment-2026-apply-online-for-12-posts-3072015",
+        "title": "UPSSSC 1156 Combined Junior Engineer Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upsssc-recruitment-2026-apply-online-for-1156-junior-engineer-technical-assistant-and-more-posts-3072932",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "12",
+        "vacancy": "1156",
         "last_date": ""
     },
     {
-        "title": "THDC Various Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/thdc-recruitment-2026-apply-online-for-10-senior-manager-deputy-general-manager-and-more-posts-3071816",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "24-25",
-        "vacancy": "10",
-        "last_date": ""
-    },
-    {
-        "title": "Gujarat Anganwadi 6,843 AWW & AWH Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gujarat-anganwadi-recruitment-2026-apply-online-for-6843-anganwadi-worker-and-helper-posts-3068594",
+        "title": "UPSSSC 380 JE Electrical Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upsssc-je-electrical-recruitment-2026-3072943",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "6",
-        "last_date": ""
+        "vacancy": "380",
+        "last_date": "74/1/2002"
     },
     {
-        "title": "NIA Various Posts Offline Form 2026 (50 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/nia-recruitment-2026-apply-offline-for-50-ldc-stenographer-and-more-posts-3072611",
+        "title": "Telangana Housing Board Assistant Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/telangana-housing-board-assistant-engineer-recruitment-2026-apply-online-for-25-posts-3072887",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹33800",
         "age_limit": "",
-        "vacancy": "50",
+        "vacancy": "25",
         "last_date": ""
-    },
-    {
-        "title": "APPSC Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/appsc-recruitment-2026-apply-online-for-90-hostel-welfare-officer-assistant-social-welfare-officer-assistant-tribal-welfare-officer-posts-3067672",
-        "qualification": "10th",
-        "salary": "₹48440",
-        "age_limit": "",
-        "vacancy": "114",
-        "last_date": "06/12/2016"
     }
 ]
