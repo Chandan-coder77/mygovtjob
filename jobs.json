@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -195,7 +177,7 @@
         "salary": "₹40000",
         "age_limit": "",
         "vacancy": "13",
-        "last_date": "21/07/2026"
+        "last_date": ""
     },
     {
         "title": "HLL Lifecare Various Posts Online Form 2026",
@@ -249,6 +231,24 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "1156",
+        "last_date": ""
+    },
+    {
+        "title": "UPSSSC 380 JE Electrical Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upsssc-je-electrical-recruitment-2026-3072943",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "380",
+        "last_date": "74/1/2002"
+    },
+    {
+        "title": "Telangana Housing Board Assistant Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/telangana-housing-board-assistant-engineer-recruitment-2026-apply-online-for-25-posts-3072887",
+        "qualification": "10th",
+        "salary": "₹33800",
+        "age_limit": "",
+        "vacancy": "25",
         "last_date": ""
     }
 ]
