@@ -1,41 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -259,5 +223,32 @@
         "age_limit": "",
         "vacancy": "25",
         "last_date": ""
+    },
+    {
+        "title": "JEPC 106 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/jepc-recruitment-2026-apply-online-for-106-manager-programmer-accounts-officer-and-je-posts-3072877",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "106",
+        "last_date": ""
+    },
+    {
+        "title": "Odisha Research Centre Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/odisha-research-centre-recruitment-2026-apply-online-for-45-senior-and-junior-research-internship-programme-posts-3072714",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "",
+        "vacancy": "45",
+        "last_date": "15/11/2026"
+    },
+    {
+        "title": "ESIC Jaipur Various Posts Walkin Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/esic-jaipur-recruitment-2026-walk-in-for-25-professor-assistant-professor-and-more-posts-3072692",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "25",
+        "last_date": "39/1/2019"
     }
 ]
