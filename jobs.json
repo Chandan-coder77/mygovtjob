@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -198,6 +216,33 @@
         "last_date": "36/2/2013"
     },
     {
+        "title": "OAVS 815 Principals and Teachers Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/oavs-teacher-recruitment-2026-apply-online-for-815-principals-and-teachers-posts-3069031",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "815",
+        "last_date": "11/11/2026"
+    },
+    {
+        "title": "APPSC Various Vacancies Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/appsc-recruitment-2026-apply-online-for-255-inspector-assistant-statistical-officer-and-more-posts-3067666",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "255",
+        "last_date": ""
+    },
+    {
+        "title": "Rajasthan 24752 Safai Karmachari Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rajasthan-safai-karmachari-recruitment-2026-apply-online-for-24752-posts-3060551",
+        "qualification": "10th",
+        "salary": "₹7410",
+        "age_limit": "",
+        "vacancy": "24",
+        "last_date": ""
+    },
+    {
         "title": "UPSSSC 1156 Combined Junior Engineer Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/upsssc-recruitment-2026-apply-online-for-1156-junior-engineer-technical-assistant-and-more-posts-3072932",
         "qualification": "10th",
@@ -205,50 +250,5 @@
         "age_limit": "",
         "vacancy": "1156",
         "last_date": ""
-    },
-    {
-        "title": "UPSSSC 380 JE Electrical Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upsssc-je-electrical-recruitment-2026-3072943",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "380",
-        "last_date": "74/1/2002"
-    },
-    {
-        "title": "Telangana Housing Board Assistant Engineer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/telangana-housing-board-assistant-engineer-recruitment-2026-apply-online-for-25-posts-3072887",
-        "qualification": "10th",
-        "salary": "₹33800",
-        "age_limit": "",
-        "vacancy": "25",
-        "last_date": ""
-    },
-    {
-        "title": "JEPC 106 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jepc-recruitment-2026-apply-online-for-106-manager-programmer-accounts-officer-and-je-posts-3072877",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "106",
-        "last_date": ""
-    },
-    {
-        "title": "Odisha Research Centre Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/odisha-research-centre-recruitment-2026-apply-online-for-45-senior-and-junior-research-internship-programme-posts-3072714",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "",
-        "vacancy": "45",
-        "last_date": "15/11/2026"
-    },
-    {
-        "title": "ESIC Jaipur Various Posts Walkin Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/esic-jaipur-recruitment-2026-walk-in-for-25-professor-assistant-professor-and-more-posts-3072692",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "25",
-        "last_date": "39/1/2019"
     }
 ]
