@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -36,21 +18,21 @@
         "last_date": ""
     },
     {
-        "title": "UCO Bank 530 Apprentice Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/uco-bank-apprentice-recruitment-2026-apply-online-for-530-posts-3073302",
-        "qualification": "10th",
-        "salary": "₹16650",
-        "age_limit": "",
-        "vacancy": "530",
-        "last_date": ""
-    },
-    {
         "title": "BHEL 660 Artisan Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
         "vacancy": "660",
+        "last_date": ""
+    },
+    {
+        "title": "UCO Bank 530 Apprentice Recruitment 2026",
+        "apply_link": "https://www.freejobalert.com/articles/uco-bank-apprentice-recruitment-2026-apply-online-for-530-posts-3073302",
+        "qualification": "10th",
+        "salary": "₹16650",
+        "age_limit": "",
+        "vacancy": "530",
         "last_date": ""
     },
     {
@@ -114,6 +96,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "NPCC Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/npcc-recruitment-2026-apply-online-for-52-assistant-junior-engineer-and-more-posts-3073611",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "",
+        "vacancy": "52",
         "last_date": ""
     },
     {
@@ -189,12 +180,39 @@
         "last_date": ""
     },
     {
-        "title": "Territorial Army Various Posts Walk-in 2026",
-        "apply_link": "https://www.freejobalert.com/articles/territorial-army-recruitment-2026-walk-in-for-74-soldier-junior-commissioned-officer-and-more-posts-3072586",
+        "title": "APSSB 93 MTS Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/apssb-mts-recruitment-2026-3073601",
+        "qualification": "10th",
+        "salary": "₹18000",
+        "age_limit": "18-35",
+        "vacancy": "93",
+        "last_date": ""
+    },
+    {
+        "title": "NRLM Karnataka Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nrlm-karnataka-recruitment-2026-apply-online-for-21-cluster-supervisor-and-other-posts-3073575",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-50",
+        "vacancy": "21",
+        "last_date": ""
+    },
+    {
+        "title": "GMCH Chandigarh 242 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gmch-chandigarh-recruitment-2026-3073548",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "137",
+        "vacancy": "242",
+        "last_date": "28/10/2026"
+    },
+    {
+        "title": "ESIC Surat Various Posts Walkin Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/esic-surat-recruitment-2026-walkin-for-29-professor-senior-resident-and-more-posts-3073523",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "29",
         "last_date": ""
     },
     {
@@ -232,23 +250,5 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": "21/69/2026"
-    },
-    {
-        "title": "AIIMS Jammu Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aiims-jammu-faculty-recruitment-2026-apply-online-for-76-professor-assistant-professor-and-more-posts-3073338",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "76",
-        "last_date": "5/7/2003"
-    },
-    {
-        "title": "APPSC 503 AEE Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/appsc-assistant-executive-engineer-aee-recruitment-2026-3073308",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "503",
-        "last_date": ""
     }
 ]
