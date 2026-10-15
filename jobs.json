@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -268,5 +250,14 @@
         "age_limit": "",
         "vacancy": "29",
         "last_date": ""
+    },
+    {
+        "title": "AP DSC 2721 Teacher Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ap-dsc-teacher-notification-2026-3073393",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "21/69/2026"
     }
 ]
