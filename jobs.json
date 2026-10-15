@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -15,6 +33,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "RRB 1,688 NTPC UG Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-ug-recruitment-2026-cen-07-2026-1688-posts-3068706",
+        "qualification": "10th",
+        "salary": "₹19900",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
@@ -63,24 +90,6 @@
         "last_date": ""
     },
     {
-        "title": "ITBP 126 Constable (GD) Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/itbpf-sports-quota-recruitment-2026-notification-out-apply-online-for-126-constable-gd-posts-3070096",
-        "qualification": "10th",
-        "salary": "₹21700",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": "27/05/2013"
-    },
-    {
-        "title": "Bank of Baroda 1100 SO Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-so-recruitment-2026-apply-online-for-1100-wealth-executive-credit-analyst-posts-3066180",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "3/2/2013"
-    },
-    {
         "title": "Indian Army TES 57 Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/indian-army-tes-57-recruitment-2026-apply-online-for-10-2-technical-entry-scheme-3071328",
         "qualification": "10th",
@@ -124,6 +133,24 @@
         "age_limit": "",
         "vacancy": "65",
         "last_date": ""
+    },
+    {
+        "title": "ITBP 126 Constable (GD) Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/itbpf-sports-quota-recruitment-2026-notification-out-apply-online-for-126-constable-gd-posts-3070096",
+        "qualification": "10th",
+        "salary": "₹21700",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "27/05/2013"
+    },
+    {
+        "title": "Bank of Baroda 1100 SO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bank-of-baroda-so-recruitment-2026-apply-online-for-1100-wealth-executive-credit-analyst-posts-3066180",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "3/2/2013"
     },
     {
         "title": "CDAC 844 Various Posts Online Form 2026",
@@ -171,93 +198,66 @@
         "last_date": ""
     },
     {
-        "title": "Territorial Army Various Posts Walk-in 2026",
-        "apply_link": "https://www.freejobalert.com/articles/territorial-army-recruitment-2026-walk-in-for-74-soldier-junior-commissioned-officer-and-more-posts-3072586",
+        "title": "UP Kasganj Anganwadi AWW Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/up-kasganj-anganwadi-aww-recruitment-2026-apply-online-for-208-anganwadi-worker-posts-3073794",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "74",
+        "vacancy": "208",
         "last_date": ""
     },
     {
-        "title": "DH&FWS Purba Bardhaman Various Posts Online Form 2026 (27 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dh-fws-purba-bardhaman-recruitment-2026-staff-nurse-block-data-manager-3073631",
+        "title": "MP Police 1000 Constable Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/mp-police-constable-driver-recruitment-2026-apply-online-for-1000-posts-3071517",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "27",
-        "last_date": ""
+        "vacancy": "1000",
+        "last_date": "29/10/2026"
     },
     {
-        "title": "APSSB 93 MTS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/apssb-mts-recruitment-2026-3073601",
+        "title": "Punjab and Haryana High Court 1270 Clerk Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/punjab-and-haryana-high-court-clerk-recruitment-2026-apply-online-for-1270-posts-3070846",
         "qualification": "10th",
-        "salary": "₹18000",
-        "age_limit": "18-35",
-        "vacancy": "93",
-        "last_date": ""
-    },
-    {
-        "title": "NRLM Karnataka Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nrlm-karnataka-recruitment-2026-apply-online-for-21-cluster-supervisor-and-other-posts-3073575",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-50",
-        "vacancy": "21",
-        "last_date": ""
-    },
-    {
-        "title": "GMCH Chandigarh 242 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gmch-chandigarh-recruitment-2026-3073548",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "242",
-        "last_date": "28/10/2026"
-    },
-    {
-        "title": "ESIC Surat Various Posts Walkin Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/esic-surat-recruitment-2026-walkin-for-29-professor-senior-resident-and-more-posts-3073523",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "29",
-        "last_date": ""
-    },
-    {
-        "title": "AIIMS Kalyani Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aiims-kalyani-post-doctoral-fellow-recruitment-2026-apply-online-for-35-posts-3073479",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "35",
-        "last_date": ""
-    },
-    {
-        "title": "Kudumbashree 66 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/kudumbashree-recruitment-2026-apply-offline-for-66-district-mission-coordinator-assistant-district-mission-coordinator-posts-3073430",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "66",
-        "last_date": ""
-    },
-    {
-        "title": "CMO Banda Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/cmo-banda-recruitment-2026-apply-offline-for-29-medical-officer-specialist-and-more-posts-3073419",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "29",
-        "last_date": ""
-    },
-    {
-        "title": "AP DSC 2721 Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ap-dsc-teacher-notification-2026-3073393",
-        "qualification": "10th",
-        "salary": "",
+        "salary": "₹29200",
         "age_limit": "",
         "vacancy": "",
-        "last_date": "21/69/2026"
+        "last_date": "10/94/2022"
+    },
+    {
+        "title": "JKSSB 2863 Class IV MTS Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/jkssb-class-iv-recruitment-2026-apply-online-for-2863-mts-sanitation-worker-posts-3065802",
+        "qualification": "10th",
+        "salary": "₹14800",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "ESIC Andheri Various Posts Walk-in 2026",
+        "apply_link": "https://www.freejobalert.com/articles/esic-andheri-recruitment-2026-walkin-for-78-junior-resident-professor-and-more-posts-3073738",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "78",
+        "last_date": ""
+    },
+    {
+        "title": "DH&FWS Purba Bardhaman 118 Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dh-fws-purba-bardhaman-recruitment-2026-apply-offline-for-118-anm-staff-nurse-and-more-posts-3073719",
+        "qualification": "10th",
+        "salary": "₹13000",
+        "age_limit": "",
+        "vacancy": "118",
+        "last_date": ""
+    },
+    {
+        "title": "HPSC Food Safety Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hpsc-fso-recruitment-2026-apply-online-for-45-food-safety-officer-posts-3068315",
+        "qualification": "10th",
+        "salary": "₹9300",
+        "age_limit": "",
+        "vacancy": "45",
+        "last_date": ""
     }
 ]
