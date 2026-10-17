@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -99,15 +81,6 @@
         "last_date": ""
     },
     {
-        "title": "Canara Bank 3500 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/canara-bank-apprentice-recruitment-2026-apply-online-for-3500-posts-3069739",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
         "title": "CRPF 521 Sports Quota Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
         "qualification": "10th",
@@ -115,6 +88,15 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
+    },
+    {
+        "title": "ITBP 126 Constable (GD) Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/itbpf-sports-quota-recruitment-2026-notification-out-apply-online-for-126-constable-gd-posts-3070096",
+        "qualification": "10th",
+        "salary": "₹21700",
+        "age_limit": "",
+        "vacancy": "2026",
+        "last_date": "27/05/2013"
     },
     {
         "title": "IREL 131 Tradesman Trainee Online Form 2026",
@@ -259,5 +241,32 @@
         "age_limit": "",
         "vacancy": "41",
         "last_date": "22/10/2026"
+    },
+    {
+        "title": "DHFWS Birbhum Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dhfws-birbhum-recruitment-2026-apply-online-for-48-pharmacist-medical-officer-posts-3074231",
+        "qualification": "10th",
+        "salary": "₹22000",
+        "age_limit": "18-40",
+        "vacancy": "48",
+        "last_date": ""
+    },
+    {
+        "title": "UPSSSC 1784 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upssc-combined-lower-subordinate-services-intermediate-level-main-examination-2026-3074209",
+        "qualification": "10th",
+        "salary": "₹19900",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Nagaland Police 1,137 Constable GD Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nagaland-police-constable-recruitment-2026-3074062",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "1137",
+        "last_date": ""
     }
 ]
