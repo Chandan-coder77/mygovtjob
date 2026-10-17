@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -54,6 +36,15 @@
         "last_date": "29/09/2026"
     },
     {
+        "title": "BHEL 660 Artisan Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "660",
+        "last_date": ""
+    },
+    {
         "title": "Income Tax Delhi 119 Sports Quota Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/income-tax-delhi-sports-quota-recruitment-2026-3073318",
         "qualification": "10th",
@@ -69,15 +60,6 @@
         "salary": "₹19900",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "BHEL 660 Artisan Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "660",
         "last_date": ""
     },
     {
@@ -162,6 +144,24 @@
         "last_date": ""
     },
     {
+        "title": "CSIR CFTRI Technician Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/csir-cftri-to-recruit-28-technician-posts-3074168",
+        "qualification": "10th",
+        "salary": "₹19900",
+        "age_limit": "",
+        "vacancy": "28",
+        "last_date": "33/1/2013"
+    },
+    {
+        "title": "South Indian Bank Junior Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/south-indian-bank-junior-officer-recruitment-2026-3074295",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "CWC 327 Assistant Manager, Junior Executive Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/cwc-recruitment-2026-apply-online-for-327-assistant-manager-junior-executive-posts-3074247",
         "qualification": "10th",
@@ -216,22 +216,13 @@
         "last_date": ""
     },
     {
-        "title": "DGQA Various Posts Offline Form 2026 (32 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dgqa-recruitment-2026-apply-offline-for-32-technician-posts-3073326",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "17-23",
-        "vacancy": "32",
-        "last_date": ""
-    },
-    {
-        "title": "Supreme Court of India SPA Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sci-senior-personal-assistant-recruitment-2026-apply-online-for-65-posts-3073095",
+        "title": "BMHRC Group B & C Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bmhrc-group-b-and-c-recruitment-2026-apply-online-for-66-engineer-officer-and-more-posts-3068127",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "65",
-        "last_date": ""
+        "vacancy": "66",
+        "last_date": "12/2/2010"
     },
     {
         "title": "IITM Various Posts Walk-in Form 2026",
