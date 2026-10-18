@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -249,24 +267,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "1137",
-        "last_date": ""
-    },
-    {
-        "title": "Auraiya District Court Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/auraiya-district-court-recruitment-2026-apply-offline-for-52-stenographer-administrative-officer-and-more-posts-3074200",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "52",
-        "last_date": ""
-    },
-    {
-        "title": "DH&FWS Purba Bardhaman Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dh-fws-purba-bardhaman-recruitment-2026-apply-online-for-47-pharmacist-medical-officer-posts-3074196",
-        "qualification": "10th",
-        "salary": "₹22000",
-        "age_limit": "18-40",
-        "vacancy": "47",
         "last_date": ""
     }
 ]
