@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -144,6 +162,15 @@
         "last_date": ""
     },
     {
+        "title": "EIL Various Posts Online Form 2026 (109 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/eil-recruitment-2026-associate-engineer-and-associate-officer-3074393",
+        "qualification": "10th",
+        "salary": "₹72000",
+        "age_limit": "",
+        "vacancy": "109",
+        "last_date": ""
+    },
+    {
         "title": "CSIR CFTRI Technician Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/csir-cftri-to-recruit-28-technician-posts-3074168",
         "qualification": "10th",
@@ -207,15 +234,6 @@
         "last_date": "14/11/2026"
     },
     {
-        "title": "NPCC Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/npcc-recruitment-2026-apply-online-for-52-assistant-junior-engineer-and-more-posts-3073611",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "",
-        "vacancy": "52",
-        "last_date": ""
-    },
-    {
         "title": "BMHRC Group B & C Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/bmhrc-group-b-and-c-recruitment-2026-apply-online-for-66-engineer-officer-and-more-posts-3068127",
         "qualification": "10th",
@@ -249,24 +267,6 @@
         "salary": "₹22000",
         "age_limit": "18-40",
         "vacancy": "48",
-        "last_date": ""
-    },
-    {
-        "title": "UPSSSC 1784 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upssc-combined-lower-subordinate-services-intermediate-level-main-examination-2026-3074209",
-        "qualification": "10th",
-        "salary": "₹19900",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Nagaland Police 1,137 Constable GD Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nagaland-police-constable-recruitment-2026-3074062",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "1137",
         "last_date": ""
     }
 ]
