@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -18,12 +36,39 @@
         "last_date": "08/10/2026"
     },
     {
+        "title": "CWC 327 Assistant Manager, Junior Executive Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cwc-recruitment-2026-apply-online-for-327-assistant-manager-junior-executive-posts-3074247",
+        "qualification": "10th",
+        "salary": "₹29000",
+        "age_limit": "18-28",
+        "vacancy": "327",
+        "last_date": "33/3/2004"
+    },
+    {
         "title": "RRB 1250 Station Master Online Form 2026 (Short Notice)",
         "apply_link": "https://www.freejobalert.com/articles/rrb-station-master-recruitment-2026-3074679",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "195",
+        "last_date": ""
+    },
+    {
+        "title": "LIC HFL 232 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-apprentice-recruitment-2026-3074488",
+        "qualification": "10th",
+        "salary": "₹14150",
+        "age_limit": "20-25",
+        "vacancy": "232",
         "last_date": ""
     },
     {
@@ -63,31 +108,13 @@
         "last_date": ""
     },
     {
-        "title": "RRB 3,548 NTPC Graduate 06/2026 Online Form",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-graduate-recruitment-062026-notification-apply-online-for-3-477-posts-3068511",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "CRPF 521 Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
+        "title": "Naval Dockyard Karwar 210 Trade Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/naval-dockyard-karwar-trade-apprentice-recruitment-2026-apply-online-for-210-posts-3072459",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
-    },
-    {
-        "title": "ITBP 126 Constable (GD) Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/itbpf-sports-quota-recruitment-2026-notification-out-apply-online-for-126-constable-gd-posts-3070096",
-        "qualification": "10th",
-        "salary": "₹21700",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": "27/05/2013"
     },
     {
         "title": "RRC North Western Railway 2008 Act Apprentice Online Form 2026",
@@ -96,24 +123,6 @@
         "salary": "",
         "age_limit": "15-24",
         "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "195",
-        "last_date": ""
-    },
-    {
-        "title": "LIC HFL 232 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-apprentice-recruitment-2026-3074488",
-        "qualification": "10th",
-        "salary": "₹14150",
-        "age_limit": "20-25",
-        "vacancy": "232",
         "last_date": ""
     },
     {
@@ -160,6 +169,24 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
+    },
+    {
+        "title": "Oil India Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/oil-india-executive-recruitment-2026-3073913",
+        "qualification": "10th",
+        "salary": "₹50000",
+        "age_limit": "",
+        "vacancy": "32",
+        "last_date": "14/11/2026"
+    },
+    {
+        "title": "ITBP Head Constable Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/itbp-head-constable-motor-mechanic-recruitment-2026-apply-online-for-21-posts-3068550",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "21",
+        "last_date": "36/2/2013"
     },
     {
         "title": "Exim Bank Business Development Officer Online Form 2026",
@@ -234,48 +261,21 @@
         "last_date": ""
     },
     {
-        "title": "CWC 327 Assistant Manager, Junior Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/cwc-recruitment-2026-apply-online-for-327-assistant-manager-junior-executive-posts-3074247",
+        "title": "DRAT Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/drat-recruitment-2026-apply-offline-for-37-stenographer-udc-and-more-posts-3075082",
         "qualification": "10th",
-        "salary": "₹29000",
-        "age_limit": "18-28",
-        "vacancy": "327",
-        "last_date": "33/3/2004"
-    },
-    {
-        "title": "SCL 83 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/scl-recruitment-2026-short-notice-apply-online-for-83-technician-technical-assistant-and-more-posts-3074836",
-        "qualification": "10th",
-        "salary": "₹41940",
+        "salary": "₹25500",
         "age_limit": "",
-        "vacancy": "83",
-        "last_date": ""
+        "vacancy": "37",
+        "last_date": "2/6/2016"
     },
     {
-        "title": "IITM Various Posts Walkin Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/iitm-recruitment-2026-walkin-for-31-technical-assistant-project-associate-and-more-posts-3074838",
+        "title": "RGNAU Teaching Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rgnau-teaching-recruitment-2026-3075050",
         "qualification": "10th",
-        "salary": "₹20000",
+        "salary": "₹57700",
         "age_limit": "",
-        "vacancy": "31",
-        "last_date": ""
-    },
-    {
-        "title": "ESIC Medical College & Hospital, Faridabad Various Posts Walk-in Form 2026 (52 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/esic-medical-college-hospital-faridabad-teaching-faculty-recruitment-2026-walkin-for-52-professor-assistant-professor-and-more-posts-3074785",
-        "qualification": "10th",
-        "salary": "₹150294",
-        "age_limit": "",
-        "vacancy": "52",
-        "last_date": "30/06/2025"
-    },
-    {
-        "title": "DGMA Management Support Associate Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dgma-management-support-associate-recruitment-2026-apply-online-for-30-posts-3074564",
-        "qualification": "10th",
-        "salary": "₹75000",
-        "age_limit": "18-35",
-        "vacancy": "30",
-        "last_date": ""
+        "vacancy": "32",
+        "last_date": "39/1/2019"
     }
 ]
