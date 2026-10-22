@@ -36,15 +36,6 @@
         "last_date": "08/10/2026"
     },
     {
-        "title": "CWC 327 Assistant Manager, Junior Executive Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/cwc-recruitment-2026-apply-online-for-327-assistant-manager-junior-executive-posts-3074247",
-        "qualification": "10th",
-        "salary": "₹29000",
-        "age_limit": "18-28",
-        "vacancy": "327",
-        "last_date": "33/3/2004"
-    },
-    {
         "title": "RRB 1250 Station Master Online Form 2026 (Short Notice)",
         "apply_link": "https://www.freejobalert.com/articles/rrb-station-master-recruitment-2026-3074679",
         "qualification": "10th",
@@ -52,6 +43,15 @@
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
+    },
+    {
+        "title": "CWC 327 Assistant Manager, Junior Executive Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cwc-recruitment-2026-apply-online-for-327-assistant-manager-junior-executive-posts-3074247",
+        "qualification": "10th",
+        "salary": "₹29000",
+        "age_limit": "18-28",
+        "vacancy": "327",
+        "last_date": "33/3/2004"
     },
     {
         "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
@@ -171,6 +171,24 @@
         "last_date": ""
     },
     {
+        "title": "Dredging Corporation of India Various Posts Walkin 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dredging-corporation-of-india-recruitment-2026-walk-in-for-28-trainee-marine-engineer-electrical-officer-and-other-posts-3075192",
+        "qualification": "10th",
+        "salary": "₹10000",
+        "age_limit": "",
+        "vacancy": "28",
+        "last_date": ""
+    },
+    {
+        "title": "DTU 219 Assistant Professor Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dtu-assistant-professor-recruitment-2026-3075190",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "219",
+        "last_date": "39/1/2019"
+    },
+    {
         "title": "Oil India Various Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/oil-india-executive-recruitment-2026-3073913",
         "qualification": "10th",
@@ -246,36 +264,18 @@
         "title": "CSIR CFTRI Technician Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/csir-cftri-to-recruit-28-technician-posts-3074168",
         "qualification": "10th",
-        "salary": "₹19900",
-        "age_limit": "",
-        "vacancy": "28",
-        "last_date": "33/1/2013"
-    },
-    {
-        "title": "South Indian Bank Junior Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/south-indian-bank-junior-officer-recruitment-2026-3074295",
-        "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "28",
         "last_date": ""
     },
     {
-        "title": "DRAT Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/drat-recruitment-2026-apply-offline-for-37-stenographer-udc-and-more-posts-3075082",
+        "title": "LAHDC SSRB 216 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/lahdc-ssrb-recruitment-2026-3075188",
         "qualification": "10th",
-        "salary": "₹25500",
-        "age_limit": "",
-        "vacancy": "37",
-        "last_date": "2/6/2016"
-    },
-    {
-        "title": "RGNAU Teaching Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rgnau-teaching-recruitment-2026-3075050",
-        "qualification": "10th",
-        "salary": "₹57700",
-        "age_limit": "",
-        "vacancy": "32",
-        "last_date": "39/1/2019"
+        "salary": "₹14800",
+        "age_limit": "18-40",
+        "vacancy": "216",
+        "last_date": ""
     }
 ]
