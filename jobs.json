@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -276,6 +258,24 @@
         "salary": "₹20000",
         "age_limit": "",
         "vacancy": "31",
+        "last_date": ""
+    },
+    {
+        "title": "ESIC Medical College & Hospital, Faridabad Various Posts Walk-in Form 2026 (52 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/esic-medical-college-hospital-faridabad-teaching-faculty-recruitment-2026-walkin-for-52-professor-assistant-professor-and-more-posts-3074785",
+        "qualification": "10th",
+        "salary": "₹150294",
+        "age_limit": "",
+        "vacancy": "52",
+        "last_date": "30/06/2025"
+    },
+    {
+        "title": "DGMA Management Support Associate Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dgma-management-support-associate-recruitment-2026-apply-online-for-30-posts-3074564",
+        "qualification": "10th",
+        "salary": "₹75000",
+        "age_limit": "18-35",
+        "vacancy": "30",
         "last_date": ""
     }
 ]
