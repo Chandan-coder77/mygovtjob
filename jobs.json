@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -153,31 +171,22 @@
         "last_date": ""
     },
     {
-        "title": "Indian Army TES 57 Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/indian-army-tes-57-recruitment-2026-apply-online-for-10-2-technical-entry-scheme-3071328",
+        "title": "ONGC Industrial Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ongc-to-recruit-50-industrial-trainee-posts-3075397",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹22000",
         "age_limit": "",
-        "vacancy": "90",
+        "vacancy": "50",
         "last_date": ""
     },
     {
-        "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
+        "title": "Oil India Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/oil-india-executive-recruitment-2026-3073913",
         "qualification": "10th",
-        "salary": "₹9300",
+        "salary": "₹50000",
         "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Dredging Corporation of India Various Posts Walkin 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dredging-corporation-of-india-recruitment-2026-walk-in-for-28-trainee-marine-engineer-electrical-officer-and-other-posts-3075192",
-        "qualification": "10th",
-        "salary": "₹10000",
-        "age_limit": "",
-        "vacancy": "28",
-        "last_date": ""
+        "vacancy": "32",
+        "last_date": "14/11/2026"
     },
     {
         "title": "DTU 219 Assistant Professor Online Form 2026",
@@ -189,13 +198,13 @@
         "last_date": "39/1/2019"
     },
     {
-        "title": "Oil India Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/oil-india-executive-recruitment-2026-3073913",
+        "title": "Dredging Corporation of India Various Posts Walkin 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dredging-corporation-of-india-recruitment-2026-walk-in-for-28-trainee-marine-engineer-electrical-officer-and-other-posts-3075192",
         "qualification": "10th",
-        "salary": "₹50000",
+        "salary": "₹10000",
         "age_limit": "",
-        "vacancy": "32",
-        "last_date": "14/11/2026"
+        "vacancy": "28",
+        "last_date": ""
     },
     {
         "title": "ITBP Head Constable Online Form 2026",
@@ -249,6 +258,24 @@
         "salary": "₹72000",
         "age_limit": "",
         "vacancy": "109",
+        "last_date": ""
+    },
+    {
+        "title": "ISRO SDSC SHAR 97 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/isro-sdsc-shar-recruitment-2026-3074399",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-35",
+        "vacancy": "97",
+        "last_date": ""
+    },
+    {
+        "title": "SMKV Bastar Non-Teaching Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/smkv-bastar-non-teaching-recruitment-2026-3074161",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "69",
         "last_date": ""
     }
 ]
