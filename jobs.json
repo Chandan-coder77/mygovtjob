@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -267,6 +249,24 @@
         "salary": "₹60000",
         "age_limit": "",
         "vacancy": "30",
+        "last_date": ""
+    },
+    {
+        "title": "UPESSC 2647 Principal, Headmaster Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-2647-principal-headmaster-recruitment-2026-3075555",
+        "qualification": "10th",
+        "salary": "₹56100",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
+        "qualification": "10th",
+        "salary": "₹44900",
+        "age_limit": "",
+        "vacancy": "17",
         "last_date": ""
     }
 ]
