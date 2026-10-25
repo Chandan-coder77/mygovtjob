@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -216,15 +198,6 @@
         "last_date": ""
     },
     {
-        "title": "Exim Bank Business Development Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/exim-bank-business-development-officer-recruitment-2026-apply-online-for-12-posts-3067808",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "2026",
-        "last_date": ""
-    },
-    {
         "title": "NABFINS CSO - Field Work Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/nabfins-cso-recruitment-2026-3074599",
         "qualification": "10th",
@@ -241,6 +214,15 @@
         "age_limit": "",
         "vacancy": "65",
         "last_date": ""
+    },
+    {
+        "title": "ITPO 46 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/itpo-recruitment-2026-apply-online-for-46-junior-steno-assistant-and-more-posts-3074441",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "",
+        "vacancy": "46",
+        "last_date": "39/1/2019"
     },
     {
         "title": "Jal Shakti Vibhag HP Various Posts Offline Form 2026",
@@ -267,6 +249,24 @@
         "salary": "₹60000",
         "age_limit": "",
         "vacancy": "30",
+        "last_date": ""
+    },
+    {
+        "title": "UPESSC 2647 Principal, Headmaster Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-2647-principal-headmaster-recruitment-2026-3075555",
+        "qualification": "10th",
+        "salary": "₹56100",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
+        "qualification": "10th",
+        "salary": "₹44900",
+        "age_limit": "",
+        "vacancy": "17",
         "last_date": ""
     }
 ]
