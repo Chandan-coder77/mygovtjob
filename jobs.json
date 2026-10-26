@@ -1,7 +1,7 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -9,9 +9,9 @@
         "last_date": ""
     },
     {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
         "salary": "",
         "age_limit": "",
         "vacancy": "",
@@ -241,14 +241,5 @@
         "age_limit": "21-40",
         "vacancy": "501",
         "last_date": "03/12/2026"
-    },
-    {
-        "title": "Jal Shakti Vibhag HP Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jal-shakti-vibhag-hp-recruitment-2026-apply-offline-for-20-mpw-para-pump-operator-and-more-posts-3075639",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-45",
-        "vacancy": "20",
-        "last_date": ""
     }
 ]
