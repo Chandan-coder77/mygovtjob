@@ -1,5 +1,41 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -231,42 +267,6 @@
         "salary": "",
         "age_limit": "18-45",
         "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "CCI 29 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/cci-recruitment-2026-apply-offline-for-29-office-manager-additional-director-general-and-more-posts-3075633",
-        "qualification": "10th",
-        "salary": "₹53100",
-        "age_limit": "",
-        "vacancy": "29",
-        "last_date": "11/02/2026"
-    },
-    {
-        "title": "NCDC 30 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ncdc-recruitment-2026-30-contractual-posts-3075560",
-        "qualification": "10th",
-        "salary": "₹60000",
-        "age_limit": "",
-        "vacancy": "30",
-        "last_date": ""
-    },
-    {
-        "title": "UPESSC 2647 Principal, Headmaster Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upessc-2647-principal-headmaster-recruitment-2026-3075555",
-        "qualification": "10th",
-        "salary": "₹56100",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
-        "qualification": "10th",
-        "salary": "₹44900",
-        "age_limit": "",
-        "vacancy": "17",
         "last_date": ""
     }
 ]
