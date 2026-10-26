@@ -1,41 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -52,15 +16,6 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": "08/10/2026"
-    },
-    {
-        "title": "Odisha Police 7,268 Constable Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/odisha-police-constable-recruitment-2026-3075546",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-32",
-        "vacancy": "7",
-        "last_date": ""
     },
     {
         "title": "RRB 1250 Station Master Online Form 2026 (Short Notice)",
@@ -81,12 +36,21 @@
         "last_date": "33/3/2004"
     },
     {
-        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
+        "title": "BHEL 660 Artisan Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "195",
+        "vacancy": "660",
+        "last_date": ""
+    },
+    {
+        "title": "RRB 3,548 NTPC Graduate 06/2026 Online Form",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-graduate-recruitment-062026-notification-apply-online-for-3-477-posts-3068511",
+        "qualification": "10th",
+        "salary": "₹35400",
+        "age_limit": "",
+        "vacancy": "",
         "last_date": ""
     },
     {
@@ -96,15 +60,6 @@
         "salary": "₹14150",
         "age_limit": "20-25",
         "vacancy": "232",
-        "last_date": ""
-    },
-    {
-        "title": "BHEL 660 Artisan Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "660",
         "last_date": ""
     },
     {
@@ -126,6 +81,42 @@
         "last_date": ""
     },
     {
+        "title": "UCO Bank 530 Apprentice Recruitment 2026",
+        "apply_link": "https://www.freejobalert.com/articles/uco-bank-apprentice-recruitment-2026-apply-online-for-530-posts-3073302",
+        "qualification": "10th",
+        "salary": "₹16650",
+        "age_limit": "",
+        "vacancy": "530",
+        "last_date": ""
+    },
+    {
+        "title": "CRPF 521 Sports Quota Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
+        "qualification": "10th",
+        "salary": "₹9300",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "NLC India 1067 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nlc-india-apprentice-recruitment-2026-1067-posts-3075682",
+        "qualification": "10th",
+        "salary": "₹12000",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "IREL 131 Tradesman Trainee Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/irel-tradesman-trainee-recruitment-2026-3074241",
         "qualification": "10th",
@@ -135,12 +126,12 @@
         "last_date": ""
     },
     {
-        "title": "Naval Dockyard Karwar 210 Trade Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/naval-dockyard-karwar-trade-apprentice-recruitment-2026-apply-online-for-210-posts-3072459",
+        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "195",
         "last_date": ""
     },
     {
@@ -207,58 +198,22 @@
         "last_date": "39/1/2019"
     },
     {
-        "title": "Dredging Corporation of India Various Posts Walkin 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dredging-corporation-of-india-recruitment-2026-walk-in-for-28-trainee-marine-engineer-electrical-officer-and-other-posts-3075192",
-        "qualification": "10th",
-        "salary": "₹10000",
-        "age_limit": "",
-        "vacancy": "28",
-        "last_date": ""
-    },
-    {
-        "title": "ITBP Head Constable Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/itbp-head-constable-motor-mechanic-recruitment-2026-apply-online-for-21-posts-3068550",
+        "title": "HBTU Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hbtu-recruitment-2026-apply-online-for-25-professor-associate-professor-and-more-posts-3075792",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "21",
-        "last_date": "36/2/2013"
+        "vacancy": "25",
+        "last_date": "01/01/2027"
     },
     {
-        "title": "RRC North Western Railway 2008 Act Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrc-north-western-railway-act-apprentice-recruitment-2026-3074741",
+        "title": "UPPSC 501 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/uppsc-ro-aro-recruitment-2026-3075713",
         "qualification": "10th",
-        "salary": "",
-        "age_limit": "15-24",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "NABFINS CSO - Field Work Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nabfins-cso-recruitment-2026-3074599",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Supreme Court of India SPA Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sci-senior-personal-assistant-recruitment-2026-apply-online-for-65-posts-3073095",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "65",
-        "last_date": ""
-    },
-    {
-        "title": "ITPO 46 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/itpo-recruitment-2026-apply-online-for-46-junior-steno-assistant-and-more-posts-3074441",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "",
-        "vacancy": "46",
-        "last_date": "39/1/2019"
+        "salary": "₹29200",
+        "age_limit": "21-40",
+        "vacancy": "501",
+        "last_date": "03/12/2026"
     },
     {
         "title": "Jal Shakti Vibhag HP Various Posts Offline Form 2026",
@@ -267,6 +222,24 @@
         "salary": "",
         "age_limit": "18-45",
         "vacancy": "20",
+        "last_date": ""
+    },
+    {
+        "title": "CCI 29 Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/cci-recruitment-2026-apply-offline-for-29-office-manager-additional-director-general-and-more-posts-3075633",
+        "qualification": "10th",
+        "salary": "₹53100",
+        "age_limit": "",
+        "vacancy": "29",
+        "last_date": "11/02/2026"
+    },
+    {
+        "title": "NCDC 30 Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/ncdc-recruitment-2026-30-contractual-posts-3075560",
+        "qualification": "10th",
+        "salary": "₹60000",
+        "age_limit": "",
+        "vacancy": "30",
         "last_date": ""
     }
 ]
