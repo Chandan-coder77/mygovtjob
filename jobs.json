@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -18,10 +36,10 @@
         "last_date": "08/10/2026"
     },
     {
-        "title": "RRB 1250 Station Master Online Form 2026 (Short Notice)",
+        "title": "RRB 1215 Station Master Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/rrb-station-master-recruitment-2026-3074679",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹35400",
         "age_limit": "",
         "vacancy": "",
         "last_date": ""
@@ -198,6 +216,15 @@
         "last_date": "39/1/2019"
     },
     {
+        "title": "Karnataka 15000 Teacher Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/karnataka-teacher-recruitment-2026-apply-online-for-15000-posts-3062634",
+        "qualification": "10th",
+        "salary": "₹44425",
+        "age_limit": "",
+        "vacancy": "15",
+        "last_date": ""
+    },
+    {
         "title": "HBTU Various Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/hbtu-recruitment-2026-apply-online-for-25-professor-associate-professor-and-more-posts-3075792",
         "qualification": "10th",
@@ -222,24 +249,6 @@
         "salary": "",
         "age_limit": "18-45",
         "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "CCI 29 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/cci-recruitment-2026-apply-offline-for-29-office-manager-additional-director-general-and-more-posts-3075633",
-        "qualification": "10th",
-        "salary": "₹53100",
-        "age_limit": "",
-        "vacancy": "29",
-        "last_date": "11/02/2026"
-    },
-    {
-        "title": "NCDC 30 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ncdc-recruitment-2026-30-contractual-posts-3075560",
-        "qualification": "10th",
-        "salary": "₹60000",
-        "age_limit": "",
-        "vacancy": "30",
         "last_date": ""
     }
 ]
