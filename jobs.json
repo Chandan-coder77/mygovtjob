@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -135,6 +117,15 @@
         "last_date": ""
     },
     {
+        "title": "BEL 350 Probationary Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bel-probationary-engineer-recruitment-2026-3076214",
+        "qualification": "10th",
+        "salary": "₹40000",
+        "age_limit": "",
+        "vacancy": "350",
+        "last_date": ""
+    },
+    {
         "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
         "qualification": "10th",
@@ -225,13 +216,31 @@
         "last_date": ""
     },
     {
-        "title": "Oil India Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/oil-india-executive-recruitment-2026-3073913",
+        "title": "JKSSB Junior Engineer (Civil) Online Form 2026 (458 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/jkssb-junior-engineer-civil-recruitment-2026-3076234",
         "qualification": "10th",
-        "salary": "₹50000",
+        "salary": "₹35400",
         "age_limit": "",
-        "vacancy": "32",
-        "last_date": "14/11/2026"
+        "vacancy": "458",
+        "last_date": ""
+    },
+    {
+        "title": "GSSSB 84 Food Safety Officer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/gsssb-food-safety-officer-recruitment-2026-3076222",
+        "qualification": "10th",
+        "salary": "₹29200",
+        "age_limit": "18-37",
+        "vacancy": "84",
+        "last_date": "10/11/2026"
+    },
+    {
+        "title": "NMPA Various Posts Offline Form 2026 (26 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nmpa-recruitment-2026-graduate-apprentice-in-mechanical-3076140",
+        "qualification": "10th",
+        "salary": "₹10900",
+        "age_limit": "",
+        "vacancy": "26",
+        "last_date": ""
     },
     {
         "title": "Deputy Commissioner Siddharthnagar Various Posts Offline Form 2026",
@@ -258,15 +267,6 @@
         "salary": "₹25000",
         "age_limit": "",
         "vacancy": "2026",
-        "last_date": ""
-    },
-    {
-        "title": "Karnataka 15000 Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/karnataka-teacher-recruitment-2026-apply-online-for-15000-posts-3062634",
-        "qualification": "10th",
-        "salary": "₹44425",
-        "age_limit": "",
-        "vacancy": "15",
         "last_date": ""
     }
 ]
