@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -36,6 +54,15 @@
         "last_date": "08/10/2026"
     },
     {
+        "title": "BHEL 660 Artisan Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "660",
+        "last_date": ""
+    },
+    {
         "title": "RRB 1215 Station Master Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/rrb-station-master-recruitment-2026-3074679",
         "qualification": "10th",
@@ -52,15 +79,6 @@
         "age_limit": "18-28",
         "vacancy": "327",
         "last_date": "33/3/2004"
-    },
-    {
-        "title": "BHEL 660 Artisan Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bhel-artisan-recruitment-2026-3073301",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "660",
-        "last_date": ""
     },
     {
         "title": "RRB 3,548 NTPC Graduate 06/2026 Online Form",
@@ -144,6 +162,15 @@
         "last_date": ""
     },
     {
+        "title": "CSIR CFTRI Technician Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/csir-cftri-to-recruit-28-technician-posts-3074168",
+        "qualification": "10th",
+        "salary": "₹19900",
+        "age_limit": "",
+        "vacancy": "28",
+        "last_date": "33/1/2013"
+    },
+    {
         "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
         "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
         "qualification": "10th",
@@ -207,13 +234,31 @@
         "last_date": "14/11/2026"
     },
     {
-        "title": "DTU 219 Assistant Professor Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dtu-assistant-professor-recruitment-2026-3075190",
+        "title": "Deputy Commissioner Siddharthnagar Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/deputy-commissioner-swarozgar-siddharthnagar-recruitment-2026-apply-offline-for-20-accountant-mis-assistant-posts-3075922",
         "qualification": "10th",
         "salary": "",
+        "age_limit": "21-45",
+        "vacancy": "20",
+        "last_date": ""
+    },
+    {
+        "title": "Goa Shipyard 91 Non-Executive Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/goa-shipyard-limited-non-executive-recruitment-2026-3075885",
+        "qualification": "10th",
+        "salary": "₹27200",
+        "age_limit": "33-41",
+        "vacancy": "91",
+        "last_date": ""
+    },
+    {
+        "title": "BPSC TRE-4.0 Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bpsc-tre-40-notification-2026-32-388-school-teacher-posts-3063451",
+        "qualification": "10th",
+        "salary": "₹25000",
         "age_limit": "",
-        "vacancy": "219",
-        "last_date": "39/1/2019"
+        "vacancy": "2026",
+        "last_date": ""
     },
     {
         "title": "Karnataka 15000 Teacher Online Form 2026",
@@ -223,23 +268,5 @@
         "age_limit": "",
         "vacancy": "15",
         "last_date": ""
-    },
-    {
-        "title": "HBTU Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hbtu-recruitment-2026-apply-online-for-25-professor-associate-professor-and-more-posts-3075792",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "25",
-        "last_date": "01/01/2027"
-    },
-    {
-        "title": "UPPSC 501 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/uppsc-ro-aro-recruitment-2026-3075713",
-        "qualification": "10th",
-        "salary": "₹29200",
-        "age_limit": "21-40",
-        "vacancy": "501",
-        "last_date": "03/12/2026"
     }
 ]
