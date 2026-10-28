@@ -132,7 +132,7 @@
         "salary": "₹9300",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
+        "last_date": "01/06/2026"
     },
     {
         "title": "NLC India 1067 Apprentice Online Form 2026",
@@ -216,6 +216,33 @@
         "last_date": ""
     },
     {
+        "title": "OPSC Various Posts Online Form 2026 (89 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/opsc-recruitment-2026-scientific-officer-3076584",
+        "qualification": "10th",
+        "salary": "₹44900",
+        "age_limit": "21-42",
+        "vacancy": "89",
+        "last_date": ""
+    },
+    {
+        "title": "SWR Various Posts Online Form 2026 (258 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/swr-recruitment-2026-goods-train-manager-junior-engineer-3076582",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-42",
+        "vacancy": "258",
+        "last_date": ""
+    },
+    {
+        "title": "JRHMS Community Health Officer Online Form 2026 (1038 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/jrhms-community-health-officer-recruitment-2026-3076571",
+        "qualification": "10th",
+        "salary": "₹25000",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "JRHMS 306 Specialist Medical Officer Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/jrhms-specialist-medical-officer-recruitment-2026-apply-online-for-306-posts-3070778",
         "qualification": "10th",
@@ -232,32 +259,5 @@
         "age_limit": "",
         "vacancy": "20",
         "last_date": ""
-    },
-    {
-        "title": "District Basic Education Office Lakhimpur 158 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/district-basic-education-office-lakhimpur-teaching-and-non-teaching-recruitment-2026-3076453",
-        "qualification": "10th",
-        "salary": "₹6433",
-        "age_limit": "25-45",
-        "vacancy": "158",
-        "last_date": "99/23/2024"
-    },
-    {
-        "title": "JKSSB Junior Engineer (Civil) Online Form 2026 (458 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/jkssb-junior-engineer-civil-recruitment-2026-3076234",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "458",
-        "last_date": ""
-    },
-    {
-        "title": "GSSSB 84 Food Safety Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/gsssb-food-safety-officer-recruitment-2026-3076222",
-        "qualification": "10th",
-        "salary": "₹29200",
-        "age_limit": "18-37",
-        "vacancy": "84",
-        "last_date": "10/11/2026"
     }
 ]
