@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -144,6 +126,15 @@
         "last_date": ""
     },
     {
+        "title": "NPCIL 80 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/npcil-apprentice-recruitment-2026-3076643",
+        "qualification": "10th",
+        "salary": "₹10560",
+        "age_limit": "18-26",
+        "vacancy": "80",
+        "last_date": ""
+    },
+    {
         "title": "RECPDCL Various Posts Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/recpdcl-recruitment-2026-apply-online-for-32-senior-executive-deputy-executive-and-more-posts-3076364",
         "qualification": "10th",
@@ -207,12 +198,57 @@
         "last_date": "09/12/2020"
     },
     {
-        "title": "WAPCOS Various Posts Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/wapcos-recruitment-2026-apply-online-for-29-office-assistant-civil-engineer-experts-and-more-posts-3075558",
+        "title": "IUST Various Posts Online Form 2026 (48 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/iust-recruitment-2026-assistant-professor-3076864",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "29",
+        "vacancy": "48",
+        "last_date": ""
+    },
+    {
+        "title": "TGPSC 102 MPSO/ ASO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/tgpsc-mpso-aso-recruitment-2026-3076747",
+        "qualification": "10th",
+        "salary": "₹36750",
+        "age_limit": "18-44",
+        "vacancy": "102",
+        "last_date": ""
+    },
+    {
+        "title": "ESIC Ranchi Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/esic-ranchi-recruitment-2026-apply-offline-for-87-professor-associate-professor-and-more-posts-3076736",
+        "qualification": "10th",
+        "salary": "₹67700",
+        "age_limit": "",
+        "vacancy": "87",
+        "last_date": ""
+    },
+    {
+        "title": "NIT Calicut Apprentices Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nit-calicut-apprentices-recruitment-2026-apply-online-for-30-graduate-and-technician-apprentice-posts-3071785",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "31",
+        "last_date": ""
+    },
+    {
+        "title": "BDL 134 Apprentices Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bdl-apprentice-recruitment-2026-3076683",
+        "qualification": "10th",
+        "salary": "₹10900",
+        "age_limit": "",
+        "vacancy": "134",
+        "last_date": ""
+    },
+    {
+        "title": "TNPDCL 500 Diploma Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/tnpdcl-diploma-apprentice-recruitment-2026-3076668",
+        "qualification": "10th",
+        "salary": "₹10900",
+        "age_limit": "",
+        "vacancy": "500",
         "last_date": ""
     },
     {
@@ -223,50 +259,5 @@
         "age_limit": "21-42",
         "vacancy": "89",
         "last_date": ""
-    },
-    {
-        "title": "SWR Various Posts Online Form 2026 (258 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/swr-recruitment-2026-goods-train-manager-junior-engineer-3076582",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-42",
-        "vacancy": "258",
-        "last_date": ""
-    },
-    {
-        "title": "JRHMS Community Health Officer Online Form 2026 (1038 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/jrhms-community-health-officer-recruitment-2026-3076571",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "JRHMS 306 Specialist Medical Officer Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jrhms-specialist-medical-officer-recruitment-2026-apply-online-for-306-posts-3070778",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "306",
-        "last_date": ""
-    },
-    {
-        "title": "DCPU Saran Support Person Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dcpu-saran-support-person-recruitment-2026-apply-online-for-20-posts-3076481",
-        "qualification": "10th",
-        "salary": "₹9000",
-        "age_limit": "",
-        "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "District Basic Education Office Lakhimpur 158 Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/district-basic-education-office-lakhimpur-teaching-and-non-teaching-recruitment-2026-3076453",
-        "qualification": "10th",
-        "salary": "₹6433",
-        "age_limit": "25-45",
-        "vacancy": "158",
-        "last_date": "99/23/2024"
     }
 ]
