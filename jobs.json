@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -16,6 +34,15 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": "15/10/2026"
+    },
+    {
+        "title": "RRB 1,688 NTPC UG Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-ug-recruitment-2026-cen-07-2026-1688-posts-3068706",
+        "qualification": "10th",
+        "salary": "₹19900",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
     },
     {
         "title": "BHEL 660 Artisan Online Form 2026",
@@ -69,15 +96,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "119",
-        "last_date": ""
-    },
-    {
-        "title": "RRB 1,688 NTPC UG Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-ug-recruitment-2026-cen-07-2026-1688-posts-3068706",
-        "qualification": "10th",
-        "salary": "₹19900",
-        "age_limit": "",
-        "vacancy": "",
         "last_date": ""
     },
     {
@@ -198,12 +216,21 @@
         "last_date": "09/12/2020"
     },
     {
-        "title": "IUST Various Posts Online Form 2026 (48 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/iust-recruitment-2026-assistant-professor-3076864",
+        "title": "DLSA Wardha Legal Volunteer Offline Form 2026 (100 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dlsa-wardha-legal-volunteer-recruitment-2026-3076974",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "48",
+        "vacancy": "100",
+        "last_date": ""
+    },
+    {
+        "title": "DLSA Bhojpur Para Legal Volunteer Offline Form 2026 (140 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dlsa-bhojpur-para-legal-volunteer-recruitment-2026-3076972",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "140",
         "last_date": ""
     },
     {
@@ -240,24 +267,6 @@
         "salary": "₹10900",
         "age_limit": "",
         "vacancy": "134",
-        "last_date": ""
-    },
-    {
-        "title": "TNPDCL 500 Diploma Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tnpdcl-diploma-apprentice-recruitment-2026-3076668",
-        "qualification": "10th",
-        "salary": "₹10900",
-        "age_limit": "",
-        "vacancy": "500",
-        "last_date": ""
-    },
-    {
-        "title": "OPSC Various Posts Online Form 2026 (89 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/opsc-recruitment-2026-scientific-officer-3076584",
-        "qualification": "10th",
-        "salary": "₹44900",
-        "age_limit": "21-42",
-        "vacancy": "89",
         "last_date": ""
     }
 ]
