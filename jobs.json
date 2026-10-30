@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -108,12 +126,21 @@
         "last_date": ""
     },
     {
-        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
+        "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
+        "qualification": "10th",
+        "salary": "₹35400",
+        "age_limit": "",
+        "vacancy": "254",
+        "last_date": "33/1/2013"
+    },
+    {
+        "title": "KEA FDA SDA Online Form 2026 (5,431 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/kea-fda-sda-recruitment-2026-3077035",
         "qualification": "10th",
         "salary": "",
-        "age_limit": "",
-        "vacancy": "195",
+        "age_limit": "18-45",
+        "vacancy": "",
         "last_date": ""
     },
     {
@@ -135,12 +162,21 @@
         "last_date": "01/06/2026"
     },
     {
-        "title": "NLC India 1067 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nlc-india-apprentice-recruitment-2026-1067-posts-3075682",
+        "title": "RITES Various Posts Online Form 2026 (27 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/rites-assistant-manager-recruitment-2026-3077140",
         "qualification": "10th",
-        "salary": "₹12000",
+        "salary": "₹24258",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "27",
+        "last_date": ""
+    },
+    {
+        "title": "Delhi University 215 Assistant Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/delhi-university-assistant-recruitment-2026-3077134",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "215",
         "last_date": ""
     },
     {
@@ -171,66 +207,75 @@
         "last_date": "33/1/2013"
     },
     {
-        "title": "ISRO URSC Technician-B, Driver Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/isro-ursc-to-recruit-61-technician-b-driver-posts-3075553",
+        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
+        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
         "qualification": "10th",
-        "salary": "₹19900",
-        "age_limit": "18-35",
-        "vacancy": "61",
-        "last_date": "39/1/2019"
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "195",
+        "last_date": ""
     },
     {
-        "title": "Supreme Court of India Court Master Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/supreme-court-of-india-to-recruit-20-court-master-posts-3074170",
+        "title": "BCECEB Senior Resident / Tutor Online Form 2026 (575 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/bceceb-senior-resident-tutor-recruitment-2026-3077173",
         "qualification": "10th",
-        "salary": "₹67700",
+        "salary": "₹115000",
+        "age_limit": "",
+        "vacancy": "575",
+        "last_date": ""
+    },
+    {
+        "title": "MSCPS Various Posts Offline Form 2026 (95 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/mscps-recruitment-2026-apply-offline-for-95-case-worker-storekeeper-cum-accountant-and-more-posts-3077145",
+        "qualification": "10th",
+        "salary": "₹7944",
+        "age_limit": "18-45",
+        "vacancy": "95",
+        "last_date": "13/2/2026"
+    },
+    {
+        "title": "GSSSB Surveyor, Class-3 Online Form 2026 (78 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/gsssb-surveyor-recruitment-2026-3077138",
+        "qualification": "10th",
+        "salary": "₹25500",
+        "age_limit": "18-33",
+        "vacancy": "78",
+        "last_date": ""
+    },
+    {
+        "title": "RIMS 113 Various Posts Walk-in 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rims-ranchi-recruitment-2026-113-posts-3077136",
+        "qualification": "10th",
+        "salary": "₹30000",
+        "age_limit": "",
+        "vacancy": "113",
+        "last_date": ""
+    },
+    {
+        "title": "GMC Jalna Various Posts Offline Form 2026 (20 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/gmc-jalna-recruitment-2026-professor-associate-professor-3077013",
+        "qualification": "10th",
+        "salary": "₹100000",
         "age_limit": "",
         "vacancy": "20",
         "last_date": ""
     },
     {
-        "title": "IREL 131 Tradesman Trainee Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/irel-tradesman-trainee-recruitment-2026-3074241",
+        "title": "TGPSC 102 MPSO/ ASO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/tgpsc-mpso-aso-recruitment-2026-3076747",
         "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "131",
+        "salary": "₹36750",
+        "age_limit": "18-44",
+        "vacancy": "102",
         "last_date": ""
     },
     {
-        "title": "AAI SSCO Consultant Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aai-consultant-recruitment-2026-apply-online-for-39-posts-3067900",
+        "title": "ESIC Ranchi Various Posts Offline Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/esic-ranchi-recruitment-2026-apply-offline-for-87-professor-associate-professor-and-more-posts-3076736",
         "qualification": "10th",
-        "salary": "",
+        "salary": "₹67700",
         "age_limit": "",
-        "vacancy": "",
-        "last_date": "09/12/2020"
-    },
-    {
-        "title": "WAPCOS Various Posts Recruitment 2026",
-        "apply_link": "https://www.freejobalert.com/articles/wapcos-recruitment-2026-apply-online-for-29-office-assistant-civil-engineer-experts-and-more-posts-3075558",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "29",
-        "last_date": ""
-    },
-    {
-        "title": "MPPGCL Various Posts Online Form 2026 (29 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/mppgcl-recruitment-2026-electrician-fitter-3076992",
-        "qualification": "10th",
-        "salary": "₹9600",
-        "age_limit": "18-25",
-        "vacancy": "29",
-        "last_date": ""
-    },
-    {
-        "title": "DLSA Wardha Legal Volunteer Offline Form 2026 (100 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dlsa-wardha-legal-volunteer-recruitment-2026-3076974",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "100",
+        "vacancy": "87",
         "last_date": ""
     }
 ]
