@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -153,13 +135,13 @@
         "last_date": ""
     },
     {
-        "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
+        "title": "GRSE Various Posts Online Form 2026 (58 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/grse-recruitment-2026-apply-online-for-58-journeyman-driver-posts-3077222",
         "qualification": "10th",
-        "salary": "₹9300",
+        "salary": "₹20110",
         "age_limit": "",
-        "vacancy": "",
-        "last_date": "01/06/2026"
+        "vacancy": "58",
+        "last_date": ""
     },
     {
         "title": "RITES Various Posts Online Form 2026 (27 Vacancy)",
@@ -207,12 +189,57 @@
         "last_date": "33/1/2013"
     },
     {
-        "title": "RRB 195 Isolated Categories Online Form 2026 (Short Notice)",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
+        "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
+        "qualification": "10th",
+        "salary": "₹9300",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": "01/06/2026"
+    },
+    {
+        "title": "Goa Samagra Shiksha Various Posts Walk-in Form 2026 (41 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/goa-samagra-shiksha-recruitment-2026-instructor-nsqf-sectors-3077344",
+        "qualification": "10th",
+        "salary": "₹20000",
+        "age_limit": "",
+        "vacancy": "41",
+        "last_date": ""
+    },
+    {
+        "title": "CG Police Fighter Constable Offline Form 2026 (375 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/cg-police-fighter-constable-recruitment-2026-3077334",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "195",
+        "vacancy": "375",
+        "last_date": ""
+    },
+    {
+        "title": "Collectorate Beed Various Posts Offline Form 2026 (24 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/collectorate-beed-recruitment-2026-non-official-member-3077312",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "24",
+        "last_date": ""
+    },
+    {
+        "title": "DMFT Dhanbad Various Posts Online Form 2026 (74 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dmft-dhanbad-recruitment-2026-medical-officer-3077230",
+        "qualification": "10th",
+        "salary": "₹63000",
+        "age_limit": "",
+        "vacancy": "74",
+        "last_date": ""
+    },
+    {
+        "title": "NRLM Karnataka Various Posts Online Form 2026 (32 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nrlm-karnataka-recruitment-2026-apply-online-for-32-deo-mis-coordinator-block-manager-and-more-posts-3077216",
+        "qualification": "10th",
+        "salary": "₹18000",
+        "age_limit": "18-50",
+        "vacancy": "32",
         "last_date": ""
     },
     {
@@ -240,42 +267,6 @@
         "salary": "₹25500",
         "age_limit": "18-33",
         "vacancy": "78",
-        "last_date": ""
-    },
-    {
-        "title": "RIMS 113 Various Posts Walk-in 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rims-ranchi-recruitment-2026-113-posts-3077136",
-        "qualification": "10th",
-        "salary": "₹30000",
-        "age_limit": "",
-        "vacancy": "113",
-        "last_date": ""
-    },
-    {
-        "title": "GMC Jalna Various Posts Offline Form 2026 (20 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/gmc-jalna-recruitment-2026-professor-associate-professor-3077013",
-        "qualification": "10th",
-        "salary": "₹100000",
-        "age_limit": "",
-        "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "TGPSC 102 MPSO/ ASO Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/tgpsc-mpso-aso-recruitment-2026-3076747",
-        "qualification": "10th",
-        "salary": "₹36750",
-        "age_limit": "18-44",
-        "vacancy": "102",
-        "last_date": ""
-    },
-    {
-        "title": "ESIC Ranchi Various Posts Offline Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/esic-ranchi-recruitment-2026-apply-offline-for-87-professor-associate-professor-and-more-posts-3076736",
-        "qualification": "10th",
-        "salary": "₹67700",
-        "age_limit": "",
-        "vacancy": "87",
         "last_date": ""
     }
 ]
