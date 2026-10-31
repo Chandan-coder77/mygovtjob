@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -135,15 +153,6 @@
         "last_date": ""
     },
     {
-        "title": "Amrita Assistant Professor in School of Computing Online Form 2026 (20 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/amrita-assistant-professor-in-school-of-computing-recruitment-2026-3077404",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "20",
-        "last_date": ""
-    },
-    {
         "title": "GRSE Various Posts Online Form 2026 (58 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/grse-recruitment-2026-apply-online-for-58-journeyman-driver-posts-3077222",
         "qualification": "10th",
@@ -196,6 +205,15 @@
         "age_limit": "",
         "vacancy": "28",
         "last_date": "33/1/2013"
+    },
+    {
+        "title": "PHHC Chowkidar Online Form 2026 (22 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/phhc-chowkidar-recruitment-2026-3077637",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-35",
+        "vacancy": "22",
+        "last_date": ""
     },
     {
         "title": "SP Sukma Bastar Fighter Constable Offline Form 2026 (375 Vacancy)",
@@ -267,15 +285,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "238",
-        "last_date": ""
-    },
-    {
-        "title": "India Post Staff Car Driver Offline Form 2026 (25 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/india-post-staff-car-driver-recruitment-2026-apply-offline-for-25-posts-3077514",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "25",
         "last_date": ""
     }
 ]
