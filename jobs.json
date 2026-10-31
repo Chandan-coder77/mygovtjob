@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -135,6 +153,15 @@
         "last_date": ""
     },
     {
+        "title": "Amrita Assistant Professor in School of Computing Online Form 2026 (20 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/amrita-assistant-professor-in-school-of-computing-recruitment-2026-3077404",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "20",
+        "last_date": ""
+    },
+    {
         "title": "GRSE Various Posts Online Form 2026 (58 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/grse-recruitment-2026-apply-online-for-58-journeyman-driver-posts-3077222",
         "qualification": "10th",
@@ -189,15 +216,6 @@
         "last_date": "33/1/2013"
     },
     {
-        "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
-        "qualification": "10th",
-        "salary": "₹9300",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "01/06/2026"
-    },
-    {
         "title": "DH&FWS Jhargram Various Posts Online Form 2026 (33 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/dh-fws-jhargram-recruitment-2026-pharmacist-staff-nurse-3077398",
         "qualification": "10th",
@@ -250,23 +268,5 @@
         "age_limit": "18-50",
         "vacancy": "32",
         "last_date": ""
-    },
-    {
-        "title": "BCECEB Senior Resident / Tutor Online Form 2026 (575 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/bceceb-senior-resident-tutor-recruitment-2026-3077173",
-        "qualification": "10th",
-        "salary": "₹115000",
-        "age_limit": "",
-        "vacancy": "575",
-        "last_date": ""
-    },
-    {
-        "title": "MSCPS Various Posts Offline Form 2026 (95 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/mscps-recruitment-2026-apply-offline-for-95-case-worker-storekeeper-cum-accountant-and-more-posts-3077145",
-        "qualification": "10th",
-        "salary": "₹7944",
-        "age_limit": "18-45",
-        "vacancy": "95",
-        "last_date": "13/2/2026"
     }
 ]
