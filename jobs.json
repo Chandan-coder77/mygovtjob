@@ -18,24 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calender",
-        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
-        "qualification": "",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -52,6 +34,24 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": "15/10/2026"
+    },
+    {
+        "title": "ONGC Apprentice Online Form 2026 (3047 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/ongc-apprentice-recruitment-2026-3077536",
+        "qualification": "10th",
+        "salary": "₹8200",
+        "age_limit": "18-24",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "LIC HFL 232 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-apprentice-recruitment-2026-3074488",
+        "qualification": "10th",
+        "salary": "₹14150",
+        "age_limit": "20-25",
+        "vacancy": "232",
+        "last_date": ""
     },
     {
         "title": "RRB 1,688 NTPC UG Online Form 2026",
@@ -99,30 +99,12 @@
         "last_date": ""
     },
     {
-        "title": "LIC HFL 232 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-apprentice-recruitment-2026-3074488",
-        "qualification": "10th",
-        "salary": "₹14150",
-        "age_limit": "20-25",
-        "vacancy": "232",
-        "last_date": ""
-    },
-    {
         "title": "Income Tax Delhi 119 Sports Quota Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/income-tax-delhi-sports-quota-recruitment-2026-3073318",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
         "vacancy": "119",
-        "last_date": ""
-    },
-    {
-        "title": "CRPF 521 Sports Quota Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/crpf-sports-quota-recruitment-2026-apply-online-for-521-head-constable-constable-posts-3068927",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
         "last_date": ""
     },
     {
@@ -150,6 +132,24 @@
         "salary": "₹40000",
         "age_limit": "",
         "vacancy": "350",
+        "last_date": ""
+    },
+    {
+        "title": "NPCC Various Manager Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/npcc-recruitment-2026-general-manager-manager-3077262",
+        "qualification": "10th",
+        "salary": "₹40000",
+        "age_limit": "",
+        "vacancy": "12",
+        "last_date": "22/11/2026"
+    },
+    {
+        "title": "AFMS SSC Medical Officer Online Form 2026 (120 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/afms-medical-officer-short-service-commission-recruitment-2026-3077439",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "120",
         "last_date": ""
     },
     {
@@ -216,57 +216,66 @@
         "last_date": "33/1/2013"
     },
     {
-        "title": "DH&FWS Jhargram Various Posts Online Form 2026 (33 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dh-fws-jhargram-recruitment-2026-pharmacist-staff-nurse-3077398",
-        "qualification": "10th",
-        "salary": "₹22000",
-        "age_limit": "18-40",
-        "vacancy": "33",
-        "last_date": ""
-    },
-    {
-        "title": "Goa Samagra Shiksha Various Posts Walk-in Form 2026 (41 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/goa-samagra-shiksha-recruitment-2026-instructor-nsqf-sectors-3077344",
-        "qualification": "10th",
-        "salary": "₹20000",
-        "age_limit": "",
-        "vacancy": "41",
-        "last_date": ""
-    },
-    {
-        "title": "CG Police Fighter Constable Offline Form 2026 (375 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/cg-police-fighter-constable-recruitment-2026-3077334",
+        "title": "OAVS 815 Principals and Teachers Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/oavs-teacher-recruitment-2026-apply-online-for-815-principals-and-teachers-posts-3069031",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "375",
+        "vacancy": "815",
+        "last_date": "11/11/2026"
+    },
+    {
+        "title": "OPSC Various Posts Online Form 2026 (89 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/opsc-recruitment-2026-scientific-officer-3076584",
+        "qualification": "10th",
+        "salary": "₹44900",
+        "age_limit": "21-42",
+        "vacancy": "89",
         "last_date": ""
     },
     {
-        "title": "Collectorate Beed Various Posts Offline Form 2026 (24 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/collectorate-beed-recruitment-2026-non-official-member-3077312",
+        "title": "Jharkhand Home Guard Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/jhdc-latehar-recruitment-2026-home-guard-3077544",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "19-40",
+        "vacancy": "2026",
+        "last_date": ""
+    },
+    {
+        "title": "Odisha Police 7,268 Constable Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/odisha-police-constable-recruitment-2026-3075546",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-32",
+        "vacancy": "7",
+        "last_date": ""
+    },
+    {
+        "title": "SP Narayanpur Bastar Fighter Constable Offline Form 2026 (383 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/sp-narayanpur-bastar-fighter-constable-recruitment-2026-3077540",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-28",
+        "vacancy": "383",
+        "last_date": ""
+    },
+    {
+        "title": "OSSSC Ophthalmic Officer Online Form 2026 (238 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/osssc-ophthalmic-officer-recruitment-2026-3077557",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "24",
+        "vacancy": "238",
         "last_date": ""
     },
     {
-        "title": "DMFT Dhanbad Various Posts Online Form 2026 (74 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dmft-dhanbad-recruitment-2026-medical-officer-3077230",
+        "title": "India Post Staff Car Driver Offline Form 2026 (25 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/india-post-staff-car-driver-recruitment-2026-apply-offline-for-25-posts-3077514",
         "qualification": "10th",
-        "salary": "₹63000",
+        "salary": "",
         "age_limit": "",
-        "vacancy": "74",
-        "last_date": ""
-    },
-    {
-        "title": "NRLM Karnataka Various Posts Online Form 2026 (32 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/nrlm-karnataka-recruitment-2026-apply-online-for-32-deo-mis-coordinator-block-manager-and-more-posts-3077216",
-        "qualification": "10th",
-        "salary": "₹18000",
-        "age_limit": "18-50",
-        "vacancy": "32",
+        "vacancy": "25",
         "last_date": ""
     }
 ]
