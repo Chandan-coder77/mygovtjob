@@ -18,6 +18,24 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calender",
+        "apply_link": "https://osssc.gov.in/Pages/Recruitment_calender.aspx",
+        "qualification": "",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -171,15 +189,6 @@
         "last_date": ""
     },
     {
-        "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "254",
-        "last_date": ""
-    },
-    {
         "title": "HPRCA 43 Radiographer Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/hprca-radiographer-recruitment-2026-3078239",
         "qualification": "10th",
@@ -231,24 +240,6 @@
         "salary": "₹8344",
         "age_limit": "",
         "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "JSHPS Various Posts Online Form 2026 (637 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/jshps-recruitment-2026-apply-online-for-637-assistant-deo-and-more-posts-3077868",
-        "qualification": "10th",
-        "salary": "₹20000",
-        "age_limit": "21-50",
-        "vacancy": "637",
-        "last_date": ""
-    },
-    {
-        "title": "JRHMS Community Health Officer Online Form 2026 (1038 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/jrhms-community-health-officer-recruitment-2026-3076571",
-        "qualification": "10th",
-        "salary": "₹25000",
-        "age_limit": "",
-        "vacancy": "",
         "last_date": ""
     }
 ]
