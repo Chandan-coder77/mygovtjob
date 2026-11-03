@@ -54,15 +54,6 @@
         "last_date": ""
     },
     {
-        "title": "RRB 1215 Station Master Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-station-master-recruitment-2026-3074679",
-        "qualification": "10th",
-        "salary": "₹35400",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "CWC 327 Assistant Manager, Junior Executive Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/cwc-recruitment-2026-apply-online-for-327-assistant-manager-junior-executive-posts-3074247",
         "qualification": "10th",
@@ -87,6 +78,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "POWERGRID 319 Engineer Trainee Online form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/powergrid-engineer-trainee-recruitment-2026-3078049",
+        "qualification": "10th",
+        "salary": "₹40000",
+        "age_limit": "",
+        "vacancy": "319",
         "last_date": ""
     },
     {
@@ -144,21 +144,21 @@
         "last_date": ""
     },
     {
-        "title": "Indian Army TES 57 Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/indian-army-tes-57-recruitment-2026-apply-online-for-10-2-technical-entry-scheme-3071328",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "90",
-        "last_date": ""
-    },
-    {
         "title": "Supreme Court of India 130 Junior Court Attendant Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/supreme-court-of-india-junior-court-attendant-recruitment-2026-3073990",
         "qualification": "10th",
         "salary": "₹21700",
         "age_limit": "",
         "vacancy": "130",
+        "last_date": ""
+    },
+    {
+        "title": "Indian Army TES 57 Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/indian-army-tes-57-recruitment-2026-apply-online-for-10-2-technical-entry-scheme-3071328",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "90",
         "last_date": ""
     },
     {
@@ -171,15 +171,6 @@
         "last_date": ""
     },
     {
-        "title": "RITES Senior Technical Assistant Online Form 2026 (31 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/rites-senior-technical-assistant-recruitment-2026-3077911",
-        "qualification": "10th",
-        "salary": "₹26218",
-        "age_limit": "",
-        "vacancy": "31",
-        "last_date": ""
-    },
-    {
         "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
         "qualification": "10th",
@@ -189,39 +180,48 @@
         "last_date": ""
     },
     {
-        "title": "LIC HFL Management Trainee Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/lic-hfl-management-trainee-recruitment-2026-apply-online-for-50-posts-3072516",
+        "title": "HPRCA 43 Radiographer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hprca-radiographer-recruitment-2026-3078239",
+        "qualification": "10th",
+        "salary": "₹18000",
+        "age_limit": "18-45",
+        "vacancy": "43",
+        "last_date": ""
+    },
+    {
+        "title": "APPSC Various Vacancies Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/appsc-recruitment-2026-apply-online-for-255-inspector-assistant-statistical-officer-and-more-posts-3067666",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "2026",
+        "vacancy": "255",
         "last_date": ""
     },
     {
-        "title": "CSIR-NBRI Various Posts Walk-in Form 2026 (35 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/csir-nbri-recruitment-2026-young-professional-research-associate-3078004",
+        "title": "APPSC 299 Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/appsc-recruitment-2026-apply-online-for-299-forest-range-officer-supervisor-and-more-posts-3067665",
         "qualification": "10th",
-        "salary": "₹30000",
-        "age_limit": "21-45",
-        "vacancy": "35",
-        "last_date": ""
-    },
-    {
-        "title": "SAI Technical Officials Online Form 2026 (40 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/sai-technical-officials-recruitment-2026-3077961",
-        "qualification": "10th",
-        "salary": "",
+        "salary": "₹25220",
         "age_limit": "",
-        "vacancy": "40",
-        "last_date": ""
+        "vacancy": "299",
+        "last_date": "06/12/2016"
     },
     {
-        "title": "HPRCA Various Posts Online Form 2026 (2423 Vacancy)",
+        "title": "HPRCA Teacher Online Form 2026 (2423 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/hprca-recruitment-2026-teacher-3077937",
         "qualification": "10th",
         "salary": "₹30000",
         "age_limit": "18-45",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "UPSSSC Junior Engineer Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upsssc-recruitment-2026-apply-online-for-1156-junior-engineer-technical-assistant-and-more-posts-3072932",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "1156",
         "last_date": ""
     },
     {
@@ -249,24 +249,6 @@
         "salary": "₹25000",
         "age_limit": "",
         "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "ESIC Gurugram Various Posts Walk-in 2026",
-        "apply_link": "https://www.freejobalert.com/articles/esic-gurugram-recruitment-2026-walkin-for-39-specialist-senior-resident-and-more-posts-3077826",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "39",
-        "last_date": ""
-    },
-    {
-        "title": "ESIC Faridabad Various Posts Recruitment 2026 (66 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/esic-faridabad-recruitment-2026-apply-online-for-66-junior-resident-tutor-demonstrator-posts-3077811",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "66",
         "last_date": ""
     }
 ]
