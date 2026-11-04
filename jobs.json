@@ -33,7 +33,7 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "2026",
-        "last_date": "15/10/2026"
+        "last_date": "04/11/2026"
     },
     {
         "title": "Indian Bank 1500 Apprentices Online Form 2026",
@@ -135,21 +135,21 @@
         "last_date": ""
     },
     {
-        "title": "DSSSB 641 Peon, PA and More Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dsssb-delhi-district-courts-recruitment-2026-notification-out-apply-online-for-641-posts-3070579",
-        "qualification": "10th",
-        "salary": "₹9300",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": "01/06/2026"
-    },
-    {
         "title": "NLC India 1067 Apprentice Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/nlc-india-apprentice-recruitment-2026-1067-posts-3075682",
         "qualification": "10th",
         "salary": "₹12000",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "IREL 131 Tradesman Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/irel-tradesman-trainee-recruitment-2026-3074241",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "131",
         "last_date": ""
     },
     {
@@ -189,6 +189,33 @@
         "last_date": ""
     },
     {
+        "title": "NHIDCL Various Posts Online Form 2026 (25 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nhidcl-recruitment-2026-senior-associate-3078731",
+        "qualification": "10th",
+        "salary": "₹80000",
+        "age_limit": "",
+        "vacancy": "25",
+        "last_date": ""
+    },
+    {
+        "title": "CSIR-NAL Various Posts Walk-in Form 2026 (46 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/csir-nal-recruitment-2026-project-associate-project-assistant-3078723",
+        "qualification": "10th",
+        "salary": "₹18000",
+        "age_limit": "",
+        "vacancy": "46",
+        "last_date": "23/11/2026"
+    },
+    {
+        "title": "SGMH Various Posts Walk-in Form 2026 (38 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/sgmh-recruitment-2026-senior-residents-doctors-3078689",
+        "qualification": "10th",
+        "salary": "₹67700",
+        "age_limit": "",
+        "vacancy": "38",
+        "last_date": ""
+    },
+    {
         "title": "ESIC Jajmau Various Posts Walk-in Form 2026 (28 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/esic-jajmau-recruitment-2026-walkin-for-28-specialist-senior-resident-and-more-posts-3078641",
         "qualification": "10th",
@@ -222,42 +249,6 @@
         "salary": "₹120000",
         "age_limit": "",
         "vacancy": "133",
-        "last_date": ""
-    },
-    {
-        "title": "CMAAA Society Assam Chief Minister’s Fellow Online Form 2026 (256 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/cmaaa-society-assam-chief-minister-s-fellow-recruitment-2026-apply-online-for-256-posts-3077781",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "256",
-        "last_date": ""
-    },
-    {
-        "title": "GSSSB CCE 2.0 Online Form 2026 ( 1,237 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/gsssb-cce-2-0-recruitment-2026-3078431",
-        "qualification": "10th",
-        "salary": "₹26000",
-        "age_limit": "20-35",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "DHFWS Purba Medinipur Various Posts Online Form 2026 (67 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dhfws-purba-medinipur-recruitment-2026-apply-online-for-67-pharmacist-staff-nurse-and-more-posts-3078407",
-        "qualification": "10th",
-        "salary": "₹13000",
-        "age_limit": "18-40",
-        "vacancy": "67",
-        "last_date": ""
-    },
-    {
-        "title": "HCL 171 Trade Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/hcl-trade-apprentice-recruitment-2026-3078354",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-25",
-        "vacancy": "171",
         "last_date": ""
     }
 ]
