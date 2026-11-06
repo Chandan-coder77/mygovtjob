@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -204,6 +186,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "660",
+        "last_date": ""
+    },
+    {
+        "title": "OLM Various Posts Online Form 2026 (1115 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/olm-recruitment-2026-block-accountant-cum-mis-assistant-3079147",
+        "qualification": "10th",
+        "salary": "₹16560",
+        "age_limit": "21-42",
+        "vacancy": "",
         "last_date": ""
     },
     {
