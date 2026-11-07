@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -162,24 +144,6 @@
         "last_date": ""
     },
     {
-        "title": "RRC NR Various Posts Online Form 2026 (4651 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/rrc-nr-recruitment-2026-act-apprentice-3079404",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "15-24",
-        "vacancy": "",
-        "last_date": "06/11/2026"
-    },
-    {
-        "title": "ESIC Various Posts Online Form 2026 (24 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/esic-recruitment-2026-medical-officer-ayurveda-3079363",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "24",
-        "last_date": ""
-    },
-    {
         "title": "SDSC SHAR Apprentice Online Form 2026 (400 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/sdsc-shar-recruitment-2026-trade-apprentice-diploma-3078917",
         "qualification": "10th",
@@ -231,6 +195,15 @@
         "salary": "₹21700",
         "age_limit": "",
         "vacancy": "130",
+        "last_date": ""
+    },
+    {
+        "title": "JSSH Various Posts Offline Form 2026 (70 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/jssh-recruitment-2026-senior-resident-3079466",
+        "qualification": "10th",
+        "salary": "₹67700",
+        "age_limit": "",
+        "vacancy": "70",
         "last_date": ""
     },
     {
