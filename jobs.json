@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -198,57 +216,39 @@
         "last_date": ""
     },
     {
-        "title": "JSSH Various Posts Offline Form 2026 (70 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/jssh-recruitment-2026-senior-resident-3079466",
-        "qualification": "10th",
-        "salary": "₹67700",
-        "age_limit": "",
-        "vacancy": "70",
-        "last_date": ""
-    },
-    {
-        "title": "SMC Various Posts Online Form 2026 (23 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/smc-recruitment-2026-associate-professor-assistant-professor-3079402",
-        "qualification": "10th",
-        "salary": "₹68900",
-        "age_limit": "",
-        "vacancy": "23",
-        "last_date": "14/12/2026"
-    },
-    {
-        "title": "IOCL Various Posts Online Form 2026 (272 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-recruitment-2026-trade-apprentice-3079378",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-24",
-        "vacancy": "272",
-        "last_date": "39/1/2019"
-    },
-    {
-        "title": "DEO Malkangiri Various Posts Offline Form 2026 (31 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/deo-malkangiri-recruitment-2026-guest-faculty-3079370",
+        "title": "DM&HO Contract / Outsourcing Posts under NHM & NUHM Offline Form 2026 (95 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dm-ho-contract-outsourcing-posts-under-nhm-nuhm-recruitment-2026-3079606",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "31",
+        "vacancy": "95",
         "last_date": ""
     },
     {
-        "title": "UKPSC Lower PCS Online Form 2026 (54 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/ukpsc-lower-pcs-recruitment-2026-3079327",
+        "title": "ICDS Various Posts Online Form 2026 (242 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/icds-recruitment-2026-anganwadi-worker-3079586",
         "qualification": "10th",
-        "salary": "₹29200",
-        "age_limit": "21-42",
-        "vacancy": "54",
+        "salary": "",
+        "age_limit": "18-35",
+        "vacancy": "242",
         "last_date": ""
     },
     {
-        "title": "WBPSC IDO Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/wbpsc-ido-recruitment-2026-3078772",
+        "title": "Chief Medical Officer, Budaun Various Posts Offline Form 2026 (30 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/chief-medical-officer-budaun-recruitment-2026-medical-officer-3079582",
         "qualification": "10th",
-        "salary": "₹32100",
-        "age_limit": "18-44",
-        "vacancy": "247",
+        "salary": "₹80000",
+        "age_limit": "",
+        "vacancy": "30",
+        "last_date": ""
+    },
+    {
+        "title": "District Education Officer Balod Various Posts Offline Form 2026 (93 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/district-education-officer-balod-recruitment-2026-sangwari-guruji-3079550",
+        "qualification": "10th",
+        "salary": "₹15000",
+        "age_limit": "21-40",
+        "vacancy": "93",
         "last_date": ""
     }
 ]
