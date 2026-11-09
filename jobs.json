@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -144,6 +162,15 @@
         "last_date": ""
     },
     {
+        "title": "AFMS SSC Medical Officer Online Form 2026 (120 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/afms-medical-officer-short-service-commission-recruitment-2026-3077439",
+        "qualification": "10th",
+        "salary": "₹61300",
+        "age_limit": "",
+        "vacancy": "120",
+        "last_date": ""
+    },
+    {
         "title": "SDSC SHAR Apprentice Online Form 2026 (400 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/sdsc-shar-recruitment-2026-trade-apprentice-diploma-3078917",
         "qualification": "10th",
@@ -189,30 +216,21 @@
         "last_date": ""
     },
     {
-        "title": "Supreme Court of India 130 Junior Court Attendant Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/supreme-court-of-india-junior-court-attendant-recruitment-2026-3073990",
+        "title": "AIIMS Bathinda Various Posts Online Form 2026 (55 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/aiims-bathinda-recruitment-2026-professor-assistant-professor-3079829",
         "qualification": "10th",
-        "salary": "₹21700",
+        "salary": "₹101500",
         "age_limit": "",
-        "vacancy": "130",
-        "last_date": ""
+        "vacancy": "55",
+        "last_date": "33/1/2013"
     },
     {
-        "title": "ABDM Various Posts Walk-in Form 2026 (20 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/abdm-recruitment-2026-project-manager-business-analyst-3079662",
+        "title": "MBSPSU Teaching & Non Teaching Online Form 2026 (123 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/mbspsu-professor-physical-education-recruitment-2026-3079654",
         "qualification": "10th",
-        "salary": "₹50000",
-        "age_limit": "21-60",
-        "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "DM&HO Contract / Outsourcing Posts under NHM & NUHM Offline Form 2026 (95 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dm-ho-contract-outsourcing-posts-under-nhm-nuhm-recruitment-2026-3079606",
-        "qualification": "10th",
-        "salary": "",
+        "salary": "₹19900",
         "age_limit": "",
-        "vacancy": "95",
+        "vacancy": "123",
         "last_date": ""
     },
     {
@@ -222,24 +240,6 @@
         "salary": "",
         "age_limit": "18-35",
         "vacancy": "242",
-        "last_date": ""
-    },
-    {
-        "title": "Chief Medical Officer, Budaun Various Posts Offline Form 2026 (30 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/chief-medical-officer-budaun-recruitment-2026-medical-officer-3079582",
-        "qualification": "10th",
-        "salary": "₹80000",
-        "age_limit": "",
-        "vacancy": "30",
-        "last_date": ""
-    },
-    {
-        "title": "District Education Officer Balod Various Posts Offline Form 2026 (93 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/district-education-officer-balod-recruitment-2026-sangwari-guruji-3079550",
-        "qualification": "10th",
-        "salary": "₹15000",
-        "age_limit": "21-40",
-        "vacancy": "93",
         "last_date": ""
     }
 ]
