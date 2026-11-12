@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -90,15 +72,6 @@
         "last_date": ""
     },
     {
-        "title": "Bank of Baroda 837 Professionals Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bob-recruitment-2026-senior-relationship-manager-3078340",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "24-50",
-        "vacancy": "837",
-        "last_date": ""
-    },
-    {
         "title": "MPSC 16,797 Group C Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/mpsc-group-c-recruitment-2026-3080387",
         "qualification": "10th",
@@ -162,6 +135,15 @@
         "last_date": ""
     },
     {
+        "title": "ISRO SAC Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/sac-recruitment-2026-graduate-apprentice-technician-apprentice-3080378",
+        "qualification": "10th",
+        "salary": "₹10560",
+        "age_limit": "18-35",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "NHPC Industrial Trainee Recruitment 2026 (23 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/nhpc-industrial-trainee-recruitment-2026-apply-online-for-23-posts-3080183",
         "qualification": "10th",
@@ -216,22 +198,40 @@
         "last_date": ""
     },
     {
-        "title": "SAMEER Various Posts Online Form 2026 (34 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/sameer-recruitment-2026-apply-online-for-34-project-technical-assistant-project-engineer-and-more-posts-3078749",
+        "title": "HARTRON 110 DEO Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/hartron-deo-recruitment-2026-3080450",
         "qualification": "10th",
-        "salary": "₹21000",
-        "age_limit": "",
-        "vacancy": "34",
+        "salary": "₹18000",
+        "age_limit": "18-42",
+        "vacancy": "110",
         "last_date": ""
     },
     {
-        "title": "SAMEER 140 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sameer-recruitment-2026-apply-online-for-140-project-fellow-project-engineer-and-more-posts-3078741",
+        "title": "High Court of Orissa Junior Grade Typist / Data Entry Operator Online Form 2026 (31 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/high-court-of-orissa-junior-grade-typist-data-entry-recruitment-2026-3080446",
         "qualification": "10th",
-        "salary": "₹21000",
-        "age_limit": "",
-        "vacancy": "140",
+        "salary": "₹19900",
+        "age_limit": "21-42",
+        "vacancy": "31",
         "last_date": ""
+    },
+    {
+        "title": "Odisha Police 7,268 Constable Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/odisha-police-constable-recruitment-2026-3075546",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-32",
+        "vacancy": "7",
+        "last_date": ""
+    },
+    {
+        "title": "Kerala High Court System Assistant Online Form 2026 (90 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/kerala-high-court-system-assistant-recruitment-2026-apply-online-for-90-posts-3080437",
+        "qualification": "10th",
+        "salary": "₹24590",
+        "age_limit": "",
+        "vacancy": "90",
+        "last_date": "02/01/1985"
     },
     {
         "title": "GSTAT Various Posts Online Form 2026 (20 Vacancy)",
@@ -241,23 +241,5 @@
         "age_limit": "",
         "vacancy": "20",
         "last_date": "50/99/2018"
-    },
-    {
-        "title": "DCPU Kancheepuram Support Persons Offline Form 2026 (20 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dcpu-kancheepuram-support-persons-recruitment-2026-3080403",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "20",
-        "last_date": ""
-    },
-    {
-        "title": "BEL Various Posts Online Form 2026 (23 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/bel-recruitment-2026-trainee-engineer-i-3080395",
-        "qualification": "10th",
-        "salary": "₹40000",
-        "age_limit": "",
-        "vacancy": "23",
-        "last_date": ""
     }
 ]
