@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -213,6 +195,24 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "29",
+        "last_date": ""
+    },
+    {
+        "title": "NCL Various Posts Online Form 2026 (100 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/ncl-recruitment-2026-iti-electrician-iti-fitter-3080705",
+        "qualification": "10th",
+        "salary": "₹8500",
+        "age_limit": "18-29",
+        "vacancy": "100",
+        "last_date": ""
+    },
+    {
+        "title": "DCPU Support Persons Offline Form 2026 (20 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dcpu-support-persons-recruitment-2026-3080683",
+        "qualification": "10th",
+        "salary": "₹10000",
+        "age_limit": "",
+        "vacancy": "20",
         "last_date": ""
     },
     {
