@@ -18,15 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -241,5 +232,23 @@
         "age_limit": "18-40",
         "vacancy": "23",
         "last_date": "30/11/2026"
+    },
+    {
+        "title": "HPPWD Various Posts Offline Form 2026 (22 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/hppwd-recruitment-2026-junior-office-assistant-3081050",
+        "qualification": "10th",
+        "salary": "₹12500",
+        "age_limit": "18-45",
+        "vacancy": "22",
+        "last_date": ""
+    },
+    {
+        "title": "ESIC MCH Bihta Various Posts Recruitment 2026 (59 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/esic-mch-bihta-recruitment-2026-professor-associate-professor-3079036",
+        "qualification": "10th",
+        "salary": "₹67700",
+        "age_limit": "",
+        "vacancy": "59",
+        "last_date": ""
     }
 ]
