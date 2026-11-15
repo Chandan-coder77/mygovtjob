@@ -18,15 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -43,15 +34,6 @@
         "age_limit": "",
         "vacancy": "2026",
         "last_date": "04/11/2026"
-    },
-    {
-        "title": "RRB 1,688 NTPC UG Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-ntpc-ug-recruitment-2026-cen-07-2026-1688-posts-3068706",
-        "qualification": "10th",
-        "salary": "₹19900",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
     },
     {
         "title": "IOCL Eastern Region Apprentice Online Form 2026 (409 Vacancy)",
@@ -105,6 +87,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "143",
+        "last_date": ""
+    },
+    {
+        "title": "SBI SO Online Form 2026 (60 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/sbi-manager-security-deputy-manager-security-recruitment-2026-3078308",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "25-40",
+        "vacancy": "60",
         "last_date": ""
     },
     {
@@ -216,6 +207,15 @@
         "last_date": ""
     },
     {
+        "title": "GMC Baramati Various Posts Offline Form 2026 (51 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/gmc-baramati-recruitment-2026-professor-associate-professor-3081298",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "51",
+        "last_date": ""
+    },
+    {
         "title": "KKHSOU Various Posts Online Form 2026 (53 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/kkhsou-recruitment-2026-assistant-professor-contractual-3081294",
         "qualification": "10th",
@@ -241,5 +241,14 @@
         "age_limit": "",
         "vacancy": "76",
         "last_date": "5/7/2003"
+    },
+    {
+        "title": "SJVN Apprentice Online Form 2026 (100 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/sjvn-recruitment-2026-technician-apprentice-graduate-apprentice-3081244",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-30",
+        "vacancy": "100",
+        "last_date": ""
     }
 ]
