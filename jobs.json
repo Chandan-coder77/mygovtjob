@@ -1,32 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Anganwadi Recruitment",
         "apply_link": "https://www.freejobalert.com/anganwadi-recruitment/",
         "qualification": "10th",
@@ -90,6 +63,15 @@
         "last_date": ""
     },
     {
+        "title": "Exim Bank 120 MT & Manager Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/exim-bank-recruitment-2026-apply-online-for-120-management-trainee-and-manager-posts-3080153",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "21-28",
+        "vacancy": "120",
+        "last_date": "34/2/2013"
+    },
+    {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
         "qualification": "10th",
@@ -135,6 +117,15 @@
         "last_date": ""
     },
     {
+        "title": "RECPDCL Various Posts Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/recpdcl-recruitment-2026-apply-online-for-32-senior-executive-deputy-executive-and-more-posts-3076364",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "32",
+        "last_date": "28/06/2023"
+    },
+    {
         "title": "Delhi University 215 Assistant Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/delhi-university-assistant-recruitment-2026-3077134",
         "qualification": "10th",
@@ -169,15 +160,6 @@
         "age_limit": "",
         "vacancy": "35",
         "last_date": ""
-    },
-    {
-        "title": "Exim Bank 120 MT & Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/exim-bank-recruitment-2026-apply-online-for-120-management-trainee-and-manager-posts-3080153",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "21-28",
-        "vacancy": "120",
-        "last_date": "34/2/2013"
     },
     {
         "title": "POWERGRID Trainee Engineer Online Form 2026 (33 Vacancy)",
@@ -225,30 +207,30 @@
         "last_date": ""
     },
     {
-        "title": "CMO Various Posts Walk-in Form 2026 (29 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/cmo-recruitment-2026-medical-officer-female-medical-officer-3082038",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "29",
-        "last_date": ""
-    },
-    {
-        "title": "UKSSSC Various Posts Online Form 2026 (1694 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/uksssc-recruitment-2026-uttarakhand-constable-civil-police-3082036",
+        "title": "District Programme Officer (ICDS), Ghazipur Anganwadi Worker Online Form 2026 (174 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/district-programme-officer-icds-ghazipur-anganwadi-recruitment-2026-3082371",
         "qualification": "10th",
         "salary": "",
         "age_limit": "18-35",
-        "vacancy": "",
+        "vacancy": "174",
         "last_date": ""
     },
     {
-        "title": "Delhi University 126 Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/delhi-university-recruitment-2026-apply-online-for-126-senior-assistant-assistant-posts-3074407",
+        "title": "BHU Group A, B and C Posts Online Form 2026 (633 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/bhu-recruitment-2026-apply-online-for-601-group-a-b-and-c-posts-3082050",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "126",
+        "vacancy": "633",
+        "last_date": ""
+    },
+    {
+        "title": "HG&CD Various Posts Offline Form 2026 (176 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/hg-cd-recruitment-2026-home-guard-and-marine-home-guard-3082316",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "20-50",
+        "vacancy": "176",
         "last_date": ""
     }
 ]
