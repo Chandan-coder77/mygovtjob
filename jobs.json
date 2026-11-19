@@ -18,15 +18,6 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -99,6 +90,15 @@
         "last_date": ""
     },
     {
+        "title": "IOCL Eastern Region Apprentice Online Form 2026 (409 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/iocl-eastern-region-apprentice-recruitment-2026-3080655",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-24",
+        "vacancy": "409",
+        "last_date": ""
+    },
+    {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
         "qualification": "10th",
@@ -126,24 +126,6 @@
         "last_date": ""
     },
     {
-        "title": "RRC North Western Railway 2008 Act Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrc-north-western-railway-act-apprentice-recruitment-2026-3074741",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "15-24",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "UPESSC 2647 Principal, Headmaster Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/upessc-2647-principal-headmaster-recruitment-2026-3075555",
-        "qualification": "10th",
-        "salary": "₹78800",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "HPRCA Teacher Online Form 2026 (2423 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/hprca-recruitment-2026-teacher-3077937",
         "qualification": "10th",
@@ -159,6 +141,15 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "OSSC Various Posts Online Form 2026 (132 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/ossc-recruitment-2026-technical-assistant-weaving-supervisor-3082735",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-42",
+        "vacancy": "132",
         "last_date": ""
     },
     {
@@ -234,15 +225,6 @@
         "last_date": ""
     },
     {
-        "title": "IOCL Eastern Region Apprentice Online Form 2026 (409 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-eastern-region-apprentice-recruitment-2026-3080655",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-24",
-        "vacancy": "409",
-        "last_date": ""
-    },
-    {
         "title": "DSSSB 1260 JE, MTS Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/dsssb-recruitment-2026-apply-online-for-mts-junior-engineer-posts-3079318",
         "qualification": "10th",
@@ -250,5 +232,23 @@
         "age_limit": "18-32",
         "vacancy": "",
         "last_date": "11/12/2026"
+    },
+    {
+        "title": "Vasantidevi Patil Institute of Pharmacy Various Posts Offline Form 2026 (32 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/vasantidevi-patil-institute-of-pharmacy-recruitment-2026-professor-3082788",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "32",
+        "last_date": "19/11/2026"
+    },
+    {
+        "title": "HG&CD Various Posts Offline Form 2026 (176 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/hg-cd-recruitment-2026-home-guard-and-marine-home-guard-3082316",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "20-50",
+        "vacancy": "176",
+        "last_date": ""
     }
 ]
