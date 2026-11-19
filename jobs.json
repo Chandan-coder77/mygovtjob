@@ -18,6 +18,15 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -90,15 +99,6 @@
         "last_date": ""
     },
     {
-        "title": "DVC Executive Trainee Online Form 2026 (108 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/dvc-recruitment-2026-executive-trainee-3079288",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "108",
-        "last_date": "06/12/2026"
-    },
-    {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
         "qualification": "10th",
@@ -126,6 +126,24 @@
         "last_date": ""
     },
     {
+        "title": "RRC North Western Railway 2008 Act Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rrc-north-western-railway-act-apprentice-recruitment-2026-3074741",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "15-24",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "UPESSC 2647 Principal, Headmaster Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-2647-principal-headmaster-recruitment-2026-3075555",
+        "qualification": "10th",
+        "salary": "₹78800",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "HPRCA Teacher Online Form 2026 (2423 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/hprca-recruitment-2026-teacher-3077937",
         "qualification": "10th",
@@ -144,21 +162,12 @@
         "last_date": ""
     },
     {
-        "title": "JKSSB 2863 Class IV MTS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jkssb-class-iv-recruitment-2026-apply-online-for-2863-mts-sanitation-worker-posts-3065802",
-        "qualification": "10th",
-        "salary": "₹14800",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "AP DSC 2721 Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ap-dsc-teacher-notification-2026-3073393",
+        "title": "POWERGRID 319 Engineer Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/powergrid-engineer-trainee-recruitment-2025-apply-online-3024796",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "319",
         "last_date": ""
     },
     {
@@ -241,23 +250,5 @@
         "age_limit": "18-32",
         "vacancy": "",
         "last_date": "11/12/2026"
-    },
-    {
-        "title": "127 Inf Bn TA Eco Garhwal Rifles Recruitment Rally 2026",
-        "apply_link": "https://www.freejobalert.com/articles/127-inf-bn-ta-eco-garhwal-rifles-recruitment-rally-2026-3080453",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "45",
-        "last_date": "20/11/0008"
-    },
-    {
-        "title": "ISRO SAC Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sac-recruitment-2026-graduate-apprentice-technician-apprentice-3080378",
-        "qualification": "10th",
-        "salary": "₹12300",
-        "age_limit": "18-35",
-        "vacancy": "",
-        "last_date": ""
     }
 ]
