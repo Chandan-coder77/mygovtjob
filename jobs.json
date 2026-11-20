@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -90,13 +72,13 @@
         "last_date": ""
     },
     {
-        "title": "NLC India 143 GET Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/nlc-india-get-recruitment-2026-3078755",
+        "title": "DVC Executive Trainee Online Form 2026 (108 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dvc-recruitment-2026-executive-trainee-3079288",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "143",
-        "last_date": ""
+        "vacancy": "108",
+        "last_date": "06/12/2026"
     },
     {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
@@ -126,30 +108,21 @@
         "last_date": ""
     },
     {
-        "title": "HPRCA Teacher Online Form 2026 (2423 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/hprca-recruitment-2026-teacher-3077937",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-45",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Manipur Police Constable, SI and More Posts Offline Form 2026 (2698 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/manipur-police-recruitment-2026-2698-constable-si-and-other-posts-3079176",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "JKSSB 2863 Class IV MTS Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/jkssb-class-iv-recruitment-2026-apply-online-for-2863-mts-sanitation-worker-posts-3065802",
         "qualification": "10th",
         "salary": "₹14800",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "NABARD JPA, SPA Online Form 2026 (24 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nabard-recruitment-2026-junior-project-associate-3083147",
+        "qualification": "10th",
+        "salary": "₹75000",
+        "age_limit": "24-45",
+        "vacancy": "24",
         "last_date": ""
     },
     {
@@ -160,6 +133,24 @@
         "age_limit": "18-42",
         "vacancy": "132",
         "last_date": ""
+    },
+    {
+        "title": "NLC India Executive Posts Online Form 2026 (145 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nlc-india-executive-recruitment-2026-3081657",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "145",
+        "last_date": "22/12/2026"
+    },
+    {
+        "title": "ISRO URSC Technician-B, Driver Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/isro-ursc-to-recruit-61-technician-b-driver-posts-3075553",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-35",
+        "vacancy": "61",
+        "last_date": "39/1/2019"
     },
     {
         "title": "POWERGRID 319 Engineer Trainee Online Form 2026",
@@ -198,15 +189,6 @@
         "last_date": ""
     },
     {
-        "title": "NLC India Executive Posts Online Form 2026 (145 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/nlc-india-executive-recruitment-2026-3081657",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "145",
-        "last_date": "22/12/2026"
-    },
-    {
         "title": "Coconut Development Board Group A, B and C Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/coconut-development-board-recruitment-2026-apply-online-for-35-group-a-b-and-c-posts-3081351",
         "qualification": "10th",
@@ -243,12 +225,39 @@
         "last_date": ""
     },
     {
-        "title": "DSSSB 1260 JE, MTS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dsssb-recruitment-2026-apply-online-for-mts-junior-engineer-posts-3079318",
+        "title": "DHS Staff Nurse Offline Form 2026 (56 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dhs-staff-nurse-recruitment-2026-3083290",
         "qualification": "10th",
         "salary": "",
-        "age_limit": "18-32",
-        "vacancy": "",
-        "last_date": "11/12/2026"
+        "age_limit": "",
+        "vacancy": "56",
+        "last_date": ""
+    },
+    {
+        "title": "DHS Krishnagiri Staff Nurse Offline Form 2026 (73 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/dhs-krishnagiri-staff-nurse-recruitment-2026-3083288",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "73",
+        "last_date": ""
+    },
+    {
+        "title": "NHM Theni Staff Nurse Offline Form 2026 (33 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nhm-theni-staff-nurse-recruitment-2026-3083284",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "33",
+        "last_date": ""
+    },
+    {
+        "title": "Thanjavur District Health Society Staff Nurse Offline Form 2026 (127 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/thanjavur-district-health-society-staff-nurse-recruitment-2026-3083279",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "127",
+        "last_date": ""
     }
 ]
