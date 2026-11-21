@@ -1,7 +1,7 @@
 [
     {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -9,8 +9,8 @@
         "last_date": ""
     },
     {
-        "title": "RECRUITMENT",
-        "apply_link": "https://osssc.gov.in",
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
         "salary": "",
         "age_limit": "",
@@ -90,13 +90,13 @@
         "last_date": ""
     },
     {
-        "title": "Exim Bank 120 MT & Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/exim-bank-recruitment-2026-apply-online-for-120-management-trainee-and-manager-posts-3080153",
+        "title": "RITES 281 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rites-apprentice-recruitment-2026-3078608",
         "qualification": "10th",
         "salary": "",
-        "age_limit": "21-28",
-        "vacancy": "120",
-        "last_date": "34/2/2013"
+        "age_limit": "",
+        "vacancy": "281",
+        "last_date": ""
     },
     {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
@@ -126,22 +126,22 @@
         "last_date": ""
     },
     {
-        "title": "JKSSB 2863 Class IV MTS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jkssb-class-iv-recruitment-2026-apply-online-for-2863-mts-sanitation-worker-posts-3065802",
+        "title": "RRC North Western Railway 2008 Act Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rrc-north-western-railway-act-apprentice-recruitment-2026-3074741",
         "qualification": "10th",
-        "salary": "₹14800",
-        "age_limit": "",
+        "salary": "",
+        "age_limit": "15-24",
         "vacancy": "",
         "last_date": ""
     },
     {
-        "title": "SIDBI 68 Grade A and B Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/sidbi-grade-a-b-recruitment-2026-3083361",
+        "title": "UPESSC 2647 Principal, Headmaster Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/upessc-2647-principal-headmaster-recruitment-2026-3075555",
         "qualification": "10th",
-        "salary": "₹62500",
-        "age_limit": "21-33",
-        "vacancy": "68",
-        "last_date": "39/1/2019"
+        "salary": "₹78800",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
     },
     {
         "title": "NABARD JPA, SPA Online Form 2026 (24 Vacancy)",
@@ -151,6 +151,42 @@
         "age_limit": "24-45",
         "vacancy": "24",
         "last_date": ""
+    },
+    {
+        "title": "Coconut Development Board Group A, B and C Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/coconut-development-board-recruitment-2026-apply-online-for-35-group-a-b-and-c-posts-3081351",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "35",
+        "last_date": ""
+    },
+    {
+        "title": "BEML Executive Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/beml-executive-recruitment-2026-3083386",
+        "qualification": "10th",
+        "salary": "₹40000",
+        "age_limit": "29-48",
+        "vacancy": "83",
+        "last_date": "33/1/2013"
+    },
+    {
+        "title": "Exim Bank 120 MT & Manager Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/exim-bank-recruitment-2026-apply-online-for-120-management-trainee-and-manager-posts-3080153",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "21-28",
+        "vacancy": "120",
+        "last_date": "34/2/2013"
+    },
+    {
+        "title": "SIDBI 68 Grade A and B Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/sidbi-grade-a-b-recruitment-2026-3083361",
+        "qualification": "10th",
+        "salary": "₹62500",
+        "age_limit": "21-33",
+        "vacancy": "68",
+        "last_date": "39/1/2019"
     },
     {
         "title": "OSSC Various Posts Online Form 2026 (132 Vacancy)",
@@ -207,15 +243,6 @@
         "last_date": ""
     },
     {
-        "title": "Coconut Development Board Group A, B and C Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/coconut-development-board-recruitment-2026-apply-online-for-35-group-a-b-and-c-posts-3081351",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "35",
-        "last_date": ""
-    },
-    {
         "title": "POWERGRID Trainee Engineer Online Form 2026 (33 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/powergrid-trainee-engineer-electronics-recruitment-2026-3080902",
         "qualification": "10th",
@@ -231,15 +258,6 @@
         "salary": "",
         "age_limit": "18-24",
         "vacancy": "409",
-        "last_date": ""
-    },
-    {
-        "title": "NHM MP Staff Nurse Online Form 2026 (301 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/nhm-mp-staff-nurse-recruitment-2026-3083367",
-        "qualification": "10th",
-        "salary": "₹28700",
-        "age_limit": "21-40",
-        "vacancy": "301",
         "last_date": ""
     }
 ]
