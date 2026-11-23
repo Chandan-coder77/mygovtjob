@@ -1,5 +1,23 @@
 [
     {
+        "title": "Apply Online",
+        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Recruitment Calendar",
+        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -33,6 +51,15 @@
         "salary": "₹15000",
         "age_limit": "20-28",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "BHEL 415 Engineer and Supervisor Trainee Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bhel-engineer-executive-supervisor-trainee-recruitment-2026-27-3083737",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "415",
         "last_date": ""
     },
     {
@@ -72,15 +99,6 @@
         "last_date": ""
     },
     {
-        "title": "RITES 281 Apprentice Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rites-apprentice-recruitment-2026-3078608",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "281",
-        "last_date": ""
-    },
-    {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/upessc-tgt-recruitment-2026-17735-posts-3075551",
         "qualification": "10th",
@@ -104,24 +122,6 @@
         "qualification": "10th",
         "salary": "₹34100",
         "age_limit": "18-45",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "JKSSB 2863 Class IV MTS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/jkssb-class-iv-recruitment-2026-apply-online-for-2863-mts-sanitation-worker-posts-3065802",
-        "qualification": "10th",
-        "salary": "₹14800",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "AP DSC 2721 Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ap-dsc-teacher-notification-2026-3073393",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
         "vacancy": "",
         "last_date": ""
     },
@@ -150,6 +150,42 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "JKSSB 2863 Class IV MTS Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/jkssb-class-iv-recruitment-2026-apply-online-for-2863-mts-sanitation-worker-posts-3065802",
+        "qualification": "10th",
+        "salary": "₹14800",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "IAF Chandigarh Apprentice Online Form 2026 (446 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/iaf-chandigarh-apprentice-recruitment-2026-3083904",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "17-25",
+        "vacancy": "446",
+        "last_date": ""
+    },
+    {
+        "title": "BHEL FTA Grade III Online Form 2026 (64 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/bhel-fta-grade-iii-recruitment-2027-3083885",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "64",
+        "last_date": ""
+    },
+    {
+        "title": "BDL Various Posts Online Form 2026 (134 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/bdl-recruitment-2026-fitter-electrician-plumber-3083777",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "134",
         "last_date": ""
     },
     {
@@ -231,33 +267,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "319",
-        "last_date": ""
-    },
-    {
-        "title": "RECPDCL Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/recpdcl-recruitment-2026-apply-online-for-32-senior-executive-deputy-executive-and-more-posts-3076364",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "32",
-        "last_date": "28/06/2023"
-    },
-    {
-        "title": "Delhi University 215 Assistant Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/delhi-university-assistant-recruitment-2026-3077134",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "215",
-        "last_date": ""
-    },
-    {
-        "title": "WCL Clerk, Jr DEO & More Online Form 2026 (514 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/wcl-recruitment-2026-clerk-jr-data-entry-operator-t-s-3081692",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "514",
         "last_date": ""
     }
 ]
