@@ -1,23 +1,5 @@
 [
     {
-        "title": "Apply Online",
-        "apply_link": "https://ossc.gov.in/Pages/Post_detail_information.aspx",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
-        "title": "Recruitment Calendar",
-        "apply_link": "https://ossc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
-        "qualification": "iti",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
-    },
-    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -90,13 +72,13 @@
         "last_date": ""
     },
     {
-        "title": "NLC India Executive Posts Online Form 2026 (145 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/nlc-india-executive-recruitment-2026-3081657",
+        "title": "RITES 281 Apprentice Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/rites-apprentice-recruitment-2026-3078608",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "145",
-        "last_date": "22/12/2026"
+        "vacancy": "281",
+        "last_date": ""
     },
     {
         "title": "UPESSC 17735 Assistant Teacher Online Form 2026",
@@ -171,6 +153,15 @@
         "last_date": ""
     },
     {
+        "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
+        "qualification": "10th",
+        "salary": "₹47600",
+        "age_limit": "",
+        "vacancy": "254",
+        "last_date": ""
+    },
+    {
         "title": "NABARD JPA, SPA Online Form 2026 (24 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/nabard-recruitment-2026-junior-project-associate-3083147",
         "qualification": "10th",
@@ -225,6 +216,15 @@
         "last_date": ""
     },
     {
+        "title": "NLC India Executive Posts Online Form 2026 (145 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nlc-india-executive-recruitment-2026-3081657",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "145",
+        "last_date": "22/12/2026"
+    },
+    {
         "title": "POWERGRID 319 Engineer Trainee Online Form 2026",
         "apply_link": "https://www.freejobalert.com/articles/powergrid-engineer-trainee-recruitment-2025-apply-online-3024796",
         "qualification": "10th",
@@ -258,15 +258,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "514",
-        "last_date": ""
-    },
-    {
-        "title": "POWERGRID Trainee Engineer Online Form 2026 (33 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/powergrid-trainee-engineer-electronics-recruitment-2026-3080902",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-28",
-        "vacancy": "33",
         "last_date": ""
     }
 ]
