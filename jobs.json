@@ -81,21 +81,30 @@
         "last_date": ""
     },
     {
-        "title": "RRB 191 Isolated Categories Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/rrb-isolated-categories-recruitment-2026-cen-09-2026-apply-online-for-195-posts-3074732",
+        "title": "Bank of Baroda 837 Professionals Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/bob-recruitment-2026-senior-relationship-manager-3078340",
         "qualification": "10th",
         "salary": "",
-        "age_limit": "",
-        "vacancy": "191",
+        "age_limit": "24-50",
+        "vacancy": "837",
         "last_date": ""
     },
     {
-        "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
+        "title": "NLC India 143 GET Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/nlc-india-get-recruitment-2026-3078755",
         "qualification": "10th",
-        "salary": "₹47600",
+        "salary": "",
         "age_limit": "",
-        "vacancy": "254",
+        "vacancy": "143",
+        "last_date": ""
+    },
+    {
+        "title": "IOCL Apprentice Online Form 2026 (500 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/iocl-apprentice-recruitment-2026-3079245",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-24",
+        "vacancy": "500",
         "last_date": ""
     },
     {
@@ -153,12 +162,21 @@
         "last_date": ""
     },
     {
-        "title": "AP DSC 2721 Teacher Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/ap-dsc-teacher-notification-2026-3073393",
+        "title": "EdCIL Various Posts Online Form 2026 (40 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/edcil-recruitment-2026-pgt-teacher-computer-science-teacher-3084266",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "",
+        "vacancy": "40",
+        "last_date": ""
+    },
+    {
+        "title": "SBI SO Online Form 2026 (60 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/sbi-manager-security-deputy-manager-security-recruitment-2026-3078308",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "25-40",
+        "vacancy": "60",
         "last_date": ""
     },
     {
@@ -207,24 +225,6 @@
         "last_date": "39/1/2019"
     },
     {
-        "title": "Bank of Baroda 837 Professionals Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/bob-recruitment-2026-senior-relationship-manager-3078340",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "24-50",
-        "vacancy": "837",
-        "last_date": ""
-    },
-    {
-        "title": "EdCIL Various Posts Online Form 2026 (40 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/edcil-recruitment-2026-pgt-teacher-computer-science-teacher-3084266",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "40",
-        "last_date": ""
-    },
-    {
         "title": "BPCL Executive Online Form 2026 (49 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/bpcl-executive-recruitment-2026-3084161",
         "qualification": "10th",
@@ -252,6 +252,15 @@
         "last_date": "14/12/2026"
     },
     {
+        "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
+        "qualification": "10th",
+        "salary": "₹47600",
+        "age_limit": "",
+        "vacancy": "254",
+        "last_date": ""
+    },
+    {
         "title": "IAF Chandigarh Apprentice Online Form 2026 (446 Vacancy)",
         "apply_link": "https://www.freejobalert.com/articles/iaf-chandigarh-apprentice-recruitment-2026-3083904",
         "qualification": "10th",
@@ -267,15 +276,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "64",
-        "last_date": ""
-    },
-    {
-        "title": "BDL Various Posts Online Form 2026 (134 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/bdl-recruitment-2026-fitter-electrician-plumber-3083777",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "",
-        "vacancy": "134",
         "last_date": ""
     }
 ]
