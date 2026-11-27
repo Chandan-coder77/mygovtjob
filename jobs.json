@@ -18,6 +18,15 @@
         "last_date": ""
     },
     {
+        "title": "RECRUITMENT",
+        "apply_link": "https://osssc.gov.in",
+        "qualification": "iti",
+        "salary": "",
+        "age_limit": "",
+        "vacancy": "",
+        "last_date": ""
+    },
+    {
         "title": "Recruitment Calendar",
         "apply_link": "https://opsc.gov.in/Pages/View_Content.aspx?id=N5n/48rKoj1sNGZtqat51w==",
         "qualification": "iti",
@@ -81,30 +90,21 @@
         "last_date": ""
     },
     {
-        "title": "Exim Bank 120 MT & Manager Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/exim-bank-recruitment-2026-apply-online-for-120-management-trainee-and-manager-posts-3080153",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "21-28",
-        "vacancy": "120",
-        "last_date": "34/2/2013"
-    },
-    {
-        "title": "BSF LDCE SI Online Form 2026 (1167 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/bsf-recruitment-2026-sub-inspector-gd-3080239",
+        "title": "NLC India Executive Posts Online Form 2026 (145 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/nlc-india-executive-recruitment-2026-3081657",
         "qualification": "10th",
         "salary": "",
         "age_limit": "",
-        "vacancy": "",
-        "last_date": ""
+        "vacancy": "145",
+        "last_date": "22/12/2026"
     },
     {
-        "title": "IOCL Eastern Region Apprentice Online Form 2026 (409 Vacancy)",
-        "apply_link": "https://www.freejobalert.com/articles/iocl-eastern-region-apprentice-recruitment-2026-3080655",
+        "title": "WCL Clerk, Jr DEO & More Online Form 2026 (514 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/wcl-recruitment-2026-clerk-jr-data-entry-operator-t-s-3081692",
         "qualification": "10th",
         "salary": "",
-        "age_limit": "18-24",
-        "vacancy": "409",
+        "age_limit": "",
+        "vacancy": "514",
         "last_date": ""
     },
     {
@@ -168,6 +168,24 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "",
+        "last_date": ""
+    },
+    {
+        "title": "Exim Bank 120 MT & Manager Online Form 2026",
+        "apply_link": "https://www.freejobalert.com/articles/exim-bank-recruitment-2026-apply-online-for-120-management-trainee-and-manager-posts-3080153",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "21-28",
+        "vacancy": "120",
+        "last_date": "34/2/2013"
+    },
+    {
+        "title": "BHEL Various Posts Online Form 2026 (40 Vacancy)",
+        "apply_link": "https://www.freejobalert.com/articles/bhel-recruitment-2026-fitter-electrician-3085255",
+        "qualification": "10th",
+        "salary": "",
+        "age_limit": "18-27",
+        "vacancy": "40",
         "last_date": ""
     },
     {
@@ -249,33 +267,6 @@
         "salary": "",
         "age_limit": "",
         "vacancy": "49",
-        "last_date": ""
-    },
-    {
-        "title": "DSSSB MTS Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/dsssb-recruitment-2026-apply-online-for-mts-junior-engineer-posts-3079318",
-        "qualification": "10th",
-        "salary": "",
-        "age_limit": "18-32",
-        "vacancy": "",
-        "last_date": "11/12/2026"
-    },
-    {
-        "title": "Oil India Various Posts Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/oil-india-executive-recruitment-2026-3073913",
-        "qualification": "10th",
-        "salary": "₹50000",
-        "age_limit": "",
-        "vacancy": "32",
-        "last_date": "14/12/2026"
-    },
-    {
-        "title": "AEES 254 PGT, TGT, PRT & Other Online Form 2026",
-        "apply_link": "https://www.freejobalert.com/articles/aees-teaching-recruitment-2026-3075950",
-        "qualification": "10th",
-        "salary": "₹47600",
-        "age_limit": "",
-        "vacancy": "254",
         "last_date": ""
     }
 ]
